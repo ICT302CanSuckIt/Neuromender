@@ -1,0 +1,4 @@
+SELECT ReachGameData.*, Session.StartTime, Session.EndTime FROM ReachGameData
+LEFT JOIN Session ON ReachGameData.SessionID = Session.SessionID
+WHERE Session.UserID = {UserID} AND TargetsPlayed >= 1
+ORDER BY ReachGameData.TimeCreated ASC

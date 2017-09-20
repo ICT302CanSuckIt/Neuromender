@@ -1,0 +1,2446 @@
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>ICT302</o:Subject>
+  <o:Author>Dave Belson</o:Author>
+  <o:LastAuthor>Connor B</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>18</o:TotalTime>
+  <o:LastPrinted>2016-09-18T03:39:00Z</o:LastPrinted>
+  <o:Created>2016-11-04T07:57:00Z</o:Created>
+  <o:LastSaved>2016-11-08T13:02:00Z</o:LastSaved>
+  <o:Pages>33</o:Pages>
+  <o:Words>1896</o:Words>
+  <o:Characters>10809</o:Characters>
+  <o:Lines>90</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12680</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>132</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>2</w:DisplayHorizontalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-AU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:DocumentVariables>
+   <w:__Grammarly_42____i>H4sIAAAAAAAEAKtWckksSQxILCpxzi/NK1GyMqwFAAEhoTITAAAA</w:__Grammarly_42____i>
+   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDY0tLQ0MDI0NzGysDAxNTRW0lEKTi0uzszPAykwrAUAZL2t5SwAAAA=</w:__Grammarly_42___1>
+  </w:DocumentVariables>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+
+
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-font-kerning:0pt;
+	font-weight:normal;}
+h2
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:normal;}
+h3
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#1F4D78;
+	mso-themecolor:accent1;
+	mso-themeshade:127;
+	font-weight:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:44.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:55.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:66.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:77.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:88.0pt;
+	line-height:105%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 225.65pt right 451.3pt;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 225.65pt right 451.3pt;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-noshow:yes;
+	mso-style-priority:35;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	color:#44546A;
+	mso-themecolor:text2;
+	font-style:italic;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-noshow:yes;
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-noshow:yes;
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-noshow:yes;
+	mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Subtitle Char";
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	color:#5A5A5A;
+	mso-themecolor:text1;
+	mso-themetint:165;
+	letter-spacing:.75pt;
+	mso-ansi-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-noshow:yes;
+	mso-style-priority:1;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 1";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-ansi-language:EN-US;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2E74B5;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#1F4D78;
+	mso-themecolor:accent1;
+	mso-themeshade:127;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Title;
+	mso-ansi-font-size:28.0pt;
+	mso-bidi-font-size:28.0pt;
+	font-family:"Calibri Light","sans-serif";
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Subtitle;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#5A5A5A;
+	mso-themecolor:text1;
+	mso-themetint:165;
+	letter-spacing:.75pt;
+	mso-ansi-language:EN-US;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.apple-tab-span
+	{mso-style-name:apple-tab-span;
+	mso-style-unhide:no;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("../assets/Web_portal_Admin_files/header.html") fs;
+	mso-footnote-continuation-separator:url("../assets/Web_portal_Admin_files/header.html") fcs;
+	mso-endnote-separator:url("../assets/Web_portal_Admin_files/header.html") es;
+	mso-endnote-continuation-separator:url("../assets/Web_portal_Admin_files/header.html") ecs;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:36.0pt 36.0pt 36.0pt 36.0pt;
+	mso-header-margin:35.45pt;
+	mso-footer-margin:35.45pt;
+	mso-title-page:yes;
+	mso-first-footer:url("../assets/Web_portal_Admin_files/header.html") ff1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:39;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable1Light-Accent51
+	{mso-style-name:"Grid Table 1 Light - Accent 51";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	border:solid #B4C6E7 1.0pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-border-alt:solid #B4C6E7 .5pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #B4C6E7;
+	mso-border-insideh-themecolor:accent5;
+	mso-border-insideh-themetint:102;
+	mso-border-insidev:.5pt solid #B4C6E7;
+	mso-border-insidev-themecolor:accent5;
+	mso-border-insidev-themetint:102;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable1Light-Accent51FirstRow
+	{mso-style-name:"Grid Table 1 Light - Accent 51";
+	mso-table-condition:first-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:1.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent51LastRow
+	{mso-style-name:"Grid Table 1 Light - Accent 51";
+	mso-table-condition:last-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.75pt double #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent51FirstCol
+	{mso-style-name:"Grid Table 1 Light - Accent 51";
+	mso-table-condition:first-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent51LastCol
+	{mso-style-name:"Grid Table 1 Light - Accent 51";
+	mso-table-condition:last-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.ListTable5Dark-Accent51
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	border:solid #4472C4 3.0pt;
+	mso-border-themecolor:accent5;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-tstyle-shading:#4472C4;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	color:white;
+	mso-themecolor:background1;
+	mso-fareast-language:EN-US;}
+table.ListTable5Dark-Accent51FirstRow
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:first-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:2.25pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.ListTable5Dark-Accent51LastRow
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:last-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.ListTable5Dark-Accent51FirstCol
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:first-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.ListTable5Dark-Accent51LastCol
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:last-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.ListTable5Dark-Accent51OddColumn
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:odd-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;}
+table.ListTable5Dark-Accent51EvenColumn
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:even-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;}
+table.ListTable5Dark-Accent51OddRow
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:odd-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;}
+table.ListTable5Dark-Accent51NECell
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:ne-cell;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-left:cell-none;}
+table.ListTable5Dark-Accent51NWCell
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:nw-cell;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-right:cell-none;}
+table.ListTable5Dark-Accent51SECell
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:se-cell;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-left:cell-none;}
+table.ListTable5Dark-Accent51SWCell
+	{mso-style-name:"List Table 5 Dark - Accent 51";
+	mso-table-condition:sw-cell;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-right:cell-none;}
+table.GridTable7Colorful-Accent51
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	border:solid #8EAADB 1.0pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:153;
+	mso-border-alt:solid #8EAADB .5pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:153;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #8EAADB;
+	mso-border-insideh-themecolor:accent5;
+	mso-border-insideh-themetint:153;
+	mso-border-insidev:.5pt solid #8EAADB;
+	mso-border-insidev-themecolor:accent5;
+	mso-border-insidev-themetint:153;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	color:#2F5496;
+	mso-themecolor:accent5;
+	mso-themeshade:191;
+	mso-fareast-language:EN-US;}
+table.GridTable7Colorful-Accent51FirstRow
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:first-row;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable7Colorful-Accent51LastRow
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:last-row;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable7Colorful-Accent51FirstCol
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:first-column;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	text-align:right;
+	mso-ansi-font-style:italic;
+	mso-bidi-font-style:italic;}
+table.GridTable7Colorful-Accent51LastCol
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:last-column;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-style:italic;
+	mso-bidi-font-style:italic;}
+table.GridTable7Colorful-Accent51OddColumn
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:odd-column;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D9E2F3;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable7Colorful-Accent51OddRow
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:odd-row;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D9E2F3;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable7Colorful-Accent51NECell
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:ne-cell;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;}
+table.GridTable7Colorful-Accent51NWCell
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:nw-cell;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;}
+table.GridTable7Colorful-Accent51SECell
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:se-cell;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;}
+table.GridTable7Colorful-Accent51SWCell
+	{mso-style-name:"Grid Table 7 Colorful - Accent 51";
+	mso-table-condition:sw-cell;
+	mso-style-priority:52;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;}
+table.GridTable5Dark-Accent41
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	border:solid white 1.0pt;
+	mso-border-themecolor:background1;
+	mso-border-alt:solid white .5pt;
+	mso-border-themecolor:background1;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid white;
+	mso-border-insideh-themecolor:background1;
+	mso-border-insidev:.5pt solid white;
+	mso-border-insidev-themecolor:background1;
+	mso-tstyle-shading:#FFF2CC;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-shading-themetint:51;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable5Dark-Accent41FirstRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:first-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFC000;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent41LastRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:last-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFC000;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent41FirstCol
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:first-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFC000;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent41LastCol
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:last-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFC000;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent41OddColumn
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:odd-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFE599;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-shading-themetint:102;}
+table.GridTable5Dark-Accent41OddRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 41";
+	mso-table-condition:odd-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#FFE599;
+	mso-tstyle-shading-themecolor:accent4;
+	mso-tstyle-shading-themetint:102;}
+table.GridTable5Dark-Accent51
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	border:solid white 1.0pt;
+	mso-border-themecolor:background1;
+	mso-border-alt:solid white .5pt;
+	mso-border-themecolor:background1;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid white;
+	mso-border-insideh-themecolor:background1;
+	mso-border-insidev:.5pt solid white;
+	mso-border-insidev-themecolor:background1;
+	mso-tstyle-shading:#D9E2F3;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:51;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable5Dark-Accent51FirstRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:first-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4472C4;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent51LastRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:last-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4472C4;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent51FirstCol
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:first-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4472C4;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-left:.5pt solid white;
+	mso-tstyle-border-left-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent51LastCol
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:last-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#4472C4;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-border-top:.5pt solid white;
+	mso-tstyle-border-top-themecolor:background1;
+	mso-tstyle-border-bottom:.5pt solid white;
+	mso-tstyle-border-bottom-themecolor:background1;
+	mso-tstyle-border-right:.5pt solid white;
+	mso-tstyle-border-right-themecolor:background1;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable5Dark-Accent51OddColumn
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:odd-column;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#B4C6E7;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:102;}
+table.GridTable5Dark-Accent51OddRow
+	{mso-style-name:"Grid Table 5 Dark - Accent 51";
+	mso-table-condition:odd-row;
+	mso-style-priority:50;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#B4C6E7;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:102;}
+table.GridTable1Light-Accent52
+	{mso-style-name:"Grid Table 1 Light - Accent 52";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	border:solid #B4C6E7 1.0pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-border-alt:solid #B4C6E7 .5pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #B4C6E7;
+	mso-border-insideh-themecolor:accent5;
+	mso-border-insideh-themetint:102;
+	mso-border-insidev:.5pt solid #B4C6E7;
+	mso-border-insidev-themecolor:accent5;
+	mso-border-insidev-themetint:102;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable1Light-Accent52FirstRow
+	{mso-style-name:"Grid Table 1 Light - Accent 52";
+	mso-table-condition:first-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:1.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent52LastRow
+	{mso-style-name:"Grid Table 1 Light - Accent 52";
+	mso-table-condition:last-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.75pt double #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent52FirstCol
+	{mso-style-name:"Grid Table 1 Light - Accent 52";
+	mso-table-condition:first-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent52LastCol
+	{mso-style-name:"Grid Table 1 Light - Accent 52";
+	mso-table-condition:last-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent11
+	{mso-style-name:"Grid Table 1 Light - Accent 11";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	border:solid #BDD6EE 1.0pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:102;
+	mso-border-alt:solid #BDD6EE .5pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:102;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #BDD6EE;
+	mso-border-insideh-themecolor:accent1;
+	mso-border-insideh-themetint:102;
+	mso-border-insidev:.5pt solid #BDD6EE;
+	mso-border-insidev-themecolor:accent1;
+	mso-border-insidev-themetint:102;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable1Light-Accent11FirstRow
+	{mso-style-name:"Grid Table 1 Light - Accent 11";
+	mso-table-condition:first-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:1.5pt solid #9CC2E5;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-bottom-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent11LastRow
+	{mso-style-name:"Grid Table 1 Light - Accent 11";
+	mso-table-condition:last-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.75pt double #9CC2E5;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-top-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent11FirstCol
+	{mso-style-name:"Grid Table 1 Light - Accent 11";
+	mso-table-condition:first-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent11LastCol
+	{mso-style-name:"Grid Table 1 Light - Accent 11";
+	mso-table-condition:last-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent11
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	border:solid #9CC2E5 1.0pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:153;
+	mso-border-alt:solid #9CC2E5 .5pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:153;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #9CC2E5;
+	mso-border-insideh-themecolor:accent1;
+	mso-border-insideh-themetint:153;
+	mso-border-insidev:.5pt solid #9CC2E5;
+	mso-border-insidev-themecolor:accent1;
+	mso-border-insidev-themetint:153;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable4-Accent11FirstRow
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:first-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#5B9BD5;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-border-top:.5pt solid #5B9BD5;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-left:.5pt solid #5B9BD5;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-bottom:.5pt solid #5B9BD5;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-right:.5pt solid #5B9BD5;
+	mso-tstyle-border-right-themecolor:accent1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent11LastRow
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:last-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:1.5pt double #5B9BD5;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent11FirstCol
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:first-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent11LastCol
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:last-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent11OddColumn
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:odd-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#DEEAF6;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable4-Accent11OddRow
+	{mso-style-name:"Grid Table 4 - Accent 11";
+	mso-table-condition:odd-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#DEEAF6;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable2-Accent61
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	border-top:solid #A8D08D 1.0pt;
+	mso-border-top-themecolor:accent6;
+	mso-border-top-themetint:153;
+	border-left:none;
+	border-bottom:solid #A8D08D 1.0pt;
+	mso-border-bottom-themecolor:accent6;
+	mso-border-bottom-themetint:153;
+	border-right:none;
+	mso-border-top-alt:solid #A8D08D .25pt;
+	mso-border-top-themecolor:accent6;
+	mso-border-top-themetint:153;
+	mso-border-bottom-alt:solid #A8D08D .25pt;
+	mso-border-bottom-themecolor:accent6;
+	mso-border-bottom-themetint:153;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.25pt solid #A8D08D;
+	mso-border-insideh-themecolor:accent6;
+	mso-border-insideh-themetint:153;
+	mso-border-insidev:.25pt solid #A8D08D;
+	mso-border-insidev-themecolor:accent6;
+	mso-border-insidev-themetint:153;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable2-Accent61FirstRow
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:first-row;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-bottom:1.5pt solid #A8D08D;
+	mso-tstyle-border-bottom-themecolor:accent6;
+	mso-tstyle-border-bottom-themetint:153;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable2-Accent61LastRow
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:last-row;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:.75pt double #A8D08D;
+	mso-tstyle-border-top-themecolor:accent6;
+	mso-tstyle-border-top-themetint:153;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable2-Accent61FirstCol
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:first-column;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable2-Accent61LastCol
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:last-column;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable2-Accent61OddColumn
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:odd-column;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#E2EFD9;
+	mso-tstyle-shading-themecolor:accent6;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable2-Accent61OddRow
+	{mso-style-name:"Grid Table 2 - Accent 61";
+	mso-table-condition:odd-row;
+	mso-style-priority:47;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#E2EFD9;
+	mso-tstyle-shading-themecolor:accent6;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable3-Accent51
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	border:solid #8EAADB 1.0pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:153;
+	mso-border-alt:solid #8EAADB .5pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:153;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #8EAADB;
+	mso-border-insideh-themecolor:accent5;
+	mso-border-insideh-themetint:153;
+	mso-border-insidev:.5pt solid #8EAADB;
+	mso-border-insidev-themecolor:accent5;
+	mso-border-insidev-themetint:153;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable3-Accent51FirstRow
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:first-row;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable3-Accent51LastRow
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:last-row;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable3-Accent51FirstCol
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:first-column;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-left:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	text-align:right;
+	mso-ansi-font-style:italic;
+	mso-bidi-font-style:italic;}
+table.GridTable3-Accent51LastCol
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:last-column;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:white;
+	mso-tstyle-shading-themecolor:background1;
+	mso-tstyle-border-top:cell-none;
+	mso-tstyle-border-bottom:cell-none;
+	mso-tstyle-border-right:cell-none;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	mso-ansi-font-style:italic;
+	mso-bidi-font-style:italic;}
+table.GridTable3-Accent51OddColumn
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:odd-column;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D9E2F3;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable3-Accent51OddRow
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:odd-row;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#D9E2F3;
+	mso-tstyle-shading-themecolor:accent5;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable3-Accent51NECell
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:ne-cell;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;}
+table.GridTable3-Accent51NWCell
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:nw-cell;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;}
+table.GridTable3-Accent51SECell
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:se-cell;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;}
+table.GridTable3-Accent51SWCell
+	{mso-style-name:"Grid Table 3 - Accent 51";
+	mso-table-condition:sw-cell;
+	mso-style-priority:48;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.5pt solid #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;}
+table.GridTable4-Accent12
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	border:solid #9CC2E5 1.0pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:153;
+	mso-border-alt:solid #9CC2E5 .5pt;
+	mso-border-themecolor:accent1;
+	mso-border-themetint:153;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #9CC2E5;
+	mso-border-insideh-themecolor:accent1;
+	mso-border-insideh-themetint:153;
+	mso-border-insidev:.5pt solid #9CC2E5;
+	mso-border-insidev-themecolor:accent1;
+	mso-border-insidev-themetint:153;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable4-Accent12FirstRow
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:first-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#5B9BD5;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-border-top:.5pt solid #5B9BD5;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-tstyle-border-left:.5pt solid #5B9BD5;
+	mso-tstyle-border-left-themecolor:accent1;
+	mso-tstyle-border-bottom:.5pt solid #5B9BD5;
+	mso-tstyle-border-bottom-themecolor:accent1;
+	mso-tstyle-border-right:.5pt solid #5B9BD5;
+	mso-tstyle-border-right-themecolor:accent1;
+	mso-tstyle-border-insideh:cell-none;
+	mso-tstyle-border-insidev:cell-none;
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent12LastRow
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:last-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:1.5pt double #5B9BD5;
+	mso-tstyle-border-top-themecolor:accent1;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent12FirstCol
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:first-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent12LastCol
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:last-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable4-Accent12OddColumn
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:odd-column;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#DEEAF6;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable4-Accent12OddRow
+	{mso-style-name:"Grid Table 4 - Accent 12";
+	mso-table-condition:odd-row;
+	mso-style-priority:49;
+	mso-style-unhide:no;
+	mso-tstyle-shading:#DEEAF6;
+	mso-tstyle-shading-themecolor:accent1;
+	mso-tstyle-shading-themetint:51;}
+table.GridTable1Light-Accent53
+	{mso-style-name:"Grid Table 1 Light - Accent 53";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	border:solid #B4C6E7 1.0pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-border-alt:solid #B4C6E7 .5pt;
+	mso-border-themecolor:accent5;
+	mso-border-themetint:102;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid #B4C6E7;
+	mso-border-insideh-themecolor:accent5;
+	mso-border-insideh-themetint:102;
+	mso-border-insidev:.5pt solid #B4C6E7;
+	mso-border-insidev-themecolor:accent5;
+	mso-border-insidev-themetint:102;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.GridTable1Light-Accent53FirstRow
+	{mso-style-name:"Grid Table 1 Light - Accent 53";
+	mso-table-condition:first-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-bottom:1.5pt solid #8EAADB;
+	mso-tstyle-border-bottom-themecolor:accent5;
+	mso-tstyle-border-bottom-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent53LastRow
+	{mso-style-name:"Grid Table 1 Light - Accent 53";
+	mso-table-condition:last-row;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-tstyle-border-top:.75pt double #8EAADB;
+	mso-tstyle-border-top-themecolor:accent5;
+	mso-tstyle-border-top-themetint:153;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent53FirstCol
+	{mso-style-name:"Grid Table 1 Light - Accent 53";
+	mso-table-condition:first-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.GridTable1Light-Accent53LastCol
+	{mso-style-name:"Grid Table 1 Light - Accent 53";
+	mso-table-condition:last-column;
+	mso-style-priority:46;
+	mso-style-unhide:no;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.TableGrid1
+	{mso-style-name:"Table Grid1";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid black 1.0pt;
+	mso-border-alt:solid black .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid black;
+	mso-border-insidev:.5pt solid black;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+table.TableGrid2
+	{mso-style-name:"Table Grid2";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid black 1.0pt;
+	mso-border-alt:solid black .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid black;
+	mso-border-insidev:.5pt solid black;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="7170"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->

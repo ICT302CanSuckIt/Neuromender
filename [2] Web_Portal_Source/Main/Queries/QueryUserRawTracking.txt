@@ -1,0 +1,4 @@
+SELECT RawTracking.*, Session.StartTime, Session.EndTime FROM RawTracking 
+LEFT JOIN Session ON RawTracking.SessionID = Session.SessionID
+WHERE Session.UserID = {UserID} AND WingmanPlayed = 1
+ORDER BY RawTracking.TIME ASC

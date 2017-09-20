@@ -1,0 +1,4 @@
+SELECT AchievementRings.*, Achievement.ThresholdPassed FROM AchievementRings
+LEFT JOIN Achievement ON AchievementRings.AcheivementID = Achievement.AcheivementID
+LEFT JOIN Session ON Achievement.SessionID = Session.SessionID
+WHERE Session.WingmanPlayed = 1 AND Session.UserID = {UserID}

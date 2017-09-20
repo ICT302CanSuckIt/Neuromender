@@ -1,0 +1,24 @@
+SELECT AchievementRings.*, t3.SessionID, t3.LevelID, t3.SelectedDuration, t3.Name, t3.Description, t3.TimeAchieved as LevelCompletedTime FROM AchievementRings
+LEFT JOIN (
+	Select Achievement.*, t2.LevelID, t2.SelectedDuration, t2.TimeFinished, t2.Name, t2.Description from Achievement LEFT JOIN Session
+	ON Session.SessionID = Achievement.SessionID
+	LEFT JOIN Task
+	ON Task.TaskID = Achievement.TaskID
+	LEFT JOIN (
+		SELECT DISTINCT SessionID, LevelID, SelectedDuration, TimeFinished, Name, Description FROM (
+			SELECT LevelCompleted.SessionID, LevelCompleted.LevelID, LevelCompleted.SelectedDuration, LevelCompleted.TimeFinished, Level.Name , Level.Description FROM Neuromend2_2.LevelCompleted LEFT JOIN Session
+			ON Session.SessionID = LevelCompleted.SessionID
+			LEFT JOIN Level
+			ON LevelCompleted.LevelID = Level.LevelID
+			WHERE Session.UserID = {UserID}
+			ORDER BY LevelCompleted.TimeFinished ASC
+		) t
+	) as t2
+	ON Achievement.TimeAchieved = t2.TimeFinished
+	WHERE Session.UserID = {UserID}
+) t3
+ON AchievementRings.AcheivementID = t3.AcheivementID
+LEFT JOIN Session 
+ON t3.SessionID = Session.SessionID
+WHERE Session.WingmanPlayed = 1 AND Session.UserID = {UserID}
+ORDER BY AchievementRings.AcheivementID, GameNo, RingNumber ASC
