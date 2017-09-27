@@ -16,6 +16,7 @@
 		exit();
 	}
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <title> Neuromender | Profile </title>
@@ -28,9 +29,9 @@
         <link href="../style.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="../Includes/GridStyle.css" rel="stylesheet">
-        <script src ="../assets/js/jquery.min.js"> </script>
-        <script src ="../bootstrap/js/bootstrap.min.js"> </script>
-        <script src ="../assets/js/ie10-viewport-bug-workaround.js"> </script>
+        <script src ="../assets/js/jquery.min.js"></script>
+        <script src ="../bootstrap/js/bootstrap.min.js"></script>
+        <script src ="../assets/js/ie10-viewport-bug-workaround.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
         <script type='text/javascript' src='user.js'></script>
         <script src="../js/amcharts/amcharts.js" type="text/javascript"></script>
@@ -39,9 +40,7 @@
     </head>
 
 <body>
-       
 
-	
 	<div class="main-header">
             
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -64,7 +63,7 @@
 				
                         </ul>
                         <ul class="nav navbar-nav navbar-right" style="display: block;">
-			    <li>
+			    <li>								<div class='main-header-links'>Logged in as: 
                                 <?php
                                     $output = "";
                                     $selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
@@ -75,9 +74,10 @@
 
                                             $roleSQL = "Select Description from Role where RoleID = $Role";
                                             $RoleDesc = getval($dbhandle, $roleSQL);
-                                            $output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc</a>";
+                                            
+																						$output .= "TEST";
                                     }
-				    /*
+																		/*
                                     if($roleCount > 1)
                                     {
                                             $sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
@@ -86,8 +86,10 @@
                                             $output = $output . "<input type='submit' name='btnRoleChange' value='Change' /></form><br><br>";
                                     }
 				    */
+				    
 				    echo $output;
                                 ?>
+															</div>
                             </li>
 			    <li>
                                 <a class="main-header-links" href="Logout.php" style="display: block;">
@@ -101,8 +103,6 @@
             
 	
 	 </div>
-	
-<div class="bar"> </div>
 
 
 
@@ -150,4 +150,3 @@
     </body>
 	
 </html>
-

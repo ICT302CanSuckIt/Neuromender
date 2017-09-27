@@ -72,8 +72,6 @@
                 
         </div>
 	
-<div class="bar"> </div>
-	
 	<div class="main-content">
             <!-- AREA FOR THE MAIN CONTENT -->
 			<div class="main-sidebar">

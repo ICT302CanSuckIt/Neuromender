@@ -70,8 +70,7 @@
                         </ul>
                     </div>
                 
-        </div>
-<div class="bar"> </div>		
+        </div>		
 	<div class="main-content">
             <!-- AREA FOR THE MAIN CONTENT -->
 			<div class="main-sidebar">

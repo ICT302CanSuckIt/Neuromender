@@ -8,7 +8,8 @@
 
 	
 	$date = date("Y-m-d");
-	$endDate = date ("Y-m-d", strtotime("-1 day", strtotime($date))); //No point checkign today, so yesterday is good enough
+	//No point checkign today, so yesterday is good enough
+	$endDate = date ("Y-m-d", strtotime("-1 day", strtotime($date))); 
 	
 	//For each patient under the current user
 	while($patient = $PatientResult->fetch_assoc())

@@ -7,23 +7,24 @@ session_start();
 error_reporting(E_ALL); 
 ini_set('display_errors', 1);
 
-/*//replacing database details with external file
+
 $username = "neuroadmin4";
 //change the following to the ones you are using
-//$password = "*7BA8FB152973F6C4434C6BC54E94A7366969EDFE";
+$password = "*7BA8FB152973F6C4434C6BC54E94A7366969EDFE";
 //$hostname = "murdoch.edu.au";
-$dbname = "Neuromender4";
-*/
+$hostname = "127.0.0.1";
+$dbname = "neuromender";
+/*//replacing database details with external file -- does not currently work
 //Declare name of Data File
-$DataFile = "DBData.txt"
+$DataFile = realpath("./DBData.txt");
 //open file
-$DBFile = fopen(DataFile, "r") or die ("Unable to Open File.");
+$DBFile = fopen("$DataFile", "r") or die ("Unable to Open File.");
 //get database details from file
-$username = fgets($DBFile);
-$password = fgets($DBFile);
-$hostname = fgets($DBFile);
-$dbname = fgets($DBFile);
-
+$username = fgets($DBFile, 1024);
+$password = fgets($DBFile, 1024);
+$hostname = fgets($DBFile, 1024);
+$dbname = fgets($DBFile, 1024);
+*/
 
 // the role types
 $constSuperAdmin = 0;
@@ -36,9 +37,10 @@ $constPatient = 5;
 $chartIncrement = 0;
 
 //connection to the database
-$dbhandle = new mysqli($hostname, $username, $password, $dbname);
-  if ($dbhandle->connect_errno) {
-	  echo "Failed to connect to MySQL: (" . $dbhandle->connect_errno . ") " . $dbhandle->connect_error;
+$dbhandle = mysqli_connect($hostname, $username, $password, $dbname);
+  if (!$dbhandle) {
+	  echo "Failed to connect to MySQL: (" . mysqli_connect_errno() . ") " . mysqli_connect_error();
+		exit;
   }
   
 function getUserRoles($id, $dbhandle)
