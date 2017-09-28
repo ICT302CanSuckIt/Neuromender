@@ -15,11 +15,11 @@
 			}
 			
             $userID = $_SESSION['UserID'];
-            $url = "location.href='PatientProfile.php?user=$userID&password=1'";
+            $url = "PatientProfile.php";
             echo("
 			
 			<i class='fa fa-user fa-3x' aria-hidden='true'> </i>
-                <a href='PatientProfile.php'>
+                <a href=\"$url\">
 			
 				
 				
@@ -79,15 +79,15 @@
 			
 			//DASHBOARD BUTTON FOR ALERTS
             $userID = $_SESSION['UserID'];
-            $url = "location.href='Alerts.php?user=$userID&password=1'";
+            $url = "Alerts.php?user=$userID";
             echo("
 				<i class='fa fa-exclamation fa-3x'></i>
-                <a href='javascript:void(0)' onclick=$url>
+                <a href=\"$url\">
 				
 			
 				
                     <div class='huge'>Alerts</div>
-                    <a href='javascript:void(0)' onclick=$url>
+                    <a href=\"$url\">
 						<div class='clearfix'></div>
                     </a>
 			

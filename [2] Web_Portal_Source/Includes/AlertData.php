@@ -31,15 +31,15 @@
 	
 	if( isset( $_GET['user'] ) && isset( $_GET['date'] ) )
 	{
-		$sql = "select * from Alerts where Seen=0 and ParentID=".$_SESSION['UserID']." and SubjectID=".$_GET['user']." and CAST(`Date` AS DATE)='".$_GET['date']."';";
+		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from Alerts where Seen=0 and SubjectID=".$_GET['user']." and CAST(`Date` AS DATE)='".$_GET['date']."';";
 	}
 	else if( isset( $_GET['user'] ) )
 	{
-		$sql = "select * from Alerts where Seen=0 and ParentID=".$_SESSION['UserID']." and SubjectID=".$_GET['user'].";";
+		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from Alerts where Seen=0 AND SubjectID=".$_GET['user'].";";
 	}
 	else
 	{
-		$sql = "select * from Alerts where Seen=0 and ParentID=".$_SESSION['UserID'].";";
+		$sql = "select * from Alerts where Seen=0 and SubjectID=".$_SESSION['UserID'].";";
 	}
 	
 	
@@ -74,7 +74,7 @@
 			
 		while( $row = $result->fetch_assoc() )
 		{
-			$date 			= $row["Date"];
+			$date 			= $row["DDate"];
 			$description 	= $row["Description"];
 			$patientID	 	= $row["SubjectID"];
 			$patientSql = "select FullName, UserID from Users where UserID=$patientID;";

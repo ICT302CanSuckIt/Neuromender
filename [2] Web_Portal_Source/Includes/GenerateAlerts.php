@@ -59,7 +59,7 @@
 					{
 						//echo "No Wingman Played today! " . $startDate . "<br/>";
 						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
-									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . $startDate . "' );";
+									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date_format($startDate, 'd-m-Y') . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					if( $patient['EnabledTargets'] == 1 && $targetsPlayed == 0 )

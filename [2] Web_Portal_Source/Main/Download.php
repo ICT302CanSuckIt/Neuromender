@@ -64,8 +64,6 @@
             
     </div>
     <!-- AREA FOR THE MAIN CONTENT -->
-	
-<div class="bar"> </div>
         <div class="main-content">
 		
 			<div class="main-sidebar"> 

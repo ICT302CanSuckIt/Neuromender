@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> Neuromender | Help </title>
+        <title> Neuromender | Alerts </title>
         <?php
             error_reporting(0);
             include "../Includes/Header.php";

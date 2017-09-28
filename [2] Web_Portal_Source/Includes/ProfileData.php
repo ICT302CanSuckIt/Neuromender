@@ -14,9 +14,9 @@
         $_SESSION['beginAngDate'] = "";
         $_SESSION['endAngDate'] = "";
         $_SESSION['wgameNumber'] = "";
-		$_SESSION['wgameNumberID'] = "";
+				$_SESSION['wgameNumberID'] = "";
         $_SESSION['AddRoleID'] = "";
-		$_SESSION['DeleteUserID'] = "";
+				$_SESSION['DeleteUserID'] = "";
                 
 		$outputString;
 		$outputString="<div class='body'>";

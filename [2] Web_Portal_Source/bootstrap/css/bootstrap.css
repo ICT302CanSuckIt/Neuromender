@@ -4257,7 +4257,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-collapse {
-    width: auto;
+    width: 950px;
     border-top: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -4268,8 +4268,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: block; /*important;*/
     height: 100px;/* !important;*/
     padding-bottom: 0;
-    width: 800px;
-		left: 400px;
+    width: 950px;
+		left: 380px;
   }
   .navbar-collapse.in {
     overflow-y: visible;
@@ -7061,12 +7061,11 @@ a.main-header-links:hover  {
 
 .navbar-nav {
 	
-	width: 550px;
+	width: 520px;
 	height: auto;
 	/*position: relative;*/
 	float:left;
 	/*top: 60px;*/
-	/*left: -400px;*/
 	z-index: 99999999999999;
 	
 }
@@ -7074,11 +7073,11 @@ a.main-header-links:hover  {
 @media (min-width: 768px) {
   .navbar-nav {
     float: left;
-    margin: 0;
+		padding-top: 30px;
+		margin-left: -300px;
   }
   .navbar-nav > li {
     float: left;
-		top: -20px;
   } /*
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -7091,9 +7090,10 @@ a.main-header-links:hover  {
     float: left !important;
   }
 	.navbar-right {
-		float: right !important;
-		width: 240px;
-		left:-350px;
+		/*float: right !important;*/
+		width: 300px;
+		padding-right: 0%;
+		margin-left: 100px;
 		top: 0px;
 	}
   .navbar-right ~ .navbar-right {
@@ -7232,7 +7232,7 @@ p.manuals-paratable {
   width: 1350px;*/
   background-color: #fcf4e8;
   position: relative;
-  width: 86.5%;
+  width: 85%;
   height: auto;
   left: 20px;
   float:left;
@@ -7285,7 +7285,7 @@ p.manuals-paratable {
 .profile-jumbotron {
 	background-color: #fcf4e8;
 	position: relative;
-	width: 1200px;
+	width: 85%;
 	height: auto;
 	left: 20px;
 	float:left;
@@ -7333,14 +7333,14 @@ p.manuals-paratable {
 }
 
 .main-sidebar {
-	 width: 10%;
+	 width: 12%;
 	 height: auto;
 	 padding-bottom:20px;
 	 background-color: #fcf4e8;
 	 position:relative;
 	 left: 10px;
 	 float: left;
-	 top:0;
+	 top:0px;
 	 display:block;
 	  border: 1px solid #f7d8aa;
 	  border-radius: 7px;
@@ -7348,18 +7348,18 @@ p.manuals-paratable {
 }
  
 .profile-sidebar {
-	 width: 230px;
-	 height: auto;
-	 padding-bottom:50px;
-	 background-color: #fcf4e8;
-	 position: relative;
-	 display:block;
-	 border: 1px solid #f7d8aa;
-	 border-radius: 7px;
-	 box-shadow: 1px 1px 10px #333;
-	left: 230px;
-	bottom: 930px;
-	float:left;
+	width: 12%;
+	height: auto;
+	padding-bottom:20px;
+	background-color: #fcf4e8;
+	position:relative;
+	left: 10px;
+	float: left;
+	top:6%;
+	display:block;
+	border: 1px solid #f7d8aa;
+	border-radius: 7px;
+	box-shadow: 1px 1px 10px #333;
 	z-index:99999999999;
 	/*margin-top:20px;*/
 }

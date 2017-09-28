@@ -14,14 +14,14 @@
 			}
 			
             $userID = $_SESSION['UserID'];
-            $url = "location.href='Profile.php?user=$userID&password=1'";
+            $url = "Profile.php";
             echo("<div class='sidebar-links' $hackedStyle>
-                <a href='javascript:void(0)' onclick=$url>
+                <a href=\"$url\">
 			
 				
 				<i class='fa fa-user fa-3x'> </i>
                     <div class='huge'>Profile</div>
-					<a href='javascript:void(0)' onclick=$url>
+					<a href=\"$url\">
 						<div class='clearfix'></div>
 					</a>
 				
@@ -77,14 +77,14 @@
 			
 			//DASHBOARD BUTTON FOR ALERTS
             $userID = $_SESSION['UserID'];
-            $url = "location.href='Alerts.php?user=$userID&password=1'";
+            $url = "Alerts.php?user=$userID";
             echo("<div class='sidebar-links' $hackedStyle>
-                <a href='javascript:void(0)' onclick=$url>
+                <a href=\"$url\">
 				
 				
 				<i class='fa fa-exclamation fa-3x'></i>
                     <div class='huge'>Alerts</div>
-                    <a href='javascript:void(0)' onclick=$url>
+                    <a href=\"$url\">
 						<div class='clearfix'></div>
                     </a>
 				

@@ -75,7 +75,7 @@
                                             $roleSQL = "Select Description from Role where RoleID = $Role";
                                             $RoleDesc = getval($dbhandle, $roleSQL);
                                             
-																						$output .= "TEST";
+																						$output .= "$RoleDesc";
                                     }
 																		/*
                                     if($roleCount > 1)
@@ -109,35 +109,21 @@
 
 
 
-<div class="main-wrapper">
-
-	
-			<div class="profile-jumbotron">
-                <?php
-                    include "../Includes/ProfileData.php"   
-                ?>
-			</div>
-			
-			
-			
-				<div class="profile-sidebar" >
-				<?php
-					include "../sidebar-profile.php"
-				?>
-			</div>
-
+	<div class="main-wrapper">
+		<div class="profile-sidebar" >
+			<?php
+				include "../sidebar-profile.php"
+			?>
+		</div>
 		
-				
-			
-			
-			 	      
-	
-			
-		
+		<div class="profile-jumbotron">
+			<?php
+				include "../Includes/ProfileData.php"   
+			?>
+		</div>
 
-
-</div>
-<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
 
 
 	<div class="main-footer">
