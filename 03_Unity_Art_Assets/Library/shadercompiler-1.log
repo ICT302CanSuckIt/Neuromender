@@ -1,0 +1,7 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-12216
+Cmd: getPlatforms
+Cmd: compileSnippet
+  api=1 type=0 insize=3341 outsize=449 kw=WATER_REFRACTIVE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=3341 outsize=810 kw=WATER_REFRACTIVE ok=1
