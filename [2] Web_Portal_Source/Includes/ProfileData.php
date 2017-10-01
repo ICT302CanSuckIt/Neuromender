@@ -3,44 +3,47 @@
 <script type='text/javascript' src='../Includes/GridSelection.js'></script>
 
 <?php
-        if ($_SESSION['loggedIn'] == false)
-        {
-            header("Location: Login.php");
-            exit();
-        }
-        error_reporting(0);
-                
-        // Reset variables used in SessionData
-        $_SESSION['beginAngDate'] = "";
-        $_SESSION['endAngDate'] = "";
-        $_SESSION['wgameNumber'] = "";
-				$_SESSION['wgameNumberID'] = "";
-        $_SESSION['AddRoleID'] = "";
-				$_SESSION['DeleteUserID'] = "";
-                
+		if ($_SESSION['loggedIn'] == false)
+		{
+				header("Location: Login.php");
+				exit();
+		}
+		error_reporting(0);
+						
+		// Reset variables used in SessionData
+		$_SESSION['beginAngDate'] = "";
+		$_SESSION['endAngDate'] = "";
+		$_SESSION['wgameNumber'] = "";
+		$_SESSION['wgameNumberID'] = "";
+		$_SESSION['AddRoleID'] = "";
+		$_SESSION['DeleteUserID'] = "";
+
 		$outputString;
 		$outputString="<div class='body'>";
 		if ($_SESSION['loggedIn'] == true) 
-        {
-			if (isset($_GET['password']) && isset($_GET['user']))
-   	 		{
-                $User = $_GET['user'];              
-                $_SESSION['PatientID'] = $User;
-    
-                $passType = $_GET['password'];
-                if ($passType == '1')
-                {
-                        $_SESSION['currPasswordChange'] = $_SESSION['UserID'];
-                }
-                    if ($passType == '2')
-                {
-                        $_SESSION['currPasswordChange'] = $_SESSION['PatientID'];
-                }
-    
-                header('Location: Profile.php');
-				
-                exit;
-            }
+		{
+			
+			if(isset($_GET['user'])){
+				$User = $_GET['user'];              
+				$_SESSION['PatientID'] = $User;
+			
+				if (isset($_GET['password']))
+				{
+					$passType = $_GET['password'];
+					if ($passType == '1')
+					{
+						$_SESSION['currPasswordChange'] = $_SESSION['UserID'];
+					} else {
+						if ($passType == '2')
+						{
+							$_SESSION['currPasswordChange'] = $_SESSION['PatientID'];
+						}
+					}
+					header('Location: Profile.php');
+
+					//exit;
+				}
+			}
 
 
 			$User = $_SESSION['UserID'];
@@ -380,7 +383,7 @@
 										Date of Birth:
 									</td>
 									<td class='editable' class='page-details'>
-										$dob
+										" . date('d-m-Y', strtotime($dob)) . "
 									</td>
 									<td class='editable' style='display:none;'>
 										<input type='date' name='dob' id='dob' onblur='ValidateBirthDate(document.getElementById(\"dob\").value);' value='$dob'>
@@ -447,7 +450,7 @@
 						$outputString = $outputString . "<table>
 															<tr>
 																<td>Date Of Birth</td>
-																<td>$dob</td>
+																<td>date_format($dob, 'd-m-Y')</td>
 															</tr>
 															<tr>
 																<td>Gender</td>

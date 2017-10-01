@@ -2,7 +2,8 @@
     date_default_timezone_set('Australia/Perth'); //set to Perth timezone, by default php sets to UTC
     include "../Includes/DBConnect.php";
     include "../Includes/Calendar.php";
-    require_once "../Includes/phpChart_Professional/conf.php";
+    // Removed old phpChart module. No Longer Required. Retained due to Client request.
+    /*require_once "phpChart_Professional/conf.php";*/
     if (isset($_SESSION['UserID']))
     {
         $User = $_SESSION['UserID'];

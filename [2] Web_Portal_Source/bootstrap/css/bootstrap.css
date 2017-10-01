@@ -7093,7 +7093,7 @@ a.main-header-links:hover  {
 		/*float: right !important;*/
 		width: 300px;
 		padding-right: 0%;
-		margin-left: 100px;
+		margin-left: 10px;
 		top: 0px;
 	}
   .navbar-right ~ .navbar-right {

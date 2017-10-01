@@ -8,23 +8,18 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-$username = "neuroadmin4";
+/*$username = "neuroadmin4";
 //change the following to the ones you are using
 $password = "*7BA8FB152973F6C4434C6BC54E94A7366969EDFE";
 //$hostname = "murdoch.edu.au";
 $hostname = "127.0.0.1";
-$dbname = "neuromender";
-/*//replacing database details with external file -- does not currently work
+$dbname = "neuromender";*/
+//replacing database details with external file -- does not currently work
 //Declare name of Data File
-$DataFile = realpath("./DBData.txt");
 //open file
-$DBFile = fopen("$DataFile", "r") or die ("Unable to Open File.");
+$DBFile = fopen(, "r") or die ("Unable to Open File.");
 //get database details from file
-$username = fgets($DBFile, 1024);
-$password = fgets($DBFile, 1024);
-$hostname = fgets($DBFile, 1024);
-$dbname = fgets($DBFile, 1024);
-*/
+
 
 // the role types
 $constSuperAdmin = 0;

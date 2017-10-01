@@ -59,14 +59,14 @@
 					{
 						//echo "No Wingman Played today! " . $startDate . "<br/>";
 						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
-									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date_format($startDate, 'd-m-Y') . "' );";
+									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					if( $patient['EnabledTargets'] == 1 && $targetsPlayed == 0 )
 					{
 						//echo "No Targets Played today! " . $startDate . "<br/>";
 						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
-									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Targets was not played today: " . $startDate . "' );";
+									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Targets was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					

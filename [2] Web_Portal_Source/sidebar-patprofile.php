@@ -15,7 +15,7 @@
 			}
 			
             $userID = $_SESSION['UserID'];
-            $url = "Profile.php";
+            $url = "Profile.php?user=$userID";
             echo("
 			
 			<i class='fa fa-user fa-3x'> </i>

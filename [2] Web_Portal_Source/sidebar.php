@@ -14,7 +14,7 @@
 			}
 			
             $userID = $_SESSION['UserID'];
-            $url = "Profile.php";
+            $url = "Profile.php?user=$userID";
             echo("<div class='sidebar-links' $hackedStyle>
                 <a href=\"$url\">
 			
