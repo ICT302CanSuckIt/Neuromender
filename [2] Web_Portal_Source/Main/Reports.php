@@ -48,7 +48,7 @@
 
                                             $roleSQL = "Select Description from Role where RoleID = $Role";
                                             $RoleDesc = getval($dbhandle, $roleSQL);
-                                            $output = $output . "<a>Logged in as: $RoleDesc</a>";
+                                            $output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc </div>";
                                     }
 				    /*
                                     if($roleCount > 1)

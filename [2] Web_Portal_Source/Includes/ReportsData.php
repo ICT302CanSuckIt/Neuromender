@@ -1,8 +1,9 @@
 <?php
+		
 		// Reset variables used in SessionData
-                $_SESSION['beginAngDate'] = "";
-                $_SESSION['endAngDate'] = "";
-                $_SESSION['wgameNumber'] = "";
+		$_SESSION['beginAngDate'] = "";
+		$_SESSION['endAngDate'] = "";
+		$_SESSION['wgameNumber'] = "";
 		$_SESSION['wgameNumberID'] = "";
 
 		$outputString;
@@ -38,7 +39,7 @@
 								$name 			= $row["FullName"];
 								$id 			= $row["UserID"];
 								$email 			= $row["Email"];
-								$url 			= "location.href='../Main/Profile.php?user=$id&password=2'";
+								$url 			= "../Main/PatientProfile.php?user=$id&password=2";
 								
 								//Alerts data
 								$alertsSql 		= "SELECT count(*) as total from Alerts where SubjectID=". $id ." and Seen=0;";
@@ -49,7 +50,7 @@
 								
 								$outputString = $outputString . "<tr>
 																	<td>
-																		<a href='javascript:void(0)' onclick=$url align='right'>$name</a>
+																		<a href=\"$url\" align='right'>$name</a>
 																	</td>
 																	<td style = 'padding-left:20px'>
 																		$email

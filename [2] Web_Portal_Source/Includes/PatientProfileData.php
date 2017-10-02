@@ -14,34 +14,34 @@
         $_SESSION['beginAngDate'] = "";
         $_SESSION['endAngDate'] = "";
         $_SESSION['wgameNumber'] = "";
-		$_SESSION['wgameNumberID'] = "";
+				$_SESSION['wgameNumberID'] = "";
         $_SESSION['AddRoleID'] = "";
-		$_SESSION['DeleteUserID'] = "";
-                
-		$outputString;
-		//$outputString="<div class='body'>";
-		if ($_SESSION['loggedIn'] == true) 
-        {
-			if (isset($_GET['password']) && isset($_GET['user']))
-   	 		{
-                $User = $_GET['user'];              
-                $_SESSION['PatientID'] = $User;
-    
-                $passType = $_GET['password'];
-                if ($passType == '1')
-                {
-                        $_SESSION['currPasswordChange'] = $_SESSION['UserID'];
-                }
-                    if ($passType == '2')
-                {
-                        $_SESSION['currPasswordChange'] = $_SESSION['PatientID'];
-                }
-    
-                header('Location: PatientProfile.php');
-				
-                exit;
-            }
+				$_SESSION['DeleteUserID'] = "";
 
+		$outputString;
+		$outputString="<div class='body'>";
+		if ($_SESSION['loggedIn'] == true) 
+		{
+			
+			if(isset($_GET['user'])){
+				$User = $_GET['user'];              
+				$_SESSION['PatientID'] = $User;
+			
+				if (isset($_GET['password']))
+				{
+					$passType = $_GET['password'];
+					if ($passType == '1')
+					{
+						$_SESSION['currPasswordChange'] = $_SESSION['UserID'];
+					} else {
+						if ($passType == '2')
+						{
+							$_SESSION['currPasswordChange'] = $_SESSION['PatientID'];
+						}
+					}
+					header('Location: PatientProfile.php');
+				}
+			}
 
 			$User = $_SESSION['UserID'];
 
@@ -221,11 +221,11 @@
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets,
+							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling,
 							Affliction.*,
 							WingmanRestrictions.AngleThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
 							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-							CyclingRestrictions.GamesPerDay as CGamesPerDay , CyclingRestrictions.GamesPerSession as CGamesPerSession, CyclingRestrictions.IntervalBetweenSession as CIntervalBetweenSession, CyclingRestrictions.ArmMaxExtension, CyclingRestrictions.GraphicLow, CyclingRestrictions.GraphicMedium, CyclingRestrictions.GraphicHigh,
+							CyclingRestrictions.GamesPerDay as CGamesPerDay , CyclingRestrictions.GamesPerSession as CGamesPerSession, CyclingRestrictions.IntervalBetweenSession as CIntervalBetweenSession, CyclingRestrictions.ArmMaxExtension, CyclingRestrictions.DistanceShort, CyclingRestrictions.DistanceMedium, CyclingRestrictions.DistanceLong,
 							Severity.Description as Severity, 
 							Lesion.Description as LesDesc, 
 							SideAffected.Description as SideAffected 
@@ -241,7 +241,7 @@
 						WHERE
 							Users.UserID = $User";
 				$result = $dbhandle->query($sql);
-
+				
 				if ($result->num_rows > 0) 
 				{
 					$user 			= $result->fetch_assoc();
@@ -253,68 +253,68 @@
 					$gender 		= $user["Gender"];
 					$gender 		= numToDetail($gender, "gender");
 					
+					
+					
 					$outputString 	= $outputString . "<h1 class='main-title'> User Profile</h1>";
                     $outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
                                         
                                         
 					if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
 					{
-                        $urlA = "location.href='../Includes/Admin/AddRole.php?user=$User'";
+						$urlA = "../Includes/Admin/AddRole.php?user=$User";
 						$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0);' onclick='showEditFields(); SetEdit();'> Edit </a></a>   
-														 <a class='vert-line'>  | <a class='profile-links' href='javascript:void(0)' onclick=$urlA>Add Role </a> </a> ";
-						 if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
-						 {
-                                                        $urlD = "location.href='../Includes/Admin/DeleteUser.php?user=$User'";
-							$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0)' onclick=$urlD>Delete User </a></a>";
-						 }
+						<a class='vert-line'>  | <a class='profile-links' href=\"$urlA\">Add Role </a> </a> ";
+						if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
+						{
+							$urlD = "../Includes/Admin/DeleteUser.php?user=$User";
+							$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href=\"$urlD\">Delete User </a></a>";
+						}
                                                 
-                        if ( (((int)$_SESSION['SelectedRole'] != $constPatient && (int)$_SESSION['SelectedRole'] != $constResearch)) && ($_SESSION['currPasswordChange'] == $_SESSION['UserID']))
-                        {
-                                $outputString = $outputString . "<a class='vert-line'>  |  <a class='profile-links' href='../Includes/Admin/CreateUser.php'>Create New User</a></a>";
-                        }
-					
-					
-                        /* Role Change Portion */
-                        if ( $_SESSION['currPasswordChange'] == $_SESSION['UserID'] )
-                        {
-                            if(isset($_POST["btnRoleSelection"]))
-                            {
-                                    $_SESSION['SelectedRole'] = $_POST["initialRole"];
-                                    header('Location: PatientProfile.php');
-                                    exit;
-                            }
+						if ( (((int)$_SESSION['SelectedRole'] != $constPatient && (int)$_SESSION['SelectedRole'] != $constResearch)) && ($_SESSION['currPasswordChange'] == $_SESSION['UserID']))
+						{
+							$outputString = $outputString . "<a class='vert-line'>  |  <a class='profile-links' href='../Includes/Admin/CreateUser.php'>Create New User</a></a>";
+						}
+						/* Role Change Portion */
+						if ( $_SESSION['currPasswordChange'] == $_SESSION['UserID'] )
+						{
+							if(isset($_POST["btnRoleSelection"]))
+							{
+								$_SESSION['SelectedRole'] = $_POST["initialRole"];
+								header('Location: PatientProfile.php');
+								exit;
+							}
 
-                            if(isset($_POST["btnRoleChange"]))
-                            {
-                                    $_SESSION['SelectedRole'] = $_POST["roleChange"];
-                                    header('Location: PatientProfile.php');
-                                    exit;        
-                            }
+							if(isset($_POST["btnRoleChange"]))
+							{
+								$_SESSION['SelectedRole'] = $_POST["roleChange"];
+								header('Location: PatientProfile.php');
+								exit;        
+							}
 
-                            $selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
-                            $roleCount = getval($dbhandle, $selectRoles);
-                            
-                            if ($roleCount > 1)
-                            {
-                                if (isset($_SESSION['SelectedRole']))
-                                {
-                                        $Role = $_SESSION['SelectedRole'];
+							$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+							$roleCount = getval($dbhandle, $selectRoles);
+							
+							if ($roleCount > 1)
+							{
+								if (isset($_SESSION['SelectedRole']))
+								{
+									$Role = $_SESSION['SelectedRole'];
 
-                                        $roleSQL = "Select Description from Role where RoleID = $Role";
-                                        $RoleDesc = getval($dbhandle, $roleSQL);
-                                        $outputString = $outputString . "<br><br>Change Role ";
-                                }
+									$roleSQL = "Select Description from Role where RoleID = $Role";
+									$RoleDesc = getval($dbhandle, $roleSQL);
+									$outputString = $outputString . "<br><br>Change Role ";
+								}
 
-                                if($roleCount > 1)
-                                {
-                                        $sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
-                                        $outputString = $outputString . "<form method='post' style='display: inline;'>";
-                                        $outputString = $outputString . "CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle)";
-                                        $outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
-                                }
-                            }
-                        }
-                    }
+								if($roleCount > 1)
+								{
+									$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+									$outputString = $outputString . "<form method='post' style='display: inline;'>";
+									$outputString = $outputString . "CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle)";
+									$outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
+								}
+							}
+						}
+					}
 					if($_SESSION['SelectedRole'] != $constResearch)
 					{
                             $outputString = $outputString . "
@@ -1392,12 +1392,13 @@
 									valueAxis.dashLength = 1;
 									valueAxis.logarithmic = false; // this line makes axis logarithmic
 									valueAxis.title = "Angle Reached (Deg)";
+									valueAxis.axisColor = "#0175CB";
 									chart.addValueAxis(valueAxis);
 									
 									// second value axis (on the right)
 									var valueAxis2 = new AmCharts.ValueAxis();
 									valueAxis2.position = "right"; // this line makes the axis to appear on the right
-									valueAxis2.axisColor = "#B0DE09";
+									valueAxis2.axisColor = "#55BE07";
 									valueAxis2.gridAlpha = 0;
 									valueAxis2.axisThickness = 2;
 									valueAxis2.title = "Score";
@@ -1425,7 +1426,7 @@
 									//graph.title = "THE TITLE";
 									graph.valueField = "angle";
 									graph.lineThickness = 2;
-									graph.lineColor = "#00BBCC";
+									graph.lineColor = "#0175CB";
 									graph.title = "Average Angle";
 									chart.addGraph(graph);
 									
@@ -1440,7 +1441,7 @@
 									graph2.bulletSize = 17;
 									graph2.valueField = "score";
 									graph2.lineThickness = 2;
-									graph2.lineColor = "#B0DE09";
+									graph2.lineColor = "#55BE07";
 									graph2.title = "Average Score";
 									graph2.valueAxis = valueAxis2;
 									chart.addGraph(graph2);

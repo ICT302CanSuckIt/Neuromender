@@ -66,7 +66,6 @@
                 </div>
          
 	</div>
-  <div class="bar"> </div>
   
   <div class="main-wrapper">
 	<div class="main-content">

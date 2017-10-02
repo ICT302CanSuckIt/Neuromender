@@ -7301,15 +7301,15 @@ p.manuals-paratable {
 
 .delete-jumbotron {
 	background-color: #fcf4e8;
-	position: relative;
-	width: 1200px;
-	height: auto;
-	left: 470px;
-	float:left;
-	display:block;
-	border: none;
-	z-index: 999;
-	border: 1px solid #f7d8aa;
+  position: relative;
+  width: 85%;
+  height: auto;
+  left: 20px;
+  float:left;
+  display:block;
+  border: none;
+  z-index: 999;
+  border: 1px solid #f7d8aa;
 	border-radius: 7px;
 	padding-bottom: 50px;
 	margin-bottom: 25px;
@@ -7381,18 +7381,18 @@ p.manuals-paratable {
 	 
 }
 .delete-sidebar {
-	 width: 230px;
-	 height: auto;
-	 padding-bottom:50px;
-	 background-color: #fcf4e8;
-	 position:relative;
+	width: 230px;
+	height: auto;
+	padding-bottom:50px;
+	background-color: #fcf4e8;
+	position:relative;
 	float:left;
-	 right:970px;
+	right:970px;
 	 
-	 display:block;
-	  border: 1px solid #f7d8aa;
-	  border-radius: 7px;
-	  box-shadow: 1px 1px 10px #333;
+	display:block;
+	border: 1px solid #f7d8aa;
+	border-radius: 7px;
+	box-shadow: 1px 1px 10px #333;
 }
 
 .session-sidebar {
@@ -7547,6 +7547,7 @@ h1.main-title {
 	position:relative;
 	left:70px;
 	font-size: 30px;
+	width: 80%;
 }
 
 .page-details {
@@ -7577,6 +7578,7 @@ h1.main-title {
 	display: block;
 	position: relative;
 	left: 40px;
+	width: 82%;
 }
 
 .sub-title {
@@ -7588,7 +7590,7 @@ h1.main-title {
 	font-size: 30px !important;
 	position:relative;
 	left: 40px;
-	
+	width: 82%;
 }
 
 

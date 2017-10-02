@@ -2,7 +2,8 @@
     date_default_timezone_set('Australia/Perth'); //set to Perth timezone, by default php sets to UTC
     include "../Includes/DBConnect.php";
     include "../Includes/Calendar.php";
-    require_once "../Includes/phpChart_Professional/conf.php";
+		// Removed old phpChart module. No Longer Required. Retained due to Client request.
+    /*require_once "phpChart_Professional/conf.php";*/
     if (isset($_SESSION['UserID']))
     {
         $User = $_SESSION['UserID'];
@@ -57,7 +58,7 @@
                                 <a class="main-header-links" href="../Dashboard.php"> <i class='fa fa-home fa-lg'> </i> Dashboard</a>
                             </li>                              
                             
-                <li> <a class="main-header-links"href="About.php"> <i class='fa fa-question fa-lg'> </i> About</a></li>
+                <li> <a class="main-header-links" href="About.php"> <i class='fa fa-question fa-lg'> </i> About</a></li>
 			    <li> <a class="main-header-links" href="Help.php"> <i class='fa fa-child fa-lg'> </i> Help</a></li>
 			    <li> <a class="main-header-links" href="Contact.php"> <i class='fa fa-phone fa-lg'> </i> Contact Us</a></li>
 				
@@ -74,7 +75,7 @@
 
                                             $roleSQL = "Select Description from Role where RoleID = $Role";
                                             $RoleDesc = getval($dbhandle, $roleSQL);
-                                            $output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc</a>";
+                                            $output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc</div>";
                                     }
 				    /*
                                     if($roleCount > 1)
@@ -100,38 +101,31 @@
             
 	
 	 </div>
-	
-<div class="bar"> </div>
 
 <div class="main-wrapper">
-
-	
-		
-			<div class="">
-                <?php
-                    include "../Includes/PatientProfileData.php"   
-                ?>
-			</div>
-			<div class="">
+	<div class="main-content">
+			<div class="main-sidebar">
 				<?php
 					include "../sidebar-patientprofile.php"
 				?>
 			</div>
-			 	      
-	
-			
 		
-
-
+			<div class="profile-jumbotron">
+				<?php
+						include "../Includes/PatientProfileData.php"   
+				?>
+			</div>
+	</div>
 </div>
+
 <div class="clear"></div>
 
 
 	<div class="main-footer">
-            <?php
-                include "../Includes/Footer.php"
-            ?>
-    </div>
+		<?php
+				include "../Includes/Footer.php"
+		?>
+	</div>
 	
 
     </body>

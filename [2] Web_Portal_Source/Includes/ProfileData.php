@@ -40,13 +40,11 @@
 						}
 					}
 					header('Location: Profile.php');
-
-					//exit;
 				}
 			}
 
 
-			$User = $_SESSION['UserID'];
+			//$User = $_SESSION['UserID'];
 
 			if((int)$_SESSION['UserID'] == (int)$User OR hasViewingRights($User, $dbhandle))
 			{
@@ -262,13 +260,13 @@
                                         
 					if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
 					{
-                        $urlA = "location.href='../Includes/Admin/AddRole.php?user=$User'";
+                        $urlA = "../Includes/Admin/AddRole.php?user=$User";
 						$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0);' onclick='showEditFields(); SetEdit();'> Edit </a></a>   
-														 <a class='vert-line'>  | <a class='profile-links' href='javascript:void(0)' onclick=$urlA>Add Role </a> </a> ";
+														 <a class='vert-line'>  | <a class='profile-links' href=\"$urlA\">Add Role </a> </a> ";
 						 if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
 						 {
-                                                        $urlD = "location.href='../Includes/Admin/DeleteUser.php?user=$User'";
-							$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0)' onclick=$urlD>Delete User </a></a>";
+								$urlD = "../Includes/Admin/DeleteUser.php?user=$User";
+							$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href=\"$urlD\">Delete User </a></a>";
 						 }
                                                 
                         if ( (((int)$_SESSION['SelectedRole'] != $constPatient && (int)$_SESSION['SelectedRole'] != $constResearch)) && ($_SESSION['currPasswordChange'] == $_SESSION['UserID']))
@@ -1360,6 +1358,7 @@
 						//
 						// ANGLE FOR GAMES OVER MULTIPLE SESSIONS
 						//
+						//(note: crashes if no game data stored. attempting to fix now - BL)
 						$output = "";
 						$totalWMSessions = 0;
 						
@@ -1505,7 +1504,7 @@
 									//graph.title = "THE TITLE";
 									graph.valueField = "angle";
 									graph.lineThickness = 2;
-									graph.lineColor = "#00BBCC";
+									graph.lineColor = "#0175CB";
 									graph.title = "Average Angle";
 									chart.addGraph(graph);
 									
@@ -1520,7 +1519,7 @@
 									graph2.bulletSize = 17;
 									graph2.valueField = "score";
 									graph2.lineThickness = 2;
-									graph2.lineColor = "#B0DE09";
+									graph2.lineColor = "#55BE07";
 									graph2.title = "Average Score";
 									graph2.valueAxis = valueAxis2;
 									chart.addGraph(graph2);
@@ -1670,7 +1669,9 @@
 				else{
 					$outputString = $outputString .  "<p>You don't have permission to view this user.</p></div>"; 
 				}
-			}//end of has viewing rights
+			} else {//end of has viewing rights; else has no rights to this.
+				$outputString = $outputString .  '<p style="color:red; font-size:150%">Error! You do not have permission to view this user.</p></div> '; 
+			}
 		} else {
 			$outputString = $outputString .  '<p>Not Logged In</p></div> '; 
 		}

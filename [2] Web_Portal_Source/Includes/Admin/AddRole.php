@@ -4,7 +4,8 @@
         <?php
             include "../DBConnect.php";
             include "../Calendar.php";
-            require_once "../phpChart_Professional/conf.php";
+            // Removed old phpChart module. No Longer Required. Retained due to Client request.
+						/*require_once "phpChart_Professional/conf.php";*/
             if ($_SESSION['loggedIn'] == false)
             {
                 header("Location: Login.php");
@@ -59,13 +60,12 @@
                     
                 </div>
     </div>
-  <div class="bar"> </div> 
   
 <div class="main-wrapper">  
 	<div class="main-content">
 		<div class="main-sidebar">
 			<?php
-				include "../../sidebar.php"
+				include "../../sidebar_admin.php"
 			?>
 		</div>
 		
@@ -82,7 +82,7 @@
 
 <div class="main-footer">
 	<?php
-		include "../../Includes/Footer.php" 
+		include "../Footer_Admin.php" 
 	?>
 </div>
 

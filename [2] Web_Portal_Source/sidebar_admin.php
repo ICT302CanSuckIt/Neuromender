@@ -1,8 +1,7 @@
 <html>
 <head>
 	        <script type='text/javascript' src='user.js'></script>
-					<script type='text/javascript' src='patientprofile.js'></script>
-					
+					<script type='text/javascript' src='profile.js'></script>
 </head>
 </html>
 		  <!-- DASHBOARD BUTTON FOR PROFILE -->
@@ -15,21 +14,19 @@
 			}
 			
             $userID = $_SESSION['UserID'];
-            $url = "Profile.php?user=$userID&password=1";
-            echo("
-			
-			<i class='fa fa-user fa-3x' aria-hidden='true'> </i>
+            $url = "../../Main/Profile.php?user=$userID&password=1";
+            echo("<div class='sidebar-links' $hackedStyle>
                 <a href=\"$url\">
 			
 				
-				
+				<i class='fa fa-user fa-3x'> </i>
                     <div class='huge'>Profile</div>
-					<a href='PatientProfile.php'>
+					<a href=\"$url\">
 						<div class='clearfix'></div>
 					</a>
-		
-				</a>
 				
+				</a>
+				</div>
             ");
 			
 	
@@ -38,19 +35,18 @@
             //DASHBOARD BUTTON FOR REPORTS
                 if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
                 {
-                echo("
-						<i class='fa fa-folder-open fa-3x'></i>                       
-					   <a href='Reports.php'>
+                echo("<div class='sidebar-links' $hackedStyle>
+                        <a href='../../Main/Reports.php'>
 						
-					
-					
+						
+						<i class='fa fa-folder-open fa-3x'></i>
                             <div class='huge'>Reports</div>
                             <a href='Reports.php'>
 								<div class='clearfix'></div>
 							</a>
-					
+						
 						</a>
-                   
+                    </div>
                     ");
                 }
                 
@@ -58,40 +54,40 @@
                 {
                     echo("
                     <!-- DASHBOARD BUTTON FOR CSV DATA DOWNLOAD -->
+                    <div class='sidebar-links' $hackedStyle>
+                         <a href='../../Main/Download.php'>
+						
+						
 						<i class='fa fa-download fa-3x'></i>
-                         <a href='Download.php'>
-						
-					
-						
 							<div class='huge'>Download Data</div>
 							 <a href='Download.php'>
 								<div class='clearfix'></div>
 							</a>
-					
+						
                         </a>
-                    ");
+                    </div>");
                 }
 			
 			
-		
+			
+         
+			
 		
 			
 			
 			//DASHBOARD BUTTON FOR ALERTS
             $userID = $_SESSION['UserID'];
-            $url = "Alerts.php?user=$userID";
-            echo("
-				<i class='fa fa-exclamation fa-3x'></i>
+            $url = "../../Main/Alerts.php?user=$userID";
+            echo("<div class='sidebar-links' $hackedStyle>
                 <a href=\"$url\">
 				
-			
 				
+				<i class='fa fa-exclamation fa-3x'></i>
                     <div class='huge'>Alerts</div>
                     <a href=\"$url\">
 						<div class='clearfix'></div>
                     </a>
-			
+				
 				</a>
-           ");
+            </div>");
 			?>
-			

@@ -148,11 +148,11 @@
                                         exit;
                                 }
                                $UserID = $_SESSION['DeleteRoleID'];
-                               $outputString = $outputString . "<h3>Are you sure you want to delete user $UserID </h3><br />
+                               $outputString = $outputString . "<h3 style='padding-left:10px'>Are you sure you want to delete user $UserID </h3><br />
                                                                                                <form method='post'>
                                                                                                <table>
                                                                                                        <tr>
-                                                                                                               <td>
+                                                                                                               <td style='padding-left:10px'>
                                                                                                                <input type='hidden' name='UserID' value='$UserID'>
                                                                                                                <input type='submit' class='btn btn-primary btn-sm' name='btnYes' value='Yes'/>
                                                                                                                </td>
