@@ -1,0 +1,1018 @@
+fileFormatVersion: 2
+guid: ebfc03455cf866b4883e2eb20b577f93
+timeCreated: 1491201139
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Backup5Windows.000
+    100002: Backup5Windows.001
+    100004: Backup5Windows.002
+    100006: Backup5Windows.003
+    100008: Backup5Windows.004
+    100010: Backup5Windows.005
+    100012: Backup5Windows.006
+    100014: Backup5Windows.007
+    100016: Backup5Windows.008
+    100018: Backup5Windows.009
+    100020: Backup5Windows.010
+    100022: Backup5Windows.011
+    100024: Backup5Windows.012
+    100026: Backup5Windows.013
+    100028: Backup5Windows.014
+    100030: Backup5Windows.015
+    100032: bank
+    100034: bank_MeshPart0
+    100036: bank_MeshPart1
+    100038: bank_MeshPart10
+    100040: bank_MeshPart11
+    100042: bank_MeshPart12
+    100044: bank_MeshPart13
+    100046: bank_MeshPart2
+    100048: bank_MeshPart3
+    100050: bank_MeshPart4
+    100052: bank_MeshPart5
+    100054: bank_MeshPart6
+    100056: bank_MeshPart7
+    100058: bank_MeshPart8
+    100060: bank_MeshPart9
+    100062: block bank
+    100064: //RootNode
+    100066: bumbung bank
+    100068: bumbung food
+    100070: Camera
+    100072: Camera.001
+    100074: chancellor
+    100076: Cube
+    100078: Cube.001
+    100080: Cube.002
+    100082: Cube.003
+    100084: Cube.004
+    100086: Cube.005
+    100088: Cube.006
+    100090: Cube.007
+    100092: Cube.008
+    100094: Cube.009
+    100096: Cube.010
+    100098: Cube.011
+    100100: Cube.012
+    100102: Cube.013
+    100104: Cube.014
+    100106: Cube.015
+    100108: Cube.016
+    100110: Cube.017
+    100112: Cube.018
+    100114: Cube.019
+    100116: Cube.020
+    100118: Cube.021
+    100120: Cube.022
+    100122: Cube.023
+    100124: Cube.024
+    100126: Cube.025
+    100128: Cube.026
+    100130: Cube.027
+    100132: Cube.028
+    100134: Cube.029
+    100136: Cube.030
+    100138: Cube.031
+    100140: Cube.032
+    100142: Cube.033
+    100144: Cube.034
+    100146: Cube.035
+    100148: Cube.036
+    100150: Cube.037
+    100152: Cube.038
+    100154: Cube.039
+    100156: Cube.040
+    100158: Cube.041
+    100160: Cube.042
+    100162: Cube.043
+    100164: Cube.044
+    100166: Cube.045
+    100168: Cube.046
+    100170: Cube.047
+    100172: Cube.048
+    100174: Cube.049
+    100176: Cube.050
+    100178: Cube.051
+    100180: Cube.052
+    100182: Cube.053
+    100184: Cube.054
+    100186: Cube.055
+    100188: Cube.056
+    100190: Cube.057
+    100192: Cube.058
+    100194: Cube.059
+    100196: Cube.060
+    100198: Cube.061
+    100200: Cube.062
+    100202: Cube.063
+    100204: Cube.064
+    100206: Cube.065
+    100208: Cube.066
+    100210: Cube.067
+    100212: Cube.068
+    100214: Cylinder.000
+    100216: Cylinder.001
+    100218: Cylinder.002
+    100220: Cylinder.003
+    100222: Cylinder.004
+    100224: Cylinder.005
+    100226: Glass
+    100228: Glass.001
+    100230: Glass.002
+    100232: Glass.003
+    100234: Glass.004
+    100236: Glass.005
+    100238: Glass.006
+    100240: Glass.007
+    100242: Glass.008
+    100244: Glass.009
+    100246: Glass.010
+    100248: Glass.011
+    100250: Glass.012
+    100252: Glass.013
+    100254: Glass.014
+    100256: Glass.015
+    100258: library
+    100260: library_MeshPart0
+    100262: library_MeshPart1
+    100264: library_MeshPart2
+    100266: library_MeshPart3
+    100268: path combined
+    100270: path combined_MeshPart0
+    100272: path combined_MeshPart1
+    100274: path combined_MeshPart10
+    100276: path combined_MeshPart11
+    100278: path combined_MeshPart12
+    100280: path combined_MeshPart13
+    100282: path combined_MeshPart14
+    100284: path combined_MeshPart15
+    100286: path combined_MeshPart16
+    100288: path combined_MeshPart17
+    100290: path combined_MeshPart18
+    100292: path combined_MeshPart19
+    100294: path combined_MeshPart2
+    100296: path combined_MeshPart20
+    100298: path combined_MeshPart21
+    100300: path combined_MeshPart22
+    100302: path combined_MeshPart23
+    100304: path combined_MeshPart24
+    100306: path combined_MeshPart25
+    100308: path combined_MeshPart26
+    100310: path combined_MeshPart27
+    100312: path combined_MeshPart28
+    100314: path combined_MeshPart29
+    100316: path combined_MeshPart3
+    100318: path combined_MeshPart30
+    100320: path combined_MeshPart31
+    100322: path combined_MeshPart32
+    100324: path combined_MeshPart33
+    100326: path combined_MeshPart34
+    100328: path combined_MeshPart35
+    100330: path combined_MeshPart36
+    100332: path combined_MeshPart37
+    100334: path combined_MeshPart38
+    100336: path combined_MeshPart39
+    100338: path combined_MeshPart4
+    100340: path combined_MeshPart40
+    100342: path combined_MeshPart41
+    100344: path combined_MeshPart42
+    100346: path combined_MeshPart43
+    100348: path combined_MeshPart44
+    100350: path combined_MeshPart45
+    100352: path combined_MeshPart46
+    100354: path combined_MeshPart5
+    100356: path combined_MeshPart6
+    100358: path combined_MeshPart7
+    100360: path combined_MeshPart8
+    100362: path combined_MeshPart9
+    100364: pillars ori
+    100366: pillars scaled
+    100368: pillars scaled.001
+    100370: Plane
+    100372: Plane.001
+    100374: Plane.002
+    100376: stairs
+    100378: student centre
+    100380: tiang
+    100382: tiang.001
+    100384: tiang.002
+    400000: Backup5Windows.000
+    400002: Backup5Windows.001
+    400004: Backup5Windows.002
+    400006: Backup5Windows.003
+    400008: Backup5Windows.004
+    400010: Backup5Windows.005
+    400012: Backup5Windows.006
+    400014: Backup5Windows.007
+    400016: Backup5Windows.008
+    400018: Backup5Windows.009
+    400020: Backup5Windows.010
+    400022: Backup5Windows.011
+    400024: Backup5Windows.012
+    400026: Backup5Windows.013
+    400028: Backup5Windows.014
+    400030: Backup5Windows.015
+    400032: bank
+    400034: bank_MeshPart0
+    400036: bank_MeshPart1
+    400038: bank_MeshPart10
+    400040: bank_MeshPart11
+    400042: bank_MeshPart12
+    400044: bank_MeshPart13
+    400046: bank_MeshPart2
+    400048: bank_MeshPart3
+    400050: bank_MeshPart4
+    400052: bank_MeshPart5
+    400054: bank_MeshPart6
+    400056: bank_MeshPart7
+    400058: bank_MeshPart8
+    400060: bank_MeshPart9
+    400062: block bank
+    400064: //RootNode
+    400066: bumbung bank
+    400068: bumbung food
+    400070: Camera
+    400072: Camera.001
+    400074: chancellor
+    400076: Cube
+    400078: Cube.001
+    400080: Cube.002
+    400082: Cube.003
+    400084: Cube.004
+    400086: Cube.005
+    400088: Cube.006
+    400090: Cube.007
+    400092: Cube.008
+    400094: Cube.009
+    400096: Cube.010
+    400098: Cube.011
+    400100: Cube.012
+    400102: Cube.013
+    400104: Cube.014
+    400106: Cube.015
+    400108: Cube.016
+    400110: Cube.017
+    400112: Cube.018
+    400114: Cube.019
+    400116: Cube.020
+    400118: Cube.021
+    400120: Cube.022
+    400122: Cube.023
+    400124: Cube.024
+    400126: Cube.025
+    400128: Cube.026
+    400130: Cube.027
+    400132: Cube.028
+    400134: Cube.029
+    400136: Cube.030
+    400138: Cube.031
+    400140: Cube.032
+    400142: Cube.033
+    400144: Cube.034
+    400146: Cube.035
+    400148: Cube.036
+    400150: Cube.037
+    400152: Cube.038
+    400154: Cube.039
+    400156: Cube.040
+    400158: Cube.041
+    400160: Cube.042
+    400162: Cube.043
+    400164: Cube.044
+    400166: Cube.045
+    400168: Cube.046
+    400170: Cube.047
+    400172: Cube.048
+    400174: Cube.049
+    400176: Cube.050
+    400178: Cube.051
+    400180: Cube.052
+    400182: Cube.053
+    400184: Cube.054
+    400186: Cube.055
+    400188: Cube.056
+    400190: Cube.057
+    400192: Cube.058
+    400194: Cube.059
+    400196: Cube.060
+    400198: Cube.061
+    400200: Cube.062
+    400202: Cube.063
+    400204: Cube.064
+    400206: Cube.065
+    400208: Cube.066
+    400210: Cube.067
+    400212: Cube.068
+    400214: Cylinder.000
+    400216: Cylinder.001
+    400218: Cylinder.002
+    400220: Cylinder.003
+    400222: Cylinder.004
+    400224: Cylinder.005
+    400226: Glass
+    400228: Glass.001
+    400230: Glass.002
+    400232: Glass.003
+    400234: Glass.004
+    400236: Glass.005
+    400238: Glass.006
+    400240: Glass.007
+    400242: Glass.008
+    400244: Glass.009
+    400246: Glass.010
+    400248: Glass.011
+    400250: Glass.012
+    400252: Glass.013
+    400254: Glass.014
+    400256: Glass.015
+    400258: library
+    400260: library_MeshPart0
+    400262: library_MeshPart1
+    400264: library_MeshPart2
+    400266: library_MeshPart3
+    400268: path combined
+    400270: path combined_MeshPart0
+    400272: path combined_MeshPart1
+    400274: path combined_MeshPart10
+    400276: path combined_MeshPart11
+    400278: path combined_MeshPart12
+    400280: path combined_MeshPart13
+    400282: path combined_MeshPart14
+    400284: path combined_MeshPart15
+    400286: path combined_MeshPart16
+    400288: path combined_MeshPart17
+    400290: path combined_MeshPart18
+    400292: path combined_MeshPart19
+    400294: path combined_MeshPart2
+    400296: path combined_MeshPart20
+    400298: path combined_MeshPart21
+    400300: path combined_MeshPart22
+    400302: path combined_MeshPart23
+    400304: path combined_MeshPart24
+    400306: path combined_MeshPart25
+    400308: path combined_MeshPart26
+    400310: path combined_MeshPart27
+    400312: path combined_MeshPart28
+    400314: path combined_MeshPart29
+    400316: path combined_MeshPart3
+    400318: path combined_MeshPart30
+    400320: path combined_MeshPart31
+    400322: path combined_MeshPart32
+    400324: path combined_MeshPart33
+    400326: path combined_MeshPart34
+    400328: path combined_MeshPart35
+    400330: path combined_MeshPart36
+    400332: path combined_MeshPart37
+    400334: path combined_MeshPart38
+    400336: path combined_MeshPart39
+    400338: path combined_MeshPart4
+    400340: path combined_MeshPart40
+    400342: path combined_MeshPart41
+    400344: path combined_MeshPart42
+    400346: path combined_MeshPart43
+    400348: path combined_MeshPart44
+    400350: path combined_MeshPart45
+    400352: path combined_MeshPart46
+    400354: path combined_MeshPart5
+    400356: path combined_MeshPart6
+    400358: path combined_MeshPart7
+    400360: path combined_MeshPart8
+    400362: path combined_MeshPart9
+    400364: pillars ori
+    400366: pillars scaled
+    400368: pillars scaled.001
+    400370: Plane
+    400372: Plane.001
+    400374: Plane.002
+    400376: stairs
+    400378: student centre
+    400380: tiang
+    400382: tiang.001
+    400384: tiang.002
+    2300000: Backup5Windows.000
+    2300002: Backup5Windows.001
+    2300004: Backup5Windows.002
+    2300006: Backup5Windows.003
+    2300008: Backup5Windows.004
+    2300010: Backup5Windows.005
+    2300012: Backup5Windows.006
+    2300014: Backup5Windows.007
+    2300016: Backup5Windows.008
+    2300018: Backup5Windows.009
+    2300020: Backup5Windows.010
+    2300022: Backup5Windows.011
+    2300024: Backup5Windows.012
+    2300026: Backup5Windows.013
+    2300028: Backup5Windows.014
+    2300030: Backup5Windows.015
+    2300032: bank_MeshPart0
+    2300034: bank_MeshPart1
+    2300036: bank_MeshPart10
+    2300038: bank_MeshPart11
+    2300040: bank_MeshPart12
+    2300042: bank_MeshPart13
+    2300044: bank_MeshPart2
+    2300046: bank_MeshPart3
+    2300048: bank_MeshPart4
+    2300050: bank_MeshPart5
+    2300052: bank_MeshPart6
+    2300054: bank_MeshPart7
+    2300056: bank_MeshPart8
+    2300058: bank_MeshPart9
+    2300060: block bank
+    2300062: bumbung bank
+    2300064: bumbung food
+    2300066: chancellor
+    2300068: Cube
+    2300070: Cube.001
+    2300072: Cube.002
+    2300074: Cube.003
+    2300076: Cube.004
+    2300078: Cube.005
+    2300080: Cube.006
+    2300082: Cube.007
+    2300084: Cube.008
+    2300086: Cube.009
+    2300088: Cube.010
+    2300090: Cube.011
+    2300092: Cube.012
+    2300094: Cube.013
+    2300096: Cube.014
+    2300098: Cube.015
+    2300100: Cube.016
+    2300102: Cube.017
+    2300104: Cube.018
+    2300106: Cube.019
+    2300108: Cube.020
+    2300110: Cube.021
+    2300112: Cube.022
+    2300114: Cube.023
+    2300116: Cube.024
+    2300118: Cube.025
+    2300120: Cube.026
+    2300122: Cube.027
+    2300124: Cube.028
+    2300126: Cube.029
+    2300128: Cube.030
+    2300130: Cube.031
+    2300132: Cube.032
+    2300134: Cube.033
+    2300136: Cube.034
+    2300138: Cube.035
+    2300140: Cube.036
+    2300142: Cube.037
+    2300144: Cube.038
+    2300146: Cube.039
+    2300148: Cube.040
+    2300150: Cube.041
+    2300152: Cube.042
+    2300154: Cube.043
+    2300156: Cube.044
+    2300158: Cube.045
+    2300160: Cube.046
+    2300162: Cube.047
+    2300164: Cube.048
+    2300166: Cube.049
+    2300168: Cube.050
+    2300170: Cube.051
+    2300172: Cube.052
+    2300174: Cube.053
+    2300176: Cube.054
+    2300178: Cube.055
+    2300180: Cube.056
+    2300182: Cube.057
+    2300184: Cube.058
+    2300186: Cube.059
+    2300188: Cube.060
+    2300190: Cube.061
+    2300192: Cube.062
+    2300194: Cube.063
+    2300196: Cube.064
+    2300198: Cube.065
+    2300200: Cube.066
+    2300202: Cube.067
+    2300204: Cube.068
+    2300206: Cylinder.000
+    2300208: Cylinder.001
+    2300210: Cylinder.002
+    2300212: Cylinder.003
+    2300214: Cylinder.004
+    2300216: Cylinder.005
+    2300218: Glass
+    2300220: Glass.001
+    2300222: Glass.002
+    2300224: Glass.003
+    2300226: Glass.004
+    2300228: Glass.005
+    2300230: Glass.006
+    2300232: Glass.007
+    2300234: Glass.008
+    2300236: Glass.009
+    2300238: Glass.010
+    2300240: Glass.011
+    2300242: Glass.012
+    2300244: Glass.013
+    2300246: Glass.014
+    2300248: Glass.015
+    2300250: library_MeshPart0
+    2300252: library_MeshPart1
+    2300254: library_MeshPart2
+    2300256: library_MeshPart3
+    2300258: path combined_MeshPart0
+    2300260: path combined_MeshPart1
+    2300262: path combined_MeshPart10
+    2300264: path combined_MeshPart11
+    2300266: path combined_MeshPart12
+    2300268: path combined_MeshPart13
+    2300270: path combined_MeshPart14
+    2300272: path combined_MeshPart15
+    2300274: path combined_MeshPart16
+    2300276: path combined_MeshPart17
+    2300278: path combined_MeshPart18
+    2300280: path combined_MeshPart19
+    2300282: path combined_MeshPart2
+    2300284: path combined_MeshPart20
+    2300286: path combined_MeshPart21
+    2300288: path combined_MeshPart22
+    2300290: path combined_MeshPart23
+    2300292: path combined_MeshPart24
+    2300294: path combined_MeshPart25
+    2300296: path combined_MeshPart26
+    2300298: path combined_MeshPart27
+    2300300: path combined_MeshPart28
+    2300302: path combined_MeshPart29
+    2300304: path combined_MeshPart3
+    2300306: path combined_MeshPart30
+    2300308: path combined_MeshPart31
+    2300310: path combined_MeshPart32
+    2300312: path combined_MeshPart33
+    2300314: path combined_MeshPart34
+    2300316: path combined_MeshPart35
+    2300318: path combined_MeshPart36
+    2300320: path combined_MeshPart37
+    2300322: path combined_MeshPart38
+    2300324: path combined_MeshPart39
+    2300326: path combined_MeshPart4
+    2300328: path combined_MeshPart40
+    2300330: path combined_MeshPart41
+    2300332: path combined_MeshPart42
+    2300334: path combined_MeshPart43
+    2300336: path combined_MeshPart44
+    2300338: path combined_MeshPart45
+    2300340: path combined_MeshPart46
+    2300342: path combined_MeshPart5
+    2300344: path combined_MeshPart6
+    2300346: path combined_MeshPart7
+    2300348: path combined_MeshPart8
+    2300350: path combined_MeshPart9
+    2300352: pillars ori
+    2300354: pillars scaled
+    2300356: pillars scaled.001
+    2300358: Plane
+    2300360: Plane.001
+    2300362: Plane.002
+    2300364: stairs
+    2300366: student centre
+    2300368: tiang
+    2300370: tiang.001
+    2300372: tiang.002
+    3300000: Backup5Windows.000
+    3300002: Backup5Windows.001
+    3300004: Backup5Windows.002
+    3300006: Backup5Windows.003
+    3300008: Backup5Windows.004
+    3300010: Backup5Windows.005
+    3300012: Backup5Windows.006
+    3300014: Backup5Windows.007
+    3300016: Backup5Windows.008
+    3300018: Backup5Windows.009
+    3300020: Backup5Windows.010
+    3300022: Backup5Windows.011
+    3300024: Backup5Windows.012
+    3300026: Backup5Windows.013
+    3300028: Backup5Windows.014
+    3300030: Backup5Windows.015
+    3300032: bank_MeshPart0
+    3300034: bank_MeshPart1
+    3300036: bank_MeshPart10
+    3300038: bank_MeshPart11
+    3300040: bank_MeshPart12
+    3300042: bank_MeshPart13
+    3300044: bank_MeshPart2
+    3300046: bank_MeshPart3
+    3300048: bank_MeshPart4
+    3300050: bank_MeshPart5
+    3300052: bank_MeshPart6
+    3300054: bank_MeshPart7
+    3300056: bank_MeshPart8
+    3300058: bank_MeshPart9
+    3300060: block bank
+    3300062: bumbung bank
+    3300064: bumbung food
+    3300066: chancellor
+    3300068: Cube
+    3300070: Cube.001
+    3300072: Cube.002
+    3300074: Cube.003
+    3300076: Cube.004
+    3300078: Cube.005
+    3300080: Cube.006
+    3300082: Cube.007
+    3300084: Cube.008
+    3300086: Cube.009
+    3300088: Cube.010
+    3300090: Cube.011
+    3300092: Cube.012
+    3300094: Cube.013
+    3300096: Cube.014
+    3300098: Cube.015
+    3300100: Cube.016
+    3300102: Cube.017
+    3300104: Cube.018
+    3300106: Cube.019
+    3300108: Cube.020
+    3300110: Cube.021
+    3300112: Cube.022
+    3300114: Cube.023
+    3300116: Cube.024
+    3300118: Cube.025
+    3300120: Cube.026
+    3300122: Cube.027
+    3300124: Cube.028
+    3300126: Cube.029
+    3300128: Cube.030
+    3300130: Cube.031
+    3300132: Cube.032
+    3300134: Cube.033
+    3300136: Cube.034
+    3300138: Cube.035
+    3300140: Cube.036
+    3300142: Cube.037
+    3300144: Cube.038
+    3300146: Cube.039
+    3300148: Cube.040
+    3300150: Cube.041
+    3300152: Cube.042
+    3300154: Cube.043
+    3300156: Cube.044
+    3300158: Cube.045
+    3300160: Cube.046
+    3300162: Cube.047
+    3300164: Cube.048
+    3300166: Cube.049
+    3300168: Cube.050
+    3300170: Cube.051
+    3300172: Cube.052
+    3300174: Cube.053
+    3300176: Cube.054
+    3300178: Cube.055
+    3300180: Cube.056
+    3300182: Cube.057
+    3300184: Cube.058
+    3300186: Cube.059
+    3300188: Cube.060
+    3300190: Cube.061
+    3300192: Cube.062
+    3300194: Cube.063
+    3300196: Cube.064
+    3300198: Cube.065
+    3300200: Cube.066
+    3300202: Cube.067
+    3300204: Cube.068
+    3300206: Cylinder.000
+    3300208: Cylinder.001
+    3300210: Cylinder.002
+    3300212: Cylinder.003
+    3300214: Cylinder.004
+    3300216: Cylinder.005
+    3300218: Glass
+    3300220: Glass.001
+    3300222: Glass.002
+    3300224: Glass.003
+    3300226: Glass.004
+    3300228: Glass.005
+    3300230: Glass.006
+    3300232: Glass.007
+    3300234: Glass.008
+    3300236: Glass.009
+    3300238: Glass.010
+    3300240: Glass.011
+    3300242: Glass.012
+    3300244: Glass.013
+    3300246: Glass.014
+    3300248: Glass.015
+    3300250: library_MeshPart0
+    3300252: library_MeshPart1
+    3300254: library_MeshPart2
+    3300256: library_MeshPart3
+    3300258: path combined_MeshPart0
+    3300260: path combined_MeshPart1
+    3300262: path combined_MeshPart10
+    3300264: path combined_MeshPart11
+    3300266: path combined_MeshPart12
+    3300268: path combined_MeshPart13
+    3300270: path combined_MeshPart14
+    3300272: path combined_MeshPart15
+    3300274: path combined_MeshPart16
+    3300276: path combined_MeshPart17
+    3300278: path combined_MeshPart18
+    3300280: path combined_MeshPart19
+    3300282: path combined_MeshPart2
+    3300284: path combined_MeshPart20
+    3300286: path combined_MeshPart21
+    3300288: path combined_MeshPart22
+    3300290: path combined_MeshPart23
+    3300292: path combined_MeshPart24
+    3300294: path combined_MeshPart25
+    3300296: path combined_MeshPart26
+    3300298: path combined_MeshPart27
+    3300300: path combined_MeshPart28
+    3300302: path combined_MeshPart29
+    3300304: path combined_MeshPart3
+    3300306: path combined_MeshPart30
+    3300308: path combined_MeshPart31
+    3300310: path combined_MeshPart32
+    3300312: path combined_MeshPart33
+    3300314: path combined_MeshPart34
+    3300316: path combined_MeshPart35
+    3300318: path combined_MeshPart36
+    3300320: path combined_MeshPart37
+    3300322: path combined_MeshPart38
+    3300324: path combined_MeshPart39
+    3300326: path combined_MeshPart4
+    3300328: path combined_MeshPart40
+    3300330: path combined_MeshPart41
+    3300332: path combined_MeshPart42
+    3300334: path combined_MeshPart43
+    3300336: path combined_MeshPart44
+    3300338: path combined_MeshPart45
+    3300340: path combined_MeshPart46
+    3300342: path combined_MeshPart5
+    3300344: path combined_MeshPart6
+    3300346: path combined_MeshPart7
+    3300348: path combined_MeshPart8
+    3300350: path combined_MeshPart9
+    3300352: pillars ori
+    3300354: pillars scaled
+    3300356: pillars scaled.001
+    3300358: Plane
+    3300360: Plane.001
+    3300362: Plane.002
+    3300364: stairs
+    3300366: student centre
+    3300368: tiang
+    3300370: tiang.001
+    3300372: tiang.002
+    4300000: Cylinder.005
+    4300002: Cylinder.004
+    4300004: Cylinder.002
+    4300006: Cylinder.001
+    4300008: Cylinder.000
+    4300010: Cylinder.003
+    4300012: Cube.068
+    4300014: Cube.067
+    4300016: Glass.015
+    4300018: Glass.014
+    4300020: Backup5Windows.015
+    4300022: Backup5Windows.014
+    4300024: Glass.013
+    4300026: Backup5Windows.013
+    4300028: Glass.012
+    4300030: Glass.011
+    4300032: Glass.010
+    4300034: Glass.009
+    4300036: Glass.008
+    4300038: Glass.007
+    4300040: Backup5Windows.012
+    4300042: Backup5Windows.011
+    4300044: Backup5Windows.010
+    4300046: Backup5Windows.009
+    4300048: Backup5Windows.007
+    4300050: Backup5Windows.006
+    4300052: Glass.006
+    4300054: Backup5Windows.005
+    4300056: Glass.005
+    4300058: Backup5Windows.004
+    4300060: Glass.004
+    4300062: Backup5Windows.003
+    4300064: Glass.003
+    4300066: Backup5Windows.002
+    4300068: Glass.002
+    4300070: Backup5Windows.001
+    4300072: Glass.001
+    4300074: Backup5Windows.000
+    4300076: Glass
+    4300078: Backup5Windows.008
+    4300080: Cube.066
+    4300082: Cube.065
+    4300084: Cube.064
+    4300086: Cube.063
+    4300088: Cube.062
+    4300090: Cube.061
+    4300092: Cube.060
+    4300094: Cube.059
+    4300096: Cube.057
+    4300098: Cube.056
+    4300100: Cube.055
+    4300102: Cube.058
+    4300104: Cube.054
+    4300106: Cube.053
+    4300108: Cube.052
+    4300110: Cube.051
+    4300112: Cube.050
+    4300114: Cube.049
+    4300116: Cube.048
+    4300118: Cube.047
+    4300120: Cube.046
+    4300122: Cube.045
+    4300124: Cube.044
+    4300126: Plane.002
+    4300128: Cube.043
+    4300130: Cube.042
+    4300132: Cube.041
+    4300134: Cube.040
+    4300136: Cube.039
+    4300138: Cube.038
+    4300140: Cube.037
+    4300142: Cube.036
+    4300144: Cube.035
+    4300146: Cube.034
+    4300148: Cube.033
+    4300150: Cube.032
+    4300152: Cube.031
+    4300154: Cube.030
+    4300156: Cube.029
+    4300158: Cube.028
+    4300160: Cube.027
+    4300162: Cube.026
+    4300164: Cube.025
+    4300166: Cube.024
+    4300168: Cube.023
+    4300170: Cube.022
+    4300172: Cube.021
+    4300174: Cube.020
+    4300176: Cube.018
+    4300178: Cube.017
+    4300180: Cube.016
+    4300182: Cube.015
+    4300184: Cube.014
+    4300186: Cube.013
+    4300188: Cube.012
+    4300190: Cube.011
+    4300192: Cube.010
+    4300194: Cube.009
+    4300196: Cube.008
+    4300198: Cube.007
+    4300200: Cube.006
+    4300202: Cube.005
+    4300204: Cube.002
+    4300206: library_MeshPart0
+    4300208: library_MeshPart1
+    4300210: library_MeshPart2
+    4300212: library_MeshPart3
+    4300214: Cube
+    4300216: Cube.001
+    4300218: Cube.003
+    4300220: Cube.019
+    4300222: Plane.001
+    4300224: tiang.002
+    4300226: tiang.001
+    4300228: bumbung food
+    4300230: bumbung bank
+    4300232: block bank
+    4300234: tiang
+    4300236: pillars scaled.001
+    4300238: pillars ori
+    4300240: pillars scaled
+    4300242: Plane
+    4300244: student centre
+    4300246: chancellor
+    4300248: stairs
+    4300250: path combined_MeshPart0
+    4300252: path combined_MeshPart1
+    4300254: path combined_MeshPart2
+    4300256: path combined_MeshPart3
+    4300258: path combined_MeshPart4
+    4300260: path combined_MeshPart5
+    4300262: path combined_MeshPart6
+    4300264: path combined_MeshPart7
+    4300266: path combined_MeshPart8
+    4300268: path combined_MeshPart9
+    4300270: path combined_MeshPart10
+    4300272: path combined_MeshPart11
+    4300274: path combined_MeshPart12
+    4300276: path combined_MeshPart13
+    4300278: path combined_MeshPart14
+    4300280: path combined_MeshPart15
+    4300282: path combined_MeshPart16
+    4300284: path combined_MeshPart17
+    4300286: path combined_MeshPart18
+    4300288: path combined_MeshPart19
+    4300290: path combined_MeshPart20
+    4300292: path combined_MeshPart21
+    4300294: path combined_MeshPart22
+    4300296: path combined_MeshPart23
+    4300298: path combined_MeshPart24
+    4300300: path combined_MeshPart25
+    4300302: path combined_MeshPart26
+    4300304: path combined_MeshPart27
+    4300306: path combined_MeshPart28
+    4300308: path combined_MeshPart29
+    4300310: path combined_MeshPart30
+    4300312: path combined_MeshPart31
+    4300314: path combined_MeshPart32
+    4300316: path combined_MeshPart33
+    4300318: path combined_MeshPart34
+    4300320: path combined_MeshPart35
+    4300322: path combined_MeshPart36
+    4300324: path combined_MeshPart37
+    4300326: path combined_MeshPart38
+    4300328: path combined_MeshPart39
+    4300330: path combined_MeshPart40
+    4300332: path combined_MeshPart41
+    4300334: path combined_MeshPart42
+    4300336: path combined_MeshPart43
+    4300338: path combined_MeshPart44
+    4300340: path combined_MeshPart45
+    4300342: path combined_MeshPart46
+    4300344: bank_MeshPart0
+    4300346: bank_MeshPart1
+    4300348: bank_MeshPart2
+    4300350: bank_MeshPart3
+    4300352: bank_MeshPart4
+    4300354: bank_MeshPart5
+    4300356: bank_MeshPart6
+    4300358: bank_MeshPart7
+    4300360: bank_MeshPart8
+    4300362: bank_MeshPart9
+    4300364: bank_MeshPart10
+    4300366: bank_MeshPart11
+    4300368: bank_MeshPart12
+    4300370: bank_MeshPart13
+    4300372: Cube.004
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 63701ff472a8875498ab1c8014dd300d
+timeCreated: 1491183123
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 5Windows.001
+    100002: bank
+    100004: bank_MeshPart0
+    100006: bank_MeshPart1
+    100008: bank_MeshPart2
+    100010: bank_MeshPart3
+    100012: bank_MeshPart4
+    100014: bank_MeshPart5
+    100016: //RootNode
+    100018: Cube.000
+    100020: Cube.002
+    100022: FemaleToilet
+    100024: FemaleToilet.001
+    100026: GlassDoor
+    100028: Glasses
+    100030: GlassForBank
+    100032: GlassForDoor
+    100034: MaleToilet
+    100036: MaleToilet.001
+    100038: Plane
+    100040: PlaneWall
+    100042: PlaneWall_MeshPart0
+    100044: PlaneWall_MeshPart1
+    100046: WallGlassDoor
+    100048: WallGlassDoor.001
+    100050: WallGlassDoor.002
+    400000: 5Windows.001
+    400002: bank
+    400004: bank_MeshPart0
+    400006: bank_MeshPart1
+    400008: bank_MeshPart2
+    400010: bank_MeshPart3
+    400012: bank_MeshPart4
+    400014: bank_MeshPart5
+    400016: //RootNode
+    400018: Cube.000
+    400020: Cube.002
+    400022: FemaleToilet
+    400024: FemaleToilet.001
+    400026: GlassDoor
+    400028: Glasses
+    400030: GlassForBank
+    400032: GlassForDoor
+    400034: MaleToilet
+    400036: MaleToilet.001
+    400038: Plane
+    400040: PlaneWall
+    400042: PlaneWall_MeshPart0
+    400044: PlaneWall_MeshPart1
+    400046: WallGlassDoor
+    400048: WallGlassDoor.001
+    400050: WallGlassDoor.002
+    2300000: 5Windows.001
+    2300002: bank_MeshPart0
+    2300004: bank_MeshPart1
+    2300006: bank_MeshPart2
+    2300008: bank_MeshPart3
+    2300010: bank_MeshPart4
+    2300012: bank_MeshPart5
+    2300014: Cube.000
+    2300016: Cube.002
+    2300018: FemaleToilet
+    2300020: FemaleToilet.001
+    2300022: GlassDoor
+    2300024: Glasses
+    2300026: GlassForBank
+    2300028: GlassForDoor
+    2300030: MaleToilet
+    2300032: MaleToilet.001
+    2300034: Plane
+    2300036: PlaneWall_MeshPart0
+    2300038: PlaneWall_MeshPart1
+    2300040: WallGlassDoor
+    2300042: WallGlassDoor.001
+    2300044: WallGlassDoor.002
+    3300000: 5Windows.001
+    3300002: bank_MeshPart0
+    3300004: bank_MeshPart1
+    3300006: bank_MeshPart2
+    3300008: bank_MeshPart3
+    3300010: bank_MeshPart4
+    3300012: bank_MeshPart5
+    3300014: Cube.000
+    3300016: Cube.002
+    3300018: FemaleToilet
+    3300020: FemaleToilet.001
+    3300022: GlassDoor
+    3300024: Glasses
+    3300026: GlassForBank
+    3300028: GlassForDoor
+    3300030: MaleToilet
+    3300032: MaleToilet.001
+    3300034: Plane
+    3300036: PlaneWall_MeshPart0
+    3300038: PlaneWall_MeshPart1
+    3300040: WallGlassDoor
+    3300042: WallGlassDoor.001
+    3300044: WallGlassDoor.002
+    4300000: WallGlassDoor.002
+    4300002: FemaleToilet.001
+    4300004: MaleToilet.001
+    4300006: Plane
+    4300008: WallGlassDoor.001
+    4300010: GlassForBank
+    4300012: GlassForDoor
+    4300014: GlassDoor
+    4300016: 5Windows.001
+    4300018: Cube.000
+    4300020: MaleToilet
+    4300022: Cube.002
+    4300024: FemaleToilet
+    4300026: WallGlassDoor
+    4300028: Glasses
+    4300030: PlaneWall_MeshPart0
+    4300032: PlaneWall_MeshPart1
+    4300034: bank_MeshPart0
+    4300036: bank_MeshPart1
+    4300038: bank_MeshPart2
+    4300040: bank_MeshPart3
+    4300042: bank_MeshPart4
+    4300044: bank_MeshPart5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

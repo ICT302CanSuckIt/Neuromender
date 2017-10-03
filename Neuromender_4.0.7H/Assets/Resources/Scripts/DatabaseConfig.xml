@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Settings>
+  <Server>ref.servebeer.com</Server>
+  <Database>Neuromend</Database>
+  <User>root</User>
+  <Password>Neuromend</Password>
+  <port>3306</port>
+  <Pooling>false</Pooling>
+</Settings>
+
+

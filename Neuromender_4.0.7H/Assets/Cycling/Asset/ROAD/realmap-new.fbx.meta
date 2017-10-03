@@ -1,0 +1,707 @@
+fileFormatVersion: 2
+guid: d58a74611fb59cd49a2ad61b107216a1
+timeCreated: 1490332286
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Grid
+    100004: Grid.001
+    100006: Grid.002
+    100008: path combined
+    100010: path combined_MeshPart0
+    100012: path combined_MeshPart1
+    100014: path combined_MeshPart10
+    100016: path combined_MeshPart11
+    100018: path combined_MeshPart12
+    100020: path combined_MeshPart13
+    100022: path combined_MeshPart14
+    100024: path combined_MeshPart15
+    100026: path combined_MeshPart16
+    100028: path combined_MeshPart17
+    100030: path combined_MeshPart18
+    100032: path combined_MeshPart19
+    100034: path combined_MeshPart2
+    100036: path combined_MeshPart20
+    100038: path combined_MeshPart21
+    100040: path combined_MeshPart22
+    100042: path combined_MeshPart23
+    100044: path combined_MeshPart24
+    100046: path combined_MeshPart25
+    100048: path combined_MeshPart26
+    100050: path combined_MeshPart27
+    100052: path combined_MeshPart28
+    100054: path combined_MeshPart29
+    100056: path combined_MeshPart3
+    100058: path combined_MeshPart30
+    100060: path combined_MeshPart31
+    100062: path combined_MeshPart32
+    100064: path combined_MeshPart33
+    100066: path combined_MeshPart34
+    100068: path combined_MeshPart35
+    100070: path combined_MeshPart36
+    100072: path combined_MeshPart37
+    100074: path combined_MeshPart38
+    100076: path combined_MeshPart39
+    100078: path combined_MeshPart4
+    100080: path combined_MeshPart40
+    100082: path combined_MeshPart41
+    100084: path combined_MeshPart42
+    100086: path combined_MeshPart43
+    100088: path combined_MeshPart44
+    100090: path combined_MeshPart45
+    100092: path combined_MeshPart46
+    100094: path combined_MeshPart5
+    100096: path combined_MeshPart6
+    100098: path combined_MeshPart7
+    100100: path combined_MeshPart8
+    100102: path combined_MeshPart9
+    100104: path indooor
+    100106: path indooor_MeshPart0
+    100108: path indooor_MeshPart1
+    100110: path indooor_MeshPart2
+    100112: path indooor_MeshPart3
+    100114: path indooor_MeshPart4
+    100116: path outdooor
+    100118: path outdooor_MeshPart0
+    100120: path outdooor_MeshPart1
+    100122: path outdooor_MeshPart10
+    100124: path outdooor_MeshPart11
+    100126: path outdooor_MeshPart2
+    100128: path outdooor_MeshPart3
+    100130: path outdooor_MeshPart4
+    100132: path outdooor_MeshPart5
+    100134: path outdooor_MeshPart6
+    100136: path outdooor_MeshPart7
+    100138: path outdooor_MeshPart8
+    100140: path outdooor_MeshPart9
+    100142: path2
+    100144: path2_MeshPart0
+    100146: path2_MeshPart1
+    100148: path2_MeshPart10
+    100150: path2_MeshPart11
+    100152: path2_MeshPart12
+    100154: path2_MeshPart13
+    100156: path2_MeshPart14
+    100158: path2_MeshPart15
+    100160: path2_MeshPart16
+    100162: path2_MeshPart2
+    100164: path2_MeshPart3
+    100166: path2_MeshPart4
+    100168: path2_MeshPart5
+    100170: path2_MeshPart6
+    100172: path2_MeshPart7
+    100174: path2_MeshPart8
+    100176: path2_MeshPart9
+    100178: path3
+    100180: path3_MeshPart0
+    100182: path3_MeshPart1
+    100184: path3_MeshPart2
+    100186: path3_MeshPart3
+    100188: path3_MeshPart4
+    100190: path3_MeshPart5
+    100192: path3_MeshPart6
+    100194: path3_MeshPart7
+    100196: pokok lagi lagi
+    100198: pokok lagi lagi lagi
+    100200: pokok lagi lagi lagi.001
+    100202: pokok lagi lagi lagi.002
+    100204: pokok lagi lagi lagi.003
+    100206: pokok lagi lagi lagi.004
+    100208: pokok lagi lagi lagi.005
+    100210: pokok lagi lagi lagi.006
+    100212: pokok lagi lagi lagi.007
+    100214: pokok lagi lagi lagi.008
+    100216: pokok lagi lagi lagi.009
+    100218: pokok lagi lagi lagi.010
+    100220: pokok lagi lagi.001
+    100222: pokok lagi lagi.001_MeshPart0
+    100224: pokok lagi lagi.001_MeshPart1
+    100226: pokok lagi lagi_MeshPart0
+    100228: pokok lagi lagi_MeshPart1
+    100230: pokok lagi.000
+    100232: pokok lagi.000_MeshPart0
+    100234: pokok lagi.000_MeshPart1
+    100236: pokok lagi.000_MeshPart2
+    100238: pokok lagi.001
+    100240: pokok lagi.001_MeshPart0
+    100242: pokok lagi.001_MeshPart1
+    100244: pokok lagi.001_MeshPart2
+    100246: pokok lagi.002
+    100248: pokok lagi.002_MeshPart0
+    100250: pokok lagi.002_MeshPart1
+    100252: pokok lagi.002_MeshPart2
+    100254: pokok4.001
+    100256: pokok4.001_MeshPart0
+    100258: pokok4.001_MeshPart1
+    100260: pokok4.001_MeshPart2
+    100262: pokok4.001_MeshPart3
+    100264: pokok4.001_MeshPart4
+    100266: pokok4.001_MeshPart5
+    100268: //RootNode
+    400000: Camera
+    400002: Grid
+    400004: Grid.001
+    400006: Grid.002
+    400008: path combined
+    400010: path combined_MeshPart0
+    400012: path combined_MeshPart1
+    400014: path combined_MeshPart10
+    400016: path combined_MeshPart11
+    400018: path combined_MeshPart12
+    400020: path combined_MeshPart13
+    400022: path combined_MeshPart14
+    400024: path combined_MeshPart15
+    400026: path combined_MeshPart16
+    400028: path combined_MeshPart17
+    400030: path combined_MeshPart18
+    400032: path combined_MeshPart19
+    400034: path combined_MeshPart2
+    400036: path combined_MeshPart20
+    400038: path combined_MeshPart21
+    400040: path combined_MeshPart22
+    400042: path combined_MeshPart23
+    400044: path combined_MeshPart24
+    400046: path combined_MeshPart25
+    400048: path combined_MeshPart26
+    400050: path combined_MeshPart27
+    400052: path combined_MeshPart28
+    400054: path combined_MeshPart29
+    400056: path combined_MeshPart3
+    400058: path combined_MeshPart30
+    400060: path combined_MeshPart31
+    400062: path combined_MeshPart32
+    400064: path combined_MeshPart33
+    400066: path combined_MeshPart34
+    400068: path combined_MeshPart35
+    400070: path combined_MeshPart36
+    400072: path combined_MeshPart37
+    400074: path combined_MeshPart38
+    400076: path combined_MeshPart39
+    400078: path combined_MeshPart4
+    400080: path combined_MeshPart40
+    400082: path combined_MeshPart41
+    400084: path combined_MeshPart42
+    400086: path combined_MeshPart43
+    400088: path combined_MeshPart44
+    400090: path combined_MeshPart45
+    400092: path combined_MeshPart46
+    400094: path combined_MeshPart5
+    400096: path combined_MeshPart6
+    400098: path combined_MeshPart7
+    400100: path combined_MeshPart8
+    400102: path combined_MeshPart9
+    400104: path indooor
+    400106: path indooor_MeshPart0
+    400108: path indooor_MeshPart1
+    400110: path indooor_MeshPart2
+    400112: path indooor_MeshPart3
+    400114: path indooor_MeshPart4
+    400116: path outdooor
+    400118: path outdooor_MeshPart0
+    400120: path outdooor_MeshPart1
+    400122: path outdooor_MeshPart10
+    400124: path outdooor_MeshPart11
+    400126: path outdooor_MeshPart2
+    400128: path outdooor_MeshPart3
+    400130: path outdooor_MeshPart4
+    400132: path outdooor_MeshPart5
+    400134: path outdooor_MeshPart6
+    400136: path outdooor_MeshPart7
+    400138: path outdooor_MeshPart8
+    400140: path outdooor_MeshPart9
+    400142: path2
+    400144: path2_MeshPart0
+    400146: path2_MeshPart1
+    400148: path2_MeshPart10
+    400150: path2_MeshPart11
+    400152: path2_MeshPart12
+    400154: path2_MeshPart13
+    400156: path2_MeshPart14
+    400158: path2_MeshPart15
+    400160: path2_MeshPart16
+    400162: path2_MeshPart2
+    400164: path2_MeshPart3
+    400166: path2_MeshPart4
+    400168: path2_MeshPart5
+    400170: path2_MeshPart6
+    400172: path2_MeshPart7
+    400174: path2_MeshPart8
+    400176: path2_MeshPart9
+    400178: path3
+    400180: path3_MeshPart0
+    400182: path3_MeshPart1
+    400184: path3_MeshPart2
+    400186: path3_MeshPart3
+    400188: path3_MeshPart4
+    400190: path3_MeshPart5
+    400192: path3_MeshPart6
+    400194: path3_MeshPart7
+    400196: pokok lagi lagi
+    400198: pokok lagi lagi lagi
+    400200: pokok lagi lagi lagi.001
+    400202: pokok lagi lagi lagi.002
+    400204: pokok lagi lagi lagi.003
+    400206: pokok lagi lagi lagi.004
+    400208: pokok lagi lagi lagi.005
+    400210: pokok lagi lagi lagi.006
+    400212: pokok lagi lagi lagi.007
+    400214: pokok lagi lagi lagi.008
+    400216: pokok lagi lagi lagi.009
+    400218: pokok lagi lagi lagi.010
+    400220: pokok lagi lagi.001
+    400222: pokok lagi lagi.001_MeshPart0
+    400224: pokok lagi lagi.001_MeshPart1
+    400226: pokok lagi lagi_MeshPart0
+    400228: pokok lagi lagi_MeshPart1
+    400230: pokok lagi.000
+    400232: pokok lagi.000_MeshPart0
+    400234: pokok lagi.000_MeshPart1
+    400236: pokok lagi.000_MeshPart2
+    400238: pokok lagi.001
+    400240: pokok lagi.001_MeshPart0
+    400242: pokok lagi.001_MeshPart1
+    400244: pokok lagi.001_MeshPart2
+    400246: pokok lagi.002
+    400248: pokok lagi.002_MeshPart0
+    400250: pokok lagi.002_MeshPart1
+    400252: pokok lagi.002_MeshPart2
+    400254: pokok4.001
+    400256: pokok4.001_MeshPart0
+    400258: pokok4.001_MeshPart1
+    400260: pokok4.001_MeshPart2
+    400262: pokok4.001_MeshPart3
+    400264: pokok4.001_MeshPart4
+    400266: pokok4.001_MeshPart5
+    400268: //RootNode
+    2300000: Grid
+    2300002: Grid.001
+    2300004: Grid.002
+    2300006: path combined_MeshPart0
+    2300008: path combined_MeshPart1
+    2300010: path combined_MeshPart10
+    2300012: path combined_MeshPart11
+    2300014: path combined_MeshPart12
+    2300016: path combined_MeshPart13
+    2300018: path combined_MeshPart14
+    2300020: path combined_MeshPart15
+    2300022: path combined_MeshPart16
+    2300024: path combined_MeshPart17
+    2300026: path combined_MeshPart18
+    2300028: path combined_MeshPart19
+    2300030: path combined_MeshPart2
+    2300032: path combined_MeshPart20
+    2300034: path combined_MeshPart21
+    2300036: path combined_MeshPart22
+    2300038: path combined_MeshPart23
+    2300040: path combined_MeshPart24
+    2300042: path combined_MeshPart25
+    2300044: path combined_MeshPart26
+    2300046: path combined_MeshPart27
+    2300048: path combined_MeshPart28
+    2300050: path combined_MeshPart29
+    2300052: path combined_MeshPart3
+    2300054: path combined_MeshPart30
+    2300056: path combined_MeshPart31
+    2300058: path combined_MeshPart32
+    2300060: path combined_MeshPart33
+    2300062: path combined_MeshPart34
+    2300064: path combined_MeshPart35
+    2300066: path combined_MeshPart36
+    2300068: path combined_MeshPart37
+    2300070: path combined_MeshPart38
+    2300072: path combined_MeshPart39
+    2300074: path combined_MeshPart4
+    2300076: path combined_MeshPart40
+    2300078: path combined_MeshPart41
+    2300080: path combined_MeshPart42
+    2300082: path combined_MeshPart43
+    2300084: path combined_MeshPart44
+    2300086: path combined_MeshPart45
+    2300088: path combined_MeshPart46
+    2300090: path combined_MeshPart5
+    2300092: path combined_MeshPart6
+    2300094: path combined_MeshPart7
+    2300096: path combined_MeshPart8
+    2300098: path combined_MeshPart9
+    2300100: path indooor_MeshPart0
+    2300102: path indooor_MeshPart1
+    2300104: path indooor_MeshPart2
+    2300106: path indooor_MeshPart3
+    2300108: path indooor_MeshPart4
+    2300110: path outdooor_MeshPart0
+    2300112: path outdooor_MeshPart1
+    2300114: path outdooor_MeshPart10
+    2300116: path outdooor_MeshPart11
+    2300118: path outdooor_MeshPart2
+    2300120: path outdooor_MeshPart3
+    2300122: path outdooor_MeshPart4
+    2300124: path outdooor_MeshPart5
+    2300126: path outdooor_MeshPart6
+    2300128: path outdooor_MeshPart7
+    2300130: path outdooor_MeshPart8
+    2300132: path outdooor_MeshPart9
+    2300134: path2_MeshPart0
+    2300136: path2_MeshPart1
+    2300138: path2_MeshPart10
+    2300140: path2_MeshPart11
+    2300142: path2_MeshPart12
+    2300144: path2_MeshPart13
+    2300146: path2_MeshPart14
+    2300148: path2_MeshPart15
+    2300150: path2_MeshPart16
+    2300152: path2_MeshPart2
+    2300154: path2_MeshPart3
+    2300156: path2_MeshPart4
+    2300158: path2_MeshPart5
+    2300160: path2_MeshPart6
+    2300162: path2_MeshPart7
+    2300164: path2_MeshPart8
+    2300166: path2_MeshPart9
+    2300168: path3_MeshPart0
+    2300170: path3_MeshPart1
+    2300172: path3_MeshPart2
+    2300174: path3_MeshPart3
+    2300176: path3_MeshPart4
+    2300178: path3_MeshPart5
+    2300180: path3_MeshPart6
+    2300182: path3_MeshPart7
+    2300184: pokok lagi lagi lagi
+    2300186: pokok lagi lagi lagi.001
+    2300188: pokok lagi lagi lagi.002
+    2300190: pokok lagi lagi lagi.003
+    2300192: pokok lagi lagi lagi.004
+    2300194: pokok lagi lagi lagi.005
+    2300196: pokok lagi lagi lagi.006
+    2300198: pokok lagi lagi lagi.007
+    2300200: pokok lagi lagi lagi.008
+    2300202: pokok lagi lagi lagi.009
+    2300204: pokok lagi lagi lagi.010
+    2300206: pokok lagi lagi.001_MeshPart0
+    2300208: pokok lagi lagi.001_MeshPart1
+    2300210: pokok lagi lagi_MeshPart0
+    2300212: pokok lagi lagi_MeshPart1
+    2300214: pokok lagi.000_MeshPart0
+    2300216: pokok lagi.000_MeshPart1
+    2300218: pokok lagi.000_MeshPart2
+    2300220: pokok lagi.001_MeshPart0
+    2300222: pokok lagi.001_MeshPart1
+    2300224: pokok lagi.001_MeshPart2
+    2300226: pokok lagi.002_MeshPart0
+    2300228: pokok lagi.002_MeshPart1
+    2300230: pokok lagi.002_MeshPart2
+    2300232: pokok4.001_MeshPart0
+    2300234: pokok4.001_MeshPart1
+    2300236: pokok4.001_MeshPart2
+    2300238: pokok4.001_MeshPart3
+    2300240: pokok4.001_MeshPart4
+    2300242: pokok4.001_MeshPart5
+    3300000: Grid
+    3300002: Grid.001
+    3300004: Grid.002
+    3300006: path combined_MeshPart0
+    3300008: path combined_MeshPart1
+    3300010: path combined_MeshPart10
+    3300012: path combined_MeshPart11
+    3300014: path combined_MeshPart12
+    3300016: path combined_MeshPart13
+    3300018: path combined_MeshPart14
+    3300020: path combined_MeshPart15
+    3300022: path combined_MeshPart16
+    3300024: path combined_MeshPart17
+    3300026: path combined_MeshPart18
+    3300028: path combined_MeshPart19
+    3300030: path combined_MeshPart2
+    3300032: path combined_MeshPart20
+    3300034: path combined_MeshPart21
+    3300036: path combined_MeshPart22
+    3300038: path combined_MeshPart23
+    3300040: path combined_MeshPart24
+    3300042: path combined_MeshPart25
+    3300044: path combined_MeshPart26
+    3300046: path combined_MeshPart27
+    3300048: path combined_MeshPart28
+    3300050: path combined_MeshPart29
+    3300052: path combined_MeshPart3
+    3300054: path combined_MeshPart30
+    3300056: path combined_MeshPart31
+    3300058: path combined_MeshPart32
+    3300060: path combined_MeshPart33
+    3300062: path combined_MeshPart34
+    3300064: path combined_MeshPart35
+    3300066: path combined_MeshPart36
+    3300068: path combined_MeshPart37
+    3300070: path combined_MeshPart38
+    3300072: path combined_MeshPart39
+    3300074: path combined_MeshPart4
+    3300076: path combined_MeshPart40
+    3300078: path combined_MeshPart41
+    3300080: path combined_MeshPart42
+    3300082: path combined_MeshPart43
+    3300084: path combined_MeshPart44
+    3300086: path combined_MeshPart45
+    3300088: path combined_MeshPart46
+    3300090: path combined_MeshPart5
+    3300092: path combined_MeshPart6
+    3300094: path combined_MeshPart7
+    3300096: path combined_MeshPart8
+    3300098: path combined_MeshPart9
+    3300100: path indooor_MeshPart0
+    3300102: path indooor_MeshPart1
+    3300104: path indooor_MeshPart2
+    3300106: path indooor_MeshPart3
+    3300108: path indooor_MeshPart4
+    3300110: path outdooor_MeshPart0
+    3300112: path outdooor_MeshPart1
+    3300114: path outdooor_MeshPart10
+    3300116: path outdooor_MeshPart11
+    3300118: path outdooor_MeshPart2
+    3300120: path outdooor_MeshPart3
+    3300122: path outdooor_MeshPart4
+    3300124: path outdooor_MeshPart5
+    3300126: path outdooor_MeshPart6
+    3300128: path outdooor_MeshPart7
+    3300130: path outdooor_MeshPart8
+    3300132: path outdooor_MeshPart9
+    3300134: path2_MeshPart0
+    3300136: path2_MeshPart1
+    3300138: path2_MeshPart10
+    3300140: path2_MeshPart11
+    3300142: path2_MeshPart12
+    3300144: path2_MeshPart13
+    3300146: path2_MeshPart14
+    3300148: path2_MeshPart15
+    3300150: path2_MeshPart16
+    3300152: path2_MeshPart2
+    3300154: path2_MeshPart3
+    3300156: path2_MeshPart4
+    3300158: path2_MeshPart5
+    3300160: path2_MeshPart6
+    3300162: path2_MeshPart7
+    3300164: path2_MeshPart8
+    3300166: path2_MeshPart9
+    3300168: path3_MeshPart0
+    3300170: path3_MeshPart1
+    3300172: path3_MeshPart2
+    3300174: path3_MeshPart3
+    3300176: path3_MeshPart4
+    3300178: path3_MeshPart5
+    3300180: path3_MeshPart6
+    3300182: path3_MeshPart7
+    3300184: pokok lagi lagi lagi
+    3300186: pokok lagi lagi lagi.001
+    3300188: pokok lagi lagi lagi.002
+    3300190: pokok lagi lagi lagi.003
+    3300192: pokok lagi lagi lagi.004
+    3300194: pokok lagi lagi lagi.005
+    3300196: pokok lagi lagi lagi.006
+    3300198: pokok lagi lagi lagi.007
+    3300200: pokok lagi lagi lagi.008
+    3300202: pokok lagi lagi lagi.009
+    3300204: pokok lagi lagi lagi.010
+    3300206: pokok lagi lagi.001_MeshPart0
+    3300208: pokok lagi lagi.001_MeshPart1
+    3300210: pokok lagi lagi_MeshPart0
+    3300212: pokok lagi lagi_MeshPart1
+    3300214: pokok lagi.000_MeshPart0
+    3300216: pokok lagi.000_MeshPart1
+    3300218: pokok lagi.000_MeshPart2
+    3300220: pokok lagi.001_MeshPart0
+    3300222: pokok lagi.001_MeshPart1
+    3300224: pokok lagi.001_MeshPart2
+    3300226: pokok lagi.002_MeshPart0
+    3300228: pokok lagi.002_MeshPart1
+    3300230: pokok lagi.002_MeshPart2
+    3300232: pokok4.001_MeshPart0
+    3300234: pokok4.001_MeshPart1
+    3300236: pokok4.001_MeshPart2
+    3300238: pokok4.001_MeshPart3
+    3300240: pokok4.001_MeshPart4
+    3300242: pokok4.001_MeshPart5
+    4300000: pokok lagi lagi lagi.010
+    4300002: pokok lagi lagi lagi.001
+    4300004: pokok lagi.002_MeshPart0
+    4300006: pokok lagi.002_MeshPart1
+    4300008: pokok lagi.002_MeshPart2
+    4300010: pokok lagi.000_MeshPart0
+    4300012: pokok lagi.000_MeshPart1
+    4300014: pokok lagi.000_MeshPart2
+    4300016: Grid.002
+    4300018: pokok lagi lagi.001_MeshPart0
+    4300020: pokok lagi lagi.001_MeshPart1
+    4300022: pokok4.001_MeshPart0
+    4300024: pokok4.001_MeshPart1
+    4300026: pokok4.001_MeshPart2
+    4300028: pokok4.001_MeshPart3
+    4300030: pokok4.001_MeshPart4
+    4300032: pokok4.001_MeshPart5
+    4300034: pokok lagi lagi lagi.009
+    4300036: pokok lagi lagi lagi.008
+    4300038: pokok lagi lagi lagi.007
+    4300040: pokok lagi lagi lagi.006
+    4300042: pokok lagi lagi lagi.005
+    4300044: pokok lagi lagi lagi.004
+    4300046: pokok lagi lagi lagi.003
+    4300048: pokok lagi lagi lagi.002
+    4300050: pokok lagi lagi lagi
+    4300052: pokok lagi lagi_MeshPart0
+    4300054: pokok lagi lagi_MeshPart1
+    4300056: pokok lagi.001_MeshPart0
+    4300058: pokok lagi.001_MeshPart1
+    4300060: pokok lagi.001_MeshPart2
+    4300062: Grid.001
+    4300064: Grid
+    4300066: path2_MeshPart0
+    4300068: path2_MeshPart1
+    4300070: path2_MeshPart2
+    4300072: path2_MeshPart3
+    4300074: path2_MeshPart4
+    4300076: path2_MeshPart5
+    4300078: path2_MeshPart6
+    4300080: path2_MeshPart7
+    4300082: path2_MeshPart8
+    4300084: path2_MeshPart9
+    4300086: path2_MeshPart10
+    4300088: path2_MeshPart11
+    4300090: path2_MeshPart12
+    4300092: path2_MeshPart13
+    4300094: path2_MeshPart14
+    4300096: path2_MeshPart15
+    4300098: path2_MeshPart16
+    4300100: path3_MeshPart0
+    4300102: path3_MeshPart1
+    4300104: path3_MeshPart2
+    4300106: path3_MeshPart3
+    4300108: path3_MeshPart4
+    4300110: path3_MeshPart5
+    4300112: path3_MeshPart6
+    4300114: path3_MeshPart7
+    4300116: path combined_MeshPart0
+    4300118: path combined_MeshPart1
+    4300120: path combined_MeshPart2
+    4300122: path combined_MeshPart3
+    4300124: path combined_MeshPart4
+    4300126: path combined_MeshPart5
+    4300128: path combined_MeshPart6
+    4300130: path combined_MeshPart7
+    4300132: path combined_MeshPart8
+    4300134: path combined_MeshPart9
+    4300136: path combined_MeshPart10
+    4300138: path combined_MeshPart11
+    4300140: path combined_MeshPart12
+    4300142: path combined_MeshPart13
+    4300144: path combined_MeshPart14
+    4300146: path combined_MeshPart15
+    4300148: path combined_MeshPart16
+    4300150: path combined_MeshPart17
+    4300152: path combined_MeshPart18
+    4300154: path combined_MeshPart19
+    4300156: path combined_MeshPart20
+    4300158: path combined_MeshPart21
+    4300160: path combined_MeshPart22
+    4300162: path combined_MeshPart23
+    4300164: path combined_MeshPart24
+    4300166: path combined_MeshPart25
+    4300168: path combined_MeshPart26
+    4300170: path combined_MeshPart27
+    4300172: path combined_MeshPart28
+    4300174: path combined_MeshPart29
+    4300176: path combined_MeshPart30
+    4300178: path combined_MeshPart31
+    4300180: path combined_MeshPart32
+    4300182: path combined_MeshPart33
+    4300184: path combined_MeshPart34
+    4300186: path combined_MeshPart35
+    4300188: path combined_MeshPart36
+    4300190: path combined_MeshPart37
+    4300192: path combined_MeshPart38
+    4300194: path combined_MeshPart39
+    4300196: path combined_MeshPart40
+    4300198: path combined_MeshPart41
+    4300200: path combined_MeshPart42
+    4300202: path combined_MeshPart43
+    4300204: path combined_MeshPart44
+    4300206: path combined_MeshPart45
+    4300208: path combined_MeshPart46
+    4300210: path indooor_MeshPart0
+    4300212: path indooor_MeshPart1
+    4300214: path indooor_MeshPart2
+    4300216: path indooor_MeshPart3
+    4300218: path indooor_MeshPart4
+    4300220: path outdooor_MeshPart0
+    4300222: path outdooor_MeshPart1
+    4300224: path outdooor_MeshPart2
+    4300226: path outdooor_MeshPart3
+    4300228: path outdooor_MeshPart4
+    4300230: path outdooor_MeshPart5
+    4300232: path outdooor_MeshPart6
+    4300234: path outdooor_MeshPart7
+    4300236: path outdooor_MeshPart8
+    4300238: path outdooor_MeshPart9
+    4300240: path outdooor_MeshPart10
+    4300242: path outdooor_MeshPart11
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

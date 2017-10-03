@@ -1,0 +1,5 @@
+Added in Camerons stuff to SVN
+ - Added in rings for track 2 and 3
+ - Added in early control for changing from left or right arm control
+ - Track not starting until the user is detected by the kinect
+ - Collision detection for the character.

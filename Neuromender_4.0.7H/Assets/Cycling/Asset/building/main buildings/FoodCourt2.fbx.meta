@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 431e3e0c7cc128740b60cc7913548e57
+timeCreated: 1491183112
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 14Windows.001
+    100002: 14Windows.002
+    100004: 14WindowsGlasses
+    100006: 5Windows.001
+    100008: 5WindowsGlasses
+    100010: 5WindowsGlasses_MeshPart0
+    100012: 5WindowsGlasses_MeshPart1
+    100014: 6Windows.000
+    100016: 6WindowsGlasses
+    100018: Backup2Windows
+    100020: Backup5Windows.008
+    100022: Backup5Windows.008_MeshPart0
+    100024: Backup5Windows.008_MeshPart1
+    100026: Backup6LongWindows
+    100028: BackupSingleWindow.000
+    100030: BackupSingleWindowof4
+    100032: Construction
+    100034: food court
+    100036: food court.001
+    100038: food court.001_MeshPart0
+    100040: food court.001_MeshPart1
+    100042: food court.001_MeshPart2
+    100044: food court.001_MeshPart3
+    100046: food court.001_MeshPart4
+    100048: food court_MeshPart0
+    100050: food court_MeshPart1
+    100052: food court_MeshPart2
+    100054: food court_MeshPart3
+    100056: food court_MeshPart4
+    100058: food court_MeshPart5
+    100060: food court_MeshPart6
+    100062: food court_MeshPart7
+    100064: //RootNode
+    100066: OneWindowMini
+    400000: 14Windows.001
+    400002: 14Windows.002
+    400004: 14WindowsGlasses
+    400006: 5Windows.001
+    400008: 5WindowsGlasses
+    400010: 5WindowsGlasses_MeshPart0
+    400012: 5WindowsGlasses_MeshPart1
+    400014: 6Windows.000
+    400016: 6WindowsGlasses
+    400018: Backup2Windows
+    400020: Backup5Windows.008
+    400022: Backup5Windows.008_MeshPart0
+    400024: Backup5Windows.008_MeshPart1
+    400026: Backup6LongWindows
+    400028: BackupSingleWindow.000
+    400030: BackupSingleWindowof4
+    400032: Construction
+    400034: food court
+    400036: food court.001
+    400038: food court.001_MeshPart0
+    400040: food court.001_MeshPart1
+    400042: food court.001_MeshPart2
+    400044: food court.001_MeshPart3
+    400046: food court.001_MeshPart4
+    400048: food court_MeshPart0
+    400050: food court_MeshPart1
+    400052: food court_MeshPart2
+    400054: food court_MeshPart3
+    400056: food court_MeshPart4
+    400058: food court_MeshPart5
+    400060: food court_MeshPart6
+    400062: food court_MeshPart7
+    400064: //RootNode
+    400066: OneWindowMini
+    2300000: 14Windows.001
+    2300002: 14Windows.002
+    2300004: 14WindowsGlasses
+    2300006: 5Windows.001
+    2300008: 5WindowsGlasses_MeshPart0
+    2300010: 5WindowsGlasses_MeshPart1
+    2300012: 6Windows.000
+    2300014: 6WindowsGlasses
+    2300016: Backup2Windows
+    2300018: Backup5Windows.008_MeshPart0
+    2300020: Backup5Windows.008_MeshPart1
+    2300022: Backup6LongWindows
+    2300024: BackupSingleWindow.000
+    2300026: BackupSingleWindowof4
+    2300028: Construction
+    2300030: food court.001_MeshPart0
+    2300032: food court.001_MeshPart1
+    2300034: food court.001_MeshPart2
+    2300036: food court.001_MeshPart3
+    2300038: food court.001_MeshPart4
+    2300040: food court_MeshPart0
+    2300042: food court_MeshPart1
+    2300044: food court_MeshPart2
+    2300046: food court_MeshPart3
+    2300048: food court_MeshPart4
+    2300050: food court_MeshPart5
+    2300052: food court_MeshPart6
+    2300054: food court_MeshPart7
+    2300056: OneWindowMini
+    3300000: 14Windows.001
+    3300002: 14Windows.002
+    3300004: 14WindowsGlasses
+    3300006: 5Windows.001
+    3300008: 5WindowsGlasses_MeshPart0
+    3300010: 5WindowsGlasses_MeshPart1
+    3300012: 6Windows.000
+    3300014: 6WindowsGlasses
+    3300016: Backup2Windows
+    3300018: Backup5Windows.008_MeshPart0
+    3300020: Backup5Windows.008_MeshPart1
+    3300022: Backup6LongWindows
+    3300024: BackupSingleWindow.000
+    3300026: BackupSingleWindowof4
+    3300028: Construction
+    3300030: food court.001_MeshPart0
+    3300032: food court.001_MeshPart1
+    3300034: food court.001_MeshPart2
+    3300036: food court.001_MeshPart3
+    3300038: food court.001_MeshPart4
+    3300040: food court_MeshPart0
+    3300042: food court_MeshPart1
+    3300044: food court_MeshPart2
+    3300046: food court_MeshPart3
+    3300048: food court_MeshPart4
+    3300050: food court_MeshPart5
+    3300052: food court_MeshPart6
+    3300054: food court_MeshPart7
+    3300056: OneWindowMini
+    4300000: 6Windows.000
+    4300002: 5Windows.001
+    4300004: 14Windows.002
+    4300006: 14Windows.001
+    4300008: food court.001_MeshPart0
+    4300010: food court.001_MeshPart1
+    4300012: food court.001_MeshPart2
+    4300014: food court.001_MeshPart3
+    4300016: food court.001_MeshPart4
+    4300018: Construction
+    4300020: 5WindowsGlasses_MeshPart0
+    4300022: 5WindowsGlasses_MeshPart1
+    4300024: 6WindowsGlasses
+    4300026: Backup6LongWindows
+    4300028: BackupSingleWindow.000
+    4300030: Backup2Windows
+    4300032: 14WindowsGlasses
+    4300034: BackupSingleWindowof4
+    4300036: Backup5Windows.008_MeshPart0
+    4300038: Backup5Windows.008_MeshPart1
+    4300040: OneWindowMini
+    4300042: food court_MeshPart0
+    4300044: food court_MeshPart1
+    4300046: food court_MeshPart2
+    4300048: food court_MeshPart3
+    4300050: food court_MeshPart4
+    4300052: food court_MeshPart5
+    4300054: food court_MeshPart6
+    4300056: food court_MeshPart7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

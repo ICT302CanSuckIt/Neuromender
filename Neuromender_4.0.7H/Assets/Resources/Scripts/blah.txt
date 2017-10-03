@@ -1,0 +1,1 @@
+server=vegas.murdoch.edu.au;user=neuroadmin4;database=Neuromender4;port=3306;password=*7BA7FB152973F6C4434A6BC54E94A7366969EDFE;

@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 7e3c523ed29a1a141a697c71816f8924
+timeCreated: 1490940777
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bank
+    100002: bank_MeshPart0
+    100004: bank_MeshPart1
+    100006: bank_MeshPart10
+    100008: bank_MeshPart11
+    100010: bank_MeshPart12
+    100012: bank_MeshPart13
+    100014: bank_MeshPart2
+    100016: bank_MeshPart3
+    100018: bank_MeshPart4
+    100020: bank_MeshPart5
+    100022: bank_MeshPart6
+    100024: bank_MeshPart7
+    100026: bank_MeshPart8
+    100028: bank_MeshPart9
+    100030: block bank
+    100032: block food
+    100034: //RootNode
+    100036: bumbung bank
+    100038: bumbung food
+    100040: Camera
+    100042: chancellor
+    100044: Cube.004
+    100046: food court
+    100048: food court_MeshPart0
+    100050: food court_MeshPart1
+    100052: food court_MeshPart10
+    100054: food court_MeshPart11
+    100056: food court_MeshPart12
+    100058: food court_MeshPart13
+    100060: food court_MeshPart14
+    100062: food court_MeshPart15
+    100064: food court_MeshPart2
+    100066: food court_MeshPart3
+    100068: food court_MeshPart4
+    100070: food court_MeshPart5
+    100072: food court_MeshPart6
+    100074: food court_MeshPart7
+    100076: food court_MeshPart8
+    100078: food court_MeshPart9
+    100080: path combined
+    100082: path combined_MeshPart0
+    100084: path combined_MeshPart1
+    100086: path combined_MeshPart10
+    100088: path combined_MeshPart11
+    100090: path combined_MeshPart12
+    100092: path combined_MeshPart13
+    100094: path combined_MeshPart14
+    100096: path combined_MeshPart15
+    100098: path combined_MeshPart16
+    100100: path combined_MeshPart17
+    100102: path combined_MeshPart18
+    100104: path combined_MeshPart19
+    100106: path combined_MeshPart2
+    100108: path combined_MeshPart20
+    100110: path combined_MeshPart21
+    100112: path combined_MeshPart22
+    100114: path combined_MeshPart23
+    100116: path combined_MeshPart24
+    100118: path combined_MeshPart25
+    100120: path combined_MeshPart26
+    100122: path combined_MeshPart27
+    100124: path combined_MeshPart28
+    100126: path combined_MeshPart29
+    100128: path combined_MeshPart3
+    100130: path combined_MeshPart30
+    100132: path combined_MeshPart31
+    100134: path combined_MeshPart32
+    100136: path combined_MeshPart33
+    100138: path combined_MeshPart34
+    100140: path combined_MeshPart35
+    100142: path combined_MeshPart36
+    100144: path combined_MeshPart37
+    100146: path combined_MeshPart38
+    100148: path combined_MeshPart39
+    100150: path combined_MeshPart4
+    100152: path combined_MeshPart40
+    100154: path combined_MeshPart41
+    100156: path combined_MeshPart42
+    100158: path combined_MeshPart43
+    100160: path combined_MeshPart44
+    100162: path combined_MeshPart45
+    100164: path combined_MeshPart46
+    100166: path combined_MeshPart5
+    100168: path combined_MeshPart6
+    100170: path combined_MeshPart7
+    100172: path combined_MeshPart8
+    100174: path combined_MeshPart9
+    100176: pillars ori
+    100178: pillars scaled
+    100180: pillars scaled.001
+    100182: Plane
+    100184: stairs
+    100186: student centre
+    100188: tiang
+    100190: tiang.001
+    400000: bank
+    400002: bank_MeshPart0
+    400004: bank_MeshPart1
+    400006: bank_MeshPart10
+    400008: bank_MeshPart11
+    400010: bank_MeshPart12
+    400012: bank_MeshPart13
+    400014: bank_MeshPart2
+    400016: bank_MeshPart3
+    400018: bank_MeshPart4
+    400020: bank_MeshPart5
+    400022: bank_MeshPart6
+    400024: bank_MeshPart7
+    400026: bank_MeshPart8
+    400028: bank_MeshPart9
+    400030: block bank
+    400032: block food
+    400034: //RootNode
+    400036: bumbung bank
+    400038: bumbung food
+    400040: Camera
+    400042: chancellor
+    400044: Cube.004
+    400046: food court
+    400048: food court_MeshPart0
+    400050: food court_MeshPart1
+    400052: food court_MeshPart10
+    400054: food court_MeshPart11
+    400056: food court_MeshPart12
+    400058: food court_MeshPart13
+    400060: food court_MeshPart14
+    400062: food court_MeshPart15
+    400064: food court_MeshPart2
+    400066: food court_MeshPart3
+    400068: food court_MeshPart4
+    400070: food court_MeshPart5
+    400072: food court_MeshPart6
+    400074: food court_MeshPart7
+    400076: food court_MeshPart8
+    400078: food court_MeshPart9
+    400080: path combined
+    400082: path combined_MeshPart0
+    400084: path combined_MeshPart1
+    400086: path combined_MeshPart10
+    400088: path combined_MeshPart11
+    400090: path combined_MeshPart12
+    400092: path combined_MeshPart13
+    400094: path combined_MeshPart14
+    400096: path combined_MeshPart15
+    400098: path combined_MeshPart16
+    400100: path combined_MeshPart17
+    400102: path combined_MeshPart18
+    400104: path combined_MeshPart19
+    400106: path combined_MeshPart2
+    400108: path combined_MeshPart20
+    400110: path combined_MeshPart21
+    400112: path combined_MeshPart22
+    400114: path combined_MeshPart23
+    400116: path combined_MeshPart24
+    400118: path combined_MeshPart25
+    400120: path combined_MeshPart26
+    400122: path combined_MeshPart27
+    400124: path combined_MeshPart28
+    400126: path combined_MeshPart29
+    400128: path combined_MeshPart3
+    400130: path combined_MeshPart30
+    400132: path combined_MeshPart31
+    400134: path combined_MeshPart32
+    400136: path combined_MeshPart33
+    400138: path combined_MeshPart34
+    400140: path combined_MeshPart35
+    400142: path combined_MeshPart36
+    400144: path combined_MeshPart37
+    400146: path combined_MeshPart38
+    400148: path combined_MeshPart39
+    400150: path combined_MeshPart4
+    400152: path combined_MeshPart40
+    400154: path combined_MeshPart41
+    400156: path combined_MeshPart42
+    400158: path combined_MeshPart43
+    400160: path combined_MeshPart44
+    400162: path combined_MeshPart45
+    400164: path combined_MeshPart46
+    400166: path combined_MeshPart5
+    400168: path combined_MeshPart6
+    400170: path combined_MeshPart7
+    400172: path combined_MeshPart8
+    400174: path combined_MeshPart9
+    400176: pillars ori
+    400178: pillars scaled
+    400180: pillars scaled.001
+    400182: Plane
+    400184: stairs
+    400186: student centre
+    400188: tiang
+    400190: tiang.001
+    2300000: bank_MeshPart0
+    2300002: bank_MeshPart1
+    2300004: bank_MeshPart10
+    2300006: bank_MeshPart11
+    2300008: bank_MeshPart12
+    2300010: bank_MeshPart13
+    2300012: bank_MeshPart2
+    2300014: bank_MeshPart3
+    2300016: bank_MeshPart4
+    2300018: bank_MeshPart5
+    2300020: bank_MeshPart6
+    2300022: bank_MeshPart7
+    2300024: bank_MeshPart8
+    2300026: bank_MeshPart9
+    2300028: block bank
+    2300030: block food
+    2300032: bumbung bank
+    2300034: bumbung food
+    2300036: chancellor
+    2300038: Cube.004
+    2300040: food court_MeshPart0
+    2300042: food court_MeshPart1
+    2300044: food court_MeshPart10
+    2300046: food court_MeshPart11
+    2300048: food court_MeshPart12
+    2300050: food court_MeshPart13
+    2300052: food court_MeshPart14
+    2300054: food court_MeshPart15
+    2300056: food court_MeshPart2
+    2300058: food court_MeshPart3
+    2300060: food court_MeshPart4
+    2300062: food court_MeshPart5
+    2300064: food court_MeshPart6
+    2300066: food court_MeshPart7
+    2300068: food court_MeshPart8
+    2300070: food court_MeshPart9
+    2300072: path combined_MeshPart0
+    2300074: path combined_MeshPart1
+    2300076: path combined_MeshPart10
+    2300078: path combined_MeshPart11
+    2300080: path combined_MeshPart12
+    2300082: path combined_MeshPart13
+    2300084: path combined_MeshPart14
+    2300086: path combined_MeshPart15
+    2300088: path combined_MeshPart16
+    2300090: path combined_MeshPart17
+    2300092: path combined_MeshPart18
+    2300094: path combined_MeshPart19
+    2300096: path combined_MeshPart2
+    2300098: path combined_MeshPart20
+    2300100: path combined_MeshPart21
+    2300102: path combined_MeshPart22
+    2300104: path combined_MeshPart23
+    2300106: path combined_MeshPart24
+    2300108: path combined_MeshPart25
+    2300110: path combined_MeshPart26
+    2300112: path combined_MeshPart27
+    2300114: path combined_MeshPart28
+    2300116: path combined_MeshPart29
+    2300118: path combined_MeshPart3
+    2300120: path combined_MeshPart30
+    2300122: path combined_MeshPart31
+    2300124: path combined_MeshPart32
+    2300126: path combined_MeshPart33
+    2300128: path combined_MeshPart34
+    2300130: path combined_MeshPart35
+    2300132: path combined_MeshPart36
+    2300134: path combined_MeshPart37
+    2300136: path combined_MeshPart38
+    2300138: path combined_MeshPart39
+    2300140: path combined_MeshPart4
+    2300142: path combined_MeshPart40
+    2300144: path combined_MeshPart41
+    2300146: path combined_MeshPart42
+    2300148: path combined_MeshPart43
+    2300150: path combined_MeshPart44
+    2300152: path combined_MeshPart45
+    2300154: path combined_MeshPart46
+    2300156: path combined_MeshPart5
+    2300158: path combined_MeshPart6
+    2300160: path combined_MeshPart7
+    2300162: path combined_MeshPart8
+    2300164: path combined_MeshPart9
+    2300166: pillars ori
+    2300168: pillars scaled
+    2300170: pillars scaled.001
+    2300172: Plane
+    2300174: stairs
+    2300176: student centre
+    2300178: tiang
+    2300180: tiang.001
+    3300000: bank_MeshPart0
+    3300002: bank_MeshPart1
+    3300004: bank_MeshPart10
+    3300006: bank_MeshPart11
+    3300008: bank_MeshPart12
+    3300010: bank_MeshPart13
+    3300012: bank_MeshPart2
+    3300014: bank_MeshPart3
+    3300016: bank_MeshPart4
+    3300018: bank_MeshPart5
+    3300020: bank_MeshPart6
+    3300022: bank_MeshPart7
+    3300024: bank_MeshPart8
+    3300026: bank_MeshPart9
+    3300028: block bank
+    3300030: block food
+    3300032: bumbung bank
+    3300034: bumbung food
+    3300036: chancellor
+    3300038: Cube.004
+    3300040: food court_MeshPart0
+    3300042: food court_MeshPart1
+    3300044: food court_MeshPart10
+    3300046: food court_MeshPart11
+    3300048: food court_MeshPart12
+    3300050: food court_MeshPart13
+    3300052: food court_MeshPart14
+    3300054: food court_MeshPart15
+    3300056: food court_MeshPart2
+    3300058: food court_MeshPart3
+    3300060: food court_MeshPart4
+    3300062: food court_MeshPart5
+    3300064: food court_MeshPart6
+    3300066: food court_MeshPart7
+    3300068: food court_MeshPart8
+    3300070: food court_MeshPart9
+    3300072: path combined_MeshPart0
+    3300074: path combined_MeshPart1
+    3300076: path combined_MeshPart10
+    3300078: path combined_MeshPart11
+    3300080: path combined_MeshPart12
+    3300082: path combined_MeshPart13
+    3300084: path combined_MeshPart14
+    3300086: path combined_MeshPart15
+    3300088: path combined_MeshPart16
+    3300090: path combined_MeshPart17
+    3300092: path combined_MeshPart18
+    3300094: path combined_MeshPart19
+    3300096: path combined_MeshPart2
+    3300098: path combined_MeshPart20
+    3300100: path combined_MeshPart21
+    3300102: path combined_MeshPart22
+    3300104: path combined_MeshPart23
+    3300106: path combined_MeshPart24
+    3300108: path combined_MeshPart25
+    3300110: path combined_MeshPart26
+    3300112: path combined_MeshPart27
+    3300114: path combined_MeshPart28
+    3300116: path combined_MeshPart29
+    3300118: path combined_MeshPart3
+    3300120: path combined_MeshPart30
+    3300122: path combined_MeshPart31
+    3300124: path combined_MeshPart32
+    3300126: path combined_MeshPart33
+    3300128: path combined_MeshPart34
+    3300130: path combined_MeshPart35
+    3300132: path combined_MeshPart36
+    3300134: path combined_MeshPart37
+    3300136: path combined_MeshPart38
+    3300138: path combined_MeshPart39
+    3300140: path combined_MeshPart4
+    3300142: path combined_MeshPart40
+    3300144: path combined_MeshPart41
+    3300146: path combined_MeshPart42
+    3300148: path combined_MeshPart43
+    3300150: path combined_MeshPart44
+    3300152: path combined_MeshPart45
+    3300154: path combined_MeshPart46
+    3300156: path combined_MeshPart5
+    3300158: path combined_MeshPart6
+    3300160: path combined_MeshPart7
+    3300162: path combined_MeshPart8
+    3300164: path combined_MeshPart9
+    3300166: pillars ori
+    3300168: pillars scaled
+    3300170: pillars scaled.001
+    3300172: Plane
+    3300174: stairs
+    3300176: student centre
+    3300178: tiang
+    3300180: tiang.001
+    4300000: tiang.001
+    4300002: bumbung food
+    4300004: bumbung bank
+    4300006: block bank
+    4300008: tiang
+    4300010: pillars scaled.001
+    4300012: pillars ori
+    4300014: pillars scaled
+    4300016: Plane
+    4300018: student centre
+    4300020: chancellor
+    4300022: stairs
+    4300024: path combined_MeshPart0
+    4300026: path combined_MeshPart1
+    4300028: path combined_MeshPart2
+    4300030: path combined_MeshPart3
+    4300032: path combined_MeshPart4
+    4300034: path combined_MeshPart5
+    4300036: path combined_MeshPart6
+    4300038: path combined_MeshPart7
+    4300040: path combined_MeshPart8
+    4300042: path combined_MeshPart9
+    4300044: path combined_MeshPart10
+    4300046: path combined_MeshPart11
+    4300048: path combined_MeshPart12
+    4300050: path combined_MeshPart13
+    4300052: path combined_MeshPart14
+    4300054: path combined_MeshPart15
+    4300056: path combined_MeshPart16
+    4300058: path combined_MeshPart17
+    4300060: path combined_MeshPart18
+    4300062: path combined_MeshPart19
+    4300064: path combined_MeshPart20
+    4300066: path combined_MeshPart21
+    4300068: path combined_MeshPart22
+    4300070: path combined_MeshPart23
+    4300072: path combined_MeshPart24
+    4300074: path combined_MeshPart25
+    4300076: path combined_MeshPart26
+    4300078: path combined_MeshPart27
+    4300080: path combined_MeshPart28
+    4300082: path combined_MeshPart29
+    4300084: path combined_MeshPart30
+    4300086: path combined_MeshPart31
+    4300088: path combined_MeshPart32
+    4300090: path combined_MeshPart33
+    4300092: path combined_MeshPart34
+    4300094: path combined_MeshPart35
+    4300096: path combined_MeshPart36
+    4300098: path combined_MeshPart37
+    4300100: path combined_MeshPart38
+    4300102: path combined_MeshPart39
+    4300104: path combined_MeshPart40
+    4300106: path combined_MeshPart41
+    4300108: path combined_MeshPart42
+    4300110: path combined_MeshPart43
+    4300112: path combined_MeshPart44
+    4300114: path combined_MeshPart45
+    4300116: path combined_MeshPart46
+    4300118: food court_MeshPart0
+    4300120: food court_MeshPart1
+    4300122: food court_MeshPart2
+    4300124: food court_MeshPart3
+    4300126: food court_MeshPart4
+    4300128: food court_MeshPart5
+    4300130: food court_MeshPart6
+    4300132: food court_MeshPart7
+    4300134: food court_MeshPart8
+    4300136: food court_MeshPart9
+    4300138: food court_MeshPart10
+    4300140: food court_MeshPart11
+    4300142: food court_MeshPart12
+    4300144: food court_MeshPart13
+    4300146: food court_MeshPart14
+    4300148: food court_MeshPart15
+    4300150: block food
+    4300152: bank_MeshPart0
+    4300154: bank_MeshPart1
+    4300156: bank_MeshPart2
+    4300158: bank_MeshPart3
+    4300160: bank_MeshPart4
+    4300162: bank_MeshPart5
+    4300164: bank_MeshPart6
+    4300166: bank_MeshPart7
+    4300168: bank_MeshPart8
+    4300170: bank_MeshPart9
+    4300172: bank_MeshPart10
+    4300174: bank_MeshPart11
+    4300176: bank_MeshPart12
+    4300178: bank_MeshPart13
+    4300180: Cube.004
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

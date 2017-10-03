@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 04f734928c27b474cad41b3a2bb844b8
+timeCreated: 1490665781
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Grid
+    100002: path combined
+    100004: path combined_MeshPart0
+    100006: path combined_MeshPart1
+    100008: path combined_MeshPart10
+    100010: path combined_MeshPart11
+    100012: path combined_MeshPart12
+    100014: path combined_MeshPart13
+    100016: path combined_MeshPart14
+    100018: path combined_MeshPart15
+    100020: path combined_MeshPart16
+    100022: path combined_MeshPart17
+    100024: path combined_MeshPart18
+    100026: path combined_MeshPart19
+    100028: path combined_MeshPart2
+    100030: path combined_MeshPart20
+    100032: path combined_MeshPart21
+    100034: path combined_MeshPart22
+    100036: path combined_MeshPart23
+    100038: path combined_MeshPart24
+    100040: path combined_MeshPart25
+    100042: path combined_MeshPart26
+    100044: path combined_MeshPart27
+    100046: path combined_MeshPart28
+    100048: path combined_MeshPart29
+    100050: path combined_MeshPart3
+    100052: path combined_MeshPart30
+    100054: path combined_MeshPart31
+    100056: path combined_MeshPart32
+    100058: path combined_MeshPart33
+    100060: path combined_MeshPart34
+    100062: path combined_MeshPart35
+    100064: path combined_MeshPart36
+    100066: path combined_MeshPart37
+    100068: path combined_MeshPart38
+    100070: path combined_MeshPart39
+    100072: path combined_MeshPart4
+    100074: path combined_MeshPart40
+    100076: path combined_MeshPart41
+    100078: path combined_MeshPart42
+    100080: path combined_MeshPart43
+    100082: path combined_MeshPart44
+    100084: path combined_MeshPart45
+    100086: path combined_MeshPart46
+    100088: path combined_MeshPart5
+    100090: path combined_MeshPart6
+    100092: path combined_MeshPart7
+    100094: path combined_MeshPart8
+    100096: path combined_MeshPart9
+    100098: path indooor
+    100100: path indooor_MeshPart0
+    100102: path indooor_MeshPart1
+    100104: path indooor_MeshPart2
+    100106: path indooor_MeshPart3
+    100108: path indooor_MeshPart4
+    100110: path outdooor
+    100112: path outdooor_MeshPart0
+    100114: path outdooor_MeshPart1
+    100116: path outdooor_MeshPart10
+    100118: path outdooor_MeshPart11
+    100120: path outdooor_MeshPart2
+    100122: path outdooor_MeshPart3
+    100124: path outdooor_MeshPart4
+    100126: path outdooor_MeshPart5
+    100128: path outdooor_MeshPart6
+    100130: path outdooor_MeshPart7
+    100132: path outdooor_MeshPart8
+    100134: path outdooor_MeshPart9
+    100136: path2
+    100138: path2_MeshPart0
+    100140: path2_MeshPart1
+    100142: path2_MeshPart10
+    100144: path2_MeshPart11
+    100146: path2_MeshPart12
+    100148: path2_MeshPart13
+    100150: path2_MeshPart14
+    100152: path2_MeshPart15
+    100154: path2_MeshPart16
+    100156: path2_MeshPart2
+    100158: path2_MeshPart3
+    100160: path2_MeshPart4
+    100162: path2_MeshPart5
+    100164: path2_MeshPart6
+    100166: path2_MeshPart7
+    100168: path2_MeshPart8
+    100170: path2_MeshPart9
+    100172: path3
+    100174: path3_MeshPart0
+    100176: path3_MeshPart1
+    100178: path3_MeshPart2
+    100180: path3_MeshPart3
+    100182: path3_MeshPart4
+    100184: path3_MeshPart5
+    100186: path3_MeshPart6
+    100188: path3_MeshPart7
+    100190: //RootNode
+    400000: Grid
+    400002: path combined
+    400004: path combined_MeshPart0
+    400006: path combined_MeshPart1
+    400008: path combined_MeshPart10
+    400010: path combined_MeshPart11
+    400012: path combined_MeshPart12
+    400014: path combined_MeshPart13
+    400016: path combined_MeshPart14
+    400018: path combined_MeshPart15
+    400020: path combined_MeshPart16
+    400022: path combined_MeshPart17
+    400024: path combined_MeshPart18
+    400026: path combined_MeshPart19
+    400028: path combined_MeshPart2
+    400030: path combined_MeshPart20
+    400032: path combined_MeshPart21
+    400034: path combined_MeshPart22
+    400036: path combined_MeshPart23
+    400038: path combined_MeshPart24
+    400040: path combined_MeshPart25
+    400042: path combined_MeshPart26
+    400044: path combined_MeshPart27
+    400046: path combined_MeshPart28
+    400048: path combined_MeshPart29
+    400050: path combined_MeshPart3
+    400052: path combined_MeshPart30
+    400054: path combined_MeshPart31
+    400056: path combined_MeshPart32
+    400058: path combined_MeshPart33
+    400060: path combined_MeshPart34
+    400062: path combined_MeshPart35
+    400064: path combined_MeshPart36
+    400066: path combined_MeshPart37
+    400068: path combined_MeshPart38
+    400070: path combined_MeshPart39
+    400072: path combined_MeshPart4
+    400074: path combined_MeshPart40
+    400076: path combined_MeshPart41
+    400078: path combined_MeshPart42
+    400080: path combined_MeshPart43
+    400082: path combined_MeshPart44
+    400084: path combined_MeshPart45
+    400086: path combined_MeshPart46
+    400088: path combined_MeshPart5
+    400090: path combined_MeshPart6
+    400092: path combined_MeshPart7
+    400094: path combined_MeshPart8
+    400096: path combined_MeshPart9
+    400098: path indooor
+    400100: path indooor_MeshPart0
+    400102: path indooor_MeshPart1
+    400104: path indooor_MeshPart2
+    400106: path indooor_MeshPart3
+    400108: path indooor_MeshPart4
+    400110: path outdooor
+    400112: path outdooor_MeshPart0
+    400114: path outdooor_MeshPart1
+    400116: path outdooor_MeshPart10
+    400118: path outdooor_MeshPart11
+    400120: path outdooor_MeshPart2
+    400122: path outdooor_MeshPart3
+    400124: path outdooor_MeshPart4
+    400126: path outdooor_MeshPart5
+    400128: path outdooor_MeshPart6
+    400130: path outdooor_MeshPart7
+    400132: path outdooor_MeshPart8
+    400134: path outdooor_MeshPart9
+    400136: path2
+    400138: path2_MeshPart0
+    400140: path2_MeshPart1
+    400142: path2_MeshPart10
+    400144: path2_MeshPart11
+    400146: path2_MeshPart12
+    400148: path2_MeshPart13
+    400150: path2_MeshPart14
+    400152: path2_MeshPart15
+    400154: path2_MeshPart16
+    400156: path2_MeshPart2
+    400158: path2_MeshPart3
+    400160: path2_MeshPart4
+    400162: path2_MeshPart5
+    400164: path2_MeshPart6
+    400166: path2_MeshPart7
+    400168: path2_MeshPart8
+    400170: path2_MeshPart9
+    400172: path3
+    400174: path3_MeshPart0
+    400176: path3_MeshPart1
+    400178: path3_MeshPart2
+    400180: path3_MeshPart3
+    400182: path3_MeshPart4
+    400184: path3_MeshPart5
+    400186: path3_MeshPart6
+    400188: path3_MeshPart7
+    400190: //RootNode
+    2300000: Grid
+    2300002: path combined_MeshPart0
+    2300004: path combined_MeshPart1
+    2300006: path combined_MeshPart10
+    2300008: path combined_MeshPart11
+    2300010: path combined_MeshPart12
+    2300012: path combined_MeshPart13
+    2300014: path combined_MeshPart14
+    2300016: path combined_MeshPart15
+    2300018: path combined_MeshPart16
+    2300020: path combined_MeshPart17
+    2300022: path combined_MeshPart18
+    2300024: path combined_MeshPart19
+    2300026: path combined_MeshPart2
+    2300028: path combined_MeshPart20
+    2300030: path combined_MeshPart21
+    2300032: path combined_MeshPart22
+    2300034: path combined_MeshPart23
+    2300036: path combined_MeshPart24
+    2300038: path combined_MeshPart25
+    2300040: path combined_MeshPart26
+    2300042: path combined_MeshPart27
+    2300044: path combined_MeshPart28
+    2300046: path combined_MeshPart29
+    2300048: path combined_MeshPart3
+    2300050: path combined_MeshPart30
+    2300052: path combined_MeshPart31
+    2300054: path combined_MeshPart32
+    2300056: path combined_MeshPart33
+    2300058: path combined_MeshPart34
+    2300060: path combined_MeshPart35
+    2300062: path combined_MeshPart36
+    2300064: path combined_MeshPart37
+    2300066: path combined_MeshPart38
+    2300068: path combined_MeshPart39
+    2300070: path combined_MeshPart4
+    2300072: path combined_MeshPart40
+    2300074: path combined_MeshPart41
+    2300076: path combined_MeshPart42
+    2300078: path combined_MeshPart43
+    2300080: path combined_MeshPart44
+    2300082: path combined_MeshPart45
+    2300084: path combined_MeshPart46
+    2300086: path combined_MeshPart5
+    2300088: path combined_MeshPart6
+    2300090: path combined_MeshPart7
+    2300092: path combined_MeshPart8
+    2300094: path combined_MeshPart9
+    2300096: path indooor_MeshPart0
+    2300098: path indooor_MeshPart1
+    2300100: path indooor_MeshPart2
+    2300102: path indooor_MeshPart3
+    2300104: path indooor_MeshPart4
+    2300106: path outdooor_MeshPart0
+    2300108: path outdooor_MeshPart1
+    2300110: path outdooor_MeshPart10
+    2300112: path outdooor_MeshPart11
+    2300114: path outdooor_MeshPart2
+    2300116: path outdooor_MeshPart3
+    2300118: path outdooor_MeshPart4
+    2300120: path outdooor_MeshPart5
+    2300122: path outdooor_MeshPart6
+    2300124: path outdooor_MeshPart7
+    2300126: path outdooor_MeshPart8
+    2300128: path outdooor_MeshPart9
+    2300130: path2_MeshPart0
+    2300132: path2_MeshPart1
+    2300134: path2_MeshPart10
+    2300136: path2_MeshPart11
+    2300138: path2_MeshPart12
+    2300140: path2_MeshPart13
+    2300142: path2_MeshPart14
+    2300144: path2_MeshPart15
+    2300146: path2_MeshPart16
+    2300148: path2_MeshPart2
+    2300150: path2_MeshPart3
+    2300152: path2_MeshPart4
+    2300154: path2_MeshPart5
+    2300156: path2_MeshPart6
+    2300158: path2_MeshPart7
+    2300160: path2_MeshPart8
+    2300162: path2_MeshPart9
+    2300164: path3_MeshPart0
+    2300166: path3_MeshPart1
+    2300168: path3_MeshPart2
+    2300170: path3_MeshPart3
+    2300172: path3_MeshPart4
+    2300174: path3_MeshPart5
+    2300176: path3_MeshPart6
+    2300178: path3_MeshPart7
+    3300000: Grid
+    3300002: path combined_MeshPart0
+    3300004: path combined_MeshPart1
+    3300006: path combined_MeshPart10
+    3300008: path combined_MeshPart11
+    3300010: path combined_MeshPart12
+    3300012: path combined_MeshPart13
+    3300014: path combined_MeshPart14
+    3300016: path combined_MeshPart15
+    3300018: path combined_MeshPart16
+    3300020: path combined_MeshPart17
+    3300022: path combined_MeshPart18
+    3300024: path combined_MeshPart19
+    3300026: path combined_MeshPart2
+    3300028: path combined_MeshPart20
+    3300030: path combined_MeshPart21
+    3300032: path combined_MeshPart22
+    3300034: path combined_MeshPart23
+    3300036: path combined_MeshPart24
+    3300038: path combined_MeshPart25
+    3300040: path combined_MeshPart26
+    3300042: path combined_MeshPart27
+    3300044: path combined_MeshPart28
+    3300046: path combined_MeshPart29
+    3300048: path combined_MeshPart3
+    3300050: path combined_MeshPart30
+    3300052: path combined_MeshPart31
+    3300054: path combined_MeshPart32
+    3300056: path combined_MeshPart33
+    3300058: path combined_MeshPart34
+    3300060: path combined_MeshPart35
+    3300062: path combined_MeshPart36
+    3300064: path combined_MeshPart37
+    3300066: path combined_MeshPart38
+    3300068: path combined_MeshPart39
+    3300070: path combined_MeshPart4
+    3300072: path combined_MeshPart40
+    3300074: path combined_MeshPart41
+    3300076: path combined_MeshPart42
+    3300078: path combined_MeshPart43
+    3300080: path combined_MeshPart44
+    3300082: path combined_MeshPart45
+    3300084: path combined_MeshPart46
+    3300086: path combined_MeshPart5
+    3300088: path combined_MeshPart6
+    3300090: path combined_MeshPart7
+    3300092: path combined_MeshPart8
+    3300094: path combined_MeshPart9
+    3300096: path indooor_MeshPart0
+    3300098: path indooor_MeshPart1
+    3300100: path indooor_MeshPart2
+    3300102: path indooor_MeshPart3
+    3300104: path indooor_MeshPart4
+    3300106: path outdooor_MeshPart0
+    3300108: path outdooor_MeshPart1
+    3300110: path outdooor_MeshPart10
+    3300112: path outdooor_MeshPart11
+    3300114: path outdooor_MeshPart2
+    3300116: path outdooor_MeshPart3
+    3300118: path outdooor_MeshPart4
+    3300120: path outdooor_MeshPart5
+    3300122: path outdooor_MeshPart6
+    3300124: path outdooor_MeshPart7
+    3300126: path outdooor_MeshPart8
+    3300128: path outdooor_MeshPart9
+    3300130: path2_MeshPart0
+    3300132: path2_MeshPart1
+    3300134: path2_MeshPart10
+    3300136: path2_MeshPart11
+    3300138: path2_MeshPart12
+    3300140: path2_MeshPart13
+    3300142: path2_MeshPart14
+    3300144: path2_MeshPart15
+    3300146: path2_MeshPart16
+    3300148: path2_MeshPart2
+    3300150: path2_MeshPart3
+    3300152: path2_MeshPart4
+    3300154: path2_MeshPart5
+    3300156: path2_MeshPart6
+    3300158: path2_MeshPart7
+    3300160: path2_MeshPart8
+    3300162: path2_MeshPart9
+    3300164: path3_MeshPart0
+    3300166: path3_MeshPart1
+    3300168: path3_MeshPart2
+    3300170: path3_MeshPart3
+    3300172: path3_MeshPart4
+    3300174: path3_MeshPart5
+    3300176: path3_MeshPart6
+    3300178: path3_MeshPart7
+    4300000: path2_MeshPart0
+    4300002: path2_MeshPart1
+    4300004: path2_MeshPart2
+    4300006: path2_MeshPart3
+    4300008: path2_MeshPart4
+    4300010: path2_MeshPart5
+    4300012: path2_MeshPart6
+    4300014: path2_MeshPart7
+    4300016: path2_MeshPart8
+    4300018: path2_MeshPart9
+    4300020: path2_MeshPart10
+    4300022: path2_MeshPart11
+    4300024: path2_MeshPart12
+    4300026: path2_MeshPart13
+    4300028: path2_MeshPart14
+    4300030: path2_MeshPart15
+    4300032: path2_MeshPart16
+    4300034: path3_MeshPart0
+    4300036: path3_MeshPart1
+    4300038: path3_MeshPart2
+    4300040: path3_MeshPart3
+    4300042: path3_MeshPart4
+    4300044: path3_MeshPart5
+    4300046: path3_MeshPart6
+    4300048: path3_MeshPart7
+    4300050: path combined_MeshPart0
+    4300052: path combined_MeshPart1
+    4300054: path combined_MeshPart2
+    4300056: path combined_MeshPart3
+    4300058: path combined_MeshPart4
+    4300060: path combined_MeshPart5
+    4300062: path combined_MeshPart6
+    4300064: path combined_MeshPart7
+    4300066: path combined_MeshPart8
+    4300068: path combined_MeshPart9
+    4300070: path combined_MeshPart10
+    4300072: path combined_MeshPart11
+    4300074: path combined_MeshPart12
+    4300076: path combined_MeshPart13
+    4300078: path combined_MeshPart14
+    4300080: path combined_MeshPart15
+    4300082: path combined_MeshPart16
+    4300084: path combined_MeshPart17
+    4300086: path combined_MeshPart18
+    4300088: path combined_MeshPart19
+    4300090: path combined_MeshPart20
+    4300092: path combined_MeshPart21
+    4300094: path combined_MeshPart22
+    4300096: path combined_MeshPart23
+    4300098: path combined_MeshPart24
+    4300100: path combined_MeshPart25
+    4300102: path combined_MeshPart26
+    4300104: path combined_MeshPart27
+    4300106: path combined_MeshPart28
+    4300108: path combined_MeshPart29
+    4300110: path combined_MeshPart30
+    4300112: path combined_MeshPart31
+    4300114: path combined_MeshPart32
+    4300116: path combined_MeshPart33
+    4300118: path combined_MeshPart34
+    4300120: path combined_MeshPart35
+    4300122: path combined_MeshPart36
+    4300124: path combined_MeshPart37
+    4300126: path combined_MeshPart38
+    4300128: path combined_MeshPart39
+    4300130: path combined_MeshPart40
+    4300132: path combined_MeshPart41
+    4300134: path combined_MeshPart42
+    4300136: path combined_MeshPart43
+    4300138: path combined_MeshPart44
+    4300140: path combined_MeshPart45
+    4300142: path combined_MeshPart46
+    4300144: path indooor_MeshPart0
+    4300146: path indooor_MeshPart1
+    4300148: path indooor_MeshPart2
+    4300150: path indooor_MeshPart3
+    4300152: path indooor_MeshPart4
+    4300154: Grid
+    4300156: path outdooor_MeshPart0
+    4300158: path outdooor_MeshPart1
+    4300160: path outdooor_MeshPart2
+    4300162: path outdooor_MeshPart3
+    4300164: path outdooor_MeshPart4
+    4300166: path outdooor_MeshPart5
+    4300168: path outdooor_MeshPart6
+    4300170: path outdooor_MeshPart7
+    4300172: path outdooor_MeshPart8
+    4300174: path outdooor_MeshPart9
+    4300176: path outdooor_MeshPart10
+    4300178: path outdooor_MeshPart11
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

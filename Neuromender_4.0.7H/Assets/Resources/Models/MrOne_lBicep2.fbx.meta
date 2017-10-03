@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: c1199ffbf10a2e64ab0d520178fbc077
+timeCreated: 1484806865
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body
+    100002: Body.005
+    100004: Helmet.001
+    100006: Helmet.002
+    100008: Lamp
+    100010: Lamp.001
+    100012: Lamp.002
+    100014: Lamp.003
+    100016: LBicep
+    100018: LBicepParent
+    100020: LForearm
+    100022: LHand
+    100024: MrOne
+    100026: //RootNode
+    100028: RBicep
+    100030: RBicepParent
+    100032: ref1
+    100034: ref2
+    100036: RForearm
+    100038: RHand
+    100040: SpaghettiCamera
+    100042: Torso
+    100044: Visor.001
+    100046: Visor.002
+    100048: WingArms
+    100050: WingArms.001
+    100052: WingArms.002
+    100054: WingLegs
+    100056: WingLegs.002
+    400000: Body
+    400002: Body.005
+    400004: Helmet.001
+    400006: Helmet.002
+    400008: Lamp
+    400010: Lamp.001
+    400012: Lamp.002
+    400014: Lamp.003
+    400016: LBicep
+    400018: LBicepParent
+    400020: LForearm
+    400022: LHand
+    400024: MrOne
+    400026: //RootNode
+    400028: RBicep
+    400030: RBicepParent
+    400032: ref1
+    400034: ref2
+    400036: RForearm
+    400038: RHand
+    400040: SpaghettiCamera
+    400042: Torso
+    400044: Visor.001
+    400046: Visor.002
+    400048: WingArms
+    400050: WingArms.001
+    400052: WingArms.002
+    400054: WingLegs
+    400056: WingLegs.002
+    2300000: Body
+    2300002: Body.005
+    2300004: Helmet.001
+    2300006: Helmet.002
+    2300008: LBicep
+    2300010: LForearm
+    2300012: LHand
+    2300014: RBicep
+    2300016: ref1
+    2300018: ref2
+    2300020: RForearm
+    2300022: RHand
+    2300024: Torso
+    2300026: Visor.001
+    2300028: Visor.002
+    2300030: WingArms
+    2300032: WingArms.001
+    2300034: WingArms.002
+    2300036: WingLegs
+    2300038: WingLegs.002
+    3300000: Body
+    3300002: Body.005
+    3300004: Helmet.001
+    3300006: Helmet.002
+    3300008: LBicep
+    3300010: LForearm
+    3300012: LHand
+    3300014: RBicep
+    3300016: ref1
+    3300018: ref2
+    3300020: RForearm
+    3300022: RHand
+    3300024: Torso
+    3300026: Visor.001
+    3300028: Visor.002
+    3300030: WingArms
+    3300032: WingArms.001
+    3300034: WingArms.002
+    3300036: WingLegs
+    3300038: WingLegs.002
+    4300000: LBicep
+    4300002: Torso
+    4300004: LHand
+    4300006: LForearm
+    4300008: RBicep
+    4300010: RForearm
+    4300012: RHand
+    4300014: WingArms.001
+    4300016: Body.005
+    4300018: WingArms.002
+    4300020: WingLegs.002
+    4300022: Helmet.001
+    4300024: Visor.001
+    4300026: WingLegs
+    4300028: WingArms
+    4300030: Visor.002
+    4300032: Helmet.002
+    4300034: Body
+    4300036: ref2
+    4300038: ref1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

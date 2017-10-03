@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{DAE67E3A-8ADD-38A9-8528-C247B1A308AA}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Basic_mapping.cs" />
+     <Compile Include="Assets\DisplayScore.cs" />
+     <Compile Include="Assets\DistanceController.cs" />
+     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
+     <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
+     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
+     <Compile Include="Assets\KinectScripts\FacetrackingManager.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+     <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\DepthSensorInterface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\Kinect1Interface.cs" />
+     <Compile Include="Assets\KinectScripts\Interfaces\Kinect2Interface.cs" />
+     <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
+     <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
+     <Compile Include="Assets\KinectScripts\KinectManager.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\FollowUserRotation.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\GetFacePointsDemo.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\GetJointPositionDemo.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\JointOrientationView.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\LoadMainLevel.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\MouseControl.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\PointCloudView.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SetSceneAvatars.cs" />
+     <Compile Include="Assets\KinectScripts\Samples\SimpleGestureListener.cs" />
+     <Compile Include="Assets\KinectScripts\SpeechErrorHandler.cs" />
+     <Compile Include="Assets\KinectScripts\SpeechManager.cs" />
+     <Compile Include="Assets\LoginControl.cs" />
+     <Compile Include="Assets\PlayVideo.cs" />
+     <Compile Include="Assets\Resources\Scripts\GameStates\FinishLevel.cs" />
+     <Compile Include="Assets\Resources\Scripts\GameStates\GameState.cs" />
+     <Compile Include="Assets\Resources\Scripts\GetData.cs" />
+     <Compile Include="Assets\Resources\Scripts\HeadsUpDisplay.cs" />
+     <Compile Include="Assets\Resources\Scripts\Levels\GlideLevel.cs" />
+     <Compile Include="Assets\Resources\Scripts\Levels\PositionCrosshairs.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\LevelSelectGUI.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\MainMenuGUI.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\MenuRingSpinner.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\OptionsBtnManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\OptionsGUI.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\Splash.cs" />
+     <Compile Include="Assets\Resources\Scripts\Menus\TaskSelectBtnManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\NeuromendKinectController.cs" />
+     <Compile Include="Assets\Resources\Scripts\RingCollider.cs" />
+     <Compile Include="Assets\Resources\Scripts\ScoreData.cs" />
+     <Compile Include="Assets\Resources\Scripts\SplashScreen.cs" />
+     <Compile Include="Assets\Resources\Scripts\StrokeRehabCalibration.cs" />
+     <Compile Include="Assets\Resources\Scripts\StrokeRehabControls.cs" />
+     <Compile Include="Assets\Resources\Scripts\StrokeRehabLevelController.cs" />
+     <Compile Include="Assets\Resources\Scripts\database.cs" />
+     <Compile Include="Assets\Resources\Scripts\ringController.cs" />
+     <Compile Include="Assets\Scenes\Menus\ExtLvlReplaceWithButton.cs" />
+     <Compile Include="Assets\Scenes\Testing\AimAssist.cs" />
+     <Compile Include="Assets\Scenes\Testing\BoatControl.cs" />
+     <Compile Include="Assets\Scenes\Testing\BrokenTarget.cs" />
+     <Compile Include="Assets\Scenes\Testing\Buoy.cs" />
+     <Compile Include="Assets\Scenes\Testing\Calibrator.cs" />
+     <Compile Include="Assets\Scenes\Testing\DestroySystem.cs" />
+     <Compile Include="Assets\Scenes\Testing\Glove.cs" />
+     <Compile Include="Assets\Scenes\Testing\GloveGood.cs" />
+     <Compile Include="Assets\Scenes\Testing\GloveRelative.cs" />
+     <Compile Include="Assets\Scenes\Testing\Grid.cs" />
+     <Compile Include="Assets\Scenes\Testing\LaneMarkerLine.cs" />
+     <Compile Include="Assets\Scenes\Testing\MapJoint.cs" />
+     <Compile Include="Assets\Scenes\Testing\MissBoard.cs" />
+     <Compile Include="Assets\Scenes\Testing\Node.cs" />
+     <Compile Include="Assets\Scenes\Testing\NodeTarget.cs" />
+     <Compile Include="Assets\Scenes\Testing\ProximityMarker.cs" />
+     <Compile Include="Assets\Scenes\Testing\ProximityRing.cs" />
+     <Compile Include="Assets\Scenes\Testing\Q4Quit.cs" />
+     <Compile Include="Assets\Scenes\Testing\RKBone.cs" />
+     <Compile Include="Assets\Scenes\Testing\ResetTimeScale.cs" />
+     <Compile Include="Assets\Scenes\Testing\ScoreCarnival.cs" />
+     <Compile Include="Assets\Scenes\Testing\ScoreDrills.cs" />
+     <Compile Include="Assets\Scenes\Testing\ScoreRowing.cs" />
+     <Compile Include="Assets\Scenes\Testing\SpheroSpawn.cs" />
+     <Compile Include="Assets\Scenes\Testing\Stars.cs" />
+     <Compile Include="Assets\Scenes\Testing\TargetCube.cs" />
+     <Compile Include="Assets\Scenes\Testing\TargetPiece.cs" />
+     <Compile Include="Assets\SoundEffects.cs" />
+     <Compile Include="Assets\SplineScripts\MathUtils.cs" />
+     <Compile Include="Assets\SplineScripts\SplineController.cs" />
+     <Compile Include="Assets\SplineScripts\SplineInterpolator.cs" />
+     <Compile Include="Assets\Test UI components\Test UI Scripts\Main Menu\ButtonManager.cs" />
+     <Compile Include="Assets\TestScript.cs" />
+     <Compile Include="Assets\_Test\Level1MenuGUI.cs" />
+     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
+     <None Include="Assets\Documents\New Text Document.txt" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Resources\Scripts\DatabaseConfig.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Michael/Desktop/Submissions/Neuromend Installer/Working folder/Tortoise folder/Neuromend_2.5/Assets/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>C:/Users/Michael/Desktop/Submissions/Neuromend Installer/Working folder/Tortoise folder/Neuromend_2.5/Assets/System.Drawing.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>C:/Users/Michael/Desktop/Submissions/Neuromend Installer/Working folder/Tortoise folder/Neuromend_2.5/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="MySql.Data">
+ <HintPath>C:/Users/Michael/Desktop/Submissions/Neuromend Installer/Working folder/Tortoise folder/Neuromend_2.5/Assets/Resources/Scripts/MySql.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity5/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{72E3DE38-5E4C-9BAC-80BD-1F28A54BF47A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{755804C8-8313-C603-F91C-C752BFD18008}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
