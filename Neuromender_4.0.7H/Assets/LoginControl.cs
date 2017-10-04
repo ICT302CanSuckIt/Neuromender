@@ -218,7 +218,7 @@ public class LoginControl : MonoBehaviour
                                 dbPass = User.GetString(i);
                             }
                         }
-
+						// Hashes passwords with SHA1. This is insecure and needs to be replaced with atleast SHA512 but preferably AES256.
                         string sha1Str = HashCode(Password);
                         if (dbPass == sha1Str.ToLower())
                         {
@@ -1079,6 +1079,8 @@ public class LoginControl : MonoBehaviour
     /// </summary>
     /// <param name="str"></param>
     /// <returns></returns>
+	
+	// Hashes passwords with SHA1. This is insecure and needs to be replaced with atleast SHA512 but preferably AES256.
     private string HashCode(string str)
     {
         System.Text.ASCIIEncoding encoder = new System.Text.ASCIIEncoding();
