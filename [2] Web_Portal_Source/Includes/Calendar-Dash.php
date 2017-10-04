@@ -84,23 +84,23 @@ function draw_calendar($month,$year, $userID, $type, $dbhandle){
 						}
 						if ($row['WingmanPlayed'] > 0 && $row['TargetsPlayed'] > 0 )
             {
-							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:red' href='Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Wingman (Elbow Raise) & Targets (Arm Extension)'>$start-$end</a>";
+							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:red' href='./Main/Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Wingman (Elbow Raise) & Targets (Arm Extension)'>$start-$end</a>";
             } 
 						else if ($row['TargetsPlayed'] > 0)
             {
-							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:green' href='Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Targets (Arm Extension)'>$start-$end</a>";
+							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:green' href='./Main/Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Targets (Arm Extension)'>$start-$end</a>";
             }
             else if ($row['WingmanPlayed'] > 0)
             {
-              $dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:blue' href='Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Wingman (Elbow Raise)'>$start-$end</a>";
+              $dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:blue' href='./Main/Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Wingman (Elbow Raise)'>$start-$end</a>";
             }       
 						else if ($row['CyclingPlayed'] > 0)
             {
-							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:purple' href='Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Cycling (Elbow Raise)'>$start-$end</a>";
+							$dayStr .= "<a style='font-size:16px;padding-bottom:2px;color:purple' href='./Main/Session.php?SessionID=$sess' 'data-toggle='tooltip' title='S#$sess: Cycling (Elbow Raise)'>$start-$end</a>";
 						} 
 						else
 						{
-              //do nothing? was like this when I found it - BL                                      
+              //do nothing??? not sure why this is here - BL                                      
             }
 					}
 				}

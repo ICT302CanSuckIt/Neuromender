@@ -93,5 +93,22 @@
 			
 				</a>
            ");
+					 
+					 //DASHBOARD BUTTON FOR Notes
+            $userID = $_SESSION['UserID'];
+            $url = "Notes.php?user=$userID";
+            echo("<div class='sidebar-links' $hackedStyle>
+                <a href=\"$url\">
+				
+				
+				<i class='fa fa-edit fa-3x'></i>
+                    <div class='huge'>Notes</div>
+                    <a href=\"$url\">
+						<div class='clearfix'></div>
+                    </a>
+				
+				</a>
+				
+            </div>");
 			?>
 			

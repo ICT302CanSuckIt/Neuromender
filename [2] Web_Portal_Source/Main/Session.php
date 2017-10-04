@@ -62,68 +62,64 @@
                         </div>
                     </div>
                 </div>
-          
-<div class="bar"> </div>
 
 <div class="main-wrapper">
 	<div class="main-content">
-		
-			
-		
-            <!-- AREA FOR THE MAIN CONTENT -->
-               <div class="session-jumbotron">
-                <?php
-                
-                    if(isset($_GET['SessionID']))
-                    {
-                        $_SESSION['SessionID'] = $_GET['SessionID'];
-                        header('Location: Session.php');
-                        exit;
-                    }
-                    $SessionID = $_SESSION['SessionID'];
-                        
-                    $sql = "SELECT * FROM Session WHERE SessionID = $SessionID";
-                    $result = mysqli_query($dbhandle,$sql);
-                    $row = mysqli_fetch_assoc($result);
-                    $wingman = (int)$row['WingmanPlayed'];
-                    $targets = (int)$row['TargetsPlayed'];
-		    $cycle = (int)$row['CyclingPlayed'];
-                    
-                    if ($wingman >= 1)
-                    {
-                        include "../Includes/SessionData_amchart.php";
-                        if ($targets == 0)
-                        {
-                           // echo ""; // Quick fix. Done so that graphs both appear on jumbotron. Needs fixing.
-                        }
-                    }
-                    if ($targets >= 1)
-                    {
-                        include "../Includes/ReachSessionData.php";
-                    }
-					
-		    if ($cycle >= 1)
-                    {
-                        include "../Includes/SessionData_cycle.php";
-                    }
-			
-		
-		    
-                    if (($wingman == 0) && ($targets == 0) && ($cycle ==  0))
-                    {
-                        echo "<p1>There have been no games played.</p1><br>";
-                        $userID = $_SESSION['UserID'];
-                        echo "<a href='javascript:void(0)' onclick=$url>Return to your profile</a>";
-                    }
-                ?>
-            </div>
-			
-		<div class="session-sidebar">
+		<div class="main-sidebar">
 			
 			<?php	
 				include "../sidebar.php"
 			?>
 		</div>
+			
+		
+		<!-- AREA FOR THE MAIN CONTENT -->
+		<div class="jumbotron">
+			<?php
+				//loads sessionID into store, then retrieves into var from session store
+				if(isset($_GET['SessionID']))
+				{
+						$_SESSION['SessionID'] = $_GET['SessionID'];
+				}
+				$SessionID = $_SESSION['SessionID'];
+				
+				$sql = "SELECT * FROM Session WHERE SessionID = $SessionID";
+				$result = mysqli_query($dbhandle,$sql);
+				$row = mysqli_fetch_assoc($result);
+				$wingman = (int)$row['WingmanPlayed'];
+				$targets = (int)$row['TargetsPlayed'];
+				$cycle = (int)$row['CyclingPlayed'];
+				
+				if ($wingman >= 1)
+				{
+						include "../Includes/SessionData_amchart.php";
+						if ($targets == 0)
+						{
+							 // echo ""; // Quick fix. Done so that graphs both appear on jumbotron. Needs fixing.
+						}
+				}
+				if ($targets >= 1)
+				{
+						include "../Includes/ReachSessionData.php";
+				}
+
+				if ($cycle >= 1)
+				{
+						include "../Includes/SessionData_cycle.php";
+				}
+
+
+
+				if (($wingman == 0) && ($targets == 0) && ($cycle ==  0))
+				{
+						echo "<p1>There have been no games played.</p1><br>";
+						$userID = $_SESSION['UserID'];
+						echo "<a href='javascript:void(0)' onclick=$url>Return to your profile</a>";
+				}
+			?>
+		</div>
+
+		
 		
 	</div>
 </div>

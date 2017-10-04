@@ -94,79 +94,75 @@
         }
         else
         {
-            ?>
-            <script>
-                var chart;
-    
-                var chartData5 = <?php echo json_encode($amchartCycleTimeArray) ?>;
-    
-                AmCharts.ready(function () {
-                    // SERIAL CHART
-                    chart = new AmCharts.AmSerialChart();
-                    chart.dataProvider = chartData5;
-                    chart.categoryField = "Diamond";
-                    chart.startDuration = 1;
-    
-                    // AXES
-                    // category
-                    var categoryAxis = chart.categoryAxis;
-                    categoryAxis.gridPosition = "start";
-                    categoryAxis.title = "Diamond No (n)";
-                    categoryAxis.twoLineMode = true;
-    
-                    // value
-                    var valueAxis = new AmCharts.ValueAxis();
-                    valueAxis.axisColor = "#DADADA";
-                    valueAxis.title = "Speed M/S";
-                    chart.addValueAxis(valueAxis);
-                    //var valueAxis = chart.valueAxis;
-                    //valueAxis.title = "Angle Reached (deg)";
-                    
-            
-    
-   
-                    
-                    // GRAPH2
-                    var graph3 = new AmCharts.AmGraph();
-                    graph3.valueField = "TimecInterval";
-                    graph3.balloonText = "<b>[[value]]</b>";
-                    graph3.type = "line";
-                    graph3.bullet = "round";
-                    graph3.bulletColor = "#FFFFFF";
-                    graph3.useLineColorForBulletBorder = true;
-                    graph3.bulletBorderAlpha = 1;
-                    graph3.bulletBorderThickness = 2;
-                    graph3.bulletSize = 17;
-                    graph3.title = "Time Taken to reach Gem";
-                    chart.addGraph(graph3);
+					?>
+					<script>
+							var chart;
+	
+							var chartData5 = <?php echo json_encode($amchartCycleTimeArray) ?>;
+	
+							AmCharts.ready(function () {
+									// SERIAL CHART
+									chart = new AmCharts.AmSerialChart();
+									chart.dataProvider = chartData5;
+									chart.categoryField = "Diamond";
+									chart.startDuration = 1;
+	
+									// AXES
+									// category
+									var categoryAxis = chart.categoryAxis;
+									categoryAxis.gridPosition = "start";
+									categoryAxis.title = "Diamond No (n)";
+									categoryAxis.twoLineMode = true;
+	
+									// value
+									var valueAxis = new AmCharts.ValueAxis();
+									valueAxis.axisColor = "#DADADA";
+									valueAxis.title = "Speed M/S";
+									chart.addValueAxis(valueAxis);
+									//var valueAxis = chart.valueAxis;
+									//valueAxis.title = "Angle Reached (deg)";
+									
 					
-				
-
+	
+ 
+									
+									// GRAPH2
+									var graph3 = new AmCharts.AmGraph();
+									graph3.valueField = "TimecInterval";
+									graph3.balloonText = "<b>[[value]]</b>";
+									graph3.type = "line";
+									graph3.bullet = "round";
+									graph3.bulletColor = "#FFFFFF";
+									graph3.useLineColorForBulletBorder = true;
+									graph3.bulletBorderAlpha = 1;
+									graph3.bulletBorderThickness = 2;
+									graph3.bulletSize = 17;
+									graph3.title = "Time Taken to reach Gem";
+									chart.addGraph(graph3);
+			
+			
+									
+									// LEGEND
+									var legend = new AmCharts.AmLegend();
+									legend.useGraphSettings = true;
+									chart.addLegend(legend);
+	
+									// CURSOR
+									var chartCursor = new AmCharts.ChartCursor();
+									chartCursor.cursorAlpha = 0;
+									chartCursor.zoomable = false;
+									chartCursor.categoryBalloonEnabled = false;
+									chart.addChartCursor(chartCursor);
+	
+									chart.creditsPosition = "top-right";
+	
+									chart.write("cycleTimeGame");
+							});
+					</script>
             
-					
-				
-                    
-                    // LEGEND
-                    var legend = new AmCharts.AmLegend();
-                    legend.useGraphSettings = true;
-                    chart.addLegend(legend);
-    
-                    // CURSOR
-                    var chartCursor = new AmCharts.ChartCursor();
-                    chartCursor.cursorAlpha = 0;
-                    chartCursor.zoomable = false;
-                    chartCursor.categoryBalloonEnabled = false;
-                    chart.addChartCursor(chartCursor);
-    
-                    chart.creditsPosition = "top-right";
-    
-                    chart.write("cycleTimeGame");
-                });
-            </script>
-            
-            <div id="cycleTimeGame" style="width: 100%; height: 434px;"></div>
-		 <?php
-		  }
+				<div id="cycleTimeGame" style="width: 100%; height: 434px;"></div>
+				<?php
+				}
 		
 		
 		//Graph2
@@ -267,6 +263,7 @@
                     // LEGEND
                     var legend = new AmCharts.AmLegend();
                     legend.useGraphSettings = true;
+										legend.spacing = 10;
                     chart.addLegend(legend);
     
                     // CURSOR

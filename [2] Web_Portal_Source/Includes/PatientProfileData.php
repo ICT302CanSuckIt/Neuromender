@@ -105,6 +105,9 @@
 						$GraphicMedium 				= $_POST["GraphicMedium"];
 						$GraphicHigh				= $_POST["GraphicHigh"];
 						
+						//----Email Alert Details----//
+						$enabledEAlerts = 0;
+						
 						//Update User
 						if( isset( $_POST['EnabledWingman']) )
 						{
@@ -118,10 +121,14 @@
 						{
 							$enabledCycling = 1;
 						}
+						if( isset( $_POST['EnabledEAlerts']) )
+						{
+							$enabledEAlerts = 1;
+						}
 
 						
 						if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
-						if(empty($Notes)) $Notes = "";	//Deal with if the address was empty (as of writing, this is allowed)
+						if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
 						
 						$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
 						$roleResult = $dbhandle->query($roleSQL);
@@ -131,7 +138,7 @@
 					
 					
 						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$Dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling
+							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$Dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -202,13 +209,13 @@
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
 									$sql = "INSERT INTO CyclingRestrictions 
-												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, GraphicLow, GraphicMedium, GraphicHigh)
+												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort, DistanceMedium, DistanceLong)
 												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $GraphicLow, $GraphicMedium, $GraphicHigh)";
 								}
 								else //Update because value already exists
 								{
 									$sql = "UPDATE CyclingRestrictions
-										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, GraphicLow=$GraphicLow, GraphicMedium=$GraphicMedium, GraphicHigh=$GraphicHigh 
+										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$GraphicLow, DistanceMedium=$GraphicMedium, DistanceLong=$GraphicHigh 
 										WHERE UserID=$User";
 								}
 								$result = $dbhandle->query($sql);
@@ -221,7 +228,7 @@
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling,
+							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling, Users.EnabledEAlerts,
 							Affliction.*,
 							WingmanRestrictions.AngleThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
 							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
@@ -509,10 +516,12 @@
 					$CGamesPerSession 			= $user["CGamesPerSession"];
 					$CIntervalBetweenSession 	= $user["CIntervalBetweenSession"];
 					$ArmMaxExtension			= $user["CountdownDistance"];
-					$GraphicLow					= $user["GraphicLow"];
-					$GraphicMedium 				= $user["GraphicMedium"];
-					$GraphicHigh				= $user["GraphicHigh"];
-						
+					$GraphicLow					= $user["DistanceShort"];
+					$GraphicMedium 				= $user["DistanceMedium"];
+					$GraphicHigh				= $user["DistanceLong"];
+					
+					//----Alert Emailing Details----//
+					$enabledEAlerts = $user['EnabledEAlerts'];
 					
                     
 					if( $DateOfAffliction != NULL )
@@ -660,7 +669,7 @@
 									</td>
 									<td class='editable' style='display:none;'>
 										<div class='tooltips'>
-											<textarea id='Notes' rows='5' cols='70' name='Notes' onkeyup='CheckText(\"Notes\")'>$Notes</textarea>
+											<textarea id='Notes' rows='5' cols='45' name='Notes' >$Notes</textarea>
 											<span class='tooltiptext'>Additional notes on the survivor</span>
 										</div>
 									</td>
@@ -1170,8 +1179,23 @@
 								</td>
 							</tr>
 							
-							
-							
+							<!-- new checkbox for emailing of alerts-->
+							<tr>
+								<td><br><h1 class='page-title'>Alert Emailing</h1></td>
+							</tr>
+							<tr>
+								<td class='page-details'>Enable Email Alerts</td>
+								<td class='editable' style='display:none;'>
+									<div class='tooltips'>
+										<input type='checkbox' ";
+										if($enabledEAlerts){
+											$outputString .= "checked";
+										}
+										$outputString .= "	name='EnabledEAlerts' value='EAlerts'/>&nbsp; &nbsp;
+										<span class='tooltiptext'>Check to enable Email Alerts</span>
+									</div>
+								</td>
+							</tr>
 							
 							<!--commit changes button-->
 							<tr class='AfflictionData'>
@@ -1260,7 +1284,8 @@
                                                 echo $outputString;
                                                 $outputString = "";
                                                 
-						echo "<div id='SessionContent'>";
+						//don't think this is ever used?
+						/*echo "<div id='SessionContent'>";
 						$sql = " SELECT AVG(ThresholdPassed) as ThresholdPassed, Achievement.SessionID, Session.StartTime, Session.UserID 
 												FROM Achievement 
 												LEFT JOIN Session on Session.SessionID = Achievement.SessionID
@@ -1275,8 +1300,14 @@
 						$SessionDate = array();
                                                 $userID = $_SESSION['UserID'];
                                                 //$outputString = $outputString . "<a href='SessionGraphAverages.php?user=$userID'>Click here to view overall averages</a>";
-                                                $outputString = $outputString . "</div></div>";
+                                                $outputString = $outputString . "</div></div>";*/
 						
+						//IF statement to check if any data exists.
+						//Otherwise, will crash the webpage and stop it here.
+						$temp = $_GET['user'];
+						$query1 = "SELECT SessionID FROM Session WHERE UserID = $temp";
+						$res = mysqli_query($dbhandle, $query1);
+						if($res->num_rows != 0){
 						//
 						// ANGLE FOR GAMES OVER MULTIPLE SESSIONS
 						//
@@ -1292,7 +1323,7 @@
 						if(empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate']))
 						{
 							//get the first available session's date
-							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
+							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Achievement.SessionID = Session.SessionID 
 									WHERE UserID = " . $User . " AND Achievement.Completed = 1
 									ORDER BY TimeAchieved ASC
 									LIMIT 1";
@@ -1312,8 +1343,8 @@
 						//echo "Between " . $beginAngDate . " and " .$endAngDate;
 						
 						$output = "<form method='post'>";
-						$output = $output . "<div class='page-details'>Begin Date: <input type='date' name='beginAngDate' value='$beginAngDate'>	";
-						$output = $output . "End Date: <input type='date' name='endAngDate' value='$endAngDate'></div>";
+						$output = $output . "<div class='page-details'>Begin Date: <input type='date' name='beginAngDate' value='".date('d-m-Y', strtotime($beginAngDate))."'>	";
+						$output = $output . "End Date: <input type='date' name='endAngDate' value='".date('d-m-Y', strtotime($endAngDate))."'></div>";
 						$output = $output . "<div class='page-details'><input type='submit' class='btn btn-primary btn-sm' id='btnAvgAng' name='btnAvgAng'/></div></form>";
 						echo $output;
 						
@@ -1476,7 +1507,7 @@
 						echo "<div class='page-details-graph'>Each value on the X-Axis reflects upon a session that the user played the wingman game in.<br>";
 						echo "The value of the Y-Axis number is calculated by the sum of the games played during that session, which is the sum of the angles at the entry of each ring divided by the number of rings in that game.<br>";
 						echo "Each Y-Axis value is essentially an average of that player's angle threshold for that session, amongst all the games they played during that session.</div><br>";
-						
+						}
 						echo "<h1 class='page-title'>Overall angle reached recorded</h1><br>";
 						
 						$allAngleData = array();

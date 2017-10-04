@@ -122,7 +122,7 @@
 
 						
 						if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
-						if(empty($Notes)) $Notes = "";	//Deal with if the address was empty (as of writing, this is allowed)
+						if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
 						
 						$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
 						$roleResult = $dbhandle->query($roleSQL);
@@ -661,7 +661,7 @@
 									</td>
 									<td class='editable' style='display:none;'>
 										<div class='tooltips'>
-											<textarea id='Notes' rows='5' cols='70' name='Notes' onkeyup='CheckText(\"Notes\")'>$Notes</textarea>
+											<textarea id='Notes' rows='5' cols='45' name='Notes'>$Notes</textarea>
 											<span class='tooltiptext'>Additional notes on the survivor</span>
 										</div>
 									</td>
@@ -1355,10 +1355,15 @@
                                                 //$outputString = $outputString . "<a href='SessionGraphAverages.php?user=$userID'>Click here to view overall averages</a>";
                                                 $outputString = $outputString . "</div></div>";
 						
+						//IF statement to check if any data exists.
+						//Otherwise, will crash the webpage and stop it here.
+						$temp = $_GET['user'];
+						$query1 = "SELECT SessionID FROM Session WHERE UserID = $temp";
+						$res = mysqli_query($dbhandle, $query1);
+						if($res->num_rows != 0){
 						//
 						// ANGLE FOR GAMES OVER MULTIPLE SESSIONS
 						//
-						//(note: crashes if no game data stored. attempting to fix now - BL)
 						$output = "";
 						$totalWMSessions = 0;
 						
@@ -1371,7 +1376,7 @@
 						if(empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate']))
 						{
 							//get the first available session's date
-							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
+							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Achievement.SessionID = Session.SessionID 
 									WHERE UserID = " . $User . " AND Achievement.Completed = 1
 									ORDER BY TimeAchieved ASC
 									LIMIT 1";
@@ -1391,8 +1396,8 @@
 						//echo "Between " . $beginAngDate . " and " .$endAngDate;
 						
 						$output = "<form method='post'>";
-						$output = $output . "<div class='page-details'>Begin Date: <input type='date' name='beginAngDate' value='$beginAngDate'>	";
-						$output = $output . "End Date: <input type='date' name='endAngDate' value='$endAngDate'></div>";
+						$output = $output . "<div class='page-details'>Begin Date: <input type='date' name='beginAngDate' value='".date('d-m-Y', strtotime($beginAngDate))."'>	";
+						$output = $output . "End Date: <input type='date' name='endAngDate' value='".date('d-m-Y', strtotime($endAngDate))."'></div>";
 						$output = $output . "<div class='page-details'><input type='submit' class='btn btn-primary btn-sm' id='btnAvgAng' name='btnAvgAng'/></div></form>";
 						echo $output;
 						
@@ -1471,12 +1476,13 @@
 									valueAxis.dashLength = 1;
 									valueAxis.logarithmic = false; // this line makes axis logarithmic
 									valueAxis.title = "Angle Reached (Deg)";
+									valueAxis.axisColor = "#0175CB";
 									chart.addValueAxis(valueAxis);
 									
 									// second value axis (on the right)
 									var valueAxis2 = new AmCharts.ValueAxis();
 									valueAxis2.position = "right"; // this line makes the axis to appear on the right
-									valueAxis2.axisColor = "#B0DE09";
+									valueAxis2.axisColor = "#55BE07";
 									valueAxis2.gridAlpha = 0;
 									valueAxis2.axisThickness = 2;
 									valueAxis2.title = "Score";
@@ -1554,7 +1560,7 @@
 						echo "<div class='page-details-graph'>Each value on the X-Axis reflects upon a session that the user played the wingman game in.<br>";
 						echo "The value of the Y-Axis number is calculated by the sum of the games played during that session, which is the sum of the angles at the entry of each ring divided by the number of rings in that game.<br>";
 						echo "Each Y-Axis value is essentially an average of that player's angle threshold for that session, amongst all the games they played during that session.</div><br>";
-						
+						}
 						echo "<h1 class='page-title'>Overall angle reached recorded</h1><br>";
 						
 						$allAngleData = array();
