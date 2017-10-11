@@ -13,12 +13,20 @@
 	
 	if(isset($_POST["btnClear"]))
 	{
-		$AlertClearSQL = "update Alerts set Seen=1 where ParentID=" . $_SESSION['UserID'] . ";";
+		if($_SESSION['UserID'] != $_GET['user']){
+			$AlertClearSQL = "update Alerts set Seen=1 where ParentID=" . $_SESSION['UserID'] . ";";
+		} else {
+			$AlertClearSQL = "UPDATE alerts SET Seen=1 WHERE SubjectID=". $_SESSION['UserID'] . ";";
+		}
 		$AlertClearResult = mysqli_query($dbhandle,$AlertClearSQL);
 	}
 	else if(isset($_POST["btnRecover"]))
 	{
-		$AlertClearSQL = "update Alerts set Seen=0 where ParentID=" . $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
+		if($_SESSION['UserID'] != $_GET['user']){
+			$AlertClearSQL = "update Alerts set Seen=0 where ParentID=" . $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
+		} else {
+			$AlertClearSQL = "UPDATE alerts SET Seen=0 WHERE SubjectID=". $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
+		}
 		$AlertClearResult = mysqli_query($dbhandle,$AlertClearSQL);
 	}
 	

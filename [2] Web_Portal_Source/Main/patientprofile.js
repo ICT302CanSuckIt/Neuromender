@@ -6,6 +6,7 @@ function SetEdit()
 	var form = document.getElementById("detailForm");
 	ShowWingman( form );
 	ShowTargets( form );
+	ShowCycling( form );
 	//if( form.EnabledWingman.checked == true )
 	//{
 		//$(".WingmanEdit").toggle();

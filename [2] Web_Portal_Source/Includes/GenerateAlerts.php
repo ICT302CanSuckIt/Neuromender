@@ -2,7 +2,7 @@
 	$PatientSql = "	select *
 					from Users
 					left join AssignedRoles on AssignedRoles.UserID=Users.UserID
-					where ParentID=" . $_SESSION['UserID'] . " and AssignedRoles.RoleID=5;";
+					where AssignedRoles.RoleID=5;";
 	
 	$PatientResult = $dbhandle->query($PatientSql);
 
@@ -15,7 +15,7 @@
 	while($patient = $PatientResult->fetch_assoc())
 	{
 		$PatientID = $patient['UserID'];
-		if( $patient['EnabledWingman'] || $patient['EnabledTargets'] )
+		if( $patient['EnabledWingman'] || $patient['EnabledTargets'] || $patient['EnabledCycling'])
 		{
 			
 			//Get the last alert for this patient
@@ -39,11 +39,12 @@
 			
 			while (strtotime($startDate) <= strtotime($endDate)) //For each day between initial startDate and now
 			{
-					$SessionSQL = "select StartTime, WingmanPlayed, TargetsPlayed from Session where UserID=" . $PatientID . " and CAST(`StartTime` AS DATE)='" . $startDate . "';"; // Select all sessions on $startDate
+					$SessionSQL = "select StartTime, WingmanPlayed, TargetsPlayed, CyclingPlayed from Session where UserID=" . $PatientID . " and CAST(`StartTime` AS DATE)='" . $startDate . "';"; // Select all sessions on $startDate
 					$SessionResult = mysqli_query($dbhandle,$SessionSQL);
 					
 					$wingmanPlayed = 0;
 					$targetsPlayed = 0;
+					$cyclingPlayed = 0;
 					
 					if( $SessionResult->num_rows > 0 )
 					{
@@ -51,6 +52,7 @@
 						{
 							$wingmanPlayed += $session["WingmanPlayed"]; 
 							$targetsPlayed += $session["TargetsPlayed"];
+							$cyclingPlayed += $session["CyclingPlayed"];
 						}
 					}
 					
@@ -59,18 +61,46 @@
 					{
 						//echo "No Wingman Played today! " . $startDate . "<br/>";
 						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
-									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
+									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					if( $patient['EnabledTargets'] == 1 && $targetsPlayed == 0 )
 					{
 						//echo "No Targets Played today! " . $startDate . "<br/>";
 						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
-									values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $startDate . "', 0, 'Targets was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
+									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Targets was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
+						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
+					}
+					if( $patient['EnabledCycling'] == 1 && $cyclingPlayed == 0 )
+					{
+						//echo "No Targets Played today! " . $startDate . "<br/>";
+						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Cycling/Rowing was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					
+					if($patient['EnabledEAlerts'] == 1){//email alerts to user
+					//Mail needs to be configured. See https://www.w3schools.com/php/php_ref_mail.asp
+						$sql = "SELECT Description, AlertID FROM alerts WHERE Seen=0 and Description<>'Hidden - Alerts accessed' AND CAST(`StartTime` AS DATE)='" . $startDate . " AND SubjectID=". $PatientID .";";
+						if(($result = $dbhandle->query($sql))){//check if successful
+							//compile mail data
+							$target = strval($patient['Email']);
+							$subject = "Haven't played game(s): " . date('d-m-Y', strtotime($startDate));
+							$headers = "From: noreply@neuromenderportal.com";
+							$message = "";
+							while($alertRes = $result->fetch_assoc()){//loop for each 
+								$message .= $alertRes['Description'];
+								
+								//set Alert seen
+								$alertClear = "UPDATE alerts SET Seen = 1 WHERE AlertID=" . $alertRes['AlertID'];
+							}
+							
+							//send mail
+							mail($target, $subject, $message, $headers);
+						}
 						
+					}
+					
 					$startDate = date ("Y-m-d", strtotime("+1 day", strtotime($startDate)));
 			}
 		}

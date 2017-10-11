@@ -20,6 +20,7 @@
 				$sql = "DELETE FROM sessionnotes WHERE NoteID = ". $deletedNote;
 				if (mysqli_query($dbhandle, $sql)) {
 					//deleted successfully
+					unset($_SESSION['noteNum']);
 				} else {
 					//delete failed. print error message.	
 					echo "Error deleting record: " . mysqli_error($conn);
@@ -62,6 +63,7 @@
 			//[New] button has been pressed
 			if(isset($_POST['new'])){
 				$_SESSION['noteNum'] = ""; //yes this is redundant, but safety first - BL
+				unset($_SESSION['noteNum']);
 			} else {
 				if(isset($_POST['memoFile'])){
 					$_SESSION['noteNum'] = intval($_POST['memoFile']);
@@ -70,6 +72,14 @@
 			
 			if((int)$_SESSION['UserID'] == (int)$User OR hasViewingRights($User, $dbhandle))
 			{
+				
+				echo '<h1 style="text-align:center;">';
+				if(!isset($_SESSION['noteNum'])){
+					echo "New Note";
+				} else {
+					echo "Viewing Note " . $_SESSION['noteNum'];
+				}
+				echo '</h1>';
 ?>
 				<!--table holding 2 columns: 1 for notes menu, one for notes-->
 				<table>
@@ -101,9 +111,14 @@
 								if($_SESSION['UserID'] == $_SESSION['PatientID']){
 									echo ("
 										<input type='hidden' name='save' value='save' form='textBlock'></input>
-										<input type='submit' value='Save' form='textBlock'></input>
 									");
-
+									if(!isset($_SESSION['noteNum'])){
+										echo "<input type='submit' value='Save New' form='textBlock'></input>";
+									} else {
+										echo "<input type='submit' value='Save Changes' form='textBlock'></input>";
+									}
+									echo '</h1>';
+									
 									if(isset($_POST["memoFile"]) && ($_SESSION['UserID'] == $_SESSION['PatientID'])){
 										echo ("<form method='post'>
 											<input type='hidden' name='new' value='new'></input>

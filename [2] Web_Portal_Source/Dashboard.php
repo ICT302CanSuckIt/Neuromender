@@ -124,9 +124,10 @@
 						echo $output;
 						?>
 					</div>
-					<div class="jumbotron-half">
 						<?php
 							if(!($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)){
+								
+								echo '<div class="jumbotron-half">';
 								
 								//Graph Nav Btn
 								$str = '
@@ -342,13 +343,9 @@
 								echo "The value of the Y-Axis number is calculated by the sum of the games played during that session, which is the sum of the angles at the entry of each ring divided by the number of rings in that game.<br>";
 								echo "Each Y-Axis value is essentially an average of that player's angle threshold for that session, amongst all the games they played during that session.</div><br>";
 								}
-								
-							}
-						?>
-					</div>
-					<div class="jumbotron-half">
-						<?php
-							if(!($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)){
+								echo "</div>";
+							
+								echo '<div class="jumbotron-half">';
 								
 								//Strt of calendar
 								$month = (int)date('m');
@@ -427,9 +424,9 @@
 								</table><br>";
 								echo $outputString;
 								$outputString = "";
+								echo "</div>";
 							}
 						?>
-					</div>
 				</div>
 			</div>
 				

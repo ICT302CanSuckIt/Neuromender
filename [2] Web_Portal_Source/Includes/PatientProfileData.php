@@ -682,12 +682,18 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Wingman Game</td>
+								<td class='WingmanNotEdit'>
+									<input type='checkbox' ";
+									if($enabledWingman)
+										$outputString .= "checked";
+									$outputString .= "	name='EnabledWingman' value='wingman' disabled />&nbsp; &nbsp;
+								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledWingman)
 											$outputString .= "checked";
-					$outputString .= "	name='EnabledWingman' value='wingman' onclick='ShowWingman(this.form);' />&nbsp; &nbsp;
+										$outputString .= "	name='EnabledWingman' value='wingman' onclick='ShowWingman(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable wingman game</span>
 									</div>
 								</td>
@@ -830,12 +836,18 @@
 								<td class='page-details'>
 									Enable Targets Game
 								</td>
+								<td class='TargetNotEdit'>
+									<input type='checkbox' ";
+									if($enabledTargets)
+										$outputString .= "checked";
+									$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' disabled />&nbsp; &nbsp;																		
+								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledTargets)
 											$outputString .= "checked";
-					$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' onclick='ShowTargets(this.form);' />&nbsp; &nbsp;
+										$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' onclick='ShowTargets(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable targets game</span>
 									</div>
 								</td>
@@ -1049,18 +1061,24 @@
 								</td>
 							</tr>
 							
-							<!--Cycling Game Settings-->
+							<!--Cycling/Rowing Game Settings-->
 							<tr>
-								<td><br><h1 class='page-title'>Cycling Game Settings</h1></td>
+								<td><br><h1 class='page-title'>Cycling/Rowing Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>Enable Cycling Game</td>
+								<td class='page-details'>Enable Cycling/Rowing Game</td>
+								<td class='CyclingNotEdit'>
+									<input type='checkbox' ";
+										if($enabledCycling)
+											$outputString .= "checked";
+										$outputString .= "	name='EnabledCycling' value='Cycling' disabled />
+								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledCycling)
 											$outputString .= "checked";
-					$outputString .= "	name='EnabledCycling' value='Cycling' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
+										$outputString .= "	name='EnabledCycling' value='Cycling' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable Cycling game</span>
 									</div>
 								</td>
@@ -1185,6 +1203,13 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Email Alerts</td>
+								<td class='CyclingNotEdit'>
+									<input type='checkbox' ";
+									if($enabledEAlerts){
+										$outputString .= "checked";
+									}
+									$outputString .= "	name='EnabledEAlerts' value='EAlerts' disabled />&nbsp; &nbsp;
+								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";

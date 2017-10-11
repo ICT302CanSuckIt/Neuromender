@@ -118,7 +118,6 @@
 		</div>
 		
 		<div class="profile-jumbotron">
-			<h1 style="text-align:center;">Notes</h1>
 			<?php
 				include "../Includes/NotesData.php"
 			?>

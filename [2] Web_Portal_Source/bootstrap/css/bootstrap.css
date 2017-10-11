@@ -7246,6 +7246,7 @@ p.manuals-paratable {
 	  box-shadow: 1px 1px 10px #333;
 }
 .jumbotron-half {
+	margin-top: 10px;
   background-color: #fcf4e8;
   position: relative;
   width: 97%;
@@ -7256,10 +7257,10 @@ p.manuals-paratable {
   border: none;
   z-index: 999;
   border: 1px solid #f7d8aa;
-	  border-radius: 7px;
-	  padding-bottom: 50px;
-	  margin-bottom: 25px;
-	  box-shadow: 1px 1px 10px #333;
+	border-radius: 7px;
+	padding-bottom: 50px;
+	margin-bottom: 25px;
+	box-shadow: 1px 1px 10px #333;
 }
 .jumbotron h1,
 .jumbotron .h1 {

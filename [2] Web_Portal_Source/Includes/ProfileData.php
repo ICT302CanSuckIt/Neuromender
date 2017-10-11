@@ -1066,7 +1066,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$ArmMaxExtension
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='ArmMaxExtension' id='ArmMaxExtension' onblur='ValidateArmMaxExtension(document.getElementById(\"ArmMaxExtension\").value);' value='$ArmMaxExtension'>
 										<span class='tooltiptext'Maximum Arm extesion that allow user to play</span>
@@ -1083,7 +1083,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$DistanceShort
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<select name='DistanceShort'>
 											  <option value='100' "; 
 												if($DistanceShort == "100") //If this gender is pre-selected, set the option to selected
@@ -1125,7 +1125,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$DistanceMedium
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<select name='DistanceMedium'>
 											  <option value='100' "; 
 												if($DistanceMedium == "100") //If this gender is pre-selected, set the option to selected
@@ -1166,7 +1166,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$DistanceLong
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 								<select name='DistanceLong'>
 											  <option value='100' "; 
 												if($DistanceLong == "100") //If this gender is pre-selected, set the option to selected
@@ -1208,7 +1208,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$CGamesPerDay
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='CGamesPerDay' id='CGamesPerDay' onblur='ValidateCycleGamesPerDay(document.getElementById(\"CGamesPerDay\").value);' value='$CGamesPerDay'>
 										<span class='tooltiptext'>The maximum number of games that can be played during an entire day</span>
@@ -1224,7 +1224,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$CGamesPerSession
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='CGamesPerSession' id='CGamesPerSession' onblur='ValidateCycleGamesPerSession(document.getElementById(\"CGamesPerSession\").value);' value='$CGamesPerSession'>
 										<span class='tooltiptext'>The maximum number of games that can be played for each session (time between login/logout)</span>
@@ -1238,7 +1238,7 @@
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$CIntervalBetweenSession
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input step='0.01' type='number' name='CIntervalBetweenSession' id='CIntervalBetweenSession' onblur='ValidateCycleInterval(document.getElementById(\"CIntervalBetweenSession\").value);' value='$CIntervalBetweenSession'>
 										<span class='tooltiptext'>The minimum number of hours after a session before a survivor can play again</span>

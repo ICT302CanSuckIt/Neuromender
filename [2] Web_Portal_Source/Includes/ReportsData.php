@@ -33,6 +33,7 @@
 																	<th style='text-align:left;'> Name: </th>
 																	<th style='text-align:left;padding-left:20px'> Email: </th>
 																	<th style='text-align:left;padding-left:20px'>Alerts: </th>
+																	<th style='text-align:left;padding-left:20px'>Notes: </th>
 																</tr>";
 							// output data of each row
 							while($row = $result->fetch_assoc()) {
@@ -47,6 +48,12 @@
 								$alertsData 	= $alertsResult->fetch_assoc();
 								$alertCount 	= $alertsData['total'];
 								
+								//Notes Data
+								$notesSql = "SELECT count(*) AS total FROM SessionNotes WHERE UserID = " . $id;
+								$notesResult = $dbhandle->query($notesSql);
+								$notesData = $notesResult->fetch_assoc();
+								$notesCount = $notesData['total'];
+								
 								
 								$outputString = $outputString . "<tr>
 																	<td>
@@ -58,6 +65,10 @@
 																	<td style = 'padding-left:20px'>";
 																		if( $alertCount > 0 )
 																			$outputString .= "<a href='../Main/Alerts.php?user=".$id."' style='color:red'>".$alertCount."</a>";
+											$outputString .= "		</td>
+																	<td style = 'padding-left:20px'>";
+																		if( $notesCount > 0 )
+																			$outputString .= "<a href='../Main/Notes.php?user=".$id."' style='color:red'>".$notesCount."</a>";
 											$outputString .= "		</td>
 																</tr>";
 							}
@@ -128,7 +139,7 @@
 									$id = $row["ID1"];
 								}
 								$Roles = getUserRoles($id, $dbhandle);
-                                                                $url = "location.href='../Main/Profile.php?user=$id&password=2'";
+								$url = "location.href='../Main/Profile.php?user=$id&password=2'";
 								$outputString = $outputString . "<tr>
 																	<td>
 																		<a href='javascript:void(0)' onclick=$url align='right'>$name</a>
