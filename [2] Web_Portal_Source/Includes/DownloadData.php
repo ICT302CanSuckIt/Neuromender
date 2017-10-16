@@ -136,87 +136,86 @@
 				{
 					
 					$outputString="<h1 class='main-title'> Neuromender Query Builder / CSV Exporter</h1>
-									<span class='manuals-content'>Instructions:<br /> </span>
-									<ol class='manuals-para2'>
-										<li>Select the table you want to get data from.</li>
-										<li>Drag and drop any field from the table in 'Available' into 'Selected'.</li>
-										<li>If you wish to select everything from the table, leave the 'Selected' field blank</li>
-										<li>If you want to add any conditions to the query then set 'Use Where Clause' to 'Yes'.</li>
-										<li>Add in any conditions to the fields provided. ie: SessionID = 5 AND UserID = 15</li>
-										<li>Click 'Run Query' to get your csv of data from the database.</li>
-									</ol><br><br>
-                                                                        <span class='manuals-content'>Table Legend:<br></span>
-                                                                        <ol class='manuals-para2'>
-                                                                            <li>Achievement: Refers to the Wingman game, in regards to overall game data</li>
-                                                                            <li>RawTracking: Information regarding to data tracked during a session</li>
-                                                                            <li>Reach Game Data: Refers to the Targets game</li>
-                                                                            <li>Eye Tracking Data: Refers to data tracked for the eyes during the Targets game </li>
-                                                                            <li>LevelCompleted: Refers to information on a completed level</li>
-                                                                            <li>Session: Refers to information about a session</li>
-                                                                        </ol>
-					<br><br>
-									<table class='manuals-table'>
-										<tr>
-											<th>
-												Table:
-												<form action='./QueryCSV.php' method='post'>
-											</th>
-                                                                                        
-											<td>
-												<select name='table' id='table' onchange='RepopulateSelectors()'>
-													  <option value='Achievement'>Achievement</option>
-													  <option value='RawTracking'>RawTracking</option>
-													  <option value='ReachGameData'>Reach Game Data</option>
-													  <option value='EyeTrackingData'>Eye Tracking Data</option>
-													  <option value='LevelCompleted'>LevelCompleted</option>
-													  <option value='Session'>Session</option>
-												</select>
-											</td>
-                                                                                        
-										</tr>
-                                                                                
-										<tr>
-											<th>
-												Fields:
-											</th>
-											<td style='vertical-align:top;'>
-												<h3>Available</h3>
-												<ul id='fieldList' class='connectedSortable'>
-													%SELECTOPTIONS%											  
-												</ul>
-											 </td>
-											 <td style='vertical-align:top;'>
-												<h3>Selected</h3>
-												<ul id='Selectedfields' class='connectedSortable' onAppend='checkSelectedValues()'>
-												</ul>
-												<input type='hidden' name='selectedValues' id='selectedValues' value='' />
-											</td>
-										</tr>
-										<tr>
-											<th>
-												Where:
-											</th>
-											<td>
-												Use Where Clause:
-												<select name='where' id='where'>
-													<option value='no'>no</option>
-													<option value='yes'>yes</option>
-												</select>
-											</td>
-											<td style='vertical-align:top;'>
-												%WHERE1%
-												%WHERE2%
-												%WHERE3%
-											</td>
-										</tr>
-										<tr>
-											
-											<td>
-												<input type='submit' class='btn btn-primary btn-sm' name='btnRunQuery' value='Run Query' onClick='checkSelectedValues()' />
-												</form>
-											</td>
-										</tr>
-									</table>";
+						<span class='manuals-content'>Instructions:<br /> </span>
+							<ol class='manuals-para2'>
+								<li>Select the table you want to get data from.</li>
+								<li>Drag and drop any field from the table in 'Available' into 'Selected'.</li>
+								<li>If you wish to select everything from the table, leave the 'Selected' field blank</li>
+								<li>If you want to add any conditions to the query then set 'Use Where Clause' to 'Yes'.</li>
+								<li>Add in any conditions to the fields provided. ie: SessionID = 5 AND UserID = 15</li>
+								<li>Click 'Run Query' to get your csv of data from the database.</li>
+								(Note that you can only download from one table at a time. If no results would be found, a popup will inform you of the error, then redirect you back to this page.)
+							</ol>
+							<br/><br/>
+						<span class='manuals-content'>Table Legend:<br></span>
+							<ol class='manuals-para2'>
+								<li>Achievement: Refers to the Wingman game, in regards to overall game data</li>
+								<li>RawTracking: Information regarding to data tracked during a session</li>
+								<li>Reach Game Data: Refers to the Targets game</li>
+								<li>Eye Tracking Data: Refers to data tracked for the eyes during the Targets game </li>
+								<li>LevelCompleted: Refers to information on a completed level</li>
+								<li>Session: Refers to information about a session</li>
+							</ol>
+						<br><br>
+							<table class='manuals-table'>
+								<tr>
+									<th>
+										Table:
+										<form action='./QueryCSV.php' method='post'>
+									</th>
+
+									<td>
+										<select name='table' id='table' onchange='RepopulateSelectors()'>
+											<option value='Achievement'>Achievement</option>
+											<option value='RawTracking'>RawTracking</option>
+											<option value='ReachGameData'>Reach Game Data</option>
+											<option value='EyeTrackingData'>Eye Tracking Data</option>
+											<option value='LevelCompleted'>LevelCompleted</option>
+											<option value='Session'>Session</option>
+										</select>
+									</td>
+                </tr>
+								<tr>
+									<th>
+										Fields:
+									</th>
+									<td style='vertical-align:top;'>
+										<h3>Available</h3>
+										<ul id='fieldList' class='connectedSortable'>
+											%SELECTOPTIONS%											  
+										</ul>
+									</td>
+									<td style='vertical-align:top;'>
+										<h3>Selected</h3>
+										<ul id='Selectedfields' class='connectedSortable' onAppend='checkSelectedValues()'>
+										</ul>
+										<input type='hidden' name='selectedValues' id='selectedValues' value='' />
+									</td>
+								</tr>
+								<tr>
+									<th>
+										Where:
+									</th>
+									<td>
+										Use Where Clause:
+										<select name='where' id='where'>
+											<option value='no'>no</option>
+											<option value='yes'>yes</option>
+										</select>
+									</td>
+									<td style='vertical-align:top;'>
+										%WHERE1%
+										%WHERE2%
+										%WHERE3%
+									</td>
+								</tr>
+								<tr>									
+									<td>
+										<input type='submit' class='btn btn-primary btn-sm' name='btnRunQuery' value='Run Query' onClick='checkSelectedValues()' />
+										</form>
+									</td>
+								</tr>
+							</table>";
 									
 					$sqlColumNames = "SHOW COLUMNS FROM Achievement";
 					

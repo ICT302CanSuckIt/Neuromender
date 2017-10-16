@@ -56,7 +56,7 @@
 						$Username 					= $_POST["uName"];
 						$Email 						= $_POST["email"];
 						$Address 					= $_POST["address"];
-						$Dob 						= $_POST["dob"];
+						$dob 						= $_POST["dob"];
 						$Gender 					= $_POST["gender"];
 						
 						//----Affliction details----//
@@ -132,7 +132,7 @@
 					
 					
 						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$Dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling
+							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-M-D', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -144,7 +144,7 @@
 						if( $isPatient > 0 )
 						{
 							$sql = "UPDATE Affliction
-								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='$Doa', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
+								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-M-D', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
 								WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
 							if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -711,7 +711,7 @@
 								</td>
 								<td class='WingmanEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='thresholdIncreaser' id='thresholdIncreaser' onblur='ValidateAngleThresholdIncrease(document.getElementById(\"thresholdIncreaser\").value);' value='$ThresholdIncrease'>
+										<input type='number' name='thresholdIncreaser' step='0.1' min='0' id='thresholdIncreaser' onblur='ValidateAngleThresholdIncrease(this.value);' value='$ThresholdIncrease'>
 										<span class='tooltiptext'>By how much the angle threshold (in degrees) will increase or decrease in response to survivor gameplay</span>
 									</div>
 									<span id='thresholdIncreaserError' style='color:red'>

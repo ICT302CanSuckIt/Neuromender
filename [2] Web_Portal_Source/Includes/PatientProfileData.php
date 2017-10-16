@@ -55,7 +55,7 @@
 						$Username 					= $_POST["uName"];
 						$Email 						= $_POST["email"];
 						$Address 					= $_POST["address"];
-						$Dob 						= $_POST["dob"];
+						$dob 						= $_POST["dob"];
 						$Gender 					= $_POST["gender"];
 						
 						//----Affliction details----//
@@ -100,10 +100,10 @@
 						$CGamesPerDay 				= $_POST["CGamesPerDay"];
 						$CGamesPerSession 			= $_POST["CGamesPerSession"];
 						$CIntervalBetweenSession 	= $_POST["CIntervalBetweenSession"];
-						$ArmMaxExtension			= $_POST["CountdownDistance"];
-						$GraphicLow					= $_POST["GraphicLow"];
-						$GraphicMedium 				= $_POST["GraphicMedium"];
-						$GraphicHigh				= $_POST["GraphicHigh"];
+						$ArmMaxExtension			= $_POST["ArmMaxExtension"];
+						$DistanceShort				= $_POST["DistanceShort"];
+						$DistanceMedium 			= $_POST["DistanceMedium"];
+						$DistanceLong				= $_POST["DistanceLong"];
 						
 						//----Email Alert Details----//
 						$enabledEAlerts = 0;
@@ -138,7 +138,7 @@
 					
 					
 						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$Dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
+							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -210,12 +210,12 @@
 								{
 									$sql = "INSERT INTO CyclingRestrictions 
 												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort, DistanceMedium, DistanceLong)
-												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $GraphicLow, $GraphicMedium, $GraphicHigh)";
+												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort, $DistanceMedium, $DistanceLong)";
 								}
 								else //Update because value already exists
 								{
 									$sql = "UPDATE CyclingRestrictions
-										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$GraphicLow, DistanceMedium=$GraphicMedium, DistanceLong=$GraphicHigh 
+										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort, DistanceMedium=$DistanceMedium, DistanceLong=$DistanceLong 
 										WHERE UserID=$User";
 								}
 								$result = $dbhandle->query($sql);
@@ -262,7 +262,7 @@
 					
 					
 					
-					$outputString 	= $outputString . "<h1 class='main-title'> User Profile</h1>";
+					$outputString 	= $outputString . "<h1 class='main-title'> Viewing $fName's Profile</h1>";
                     $outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
                                         
                                         
@@ -387,10 +387,10 @@
 										Date of Birth:
 									</td>
 									<td class='editable' class='page-details'>
-										$dob
+										" . date('d-m-Y', strtotime($dob)) . "
 									</td>
 									<td class='editable' style='display:none;'>
-										<input type='date' name='dob' id='dob' onblur='ValidateBirthDate(document.getElementById(\"dob\").value);' value='$dob'>
+										<input type='date' name='dob' id='dob' onblur='ValidateBirthDate(document.getElementById(\"dob\").value);' value='".date('d-m-Y', strtotime($dob))."'>
 									<span id='dobError' style='color:red'>
 									</span>
 									</td>
@@ -516,9 +516,9 @@
 					$CGamesPerSession 			= $user["CGamesPerSession"];
 					$CIntervalBetweenSession 	= $user["CIntervalBetweenSession"];
 					$ArmMaxExtension			= $user["CountdownDistance"];
-					$GraphicLow					= $user["DistanceShort"];
-					$GraphicMedium 				= $user["DistanceMedium"];
-					$GraphicHigh				= $user["DistanceLong"];
+					$DistanceShort					= $user["DistanceShort"];
+					$DistanceMedium 				= $user["DistanceMedium"];
+					$DistanceLong				= $user["DistanceLong"];
 					
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -617,11 +617,11 @@
 										Date of Affliction:
 									</td>
 									<td class='editable' style='padding:10px;'>
-										$DateOfAffliction
+										".date('d-m-Y', strtotime($DateOfAffliction))."
 									</td>
 									<td class='editable' style='display:none;'>
 										<div class='tooltips'>
-											<input type='date' name='DateOfAffliction' id='DateOfAffliction' onblur='ValidateDoa(document.getElementById(\"DateOfAffliction\").value);' value='$DateOfAffliction'>
+											<input type='date' name='DateOfAffliction' id='DateOfAffliction' onblur='ValidateDoa(document.getElementById(\"DateOfAffliction\").value);' value='".date('d-m-Y', strtotime($DateOfAffliction))."'>
 											<span class='tooltiptext'>The date of the stroke</span>
 										</div>
 										<span id='DateOfAfflictionError' style='color:red'>
@@ -682,25 +682,20 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Wingman Game</td>
-								<td class='WingmanNotEdit'>
-									<input type='checkbox' ";
-									if($enabledWingman)
-										$outputString .= "checked";
-									$outputString .= "	name='EnabledWingman' value='wingman' disabled />&nbsp; &nbsp;
-								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledWingman)
 											$outputString .= "checked";
-										$outputString .= "	name='EnabledWingman' value='wingman' onclick='ShowWingman(this.form);' />&nbsp; &nbsp;
+					$outputString .= "	name='EnabledWingman' value='wingman' onclick='ShowWingman(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable wingman game</span>
 									</div>
 								</td>
 							</tr>
 							
 							<tr class='WingmanData'>
-								<td class='page-details'>
+							
+								<td class='page-details WingmanData'>
 									Angle Threshold (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -716,7 +711,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details WingmanData'>
 									Threshold Increment-Decrement (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -724,7 +719,7 @@
 								</td>
 								<td class='WingmanEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='thresholdIncreaser' id='thresholdIncreaser' onblur='ValidateAngleThresholdIncrease(document.getElementById(\"thresholdIncreaser\").value);' value='$ThresholdIncrease'>
+										<input type='number' name='thresholdIncreaser' step='0.1' min='0' id='thresholdIncreaser' onblur='ValidateAngleThresholdIncrease(this.value);' value='$ThresholdIncrease'>
 										<span class='tooltiptext'>By how much the angle threshold (in degrees) will increase or decrease in response to survivor gameplay</span>
 									</div>
 									<span id='thresholdIncreaserError' style='color:red'>
@@ -748,7 +743,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details WingmanData'>
 									Track Medium (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -764,7 +759,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details WingmanData'>
 									Track Fast (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -781,7 +776,7 @@
 							</tr>
 							
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details WingmanData'>
 									Max games per day:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -797,7 +792,7 @@
 								</td>
 							</tr>
 							 <tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details WingmanData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -813,7 +808,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
+								<td class='page-details WingmanData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
 									$WIntervalBetweenSession
 								</td>
@@ -836,24 +831,18 @@
 								<td class='page-details'>
 									Enable Targets Game
 								</td>
-								<td class='TargetNotEdit'>
-									<input type='checkbox' ";
-									if($enabledTargets)
-										$outputString .= "checked";
-									$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' disabled />&nbsp; &nbsp;																		
-								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledTargets)
 											$outputString .= "checked";
-										$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' onclick='ShowTargets(this.form);' />&nbsp; &nbsp;
+					$outputString .= "	name='EnabledTargets' id='EnabledTargets' value='targets' onclick='ShowTargets(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable targets game</span>
 									</div>
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Grid Size [rows,columns]:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -873,7 +862,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Grid Order:<br/>
 									<div class='tooltips'>
 										<textarea id='gridOrder' rows='10' cols='20' name='gridOrder' onchange='GridOrderChanged()' >$gridOrder</textarea>
@@ -900,7 +889,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Repetitions/Loops:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -916,7 +905,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Max Extension Threshold (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -932,7 +921,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Min Extension Threshold (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -948,7 +937,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Extension Threshold Increment-Decrement (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -965,7 +954,7 @@
 							</tr>
 							
 							<tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Max games per day:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -981,7 +970,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -997,7 +986,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1013,7 +1002,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Distance before grid adjusts (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1029,7 +1018,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Countdown before grid adjusts (seconds):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1045,7 +1034,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details'>
+								<td class='page-details TargetData'>
 									Arm Reset Distance (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1067,12 +1056,6 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Cycling/Rowing Game</td>
-								<td class='CyclingNotEdit'>
-									<input type='checkbox' ";
-										if($enabledCycling)
-											$outputString .= "checked";
-										$outputString .= "	name='EnabledCycling' value='Cycling' disabled />
-								</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
@@ -1106,11 +1089,11 @@
 									Short Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$GraphicLow
+									$DistanceShort
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='GraphicLow' id='GraphicLow' onblur='ValidateGraphicLow(document.getElementById(\"GraphicLow\").value);' value='$GraphicLow'>
+										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$DistanceShort'>
 										<span class='tooltiptext'>The length (in seconds) of the slow track mode</span>
 									</div>
 									<span id='GraphicLowError' style='color:red'>
@@ -1122,11 +1105,11 @@
 									Medium Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$GraphicMedium
+									$DistanceMedium
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='GraphicMedium' id='GraphicMedium' onblur='ValidateGraphicMedium(document.getElementById(\"GraphicMedium\").value);' value='$GraphicMedium'>
+										<input type='number' name='DistanceMedium' id='DistanceMedium' onblur='ValidateGraphicMedium(document.getElementById(\"DistanceMedium\").value);' value='$DistanceMedium'>
 										<span class='tooltiptext'>The length (in seconds) of the medium track mode</span>
 									</div>
 									<span id='GraphicMediumError' style='color:red'>
@@ -1138,11 +1121,11 @@
 									Long Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$GraphicHigh
+									$DistanceLong
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='GraphicHigh' id='GraphicHigh' onblur='ValidateGraphicHigh(document.getElementById(\"GraphicHigh\").value);' value='$GraphicHigh'>
+										<input type='number' name='DistanceLong' id='DistanceLong' onblur='ValidateGraphicHigh(document.getElementById(\"DistanceLong\").value);' value='$DistanceLong'>
 										<span class='tooltiptext'>The length (in seconds) of the fast track mode</span>
 									</div>
 									<span id='GraphicHighError' style='color:red'>

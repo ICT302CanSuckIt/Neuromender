@@ -599,9 +599,9 @@ function ValidateAdjustmentCountdown( num, output )
 function ValidateDoa( doa, output )
 {
 	var pickedDate =  new Date( doa );
-	var todayDate =  new Date();
+	var todayDate = new Date();
 	
-	if( pickedDate > todayDate || pickedDate == "Invalid Date"  )
+	if( pickedDate > today || pickedDate == "Invalid Date"  )
 	{
 		//output.string += "Please enter a valid affliction date\n";
 		document.getElementById("DateOfAfflictionError").textContent = "Please enter a valid affliction date";
@@ -684,9 +684,20 @@ function ValidateEmail( email, output )
 function ValidateBirthDate( date, output )
 {
 	var pickedDate =  new Date( date );
-	var todayDate =  new Date();
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+
+	var yyyy = today.getFullYear();
+	if(dd<10){
+			dd='0'+dd;
+	} 
+	if(mm<10){
+			mm='0'+mm;
+	} 
+	var today = dd+'/'+mm+'/'+yyyy;
 	
-	if( pickedDate > todayDate || pickedDate == "Invalid Date"  )
+	if( pickedDate > today || pickedDate == "Invalid Date"  )
 	{
 		//output.string += "Please enter a valid birth date\n";
 		document.getElementById("dobError").textContent = "Please enter a valid birth date";

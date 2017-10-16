@@ -85,7 +85,7 @@
 				<table>
 					<tr>
 						<td>
-							<!--//column holds notes menu (load/save) (currently placeholder item)-->
+							<!--//column holds notes menu (load/save)-->
 							<form method="post">
 								<select name="memoFile" style="width:auto;">
 									<?php
@@ -102,7 +102,7 @@
 								</select>
 								<?php
 									if($result->num_rows > 0){
-										echo ("<input type='submit' value='Load'></input>");
+										echo ("<br/><input type='submit' class='btn btn-primary btn-sm' style='top:10px; margin-bottom:0px;' value='Load'></input>");
 									}
 								?>
 							</form>
@@ -113,21 +113,21 @@
 										<input type='hidden' name='save' value='save' form='textBlock'></input>
 									");
 									if(!isset($_SESSION['noteNum'])){
-										echo "<input type='submit' value='Save New' form='textBlock'></input>";
+										echo "<input type='submit' class='btn btn-primary btn-sm' value='Save New' form='textBlock'></input>";
 									} else {
-										echo "<input type='submit' value='Save Changes' form='textBlock'></input>";
+										echo "<input type='submit' class='btn btn-primary btn-sm' value='Save Changes' form='textBlock'></input>";
 									}
 									echo '</h1>';
 									
 									if(isset($_POST["memoFile"]) && ($_SESSION['UserID'] == $_SESSION['PatientID'])){
 										echo ("<form method='post'>
 											<input type='hidden' name='new' value='new'></input>
-											<input type='submit' value='New'></input>
+											<input type='submit' class='btn btn-primary btn-sm' value='New'></input>
 										</form>
 										
 										<form method='post'>
 											<input type='hidden' name='delete' value='delete'></input>
-											<input type='submit' value='Delete'></input>
+											<input type='submit' class='btn btn-primary btn-sm' value='Delete'></input>
 										</form>
 									");
 									}

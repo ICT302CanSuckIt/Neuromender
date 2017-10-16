@@ -29,7 +29,7 @@
     
     $csvContent = array();
     $csvContent[] = array(
-        "filename" =>"../../../../tmp/WingmanTracking.csv",
+        "filename" => __DIR__ . "../../../../tmp/WingmanTracking.csv",
         "sqlQuery"=>file_get_contents("./Queries/QueryUserRawTracking.txt"),
         "replaceTokens" => array(
             "{UserID}" => $selectUsers
@@ -61,7 +61,7 @@
 		
 		$csvContent = array();
 		$csvContent[] = array(
-			"filename" =>"../../../../tmp/TargetsGameData.csv",
+			"filename" => __DIR__ . "../../../../tmp/TargetsGameData.csv",
 			"sqlQuery"=>file_get_contents("./Queries/QueryUserReachGameData.txt"),
 			"replaceTokens" => array(
 				"{UserID}" => $selectUsers
@@ -90,7 +90,7 @@
 		
 		$csvContent = array();
 		$csvContent[] = array(
-			"filename" =>"../../../../tmp/TargetsTrackingData.csv",
+			"filename" => __DIR__ . "../../../../tmp/TargetsTrackingData.csv",
 			"sqlQuery"=>file_get_contents("./Queries/QueryUserReachTrackingData.txt"),
 			"replaceTokens" => array(
 				"{UserID}" => $selectUsers
@@ -111,6 +111,10 @@
 			array_push($files, $tempCsvFile);
 			array_push($filesContent, $filename);
 		}
+		
+	//------------------------------------------//
+	//Rowing Tracking data code goes here//
+	//------------------------------------------//
 
 		ob_end_clean();
 	
