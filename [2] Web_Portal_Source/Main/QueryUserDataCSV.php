@@ -16,113 +16,122 @@
     $selectUsers = $_POST['selectUsers'];
     
     $sql = "SELECT * FROM Users WHERE UserID = $selectUsers";
-	$result = $dbhandle->query($sql);
-	$row = $result->fetch_assoc();
-    $username = $row["Username"];
-    $username = str_replace(' ', '', $username);
+	  $result = $dbhandle->query($sql);
+		if($result->num_rows > 0){
+			$row = $result->fetch_assoc();
+			$username = $row["Username"];
+			$username = str_replace(' ', '', $username);
 
-	
 		
-	$fileSize = 0;
-    $files = array();
-    $filesContent = array();
-    
-    $csvContent = array();
-    $csvContent[] = array(
-        "filename" => __DIR__ . "../../../../tmp/WingmanTracking.csv",
-        "sqlQuery"=>file_get_contents("./Queries/QueryUserRawTracking.txt"),
-        "replaceTokens" => array(
-            "{UserID}" => $selectUsers
-        )
-    );
-
-    foreach($csvContent as $csv) {
-        $filename = $csv["filename"];
-        $query = $csv["sqlQuery"];
-        $replacementTokens = $csv["replaceTokens"];
-        
-        foreach($replacementTokens as $key => $value) {
-            $query = str_replace($key, $value, $query);
-        }
-        $result = $dbhandle->query($query, MYSQLI_USE_RESULT);
-        $tempCsvFile = createFile($filename, $result);
-        
-        array_push($files, $tempCsvFile);
-        array_push($filesContent, $filename);
-    }
-    /*foreach ($files as $file) {
-        unlink($file);
-	}*/
-	//------------------------------------------//
-	//Reach game data//
-	//------------------------------------------//
-		$fileSize = 0;
-		$files = array();
-		
-		$csvContent = array();
-		$csvContent[] = array(
-			"filename" => __DIR__ . "../../../../tmp/TargetsGameData.csv",
-			"sqlQuery"=>file_get_contents("./Queries/QueryUserReachGameData.txt"),
-			"replaceTokens" => array(
-				"{UserID}" => $selectUsers
-			)
-		);
-
-		foreach($csvContent as $csv) {
-			$filename = $csv["filename"];
-			$query = $csv["sqlQuery"];
-			$replacementTokens = $csv["replaceTokens"];
 			
-			foreach($replacementTokens as $key => $value) {
-				$query = str_replace($key, $value, $query);
+			$fileSize = 0;
+			$files = array();
+			$filesContent = array();
+			
+			$csvContent = array();
+			$csvContent[] = array(
+					"filename" => __DIR__ . "../../../../tmp/WingmanTracking.csv",
+					"sqlQuery"=>file_get_contents("./Queries/QueryUserRawTracking.txt"),
+					"replaceTokens" => array(
+							"{UserID}" => $selectUsers
+					)
+			);
+
+			foreach($csvContent as $csv) {
+					$filename = $csv["filename"];
+					$query = $csv["sqlQuery"];
+					$replacementTokens = $csv["replaceTokens"];
+					
+					foreach($replacementTokens as $key => $value) {
+							$query = str_replace($key, $value, $query);
+					}
+					$result = $dbhandle->query($query, MYSQLI_USE_RESULT);
+					$tempCsvFile = createFile($filename, $result);
+					
+					array_push($files, $tempCsvFile);
+					array_push($filesContent, $filename);
 			}
-			$result = $dbhandle->query($query, MYSQLI_USE_RESULT);
-			$tempCsvFile = createFile($filename, $result);
+			/*foreach ($files as $file) {
+					unlink($file);
+		}*/
+		//------------------------------------------//
+		//Reach game data//
+		//------------------------------------------//
+			$fileSize = 0;
+			$files = array();
 			
-			array_push($files, $tempCsvFile);
-			array_push($filesContent, $filename);
-		}
-	//------------------------------------------//
-	//Reach Tracking data//
-	//------------------------------------------//
-		$fileSize = 0;
-		$files = array();
-		
-		$csvContent = array();
-		$csvContent[] = array(
-			"filename" => __DIR__ . "../../../../tmp/TargetsTrackingData.csv",
-			"sqlQuery"=>file_get_contents("./Queries/QueryUserReachTrackingData.txt"),
-			"replaceTokens" => array(
-				"{UserID}" => $selectUsers
-			)
-		);
+			$csvContent = array();
+			$csvContent[] = array(
+				"filename" => __DIR__ . "../../../../tmp/TargetsGameData.csv",
+				"sqlQuery"=>file_get_contents("./Queries/QueryUserReachGameData.txt"),
+				"replaceTokens" => array(
+					"{UserID}" => $selectUsers
+				)
+			);
 
-		foreach($csvContent as $csv) {
-			$filename = $csv["filename"];
-			$query = $csv["sqlQuery"];
-			$replacementTokens = $csv["replaceTokens"];
-			
-			foreach($replacementTokens as $key => $value) {
-				$query = str_replace($key, $value, $query);
+			foreach($csvContent as $csv) {
+				$filename = $csv["filename"];
+				$query = $csv["sqlQuery"];
+				$replacementTokens = $csv["replaceTokens"];
+				
+				foreach($replacementTokens as $key => $value) {
+					$query = str_replace($key, $value, $query);
+				}
+				$result = $dbhandle->query($query, MYSQLI_USE_RESULT);
+				$tempCsvFile = createFile($filename, $result);
+				
+				array_push($files, $tempCsvFile);
+				array_push($filesContent, $filename);
 			}
-			$result = $dbhandle->query($query, MYSQLI_USE_RESULT);
-			$tempCsvFile = createFile($filename, $result);
+		//------------------------------------------//
+		//Reach Tracking data//
+		//------------------------------------------//
+			$fileSize = 0;
+			$files = array();
 			
-			array_push($files, $tempCsvFile);
-			array_push($filesContent, $filename);
-		}
-		
-	//------------------------------------------//
-	//Rowing Tracking data code goes here//
-	//------------------------------------------//
+			$csvContent = array();
+			$csvContent[] = array(
+				"filename" => __DIR__ . "../../../../tmp/TargetsTrackingData.csv",
+				"sqlQuery"=>file_get_contents("./Queries/QueryUserReachTrackingData.txt"),
+				"replaceTokens" => array(
+					"{UserID}" => $selectUsers
+				)
+			);
 
-		ob_end_clean();
-	
-    useZipArchive($filesContent, $username);
-	
-    foreach ($files as $file) {
-        unlink($file);
-    }
+			foreach($csvContent as $csv) {
+				$filename = $csv["filename"];
+				$query = $csv["sqlQuery"];
+				$replacementTokens = $csv["replaceTokens"];
+				
+				foreach($replacementTokens as $key => $value) {
+					$query = str_replace($key, $value, $query);
+				}
+				$result = $dbhandle->query($query, MYSQLI_USE_RESULT);
+				$tempCsvFile = createFile($filename, $result);
+				
+				array_push($files, $tempCsvFile);
+				array_push($filesContent, $filename);
+			}
+			
+		//------------------------------------------//
+		//Rowing Tracking data code goes here//
+		//------------------------------------------//
+
+			ob_end_clean();
+		
+			useZipArchive($filesContent, $username);
+		
+			foreach ($files as $file) {
+					unlink($file);
+			}
+		} else{
+			echo ("
+				<script>
+					alert('Error! No Results Found!');
+					window.location.href='./Download.php';
+				</script>
+			");
+		}
 
     function createFile($filename, $content) {
         $output = fopen($filename, "w");
@@ -148,6 +157,7 @@
         }
         mysqli_free_result($content);
         fclose($output);
+				
 		
 		$fileSize = (filesize($filename) + 1333);
 		
