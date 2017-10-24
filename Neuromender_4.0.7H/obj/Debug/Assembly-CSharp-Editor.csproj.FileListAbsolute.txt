@@ -1,1 +1,3 @@
 C:\Users\MRXXX24111974\Documents\GitHub\Neuromender_v2.6.2\Neuromender.2.6.2.source_rev_02\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+C:\Users\Egerton\Desktop\Neuromender ICT302\Neuromender_4.0.7H\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+C:\Users\Egerton\Desktop\Neuromender ICT302\Neuromender_4.0.7H\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache

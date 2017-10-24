@@ -12,7 +12,7 @@ public class Buoy : MonoBehaviour {
     public float worldHeight = 7.5f;
 
     [Tooltip("Alternate place to set the size of the collider.")]
-    public float colliderRadius = 3.0f;
+    public float colliderRadius = 1.0f;
 
     [Tooltip("The time taken for the buoy to disappear.")]
     public float fadeOutTime = 4.0f;

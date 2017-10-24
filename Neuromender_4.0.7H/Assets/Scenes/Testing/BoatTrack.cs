@@ -16,7 +16,7 @@ public class BoatTrack : MonoBehaviour {
     public GameObject boat = null;
 
     [Tooltip("The turning speed of the boat (degrees per second).")]
-    public float boatTurnSpeed = 10.0f;
+    public float boatTurnSpeed = 20.0f;
 
 
     //*************************---------------------------------------------
@@ -41,6 +41,9 @@ public class BoatTrack : MonoBehaviour {
     [Tooltip("The list of all waypoints in the world.")]
     public List<GameObject> trackWaypoints = null;
 
+    
+    GameObject finishLine;
+
     public Vector3 DEST;
     public float boatHeight = -1;
 
@@ -48,6 +51,7 @@ public class BoatTrack : MonoBehaviour {
 	void Start () {
 
         boat = GameObject.Find("Boat");
+        finishLine = GameObject.Find("Finish");
 
         boatHeight = boat.transform.position.y;
 
@@ -58,8 +62,8 @@ public class BoatTrack : MonoBehaviour {
         }
 
         if(trackWaypoints == null)
-            trackWaypoints = new List<GameObject>();
-
+            trackWaypoints = new List<GameObject>();  
+        
         // Fill the track waypoint list with all of the gameobjects that are its children.
         foreach (Transform child in transform)
             trackWaypoints.Add(child.gameObject);
@@ -67,9 +71,15 @@ public class BoatTrack : MonoBehaviour {
         if(trackLength == 0)
             trackLength = trackWaypoints.Count;
 
+        //something about trackLength = number set in web portal
+
+        //make sure track can't be longer than the number of buoys
+        if (trackLength > 18) { trackLength = 18; }
+
+
         // Create the progress markers between the waypoints, if a prefab has been specified.
         if (progressMarker != null)
-            for (int i = 0; i < trackWaypoints.Count - 1; ++i)
+            for (int i = 0; i < trackLength -1; ++i)
             {
                 float distance = Vector3.Distance(trackWaypoints[i].transform.position, trackWaypoints[i + 1].transform.position);
                 Vector3 directon = (trackWaypoints[i + 1].transform.position - trackWaypoints[i].transform.position).normalized;
@@ -86,14 +96,20 @@ public class BoatTrack : MonoBehaviour {
 
                     obj.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                     obj.transform.localPosition = trackWaypoints[i].transform.position + (directon * j * stepEveryNMeters);
-                    obj.transform.SetParent(trackWaypoints[i + 1].transform);
+                    obj.transform.SetParent(trackWaypoints[i].transform); //put little white ball things inbetween buoys
                     obj.transform.localPosition = new Vector3(obj.transform.localPosition.x, -1.0f, obj.transform.localPosition.z);
                 }
             }
         else
-            Debug.LogWarning("No progress marker was specified for the Boat Track.");
+        { Debug.LogWarning("No progress marker was specified for the Boat Track."); }
 
-	}
+        //put finish line at the end of the track facing towards the previous buoy
+        finishLine.transform.Translate(trackWaypoints[trackLength-1].transform.position.x, 0, trackWaypoints[trackLength-1].transform.position.z);
+        Vector3 targetPos = trackWaypoints[trackLength - 2].transform.position - finishLine.transform.position;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetPos, 100f, 0f);
+        finishLine.transform.rotation = Quaternion.LookRotation(newDir);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

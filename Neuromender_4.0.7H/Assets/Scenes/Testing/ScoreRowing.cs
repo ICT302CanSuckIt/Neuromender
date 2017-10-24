@@ -14,17 +14,24 @@ public class ScoreRowing : MonoBehaviour
 	public  Text txtDistance;
     public GameObject Boat;
 
-
+    private Vector3 previousPosition;
+    public float totalDist;
+    
     // Use this for initialization
     void Start()
     {
-
+        Boat = GameObject.Find("Boat");
+        previousPosition = Boat.transform.position;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        //total distance the boat has traveled
+        totalDist += (Boat.transform.position - previousPosition).magnitude;
+        previousPosition = Boat.transform.position;
+
         if (Racing)
         {
             RaceTime += Time.deltaTime;
@@ -42,11 +49,11 @@ public class ScoreRowing : MonoBehaviour
 
         if (txtDistance)
         {
-			Distance = Boat.transform.position.z;
+			Distance = totalDist;
 			Distance = Mathf.Round (Distance * 10f) / 10f;
 			txtDistance.text = "" + (Distance) + " m";
         }
-        //Debug.Log(RaceTime);
+
     }
 
     public void StartRace()

@@ -1598,3 +1598,8 @@ file loaded
 main controls object found
 basic body found
 HUD found
+Start
+file loaded
+main controls object found
+basic body found
+HUD found

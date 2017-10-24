@@ -309,7 +309,9 @@ public class TargetsDataMass : DataMass_Base
     /// <param name="targNum">The target index in the grid.</param>
     /// <param name="reach">The time taken to extend the arm to the contact point.</param>
     /// <param name="retract">The time taken to return the arm to the body.</param>
-    /// <param name="distance">The distance that the arm was extended.</param>
+    /// <param name=
+    /// 
+    /// >The distance that the arm was extended.</param>
     /// <param name="acc">The proximity the punch was to the centre of the target.</param>
     /// <param name="points">The points awarded to reflect the punch's performance.</param>
     /// <param name="assist">Was the action assisted by another arm? TRUE: Yes.</param>

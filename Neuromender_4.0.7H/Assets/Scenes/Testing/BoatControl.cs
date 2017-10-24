@@ -23,7 +23,7 @@ public class BoatControl : MonoBehaviour
 
     public Rigidbody rb;
 
-    public float PowerModifier = 50.0f;
+    public float PowerModifier = 100.0f;
 
     public bool keyboardControl = true;
 
@@ -37,6 +37,12 @@ public class BoatControl : MonoBehaviour
     public GameObject LeftPin;
     public GameObject RightPin;
     public bool Pulling = false;
+
+
+
+    bool moving = true;
+    float t = 0.0f;
+    float tp = 3.0f;
 
 
 	//what is this for???????????? the game wont work if its not true so why have it
@@ -76,10 +82,10 @@ public class BoatControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		
-        if(keyboardControl)
+
+        if (keyboardControl)
         {
-			
+
             if (!Joint)
             {
                 Joint = GameObject.Find(Hand.ToString());
@@ -93,7 +99,7 @@ public class BoatControl : MonoBehaviour
                         Wrist = GameObject.Find("WristRight");
                         Elbow = GameObject.Find("ElbowRight");
                         Shoulder = GameObject.Find("ShoulderRight");
-						Debug.Log ("Right Hand");
+                        Debug.Log("Right Hand");
                     }
                     else
                     {
@@ -116,6 +122,7 @@ public class BoatControl : MonoBehaviour
                     if (!Racing)
                     {
                         rb.AddRelativeForce(Vector3.back * DeltaReach * PowerModifier);
+                        moving = true;
                     }
 
                     Pulling = true;
@@ -125,48 +132,37 @@ public class BoatControl : MonoBehaviour
                 else if (DeltaReach > 0)
                 {
 
-					//if (!Racing)
-					//{
-					//	rb.AddRelativeForce(Vector3.forward * DeltaReach * PowerModifier);
-				//	}
+                    //if (!Racing)
+                    //{
+                    //	rb.AddRelativeForce(Vector3.forward * DeltaReach * PowerModifier);
+                    //	}
 
                     Pulling = false;
-
+                    moving = false;
 
                 }
 
                 if (Pulling)
-                {	
-					
+                {
                     // pull oars animation
-                   // LeftOar.transform.localEulerAngles = new Vector3(90, 270, 270);
-
                     LeftOar.transform.localRotation = Quaternion.Lerp(LeftOar.transform.localRotation, Quaternion.Euler(90, 250, 270), Time.deltaTime * 5);
-                    //RightOar.transform.localEulerAngles = new Vector3(-90, 270, 90);
                     RightOar.transform.localRotation = Quaternion.Lerp(RightOar.transform.localRotation, Quaternion.Euler(-90, 250, 90), Time.deltaTime * 5);
 
                     if (Racing)
                     {
-                        //LeftCuff.transform.localEulerAngles = new Vector3(283.5f, 0, 90);
                         LeftCuff.transform.localRotation = Quaternion.Lerp(LeftCuff.transform.localRotation, Quaternion.Euler(283.5f, 0, 90), Time.deltaTime * 5);
-                        //RightCuff.transform.localEulerAngles = new Vector3(283.5f, 180, 90);
                         RightCuff.transform.localRotation = Quaternion.Lerp(RightCuff.transform.localRotation, Quaternion.Euler(283.5f, 180, 90), Time.deltaTime * 5);
                     }
                 }
                 else
                 {
-
                     // lift oars animation
-                    //LeftOar.transform.localEulerAngles = new Vector3(0, 270, 270);
                     LeftOar.transform.localRotation = Quaternion.Lerp(LeftOar.transform.localRotation, Quaternion.Euler(0, 270, 250), Time.deltaTime * 5);
-                   // RightOar.transform.localEulerAngles = new Vector3(0, 270, 90);
                     RightOar.transform.localRotation = Quaternion.Lerp(RightOar.transform.localRotation, Quaternion.Euler(0, 270, 110), Time.deltaTime * 5);
 
                     if (Racing)
                     {
-                        //LeftCuff.transform.localEulerAngles = new Vector3(270, 90, 0);
                         LeftCuff.transform.localRotation = Quaternion.Lerp(LeftCuff.transform.localRotation, Quaternion.Euler(270, 90, 0), Time.deltaTime * 5);
-                        //RightCuff.transform.localEulerAngles = new Vector3(270, 270, 0);
                         RightCuff.transform.localRotation = Quaternion.Lerp(RightCuff.transform.localRotation, Quaternion.Euler(270, 270, 0), Time.deltaTime * 5);
                     }
                 }
@@ -190,21 +186,34 @@ public class BoatControl : MonoBehaviour
 
                 ReachPercent = (CurReach - MinReach) / (MaxReach - MinReach);
 
-               // LeftPin.transform.localEulerAngles = new Vector3(0, 0, 45 - 90 * ReachPercent); // 45 to - 45)   these make it crash
-               // RightPin.transform.localEulerAngles = new Vector3(0, 180, 225 - 90 * ReachPercent); // 225 to  135)   crash
-
                 //debug speed check
                 //Speed = rb.velocity.magnitude;
+            }
+            if (moving == false) ///need to find a better way to trigger bool moving. 
+            {
+                if (t >= tp)
+                {
+                    rb.AddRelativeForce(Vector3.forward * 1);
+                    t = 0.0f;
+                }
+                else
+                {
+                    t += Time.deltaTime;
+                }
             }
         }
         else
         {
 
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
                 rb.AddRelativeForce(Vector3.forward * 10 * PowerModifier);
+            //put default speed here
 
-       }
+
+        }
         
+   
+
     }
 
     public void Calibrate()

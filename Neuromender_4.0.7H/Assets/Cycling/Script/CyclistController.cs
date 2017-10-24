@@ -79,7 +79,7 @@ public class CyclistController : MonoBehaviour
 			
             DiamondGapTime -= Time.deltaTime;
 
-            if (colRPM.GetComponent<colliderRPM>().counter > 0) //|| (Input.GetKey(KeyCode.UpArrow))
+            if (colRPM.GetComponent<colliderRPM>().counter > 0)// || (Input.GetKey(KeyCode.UpArrow)))
             {
                 Bike.GetComponent<Timer>().enabled = true;
 

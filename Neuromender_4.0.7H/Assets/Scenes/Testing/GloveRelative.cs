@@ -19,7 +19,10 @@ public class GloveRelative : Glove_Base
     private float rdsTimer = 0.0f;
     private float rdsTime = 3.0f;
 
+    private float t = 0.0f; //time
+    public float tp = 2.0f; //time passed, used to make a pause after hitting a target
     DataLogger_Targets logger = null;           // Data logger that tracks and records the performance of this glove.
+
 
     public Camera cam;// = Camera.current;
 
@@ -131,8 +134,17 @@ public class GloveRelative : Glove_Base
 
                 if (!Loaded && Joint.transform.position.z < RelativeJoint.transform.position.z + ArmResetDistance && !countdownActive)
                 {
-                    Reload();
-                    startLogging = true;
+                   // if (t >= tp)
+                   // {
+                        Reload();
+                        startLogging = true;
+                      //  t = 0.0f;
+                   // }
+                   // else
+                   // {
+                 //       t += Time.deltaTime;
+                 //   } */
+
                 }/*
                 if (!Loaded && Reach <= ReloadDistance)
                 {
