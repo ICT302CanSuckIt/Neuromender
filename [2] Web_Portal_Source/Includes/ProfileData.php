@@ -43,7 +43,6 @@
 				}
 			}
 
-
 			//$User = $_SESSION['UserID'];
 
 			if((int)$_SESSION['UserID'] == (int)$User OR hasViewingRights($User, $dbhandle))
@@ -51,178 +50,182 @@
 				$User = $_SESSION['PatientID'];
 				if (!empty($_POST) && isset($_POST["btnEdit"]))
 				{
-						//$User = $_GET['user'];
-						$FullName 					= $_POST["fName"];
-						$Username 					= $_POST["uName"];
-						$Email 						= $_POST["email"];
-						$Address 					= $_POST["address"];
-						$dob 						= $_POST["dob"];
-						$Gender 					= $_POST["gender"];
-						
-						//----Affliction details----//
-						$SideAffected 				= $_POST["SideAffected"];
-						$Severity 					= $_POST["Severity"];
-						$Bilateral 					= $_POST["Bilateral"];
-						$Doa 						= $_POST["DateOfAffliction"];
-						$SensorDistance 			= $_POST["SensorDistance"];						
-						$ArmLength 					= $_POST["ArmLength"];
-						$LeftNeglect 				= $_POST["LeftNeglect"];
-						$Notes 						= $_POST["Notes"];
-						
-						//----Wingman Restriction Details:----//
-						$enabledWingman 			= 0;//isset( $_POST["enabledWingman"] );
-						$angleThreshold 			= $_POST["angleThreshold"];
-						$ThresholdIncreaser 		= $_POST["thresholdIncreaser"];
-						$speedSlow 					= $_POST["speedSlow"];
-						$speedMedium 				= $_POST["speedMedium"];
-						$speedFast 					= $_POST["speedFast"];
-						$WGamesPerDay 				= $_POST["WGamesPerDay"];
-						$WGamesPerSession 			= $_POST["WGamesPerSession"];
-						$WIntervalBetweenSession 	= $_POST["WIntervalBetweenSession"];
-						
-						
-						//----Target Restriction Details----//
-						$enabledTargets 			= 0;//sset( $_POST["enabledTargets"] );
-						$extensionThreshold 		= $_POST["extensionThreshold"];
-						$extensionThresholdIncrease = $_POST["extensionThresholdIncrease"];
-						$minimumExtensionThreshold 	= $_POST["minimumExtensionThreshold"];
-						$gridSize 					= $_POST["gridSizeRow"] . "," . $_POST["gridSizeCol"];
-						$gridOrder 					= $_POST["gridOrder"];
-						$repetitions 				= $_POST["repetitions"];
-						$TGamesPerDay 				= $_POST["TGamesPerDay"];
-						$TGamesPerSession 			= $_POST["TGamesPerSession"];
-						$TIntervalBetweenSession 	= $_POST["TIntervalBetweenSession"];
-						$CountdownDistance			= $_POST["CountdownDistance"];
-						$AdjustmentCountdown		= $_POST["AdjustmentCountdown"];
-						$ArmResetDistance 			= $_POST["ArmResetDistance"];
-						
-						//----Cycling Restriction Details----//
-						$enabledCycling 			= 0;//sset( $_POST["enabledCycling"] );
-						$CGamesPerDay 				= $_POST["CGamesPerDay"];
-						$CGamesPerSession 			= $_POST["CGamesPerSession"];
-						$CIntervalBetweenSession 	= $_POST["CIntervalBetweenSession"];
-						$ArmMaxExtension			= $_POST["ArmMaxExtension"];
-						$DistanceShort				= $_POST["DistanceShort"];
-						$DistanceMedium 			= $_POST["DistanceMedium"];
-						$DistanceLong				= $_POST["DistanceLong"];
-						
-						//Update User
-						if( isset( $_POST['EnabledWingman']) )
-						{
-							$enabledWingman = 1;
-						}
-						if( isset( $_POST['EnabledTargets']) )
-						{
-							$enabledTargets = 1;
-						}
-						if( isset( $_POST['EnabledCycling']) )
-						{
-							$enabledCycling = 1;
-						}
+					//$User = $_GET['user'];
+					$FullName 					= $_POST["fName"];
+					$Username 					= $_POST["uName"];
+					$Email 						= $_POST["email"];
+					$Address 					= $_POST["address"];
+					$dob 						= $_POST["dob"];
+					$Gender 					= $_POST["gender"];
+					
+					//----Affliction details----//
+					$SideAffected 				= $_POST["SideAffected"];
+					$Severity 					= $_POST["Severity"];
+					$Bilateral 					= $_POST["Bilateral"];
+					$Doa 						= $_POST["DateOfAffliction"];
+					$SensorDistance 			= $_POST["SensorDistance"];						
+					$ArmLength 					= $_POST["ArmLength"];
+					$LeftNeglect 				= $_POST["LeftNeglect"];
+					$Notes 						= $_POST["Notes"];
+					
+					//----Wingman Restriction Details:----//
+					$enabledWingman 			= 0;//isset( $_POST["enabledWingman"] );
+					$angleThreshold 			= $_POST["angleThreshold"];
+					$ThresholdIncreaser 		= $_POST["thresholdIncreaser"];
+					$speedSlow 					= $_POST["speedSlow"];
+					$speedMedium 				= $_POST["speedMedium"];
+					$speedFast 					= $_POST["speedFast"];
+					$WGamesPerDay 				= $_POST["WGamesPerDay"];
+					$WGamesPerSession 			= $_POST["WGamesPerSession"];
+					$WIntervalBetweenSession 	= $_POST["WIntervalBetweenSession"];
+					
+					
+					//----Target Restriction Details----//
+					$enabledTargets 			= 0;//sset( $_POST["enabledTargets"] );
+					$extensionThreshold 		= $_POST["extensionThreshold"];
+					$extensionThresholdIncrease = $_POST["extensionThresholdIncrease"];
+					$minimumExtensionThreshold 	= $_POST["minimumExtensionThreshold"];
+					$gridSize 					= $_POST["gridSizeRow"] . "," . $_POST["gridSizeCol"];
+					$gridOrder 					= $_POST["gridOrder"];
+					$repetitions 				= $_POST["repetitions"];
+					$TGamesPerDay 				= $_POST["TGamesPerDay"];
+					$TGamesPerSession 			= $_POST["TGamesPerSession"];
+					$TIntervalBetweenSession 	= $_POST["TIntervalBetweenSession"];
+					$CountdownDistance			= $_POST["CountdownDistance"];
+					$AdjustmentCountdown		= $_POST["AdjustmentCountdown"];
+					$ArmResetDistance 			= $_POST["ArmResetDistance"];
+					
+					//----Cycling Restriction Details----//
+					$enabledCycling 			= 0;//sset( $_POST["enabledCycling"] );
+					$CGamesPerDay 				= $_POST["CGamesPerDay"];
+					$CGamesPerSession 			= $_POST["CGamesPerSession"];
+					$CIntervalBetweenSession 	= $_POST["CIntervalBetweenSession"];
+					$ArmMaxExtension			= $_POST["ArmMaxExtension"];
+					$DistanceShort				= $_POST["DistanceShort"];
+					$DistanceMedium 			= $_POST["DistanceMedium"];
+					$DistanceLong				= $_POST["DistanceLong"];
+					
+					//----Email Alert Details----//
+					$enabledEAlerts = 0;
+					
+					//Update User
+					if( isset( $_POST['EnabledWingman']) )
+					{
+						$enabledWingman = 1;
+					}
+					if( isset( $_POST['EnabledTargets']) )
+					{
+						$enabledTargets = 1;
+					}
+					if( isset( $_POST['EnabledCycling']) )
+					{
+						$enabledCycling = 1;
+					}
+					if( isset( $_POST['EnabledEAlerts']) )
+					{
+						$enabledEAlerts = 1;
+					}
 
-						
-						if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
-						if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
-						
-						$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
-						$roleResult = $dbhandle->query($roleSQL);
-						$isPatient = $roleResult->num_rows;
 					
+					if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
+					if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
 					
+					$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
+					$roleResult = $dbhandle->query($roleSQL);
+					$isPatient = $roleResult->num_rows;
+				
+				
+				
+				
+					$sql = "UPDATE Users
+						SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-M-D', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
+						WHERE UserID=$User";
+					$result = $dbhandle->query($sql);
+					if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
 					
+											
 					
-						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-M-D', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling
+					//Update Affliction notes
+						//GetSideAffected
+					if( $isPatient > 0 )
+					{
+						$sql = "UPDATE Affliction
+							SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-M-D', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
 						
-                        
-						
-						//Update Affliction notes
-							//GetSideAffected
-						if( $isPatient > 0 )
+						//Update Wingman Restriction Details
+						//First check if an entry exists
+						if( $enabledWingman == 1 )
 						{
-							$sql = "UPDATE Affliction
-								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-M-D', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
-								WHERE UserID=$User";
+							$sql = "SELECT * FROM WingmanRestrictions WHERE UserID=$User";
+							$result = $dbhandle->query($sql);
+							if ($result->num_rows == 0) // Insert because value doesn't exist
+							{
+								$sql = "INSERT INTO WingmanRestrictions 
+											(UserID, AngleThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
+											values ($User, $angleThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
+							}
+							else //Update because value already exists
+							{
+								$sql = "UPDATE WingmanRestrictions
+									SET AngleThreshold=$angleThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
+									WHERE UserID=$User";
+							}
 							$result = $dbhandle->query($sql);
 							if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
-							
-							//Update Wingman Restriction Details
-							//First check if an entry exists
-							if( $enabledWingman == 1 )
-							{
-								$sql = "SELECT * FROM WingmanRestrictions WHERE UserID=$User";
-								$result = $dbhandle->query($sql);
-								if ($result->num_rows == 0) // Insert because value doesn't exist
-								{
-									$sql = "INSERT INTO WingmanRestrictions 
-												(UserID, AngleThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
-												values ($User, $angleThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
-								}
-								else //Update because value already exists
-								{
-									$sql = "UPDATE WingmanRestrictions
-										SET AngleThreshold=$angleThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
-										WHERE UserID=$User";
-								}
-								$result = $dbhandle->query($sql);
-								if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
-							}
-							
-							
-							//Update Target Restriction Details
-							//First check if an entry exists
-							if( $enabledTargets == 1 )
-							{
-								$sql = "SELECT * FROM TargetRestrictions WHERE UserID=$User";
-								$result = $dbhandle->query($sql);
-								if ($result->num_rows == 0) // Insert because value doesn't exist
-								{
-									$sql = "INSERT INTO TargetRestrictions 
-												(UserID, ExtensionThreshold, ExtensionThresholdIncrease, MinimumExtensionThreshold, GridSize, GridOrder, Repetitions, GamesPerDay, GamesPerSession, IntervalBetweenSession, AdjustmentCountdown, CountdownDistance, ArmResetDistance)
-												values ($User, $extensionThreshold, $extensionThresholdIncrease, $minimumExtensionThreshold, '$gridSize', '$gridOrder', $repetitions, $TGamesPerDay, $TGamesPerSession, $TIntervalBetweenSession, $AdjustmentCountdown, $CountdownDistance, $ArmResetDistance)";
-								}
-								else //Update because value already exists
-								{
-									$sql = "UPDATE TargetRestrictions
-										SET ExtensionThreshold=$extensionThreshold, ExtensionThresholdIncrease=$extensionThresholdIncrease, MinimumExtensionThreshold=$minimumExtensionThreshold, GridSize='$gridSize', GridOrder='$gridOrder', Repetitions=$repetitions, GamesPerDay=$TGamesPerDay, GamesPerSession=$TGamesPerSession, IntervalBetweenSession=$TIntervalBetweenSession, AdjustmentCountdown=$AdjustmentCountdown, CountdownDistance=$CountdownDistance, ArmResetDistance=$ArmResetDistance 
-										WHERE UserID=$User";
-								}
-								$result = $dbhandle->query($sql);
-								if ($result  === FALSE) { echo "<br>Errork: " . $sql . "<br>" . $dbhandle->error; } //Error check
-							}
-							
-							//Update Cycling Restriction Details
-							//First check if an entry exists
-							if( $enabledCycling == 1 )
-							{
-								$sql = "SELECT * FROM CyclingRestrictions WHERE UserID=$User";
-								$result = $dbhandle->query($sql);
-								if ($result->num_rows == 0) // Insert because value doesn't exist
-								{
-									$sql = "INSERT INTO CyclingRestrictions 
-												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort, DistanceMedium, DistanceLong)
-												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort, $DistanceMedium, $DistanceLong)";
-								}
-								else //Update because value already exists
-								{
-									$sql = "UPDATE CyclingRestrictions
-										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort, DistanceMedium=$DistanceMedium, DistanceLong=$DistanceLong 
-										WHERE UserID=$User";
-								}
-								$result = $dbhandle->query($sql);
-								if ($result  === FALSE) { echo "<br>Errora: " . $sql . "<br>" . $dbhandle->error; } //Error check
-							}
-							
-							
 						}
-
+						
+						
+						//Update Target Restriction Details
+						//First check if an entry exists
+						if( $enabledTargets == 1 )
+						{
+							$sql = "SELECT * FROM TargetRestrictions WHERE UserID=$User";
+							$result = $dbhandle->query($sql);
+							if ($result->num_rows == 0) // Insert because value doesn't exist
+							{
+								$sql = "INSERT INTO TargetRestrictions 
+											(UserID, ExtensionThreshold, ExtensionThresholdIncrease, MinimumExtensionThreshold, GridSize, GridOrder, Repetitions, GamesPerDay, GamesPerSession, IntervalBetweenSession, AdjustmentCountdown, CountdownDistance, ArmResetDistance)
+											values ($User, $extensionThreshold, $extensionThresholdIncrease, $minimumExtensionThreshold, '$gridSize', '$gridOrder', $repetitions, $TGamesPerDay, $TGamesPerSession, $TIntervalBetweenSession, $AdjustmentCountdown, $CountdownDistance, $ArmResetDistance)";
+							}
+							else //Update because value already exists
+							{
+								$sql = "UPDATE TargetRestrictions
+									SET ExtensionThreshold=$extensionThreshold, ExtensionThresholdIncrease=$extensionThresholdIncrease, MinimumExtensionThreshold=$minimumExtensionThreshold, GridSize='$gridSize', GridOrder='$gridOrder', Repetitions=$repetitions, GamesPerDay=$TGamesPerDay, GamesPerSession=$TGamesPerSession, IntervalBetweenSession=$TIntervalBetweenSession, AdjustmentCountdown=$AdjustmentCountdown, CountdownDistance=$CountdownDistance, ArmResetDistance=$ArmResetDistance 
+									WHERE UserID=$User";
+							}
+							$result = $dbhandle->query($sql);
+							if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
+						}
+						
+						//Update Cycling Restriction Details
+						//First check if an entry exists
+						if( $enabledCycling == 1 )
+						{
+							$sql = "SELECT * FROM CyclingRestrictions WHERE UserID=$User";
+							$result = $dbhandle->query($sql);
+							if ($result->num_rows == 0) // Insert because value doesn't exist
+							{
+								$sql = "INSERT INTO CyclingRestrictions 
+											(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort, DistanceMedium, DistanceLong)
+											values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort, $DistanceMedium, $DistanceLong)";
+							}
+							else //Update because value already exists
+							{
+								$sql = "UPDATE CyclingRestrictions
+									SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort, DistanceMedium=$DistanceMedium, DistanceLong=$DistanceLong 
+									WHERE UserID=$User";
+							}
+							$result = $dbhandle->query($sql);
+							if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
+						}
+					}
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling,
+							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling, Users.EnabledEAlerts,
 							Affliction.*,
 							WingmanRestrictions.AngleThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
 							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
@@ -255,70 +258,68 @@
 					$gender 		= numToDetail($gender, "gender");
 					
 					$outputString 	= $outputString . "<h1 class='main-title'> User Profile</h1>";
-                    $outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
-                                        
-                                        
+					$outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
+					
 					if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
 					{
-                        $urlA = "../Includes/Admin/AddRole.php?user=$User";
+						$urlA = "../Includes/Admin/AddRole.php?user=$User";
 						$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0);' onclick='showEditFields(); SetEdit();'> Edit </a></a>   
-														 <a class='vert-line'>  | <a class='profile-links' href=\"$urlA\">Add Role </a> </a> ";
-						 if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
-						 {
-								$urlD = "../Includes/Admin/DeleteUser.php?user=$User";
+						<a class='vert-line'>  | <a class='profile-links' href=\"$urlA\">Add Role </a> </a> ";
+						if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
+						{
+							$urlD = "../Includes/Admin/DeleteUser.php?user=$User";
 							$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href=\"$urlD\">Delete User </a></a>";
-						 }
+						}
                                                 
-                        if ( (((int)$_SESSION['SelectedRole'] != $constPatient && (int)$_SESSION['SelectedRole'] != $constResearch)) && ($_SESSION['currPasswordChange'] == $_SESSION['UserID']))
-                        {
-                                $outputString = $outputString . "<a class='vert-line'>  |  <a class='profile-links' href='../Includes/Admin/CreateUser.php'>Create New User</a></a>";
-                        }
-					
-					
-                        /* Role Change Portion */
-                        if ( $_SESSION['currPasswordChange'] == $_SESSION['UserID'] )
-                        {
-                            if(isset($_POST["btnRoleSelection"]))
-                            {
-                                    $_SESSION['SelectedRole'] = $_POST["initialRole"];
-                                    header('Location: Profile.php');
-                                    exit;
-                            }
+						if ( (((int)$_SESSION['SelectedRole'] != $constPatient && (int)$_SESSION['SelectedRole'] != $constResearch)) && ($_SESSION['currPasswordChange'] == $_SESSION['UserID']))
+						{
+							$outputString = $outputString . "<a class='vert-line'>  |  <a class='profile-links' href='../Includes/Admin/CreateUser.php'>Create New User</a></a>";
+						}
 
-                            if(isset($_POST["btnRoleChange"]))
-                            {
-                                    $_SESSION['SelectedRole'] = $_POST["roleChange"];
-                                    header('Location: Profile.php');
-                                    exit;        
-                            }
+						/* Role Change Portion */
+						if ( $_SESSION['currPasswordChange'] == $_SESSION['UserID'] )
+						{
+							if(isset($_POST["btnRoleSelection"]))
+							{
+								$_SESSION['SelectedRole'] = $_POST["initialRole"];
+								header('Location: Profile.php');
+								exit;
+							}
 
-                            $selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
-                            $roleCount = getval($dbhandle, $selectRoles);
-                            
-                            if ($roleCount > 1)
-                            {
-                                if (isset($_SESSION['SelectedRole']))
-                                {
-                                        $Role = $_SESSION['SelectedRole'];
+							if(isset($_POST["btnRoleChange"]))
+							{
+								$_SESSION['SelectedRole'] = $_POST["roleChange"];
+								header('Location: Profile.php');
+								exit;        
+							}
 
-                                        $roleSQL = "Select Description from Role where RoleID = $Role";
-                                        $RoleDesc = getval($dbhandle, $roleSQL);
-                                        $outputString = $outputString . "<br><br>Change Role ";
-                                }
+							$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+							$roleCount = getval($dbhandle, $selectRoles);
+							
+							if ($roleCount > 1)
+							{
+								if (isset($_SESSION['SelectedRole']))
+								{
+									$Role = $_SESSION['SelectedRole'];
 
-                                if($roleCount > 1)
-                                {
-                                        $sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
-                                        $outputString = $outputString . "<form method='post' style='display: inline;'>";
-                                        $outputString = $outputString . CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle);
-                                        $outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
-                                }
-                            }
-                        }
-                    }
+									$roleSQL = "Select Description from Role where RoleID = $Role";
+									$RoleDesc = getval($dbhandle, $roleSQL);
+									$outputString = $outputString . "<br><br>Change Role ";
+								}
+
+								if($roleCount > 1)
+								{
+									$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+									$outputString = $outputString . "<form method='post' style='display: inline;'>";
+									$outputString = $outputString . "CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle)";
+									$outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
+								}
+							}
+						}
+					}
 					if($_SESSION['SelectedRole'] != $constResearch)
 					{
-                            $outputString = $outputString . "
+						$outputString = $outputString . "
 							<table>
 							<tbody>
 								<form id='detailForm' method='post' onsubmit='return CheckValidForm(this);'>
@@ -327,7 +328,7 @@
 								</tr>
 								<div class='details'>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Full Name:
 									</td>
 									<td class='editable' class='page-details'>
@@ -340,7 +341,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Username:
 									</td>
 									<td class='editable' class='page-details'>
@@ -353,7 +354,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Email:
 									</td>
 									<td class='editable' class='page-details'>
@@ -366,31 +367,31 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Address:
 									</td>
 									<td class='editable' class='page-details'>
 										$address
 									</td>
 									<td class='editable' style='display:none;'>
-										<input type='text' name='address' id='address' value='$address' onkeyup='CheckText(\"address\")'>
+										<input type='text' name='address' id='address' value='$address' onkeyup='CheckTextAdd(\"address\")'>
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Date of Birth:
 									</td>
 									<td class='editable' class='page-details'>
 										" . date('d-m-Y', strtotime($dob)) . "
 									</td>
 									<td class='editable' style='display:none;'>
-										<input type='date' name='dob' id='dob' onblur='ValidateBirthDate(document.getElementById(\"dob\").value);' value='$dob'>
+										<input type='date' name='dob' id='dob' onblur='ValidateBirthDate(document.getElementById(\"dob\").value);' value='" . date('d-m-Y', strtotime($dob)) . "'>
 									<span id='dobError' style='color:red'>
 									</span>
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Gender:
 									</td>
 									<td class='editable' class='page-details'>
@@ -414,7 +415,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>Roles: </td>
+									<td class='page-details-table'>Roles: </td>
 									<td class='page-details-role'>%ROLESELECTOR%
 									</td>
 								</tr>
@@ -448,7 +449,7 @@
 						$outputString = $outputString . "<table>
 															<tr>
 																<td>Date Of Birth</td>
-																<td>date_format($dob, 'd-m-Y')</td>
+																<td>".date('d-m-Y', $dob)."</td>
 															</tr>
 															<tr>
 																<td>Gender</td>
@@ -514,6 +515,8 @@
 					$DistanceMedium 				= $user["DistanceMedium"];
 					$DistanceLong				= $user["DistanceLong"];
 						
+					//----Alert Emailing Details----//
+					$enabledEAlerts = $user['EnabledEAlerts'];
 					
                     
 					if( $DateOfAffliction != NULL )
@@ -523,7 +526,7 @@
 							$outputString = $outputString . "
 							<tr><td><br><h1 class='page-title'>Affliction Details</h1></td></tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Side Affected:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -537,7 +540,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Severity:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -551,7 +554,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Left Neglect:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -578,7 +581,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Bilaterial:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -605,15 +608,15 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Date of Affliction:
 									</td>
 									<td class='editable' style='padding:10px;'>
-										$DateOfAffliction
+										".date('d-m-Y', strtotime($DateOfAffliction))."
 									</td>
 									<td class='editable' style='display:none;'>
 										<div class='tooltips'>
-											<input type='date' name='DateOfAffliction' id='DateOfAffliction' onblur='ValidateDoa(document.getElementById(\"DateOfAffliction\").value);' value='$DateOfAffliction'>
+											<input type='date' name='DateOfAffliction' id='DateOfAffliction' onblur='ValidateDoa(document.getElementById(\"DateOfAffliction\").value);' value='".date('d-m-Y', strtotime($DateOfAffliction))."'>
 											<span class='tooltiptext'>The date of the stroke</span>
 										</div>
 										<span id='DateOfAfflictionError' style='color:red'>
@@ -621,7 +624,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Sensor Distance (mm) :
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -637,7 +640,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Arm Length (mm) :
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -653,8 +656,8 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
-										Notes: 
+									<td class='page-details-table'>
+										Affliction Notes: 
 									</td>
 									<td class='editable' style='padding:10px;'>
 										$Notes
@@ -673,7 +676,7 @@
 								<td><br><h1 class='page-title'>Wingman Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>Enable Wingman Game</td>
+								<td class='page-details-table'>Enable Wingman Game</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
@@ -687,7 +690,7 @@
 							
 							<tr class='WingmanData'>
 							
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Angle Threshold (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -703,7 +706,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Threshold Increment-Decrement (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -719,7 +722,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details-table'>
 									Track Slow (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -735,7 +738,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Track Medium (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -751,7 +754,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Track Fast (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -768,7 +771,7 @@
 							</tr>
 							
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Max games per day:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -784,7 +787,7 @@
 								</td>
 							</tr>
 							 <tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -800,7 +803,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details WingmanData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
+								<td class='page-details-table WingmanData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
 									$WIntervalBetweenSession
 								</td>
@@ -820,7 +823,7 @@
 								<td><br><h1 class='page-title'>Target Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>
+								<td class='page-details-table'>
 									Enable Targets Game
 								</td>
 								<td class='editable' style='display:none;'>
@@ -834,7 +837,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Grid Size [rows,columns]:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -854,7 +857,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Grid Order:<br/>
 									<div class='tooltips'>
 										<textarea id='gridOrder' rows='10' cols='20' name='gridOrder' onchange='GridOrderChanged()' >$gridOrder</textarea>
@@ -881,7 +884,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Repetitions/Loops:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -897,7 +900,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Max Extension Threshold (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -913,7 +916,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Min Extension Threshold (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -929,7 +932,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Extension Threshold Increment-Decrement (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -946,7 +949,7 @@
 							</tr>
 							
 							<tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Max games per day:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -962,7 +965,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -978,7 +981,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -994,7 +997,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Distance before grid adjusts (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1010,7 +1013,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Countdown before grid adjusts (seconds):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1026,7 +1029,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details TargetData'>
+								<td class='page-details-table TargetData'>
 									Arm Reset Distance (mm):
 								</td>
 								<td class='TargetNotEdit' style='padding:10px;'>
@@ -1042,25 +1045,25 @@
 								</td>
 							</tr>
 							
-							<!--Cycling Game Settings-->
+							<!--Rowing Game Settings-->
 							<tr>
-								<td><br><h1 class='page-title'>Cycling Game Settings</h1></td>
+								<td><br><h1 class='page-title'>Rowing Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>Enable Cycling Game</td>
+								<td class='page-details-table'>Enable Rowing Game</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledCycling)
 											$outputString .= "checked";
 					$outputString .= "	name='EnabledCycling' value='Cycling' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
-										<span class='tooltiptext'>Check to enable Cycling game</span>
+										<span class='tooltiptext'>Check to enable Rowing game</span>
 									</div>
 								</td>
 							</tr>
 							
 							<tr class='CyclingData'>
-								<td class='page-details CyclingData'>
+								<td class='page-details-table CyclingData'>
 									Maximum Arm Extension (mm):
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1077,7 +1080,7 @@
 							</tr>
 							
 							<tr class='CyclingData'>
-								<td class='page-details CyclingData'>
+								<td class='page-details-table CyclingData'>
 									Short Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1119,7 +1122,7 @@
 								</td>
 							</tr>
 							<tr class='CyclingData'>
-								<td class='page-details CyclingData'>
+								<td class='page-details-table CyclingData'>
 									Medium Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1160,7 +1163,7 @@
 										</select>
 							</tr>
 							<tr class='CyclingData'>
-								<td class='page-details CyclingData'>
+								<td class='page-details-table CyclingData'>
 									Long Distance:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1202,7 +1205,7 @@
 							</tr>
 							
 							<tr class='CyclingData'>
-								<td class='page-details CyclingData'>
+								<td class='page-details-table CyclingData'>
 									Max games per day:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1218,7 +1221,7 @@
 								</td>
 							</tr>
 							 <tr class='CyclingData CyclingData'>
-								<td class='page-details'>
+								<td class='page-details-table'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
@@ -1234,7 +1237,7 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details CyclingData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
+								<td class='page-details-table CyclingData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$CIntervalBetweenSession
 								</td>

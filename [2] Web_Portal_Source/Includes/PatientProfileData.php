@@ -3,20 +3,20 @@
 <script type='text/javascript' src='../Includes/GridSelection.js'></script>
 
 <?php
-        if ($_SESSION['loggedIn'] == false)
-        {
-            header("Location: Login.php");
-            exit();
-        }
-        error_reporting(0);
-                
-        // Reset variables used in SessionData
-        $_SESSION['beginAngDate'] = "";
-        $_SESSION['endAngDate'] = "";
-        $_SESSION['wgameNumber'] = "";
-				$_SESSION['wgameNumberID'] = "";
-        $_SESSION['AddRoleID'] = "";
-				$_SESSION['DeleteUserID'] = "";
+		if ($_SESSION['loggedIn'] == false)
+		{
+				header("Location: Login.php");
+				exit();
+		}
+		error_reporting(0);
+						
+		// Reset variables used in SessionData
+		$_SESSION['beginAngDate'] = "";
+		$_SESSION['endAngDate'] = "";
+		$_SESSION['wgameNumber'] = "";
+		$_SESSION['wgameNumberID'] = "";
+		$_SESSION['AddRoleID'] = "";
+		$_SESSION['DeleteUserID'] = "";
 
 		$outputString;
 		$outputString="<div class='body'>";
@@ -55,28 +55,29 @@
 						$Username 					= $_POST["uName"];
 						$Email 						= $_POST["email"];
 						$Address 					= $_POST["address"];
-						$dob 						= $_POST["dob"];
+						$dob 						=  date("Y-m-d", $_POST["dob"]);
 						$Gender 					= $_POST["gender"];
 						
 						//----Affliction details----//
 						$SideAffected 				= $_POST["SideAffected"];
 						$Severity 					= $_POST["Severity"];
 						$Bilateral 					= $_POST["Bilateral"];
-						$Doa 						= $_POST["DateOfAffliction"];
+						$Doa 						= date("Y-m-d", $_POST["DateOfAffliction"]);
 						$SensorDistance 			= $_POST["SensorDistance"];						
 						$ArmLength 					= $_POST["ArmLength"];
 						$LeftNeglect 				= $_POST["LeftNeglect"];
 						$Notes 						= $_POST["Notes"];
 						
 						//----Wingman Restriction Details:----//
-						$enabledWingman 			= 0;//isset( $_POST["enabledWingman"] );
-						$angleThreshold 			= $_POST["angleThreshold"];
-						$ThresholdIncreaser 		= $_POST["thresholdIncreaser"];
-						$speedSlow 					= $_POST["speedSlow"];
-						$speedMedium 				= $_POST["speedMedium"];
-						$speedFast 					= $_POST["speedFast"];
-						$WGamesPerDay 				= $_POST["WGamesPerDay"];
-						$WGamesPerSession 			= $_POST["WGamesPerSession"];
+						$enabledWingman 			    = 0;//isset( $_POST["enabledWingman"] );
+						$angleThreshold 			    = $_POST["angleThreshold"];
+						$angleMinThreshold        = $_POST["angleMinThreshold"];
+						$ThresholdIncreaser 	    = $_POST["thresholdIncreaser"];
+						$speedSlow 					      = $_POST["speedSlow"];
+						$speedMedium 				      = $_POST["speedMedium"];
+						$speedFast 					      = $_POST["speedFast"];
+						$WGamesPerDay 				    = $_POST["WGamesPerDay"];
+						$WGamesPerSession 			  = $_POST["WGamesPerSession"];
 						$WIntervalBetweenSession 	= $_POST["WIntervalBetweenSession"];
 						
 						
@@ -96,14 +97,12 @@
 						$ArmResetDistance 			= $_POST["ArmResetDistance"];
 						
 						//----Cycling Restriction Details----//
-						$enabledCycling 				= 0;//sset( $_POST["enabledCycling"] );
+						$enabledCycling 			= 0;//sset( $_POST["enabledCycling"] );
 						$CGamesPerDay 				= $_POST["CGamesPerDay"];
 						$CGamesPerSession 			= $_POST["CGamesPerSession"];
 						$CIntervalBetweenSession 	= $_POST["CIntervalBetweenSession"];
 						$ArmMaxExtension			= $_POST["ArmMaxExtension"];
 						$DistanceShort				= $_POST["DistanceShort"];
-						$DistanceMedium 			= $_POST["DistanceMedium"];
-						$DistanceLong				= $_POST["DistanceLong"];
 						
 						//----Email Alert Details----//
 						$enabledEAlerts = 0;
@@ -138,7 +137,7 @@
 					
 					
 						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='$dob', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
+							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-m-d', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -150,7 +149,7 @@
 						if( $isPatient > 0 )
 						{
 							$sql = "UPDATE Affliction
-								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='$Doa', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
+								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-m-d', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
 								WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
 							if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -164,13 +163,13 @@
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
 									$sql = "INSERT INTO WingmanRestrictions 
-												(UserID, AngleThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
-												values ($User, $angleThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
+												(UserID, AngleThreshold, AngleMinThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
+												values ($User, $angleThreshold, $angleMinThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
 								}
 								else //Update because value already exists
 								{
 									$sql = "UPDATE WingmanRestrictions
-										SET AngleThreshold=$angleThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
+										SET AngleThreshold=$angleThreshold, AngleMinThreshold=$angleMinThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
 										WHERE UserID=$User";
 								}
 								$result = $dbhandle->query($sql);
@@ -209,13 +208,13 @@
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
 									$sql = "INSERT INTO CyclingRestrictions 
-												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort, DistanceMedium, DistanceLong)
-												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort, $DistanceMedium, $DistanceLong)";
+												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort)
+												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort)";
 								}
 								else //Update because value already exists
 								{
 									$sql = "UPDATE CyclingRestrictions
-										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort, DistanceMedium=$DistanceMedium, DistanceLong=$DistanceLong 
+										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort
 										WHERE UserID=$User";
 								}
 								$result = $dbhandle->query($sql);
@@ -230,9 +229,9 @@
 				$sql = "SELECT 
 							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling, Users.EnabledEAlerts,
 							Affliction.*,
-							WingmanRestrictions.AngleThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
+							WingmanRestrictions.AngleThreshold, WingmanRestrictions.AngleMinThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
 							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-							CyclingRestrictions.GamesPerDay as CGamesPerDay , CyclingRestrictions.GamesPerSession as CGamesPerSession, CyclingRestrictions.IntervalBetweenSession as CIntervalBetweenSession, CyclingRestrictions.ArmMaxExtension, CyclingRestrictions.DistanceShort, CyclingRestrictions.DistanceMedium, CyclingRestrictions.DistanceLong,
+							CyclingRestrictions.GamesPerDay as CGamesPerDay , CyclingRestrictions.GamesPerSession as CGamesPerSession, CyclingRestrictions.IntervalBetweenSession as CIntervalBetweenSession, CyclingRestrictions.ArmMaxExtension, CyclingRestrictions.DistanceShort,
 							Severity.Description as Severity, 
 							Lesion.Description as LesDesc, 
 							SideAffected.Description as SideAffected 
@@ -248,7 +247,7 @@
 						WHERE
 							Users.UserID = $User";
 				$result = $dbhandle->query($sql);
-				
+
 				if ($result->num_rows > 0) 
 				{
 					$user 			= $result->fetch_assoc();
@@ -258,14 +257,11 @@
 					$address 		= $user["Address"];
 					$dob 			= $user["Dob"];
 					$gender 		= $user["Gender"];
-					$gender 		= numToDetail($gender, "gender");
-					
-					
+					$gender 		= numToDetail($gender, "gender");	
 					
 					$outputString 	= $outputString . "<h1 class='main-title'> Viewing $fName's Profile</h1>";
-                    $outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
-                                        
-                                        
+					$outputString 	= $outputString . "<a class='profile-links' href='ChangePassword.php' name='userPassword'>Change Password</a> ";  
+					
 					if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
 					{
 						$urlA = "../Includes/Admin/AddRole.php?user=$User";
@@ -281,6 +277,7 @@
 						{
 							$outputString = $outputString . "<a class='vert-line'>  |  <a class='profile-links' href='../Includes/Admin/CreateUser.php'>Create New User</a></a>";
 						}
+						
 						/* Role Change Portion */
 						if ( $_SESSION['currPasswordChange'] == $_SESSION['UserID'] )
 						{
@@ -324,7 +321,7 @@
 					}
 					if($_SESSION['SelectedRole'] != $constResearch)
 					{
-                            $outputString = $outputString . "
+						$outputString = $outputString . "
 							<table>
 							<tbody>
 								<form id='detailForm' method='post' onsubmit='return CheckValidForm(this);'>
@@ -333,7 +330,7 @@
 								</tr>
 								<div class='details'>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Full Name:
 									</td>
 									<td class='editable' class='page-details'>
@@ -346,7 +343,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Username:
 									</td>
 									<td class='editable' class='page-details'>
@@ -359,7 +356,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Email:
 									</td>
 									<td class='editable' class='page-details'>
@@ -372,18 +369,18 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Address:
 									</td>
 									<td class='editable' class='page-details'>
 										$address
 									</td>
 									<td class='editable' style='display:none;'>
-										<input type='text' name='address' id='address' value='$address' onkeyup='CheckText(\"address\")'>
+										<input type='text' name='address' id='address' value='$address' onkeyup='CheckTextAdd(\"address\")'>
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Date of Birth:
 									</td>
 									<td class='editable' class='page-details'>
@@ -396,7 +393,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Gender:
 									</td>
 									<td class='editable' class='page-details'>
@@ -420,7 +417,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class='page-details'>Roles: </td>
+									<td class='page-details-table'>Roles: </td>
 									<td class='page-details-role'>%ROLESELECTOR%
 									</td>
 								</tr>
@@ -454,7 +451,7 @@
 						$outputString = $outputString . "<table>
 															<tr>
 																<td>Date Of Birth</td>
-																<td>$dob</td>
+																<td>".date('d-m-Y', $dob)."</td>
 															</tr>
 															<tr>
 																<td>Gender</td>
@@ -482,6 +479,7 @@
 					$enabledWingman 			= $user["EnabledWingman"];
 					
 					$AngleThreshold 			= $user["AngleThreshold"];
+					$AngleMinThreshold    = $user["AngleMinThreshold"];
 					$ThresholdIncrease 			= $user["ThresholdIncrease"];
 					$slow 						= $user["trackSlow"];
 					$medium 					= $user["trackMedium"];
@@ -515,10 +513,8 @@
 					$CGamesPerDay 				= $user["CGamesPerDay"];
 					$CGamesPerSession 			= $user["CGamesPerSession"];
 					$CIntervalBetweenSession 	= $user["CIntervalBetweenSession"];
-					$ArmMaxExtension			= $user["CountdownDistance"];
+					$ArmMaxExtension			= $user["ArmMaxExtension"];
 					$DistanceShort					= $user["DistanceShort"];
-					$DistanceMedium 				= $user["DistanceMedium"];
-					$DistanceLong				= $user["DistanceLong"];
 					
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -531,7 +527,7 @@
 							$outputString = $outputString . "
 							<tr><td><br><h1 class='page-title'>Affliction Details</h1></td></tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Side Affected:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -545,7 +541,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Severity:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -559,7 +555,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Left Neglect:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -586,7 +582,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Bilaterial:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -613,7 +609,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Date of Affliction:
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -629,7 +625,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Sensor Distance (mm) :
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -645,7 +641,7 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
+									<td class='page-details-table'>
 										Arm Length (mm) :
 									</td>
 									<td class='editable' style='padding:10px;'>
@@ -661,15 +657,15 @@
 									</td>
 								</tr>
 								<tr class='AfflictionData'>
-									<td class='page-details'>
-										Notes: 
+									<td class='page-details-table'>
+										Affliction Notes: 
 									</td>
 									<td class='editable' style='padding:10px;'>
 										$Notes
 									</td>
 									<td class='editable' style='display:none;'>
 										<div class='tooltips'>
-											<textarea id='Notes' rows='5' cols='45' name='Notes' >$Notes</textarea>
+											<textarea id='Notes' rows='5' cols='45' name='Notes'>$Notes</textarea>
 											<span class='tooltiptext'>Additional notes on the survivor</span>
 										</div>
 									</td>
@@ -681,7 +677,7 @@
 								<td><br><h1 class='page-title'>Wingman Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>Enable Wingman Game</td>
+								<td class='page-details-table'>Enable Wingman Game</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
@@ -695,7 +691,7 @@
 							
 							<tr class='WingmanData'>
 							
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Angle Threshold (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -711,7 +707,24 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+							
+								<td class='page-details-table WingmanData'>
+									Arm Reset Angle (degrees):
+								</td>
+								<td class='WingmanNotEdit' style='padding:10px;'>
+									$AngleMinThreshold
+								</td>
+								<td class='WingmanEdit' style='display:none;'>
+									<div class='tooltips'>
+										<input type='number' name='angleMinThreshold' id='angleMinThreshold' onblur='ValidateAngleMinThreshold(document.getElementById(\"angleMinThreshold\").value);' value='$AngleMinThreshold'>
+										<span class='tooltiptext'>The angle the user will have to lower their arm to when prompted to do so.</span>
+									</div>
+									<span id='angleMinThresholdError' style='color:red'>
+									</span>
+								</td>
+							</tr>
+							<tr class='WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Threshold Increment-Decrement (degrees):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -727,7 +740,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details'>
+								<td class='page-details-table'>
 									Track Slow (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -743,7 +756,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Track Medium (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -759,7 +772,7 @@
 								</td>
 							</tr>
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Track Fast (seconds):
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -776,7 +789,7 @@
 							</tr>
 							
 							<tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									Max games per day:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -792,7 +805,7 @@
 								</td>
 							</tr>
 							 <tr class='WingmanData'>
-								<td class='page-details WingmanData'>
+								<td class='page-details-table WingmanData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='WingmanNotEdit' style='padding:10px;'>
@@ -1050,19 +1063,19 @@
 								</td>
 							</tr>
 							
-							<!--Cycling/Rowing Game Settings-->
+							<!--Rowing Game Settings-->
 							<tr>
-								<td><br><h1 class='page-title'>Cycling/Rowing Game Settings</h1></td>
+								<td><br><h1 class='page-title'>Rowing Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details'>Enable Cycling/Rowing Game</td>
+								<td class='page-details'>Enable Rowing Game</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledCycling)
 											$outputString .= "checked";
 										$outputString .= "	name='EnabledCycling' value='Cycling' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
-										<span class='tooltiptext'>Check to enable Cycling game</span>
+										<span class='tooltiptext'>Check to enable Rowing game</span>
 									</div>
 								</td>
 							</tr>
@@ -1086,53 +1099,20 @@
 							
 							<tr class='CyclingData'>
 								<td class='page-details'>
-									Short Distance:
+									Track Length:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
 									$DistanceShort
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$DistanceShort'>
-										<span class='tooltiptext'>The length (in seconds) of the slow track mode</span>
+										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$DistanceShort' step='50' max='500' min='50'>
+										<span class='tooltiptext'>The length (in meters) of the track.</span>
 									</div>
 									<span id='GraphicLowError' style='color:red'>
 									</span>
 								</td>
 							</tr>
-							<tr class='CyclingData'>
-								<td class='page-details'>
-									Medium Distance:
-								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
-									$DistanceMedium
-								</td>
-								<td class='CyclingEdit' style='display:none;'>
-									<div class='tooltips'>
-										<input type='number' name='DistanceMedium' id='DistanceMedium' onblur='ValidateGraphicMedium(document.getElementById(\"DistanceMedium\").value);' value='$DistanceMedium'>
-										<span class='tooltiptext'>The length (in seconds) of the medium track mode</span>
-									</div>
-									<span id='GraphicMediumError' style='color:red'>
-									</span>
-								</td>
-							</tr>
-							<tr class='CyclingData'>
-								<td class='page-details'>
-									Long Distance:
-								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
-									$DistanceLong
-								</td>
-								<td class='CyclingEdit' style='display:none;'>
-									<div class='tooltips'>
-										<input type='number' name='DistanceLong' id='DistanceLong' onblur='ValidateGraphicHigh(document.getElementById(\"DistanceLong\").value);' value='$DistanceLong'>
-										<span class='tooltiptext'>The length (in seconds) of the fast track mode</span>
-									</div>
-									<span id='GraphicHighError' style='color:red'>
-									</span>
-								</td>
-							</tr>
-							
 							<tr class='CyclingData'>
 								<td class='page-details'>
 									Max games per day:
@@ -1373,14 +1353,16 @@
 						foreach($sessionIds as $sessionId)
 						{
 							//sum all the threshold pass and count the number of games
-							$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM Achievement 
+							$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore 
+							FROM Achievement 
 									LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
 									WHERE Achievement.SessionID = $sessionId AND Session.WingmanPlayed >= 1 AND Achievement.Completed = 1";
 							$result = mysqli_query($dbhandle,$sql);
 							$row = mysqli_fetch_assoc($result);
 							$totalGame = (float)$row["TotalGame"];
-							$totalAngle = (float)$row["TotalAngle"];
-							$totalScore = (float)$row["TotalScore"];
+							$totalAngle = (double)$row["TotalAngle"];
+							$totalScore = (double)$row["TotalScore"];
+							$date = $row["dDate"];
 							$averageAngle = $totalAngle / $totalGame;
 							$averageScore = $totalScore / $totalGame;
 							
@@ -1625,11 +1607,12 @@
 						$outputString = $outputString . '</table></div></div>';
 					}
 					
-				}//end of profile stuff
-				else{
-					$outputString = $outputString .  "<p>You don't have permission to view this user.</p></div>"; 
+				} else {//end of profile stuff
+					$outputString = $outputString .  "<p>Error! No Results Found.</p></div>"; 
 				}
-			}//end of has viewing rights
+			}else{//end of has viewing rights
+				$outputString = $outputString .  "<p>You don't have permission to view this user.</p></div>"; 
+			}
 		} else {
 			$outputString = $outputString .  '<p>Not Logged In</p></div> '; 
 		}

@@ -73,24 +73,23 @@
                     </div>
                 </div>
             </div>
-<div class="bar"> </div>
 
 <!--<div class="main-wrapper"> 
 	<div class="main-content">-->
-		
-            <!-- AREA FOR THE MAIN CONTENT -->
-            <div class="session-jumbotron">
-                <?php
-                    include "../Includes/SessionGraphAveragesData.php";
-                ?>
-            </div>
-
-		<div class="session-sidebar">
+		<div class="main-sidebar">
 			
 			<?php	
 				include "../sidebar.php"
 			?>
 		</div>
+            <!-- AREA FOR THE MAIN CONTENT -->
+            <div class="jumbotron">
+                <?php
+                    include "../Includes/SessionGraphAveragesData.php";
+                ?>
+            </div>
+
+		
 	</div>
 </div>
  <div class="clear"> </div>

@@ -151,8 +151,8 @@
 							<ol class='manuals-para2'>
 								<li>Achievement: Refers to the Wingman game, in regards to overall game data</li>
 								<li>RawTracking: Information regarding to data tracked during a session</li>
-								<li>Reach Game Data: Refers to the Targets game</li>
-								<li>Eye Tracking Data: Refers to data tracked for the eyes during the Targets game </li>
+								<li>Targets Game Data: Refers to the Targets game</li>
+								<li>Rowing Game Data: Refers to the Rowing Game</li>
 								<li>LevelCompleted: Refers to information on a completed level</li>
 								<li>Session: Refers to information about a session</li>
 							</ol>
@@ -167,9 +167,9 @@
 									<td>
 										<select name='table' id='table' onchange='RepopulateSelectors()'>
 											<option value='Achievement'>Achievement</option>
+											<option value='ReachGameData'>Targets Game Data</option>
+											<option value='CyclingGameData'>Rowing Game Data</option>
 											<option value='RawTracking'>RawTracking</option>
-											<option value='ReachGameData'>Reach Game Data</option>
-											<option value='EyeTrackingData'>Eye Tracking Data</option>
 											<option value='LevelCompleted'>LevelCompleted</option>
 											<option value='Session'>Session</option>
 										</select>

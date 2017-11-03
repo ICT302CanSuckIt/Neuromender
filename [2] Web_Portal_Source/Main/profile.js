@@ -597,7 +597,11 @@ function ValidateAdjustmentCountdown( num, output )
 //----Validate affliction----//
 function ValidateDoa( doa, output )
 {
-	var pickedDate =  new Date( doa );
+	var dd = doa.split("-")[0];
+	var mm = doa.split("-")[1];
+	var yy = doa.split("-")[1];
+	
+	var pickedDate =  new Date( yy,mm,dd );
 	var todayDate =  new Date();
 	
 	if( pickedDate > todayDate || pickedDate == "Invalid Date"  )
@@ -682,7 +686,11 @@ function ValidateEmail( email, output )
 
 function ValidateBirthDate( date, output )
 {
-	var pickedDate =  new Date( date );
+	var dd = date.split("-")[0];
+	var mm = date.split("-")[1];
+	var yy = date.split("-")[1];
+	
+	var pickedDate =  new Date( yy,mm,dd );
 	var todayDate =  new Date();
 	
 	if( pickedDate > todayDate || pickedDate == "Invalid Date"  )

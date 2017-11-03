@@ -111,18 +111,19 @@
 
 
 	<div class="main-wrapper">
-		<div class="profile-sidebar" >
-			<?php
-				include "../sidebar-profile.php"
-			?>
+		<div class="main-content">
+			<div class="profile-sidebar" >
+				<?php
+					include "../sidebar-profile.php"
+				?>
+			</div>
+			
+			<div class="profile-jumbotron">
+				<?php
+					include "../Includes/ProfileData.php"   
+				?>
+			</div>
 		</div>
-		
-		<div class="profile-jumbotron">
-			<?php
-				include "../Includes/ProfileData.php"   
-			?>
-		</div>
-
 	</div>
 	<div class="clear"></div>
 

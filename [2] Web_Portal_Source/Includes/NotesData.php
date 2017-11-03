@@ -77,7 +77,7 @@
 				if(!isset($_SESSION['noteNum'])){
 					echo "New Note";
 				} else {
-					echo "Viewing Note " . $_SESSION['noteNum'];
+					echo "Viewing Note";
 				}
 				echo '</h1>';
 ?>

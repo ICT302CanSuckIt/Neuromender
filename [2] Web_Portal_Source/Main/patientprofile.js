@@ -122,6 +122,21 @@ function ValidateAngleThreshold( threshold, output )
 	}
 }
 
+function ValidateAngleMinThreshold( threshold, output )
+{
+	if( threshold <= 0 || isNaN(threshold) || threshold=="" || (threshold > document.getElementById("angleThreshold").value))
+	{
+		//output.string += "Please enter valid angled threshold\n";
+		document.getElementById("angleMinThresholdError").textContent = "Please enter valid angle threshold";
+		return false;
+	}
+	else
+	{
+		document.getElementById("angleMinThresholdError").textContent = "";
+		return true;
+	}
+}
+
 
 function ValidateArmMaxExtension( threshold, output )
 {
@@ -170,10 +185,10 @@ function ValidateSlowTrack( speed, output )
 
 function ValidateGraphicLow( speed, output )
 {
-	if( speed <= 0 || isNaN(speed) || speed=="" )
+	if( speed <= 0 || isNaN(speed) || speed=="" || ((speed % 50) != 0))
 	{
 		//output.string += "Please enter a valid slow track speed\n";
-		document.getElementById("GraphicLowError").textContent = "Please enter a valid slow track speed";
+		document.getElementById("GraphicLowError").textContent = "Please enter a valid short track length";
 		return false;
 	}
 	else
@@ -186,10 +201,10 @@ function ValidateGraphicLow( speed, output )
 
 function ValidateGraphicMedium( speed, output )
 {
-	if( speed <= 0 || isNaN(speed) || speed=="" )
+	if( speed <= 0 || isNaN(speed) || speed=="" || ((speed % 50) != 0))
 	{
 		//output.string += "Please enter a valid slow track speed\n";
-		document.getElementById("GraphicMediumError").textContent = "Please enter a valid slow track speed";
+		document.getElementById("GraphicMediumError").textContent = "Please enter a valid medium track length";
 		return false;
 	}
 	else
@@ -201,10 +216,10 @@ function ValidateGraphicMedium( speed, output )
 
 function ValidateGraphicHigh( speed, output )
 {
-	if( speed <= 0 || isNaN(speed) || speed=="" )
+	if( speed <= 0 || isNaN(speed) || speed=="" || ((speed % 50) != 0))
 	{
 		//output.string += "Please enter a valid slow track speed\n";
-		document.getElementById("GraphicHighError").textContent = "Please enter a valid slow track speed";
+		document.getElementById("GraphicHighError").textContent = "Please enter a valid long track length";
 		return false;
 	}
 	else
@@ -598,7 +613,11 @@ function ValidateAdjustmentCountdown( num, output )
 //----Validate affliction----//
 function ValidateDoa( doa, output )
 {
-	var pickedDate =  new Date( doa );
+	var dd = doa.split("-")[0];
+	var mm = doa.split("-")[1];
+	var yy = doa.split("-")[1];
+	
+	var pickedDate =  new Date( yy,mm,dd );
 	var todayDate = new Date();
 	
 	if( pickedDate > today || pickedDate == "Invalid Date"  )
@@ -683,7 +702,11 @@ function ValidateEmail( email, output )
 
 function ValidateBirthDate( date, output )
 {
-	var pickedDate =  new Date( date );
+	var dd = date.split("-")[0];
+	var mm = date.split("-")[1];
+	var yy = date.split("-")[1];
+	
+	var pickedDate =  new Date( yy,mm,dd );
 	var today = new Date();
 	var dd = today.getDate();
 	var mm = today.getMonth()+1; //January is 0!
@@ -713,7 +736,7 @@ function ValidateBirthDate( date, output )
 
 function ValidateArmResetDistance( num, output )
 {
-	if( num < 0 || isNaN(num) || num=="" )
+	if( num < 0 || isNaN(num) || num=="" || (num > document.getElementById("minimumExtensionThreshold").value) )
 	{
 		//output.string += "Please enter a valid arm length\n";
 		document.getElementById("ArmResetDistanceError").textContent = "Please enter a valid arm reset distance";
@@ -819,6 +842,22 @@ function CheckText(id)
 	
 	
 	str = str.replace(/[^a-zA-Z1-9.@ ]/g, "");
+	
+	//Update real value
+	element.value = str;
+	
+	return true;
+	
+}
+
+function CheckTextAdd(id)
+{
+	var element = document.getElementById(id);
+	var i = 0;
+	var str = element.value;
+	
+	
+	str = str.replace(/[^a-zA-Z1-9.,@ ]/g, "");
 	
 	//Update real value
 	element.value = str;

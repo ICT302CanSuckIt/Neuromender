@@ -7573,8 +7573,15 @@ h1.main-title {
 	margin-top: 10px;
 	margin-bottom:10px;
 	position:relative;
-	
-	
+}
+
+.page-details-table {
+	display:block;
+	margin-left:70px;
+	margin-top: 10px;
+	margin-bottom:10px;
+	position:relative;
+	width: auto;
 }
 
 .page-details-graph {

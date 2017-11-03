@@ -122,7 +122,11 @@ function ValidateAnswer( answer )
 
 function ValidateBirthDate( date )
 {
-	var pickedDate =  new Date( date );
+	var dd = date.split("-")[0];
+	var mm = date.split("-")[1];
+	var yy = date.split("-")[1];
+	
+	var pickedDate =  new Date( yy,mm,dd );
 	var todayDate =  new Date();
 	
 	if( pickedDate > todayDate || pickedDate == "Invalid Date" )

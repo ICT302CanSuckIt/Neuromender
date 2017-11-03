@@ -17,37 +17,37 @@
 			{
                             
 				$gameNumber = $_POST['gameNumberSelection'];
-                                if (!($gameNumber > 0))
-                                {
-                                    $gameNumber = 1;
-                                }
+				if (!($gameNumber > 0))
+				{
+						$gameNumber = 1;
+				}
 
-                                echo "<br><h1 class='page-title'>Cycle Game Graphs</h1><br>";
-                                echo "<div class='page-details-graph'><b> Common Terms for the Cycle Game</b><br>";
-                                echo "Session = The time from when the player logs in, to when they log out.<br>";
-                                echo "Game = A full set of rounds (A set of target hits, 20 Cycle could be 1 game).<br>";
-                                echo "Round = An extension towards a target. 1 target hit is equal to 1 round.</div><br><br>";
+				echo "<br><h1 class='page-title'>Cycle Game Graphs</h1><br>";
+				echo "<div class='page-details-graph'><b> Common Terms for the Cycle Game</b><br>";
+				echo "Session = The time from when the player logs in, to when they log out.<br>";
+				echo "Game = A full set of rounds (A set of target hits, 20 Cycle could be 1 game).<br>";
+				echo "Round = An extension towards a target. 1 target hit is equal to 1 round.</div><br><br>";
 
-                                $sql = "SELECT * FROM CyclingGameData WHERE UserID = $currUser";
-                                $result = mysqli_query($dbhandle,$sql);
-                                $row = mysqli_fetch_assoc($result);
-                                
-								
-                                echo "<h1 class='page-title'>Accuracy for Game $gameNumber from Session $SessionID</h1>";
-                                
+				$sql = "SELECT * FROM CyclingGameData WHERE UserID = $currUser";
+				$result = mysqli_query($dbhandle,$sql);
+				$row = mysqli_fetch_assoc($result);
+				
 
-                                
-                                //
+				echo "<h1 class='page-title'>Accuracy for Game $gameNumber from Session $SessionID</h1>";
+				
+
+				
+				//
 				// ACCURACY FOR A SINGULAR GAME
-                                //
-                                $output = "<form method='post'>";
-                                $output = $output . "<div class='page-details-graph'>Select the game you wish to view <b>(if no data appears by default, hit submit)</b>: </div>";
-                                $output = $output . "<div class='page-details-graph'>%GAMENUMBER%</div>";
-                                $output = $output . "<div class='page-details-graph'><input type='submit' class='btn btn-primary btn-sm' id='btnGameNumber' name='btnGameNumber'/> </div></form>";
+				//
+				$output = "<form method='post'>";
+				$output = $output . "<div class='page-details-graph'>Select the game you wish to view <b>(if no data appears by default, hit submit)</b>: </div>";
+				$output = $output . "<div class='page-details-graph'>%GAMENUMBER%</div>";
+				$output = $output . "<div class='page-details-graph'><input type='submit' class='btn btn-primary btn-sm' id='btnGameNumber' name='btnGameNumber'/> </div></form>";
 
-                                $sql = "SELECT GameNo FROM CyclingGameData WHERE UserID = $currUser AND SessionID = $SessionID";
-                                $output = str_replace("%GAMENUMBER%", CreateSelectBox($sql, 'gameNumberSelection', 'gameNumberSelection', 'GameNo', 'GameNo', '', $dbhandle), $output);
-                                echo $output;
+				$sql = "SELECT GameNo FROM CyclingGameData WHERE UserID = $currUser AND SessionID = $SessionID";
+				$output = str_replace("%GAMENUMBER%", CreateSelectBox($sql, 'gameNumberSelection', 'gameNumberSelection', 'GameNo', 'GameNo', '', $dbhandle), $output);
+				echo $output;
 
 								
 				$sql = "SELECT * FROM CyclingGameData Where GameNo = $gameNumber AND SessionID = $SessionID AND UserID = $currUser";
@@ -81,7 +81,7 @@
               			
 					$amchartCycleTimeArray[] = array(
                     "Diamond"=>$ictgCounter, 
-                    "TimecInterval"=>(double)$row['DiamondGap'] / (float)$row['TimeInterval']
+                    "TimecInterval"=>round(((double)$row['DiamondGap'] / (float)$row['TimeInterval']), 2)
                     
                 );
 				

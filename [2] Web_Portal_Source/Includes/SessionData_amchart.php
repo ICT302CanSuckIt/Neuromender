@@ -282,49 +282,49 @@
         while($row = mysqli_fetch_assoc($result))
         {
             $iwgCounter++;
-		if ($row['Reloaded'] == 1) //lowered
-		{   
-				/*	$amchartGameArray[] = array(
+						if ($row['Reloaded'] == 1) //lowered
+						{   
+							/*	$amchartGameArray[] = array(
                     "ring"=>$iwgCounter,                 
-					"angleassisted"=>round((float)$row['Angle'], 2),
-					"score"=>((int)$row['Score']) 
-				); */
+										"angleassisted"=>round((float)$row['Angle'], 2),
+										"score"=>((int)$row['Score']) 
+							); */
 				
-				if ($row['Assisted'] == 1)
-				{
-					$amchartGameArray[] = array(
-                    "ring"=>$iwgCounter,                 
-					"angleassisted"=>round((float)$row['Angle'], 2),
-					"score"=>((int)$row['Score']) 
-					);
-				}
-				else
-				{	
-					$amchartGameArray[] = array(
-					"ring"=>$iwgCounter,                 
-					"angle"=>round((float)$row['Angle'], 2),
-					"score"=>((int)$row['Score'])
-					);
-				}			
+							if ($row['Assisted'] == 1)
+							{
+								$amchartGameArray[] = array(
+									"ring"=>$iwgCounter,                 
+									"angleassisted"=>round((float)$row['Angle'], 2),
+									"score"=>((int)$row['Score']) 
+								);
+							}
+							else
+							{	
+								$amchartGameArray[] = array(
+									"ring"=>$iwgCounter,                 
+									"angle"=>round((float)$row['Angle'], 2),
+									"score"=>((int)$row['Score'])
+								);
+							}			
                 
-        }
+						}
             else //not lowered
             {   if ($row['Assisted'] == 1)
-				{				
-					$amchartGameArray[] = array(
+								{				
+									$amchartGameArray[] = array(
                     "ring"=>$iwgCounter, 
                     "angleNotLoweredassisted"=>round((float)$row['Angle'], 2),
                     "score"=>((int)$row['Score'])
-                );
-				}
-				else
-				{				
-					$amchartGameArray[] = array(
+									);
+								}
+								else
+								{				
+									$amchartGameArray[] = array(
                     "ring"=>$iwgCounter, 
                     "angleNotLowered"=>round((float)$row['Angle'], 2),
                     "score"=>((int)$row['Score'])
-                );
-				}
+									);
+								}
             }
         }
                         
