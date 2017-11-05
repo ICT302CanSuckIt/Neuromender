@@ -50,7 +50,7 @@
 					$insertSQL = 	"INSERT 
 									INTO Users 
 											(Username,Password,Email,Address,SecretQuestion,SecretAnswer,FullName,Dob,Gender,ParentID,SignupDate)
-									Values ('$Username','$Password','$Email','$Address','$Question','$Answer','$FullName','$DOB','$Gender','$parent','$Signup')";
+									Values ('$Username','$Password','$Email','$Address','$Question','$Answer','$FullName','".date('Y-m-d',$DOB)."','$Gender','$parent','$Signup')";
 					$result = $dbhandle->query($insertSQL);
 					
 					if ($result  === TRUE) {
@@ -96,7 +96,7 @@
 						 $insertSQL = 	"INSERT 
 										INTO Affliction 
 												(UserID, SideAffectedID, SiteOfLesionID, SeverityID, Bilateral, DateOfAffliction, ArmLength, LeftNeglect, Notes)
-										Values ($UserID, $sideAffected, $siteOfLesion, $severity, $bilateral, '$dateOfAfflction', $armLength, $leftNeglect, '$Notes')";
+										Values ($UserID, $sideAffected, $siteOfLesion, $severity, $bilateral, '" . date('Y-m-d',$dateOfAfflction) . "', $armLength, $leftNeglect, '$Notes')";
 						$result = $dbhandle->query($insertSQL);
 						if ($result  === TRUE) {
 							//echo "Survivor Data set. You can set game restrictions in their profile under <b>Reports</b>";

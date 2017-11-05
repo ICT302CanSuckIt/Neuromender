@@ -73,7 +73,7 @@
 				$username = $_POST["Username"];
 				if($password == $confirm)
 				{
-					$password = sha1(htmlspecialchars($password));
+					$password = hash("sha512", htmlspecialchars($password));
 					$sql = "UPDATE Users
 							SET Password='$password'
 							WHERE Username='$username' ";

@@ -12,16 +12,16 @@ $filename = __DIR__ . "./DBData.txt";
 $DBFile = fopen($filename, "r") or die ("Unable to Open File.");
 //get database details from file
 $cipher = "AES-256-OFB";
-//$key = rtrim(fgets($DBFile));
-//$iv = rtrim(fgets($DBFile));
-$username = rtrim(fgets($DBFile));
-//$username = openssl_decrypt($u1, $cipher, $key, $options=0, $iv);
-$password = rtrim(fgets($DBFile));
-//$password = openssl_decrypt($p1, $cipher, $key, $options=0, $iv);
-$hostname = rtrim(fgets($DBFile));
-//$hostname = openssl_decrypt($h1, $cipher, $key, $options=0, $iv);
-$dbname = rtrim(fgets($DBFile));
-//$dbname = openssl_decrypt($d1, $cipher, $key, $options=0, $iv);
+$key = rtrim(fgets($DBFile));
+$iv = rtrim(fgets($DBFile));
+$u1 = rtrim(fgets($DBFile));
+$username = openssl_decrypt($u1, $cipher, $key, $options=0, $iv);
+$p1 = rtrim(fgets($DBFile));
+$password = openssl_decrypt($p1, $cipher, $key, $options=0, $iv);
+$h1 = rtrim(fgets($DBFile));
+$hostname = openssl_decrypt($h1, $cipher, $key, $options=0, $iv);
+$d1 = rtrim(fgets($DBFile));
+$dbname = openssl_decrypt($d1, $cipher, $key, $options=0, $iv);
 
 fclose($DBFile);
 
