@@ -96,13 +96,15 @@
 						$AdjustmentCountdown		= $_POST["AdjustmentCountdown"];
 						$ArmResetDistance 			= $_POST["ArmResetDistance"];
 						
-						//----Cycling Restriction Details----//
-						$enabledCycling 			= 0;//sset( $_POST["enabledCycling"] );
-						$CGamesPerDay 				= $_POST["CGamesPerDay"];
-						$CGamesPerSession 			= $_POST["CGamesPerSession"];
-						$CIntervalBetweenSession 	= $_POST["CIntervalBetweenSession"];
-						$ArmMaxExtension			= $_POST["ArmMaxExtension"];
-						$DistanceShort				= $_POST["DistanceShort"];
+						//----Rowing Restriction Details----//
+						$enabledRowing 						= 0;//sset( $_POST["enabledCycling"] );
+						$RGamesPerDay 						= $_POST["RGamesPerDay"];
+						$RGamesPerSession 				= $_POST["RGamesPerSession"];
+						$RIntervalBetweenSession 	= $_POST["RIntervalBetweenSession"];
+						$ArmMaxExtension					= $_POST["ArmMaxExtension"];
+						$targetReachPercent				= $_POST["TargetReachPercent"];
+						$reachResetPercent				= $_POST["reachResetPercent"];
+						$trackLength							= $_POST["trackLength"];
 						
 						//----Email Alert Details----//
 						$enabledEAlerts = 0;
@@ -116,9 +118,9 @@
 						{
 							$enabledTargets = 1;
 						}
-						if( isset( $_POST['EnabledCycling']) )
+						if( isset( $_POST['EnabledRowing']) )
 						{
-							$enabledCycling = 1;
+							$enabledRowing = 1;
 						}
 						if( isset( $_POST['EnabledEAlerts']) )
 						{
@@ -137,7 +139,7 @@
 					
 					
 						$sql = "UPDATE Users
-							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-m-d', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledCycling=$enabledCycling, EnabledEAlerts='$enabledEAlerts'
+							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-m-d', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledRowing=$enabledRowing, EnabledEAlerts='$enabledEAlerts'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
 						if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
@@ -199,22 +201,22 @@
 								if ($result  === FALSE) { echo "<br>Error: " . $sql . "<br>" . $dbhandle->error; } //Error check
 							}
 							
-							//Update Cycling Restriction Details
+							//Update Rowing Restriction Details
 							//First check if an entry exists
-							if( $enabledCycling == 1 )
+							if( $enabledRowing == 1 )
 							{
-								$sql = "SELECT * FROM CyclingRestrictions WHERE UserID=$User";
+								$sql = "SELECT * FROM RowingRestrictions WHERE UserID=$User";
 								$result = $dbhandle->query($sql);
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
-									$sql = "INSERT INTO CyclingRestrictions 
-												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, DistanceShort)
-												values ($User, $CGamesPerDay, $CGamesPerSession, $CIntervalBetweenSession, $ArmMaxExtension, $DistanceShort)";
+									$sql = "INSERT INTO RowingRestrictions 
+												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, targetReachPercent, reachResetPercent, trackLength)
+												values ($User, $RGamesPerDay, $RGamesPerSession, $RIntervalBetweenSession, $ArmMaxExtension, $targetReachPercent, $reachResetPercent, $trackLength)";
 								}
 								else //Update because value already exists
 								{
-									$sql = "UPDATE CyclingRestrictions
-										SET GamesPerDay=$CGamesPerDay, GamesPerSession=$CGamesPerSession, IntervalBetweenSession=$CIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, DistanceShort=$DistanceShort
+									$sql = "UPDATE RowingRestrictions
+										SET GamesPerDay=$RGamesPerDay, GamesPerSession=$RGamesPerSession, IntervalBetweenSession=$RIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, targetReachPercent=$targetReachPercent, reachResetPercent=$reachResetPercent, trackLength=$trackLength
 										WHERE UserID=$User";
 								}
 								$result = $dbhandle->query($sql);
@@ -227,11 +229,11 @@
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledCycling, Users.EnabledEAlerts,
+							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledRowing, Users.EnabledEAlerts,
 							Affliction.*,
 							WingmanRestrictions.AngleThreshold, WingmanRestrictions.AngleMinThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
 							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-							CyclingRestrictions.GamesPerDay as CGamesPerDay , CyclingRestrictions.GamesPerSession as CGamesPerSession, CyclingRestrictions.IntervalBetweenSession as CIntervalBetweenSession, CyclingRestrictions.ArmMaxExtension, CyclingRestrictions.DistanceShort,
+							RowingRestrictions.GamesPerDay as RGamesPerDay , RowingRestrictions.GamesPerSession as RGamesPerSession, RowingRestrictions.IntervalBetweenSession as RIntervalBetweenSession, RowingRestrictions.ArmMaxExtension, RowingRestrictions.targetReachPercent, RowingRestrictions.reachResetPercent, RowingRestrictions.trackLength,
 							Severity.Description as Severity, 
 							Lesion.Description as LesDesc, 
 							SideAffected.Description as SideAffected 
@@ -240,7 +242,7 @@
 							Left Join Affliction on Affliction.UserID = Users.UserID 
 							Left Join WingmanRestrictions on WingmanRestrictions.UserID = Users.UserID 
 							Left Join TargetRestrictions on TargetRestrictions.UserID = Users.UserID 
-							Left Join CyclingRestrictions on CyclingRestrictions.UserID = Users.UserID 
+							Left Join RowingRestrictions on RowingRestrictions.UserID = Users.UserID 
 							Left Join SideAffected on SideAffected.SideAffectedID = Affliction.SideAffectedID
 							Left Join Severity on Affliction.SeverityID = Severity.SeverityID
 							Left Join Lesion on Affliction.SiteOfLesionID = Lesion.LesionID
@@ -508,13 +510,15 @@
 					$AdjustmentCountdown		= $user["AdjustmentCountdown"];
 					$ArmResetDistance 			= $user["ArmResetDistance"];
 					
-					//----Cycling Restriction Details----//
-					$enabledCycling 			= $user["EnabledCycling"];
-					$CGamesPerDay 				= $user["CGamesPerDay"];
-					$CGamesPerSession 			= $user["CGamesPerSession"];
-					$CIntervalBetweenSession 	= $user["CIntervalBetweenSession"];
-					$ArmMaxExtension			= $user["ArmMaxExtension"];
-					$DistanceShort					= $user["DistanceShort"];
+					//----Rowing Restriction Details----//
+					$enabledRowing 						= $user["EnabledRowing"];
+					$RGamesPerDay 						= $user["RGamesPerDay"];
+					$RGamesPerSession 				= $user["RGamesPerSession"];
+					$RIntervalBetweenSession 	= $user["RIntervalBetweenSession"];
+					$ArmMaxExtension					= $user["ArmMaxExtension"];
+					$targetReachPercent				= $user["targetReachPercent"];
+					$reachResetPercent				= $user["reachResetPercent"];
+					$DistanceShort						= $user["trackLength"];
 					
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -1063,7 +1067,9 @@
 								</td>
 							</tr>
 							
-							<!--Rowing Game Settings-->
+							<!--Rowing Game Settings
+							//was originally cycling, so all class names haven't been changed
+							-->
 							<tr>
 								<td><br><h1 class='page-title'>Rowing Game Settings</h1></td>
 							</tr>
@@ -1072,9 +1078,9 @@
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
-										if($enabledCycling)
+										if($enabledRowing)
 											$outputString .= "checked";
-										$outputString .= "	name='EnabledCycling' value='Cycling' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
+										$outputString .= "	name='EnabledRowinging' value='Rowing' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable Rowing game</span>
 									</div>
 								</td>
@@ -1102,11 +1108,11 @@
 									Track Length:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$DistanceShort
+									$trackLength
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$DistanceShort' step='50' max='500' min='50'>
+										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$trackLength' step='50' max='900' min='100'>
 										<span class='tooltiptext'>The length (in meters) of the track.</span>
 									</div>
 									<span id='GraphicLowError' style='color:red'>
@@ -1118,11 +1124,11 @@
 									Max games per day:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$CGamesPerDay
+									$RGamesPerDay
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='CGamesPerDay' id='CGamesPerDay' onblur='ValidateCycleGamesPerDay(document.getElementById(\"CGamesPerDay\").value);' value='$CGamesPerDay'>
+										<input type='number' name='RGamesPerDay' id='RGamesPerDay' onblur='ValidateCycleGamesPerDay(document.getElementById(\"CGamesPerDay\").value);' value='$RGamesPerDay'>
 										<span class='tooltiptext'>The maximum number of games that can be played during an entire day</span>
 									</div>
 									<span id='CGamesPerDayError' style='color:red'>
@@ -1134,11 +1140,11 @@
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$CGamesPerSession
+									$RGamesPerSession
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='CGamesPerSession' id='CGamesPerSession' onblur='ValidateCycleGamesPerSession(document.getElementById(\"CGamesPerSession\").value);' value='$CGamesPerSession'>
+										<input type='number' name='CGamesPerSession' id='CGamesPerSession' onblur='ValidateCycleGamesPerSession(document.getElementById(\"CGamesPerSession\").value);' value='$RGamesPerSession'>
 										<span class='tooltiptext'>The maximum number of games that can be played for each session (time between login/logout)</span>
 									</div>
 									<span id='CGamesPerSessionError' style='color:red'>
@@ -1148,11 +1154,11 @@
 							 <tr>
 								<td class='page-details'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
 								<td class='CyclingNotEdit' style='padding:10px;'>
-									$CIntervalBetweenSession
+									$RIntervalBetweenSession
 								</td>
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
-										<input step='0.01' type='number' name='CIntervalBetweenSession' id='CIntervalBetweenSession' onblur='ValidateCycleInterval(document.getElementById(\"CIntervalBetweenSession\").value);' value='$CIntervalBetweenSession'>
+										<input step='0.01' type='number' name='CIntervalBetweenSession' id='CIntervalBetweenSession' onblur='ValidateCycleInterval(document.getElementById(\"CIntervalBetweenSession\").value);' value='$RIntervalBetweenSession'>
 										<span class='tooltiptext'>The minimum number of hours after a session before a survivor can play again</span>
 									</div>
 									<span id='CIntervalBetweenSessionError' style='color:red'>
