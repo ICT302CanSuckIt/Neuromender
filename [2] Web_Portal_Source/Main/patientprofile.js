@@ -153,6 +153,21 @@ function ValidateArmMaxExtension( threshold, output )
 	}
 }
 
+function ValidateReachReset( threshold, output )
+{
+	if( threshold <= 1 || isNaN(threshold) || threshold=="" || threshold >=document.getElementById('targetReachPercent').value )
+	{
+		//output.string += "Please enter valid angled threshold\n";
+		document.getElementById("ReachResetError").textContent = "Please enter valid percentage";
+		return false;
+	}
+	else
+	{
+		document.getElementById("ReachResetError").textContent = "";
+		return true;
+	}
+}
+
 function ValidateAngleThresholdIncrease( increase, output )
 {
 	if( increase < 0 || isNaN(increase) || increase=="" )

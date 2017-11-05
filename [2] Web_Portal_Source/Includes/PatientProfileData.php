@@ -1096,13 +1096,43 @@
 								<td class='CyclingEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='ArmMaxExtension' id='ArmMaxExtension' onblur='ValidateArmMaxExtension(document.getElementById(\"ArmMaxExtension\").value);' value='$ArmMaxExtension'>
-										<span class='tooltiptext'Maximum Arm extesion that allow user to play</span>
+										<span class='tooltiptext'>Maximum Arm extesion that allow user to play</span>
 									</div>
 									<span id='ArmMaxExtensionError' style='color:red'>
 									</span>
 								</td>
 							</tr>
-							
+							<tr class='CyclingData'>
+								<td class='page-details'>
+									Target Reach Percentage:
+								</td>
+								<td class='CyclingNotEdit' style='padding:10px;'>
+									$targetReachPercent
+								</td>
+								<td class='CyclingEdit' style='display:none;'>
+									<div class='tooltips'>
+										<input type='number' name='targetReachPercent' id='targetReachPercent' min='1' max='99' value='$targetReachPercent'>
+										<span class='tooltiptext'>Percentage of maximum arm extension that is required of the patient</span>
+									</div>
+									</span>
+								</td>
+							</tr>
+							<tr class='CyclingData'>
+								<td class='page-details'>
+									Reach Reset Percentage:
+								</td>
+								<td class='CyclingNotEdit' style='padding:10px;'>
+									$reachResetPercent
+								</td>
+								<td class='CyclingEdit' style='display:none;'>
+									<div class='tooltips'>
+										<input type='number' name='targetReachPercent' id='targetReachPercent' min='1' onblur='ValidateReachReset(this.value);' value='$reachResetPercent'>
+										<span class='tooltiptext'>Percentage of maximum arm extension that the patient needs to pull back.</span>
+									</div>
+									<span id='ReachResetError' style='color:red'>
+									</span>
+								</td>
+							</tr>
 							<tr class='CyclingData'>
 								<td class='page-details'>
 									Track Length:
