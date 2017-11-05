@@ -34,7 +34,7 @@
 
 				
 				//Insert User Data
-				$Password = Sha1($Password);
+				$Password = hash("sha512", htmlspecialchars($Password));
 				$Signup = date("Y-m-d H:i:s");  
 				$parent = $_SESSION['UserID'];
 
