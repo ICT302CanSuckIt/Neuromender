@@ -6,13 +6,34 @@ function SetEdit()
 	var form = document.getElementById("detailForm");
 	ShowWingman( form );
 	ShowTargets( form );
-	ShowCycling( form );
+	RowingDisplay( form );
+	//ShowCycling( form );
 	//if( form.EnabledWingman.checked == true )
 	//{
 		//$(".WingmanEdit").toggle();
 	//}
 }
 
+function RowingDisplay ( form ){
+	if( form.EnabledRowing.checked == true){
+		$(".RowingData").show();
+		
+		if( editMode == true )
+		{
+			$(".RowingEdit").show();
+			$(".RowingNotEdit").hide();
+		}
+		else
+		{
+			$(".RowingEdit").hide();
+			$(".RowingNotEdit").show();
+		}
+	} else {
+		$(".RowingEdit").hide();
+		$(".RowingNotEdit").hide();
+		$(".RowingData").hide();
+	}
+}
 
 function ShowCycling( form )
 {
@@ -195,6 +216,13 @@ function ValidateSlowTrack( speed, output )
 	{
 		document.getElementById("speedSlowError").textContent = "";
 		return true;
+	}
+}
+
+function ValidateTrackLength( length, output ){
+	if( length < 100 || length > 900 || length="" || ((length % 50) != 0){
+		document.getElementById("TrackLengthError").textContent = "Please enter a valid track length.";
+		return false;
 	}
 }
 

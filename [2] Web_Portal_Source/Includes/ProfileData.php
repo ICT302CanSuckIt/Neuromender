@@ -102,7 +102,7 @@
 					$RIntervalBetweenSession 	= $_POST["RIntervalBetweenSession"];
 					$ArmMaxExtension					= $_POST["ArmMaxExtension"];
 					$targetReachPercent				= $_POST["TargetReachPercent"];
-					$reachResetPercent				= $_POST["reachResetPercent"];
+					$resetReachPercent				= $_POST["resetReachPercent"];
 					$trackLength							= $_POST["trackLength"];
 					
 					//----Email Alert Details----//
@@ -209,13 +209,13 @@
 							if ($result->num_rows == 0) // Insert because value doesn't exist
 							{
 								$sql = "INSERT INTO RowingRestrictions 
-											(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSession, ArmMaxExtension, targetReachPercent, reachResetPercent, trackLength)
-											values ($User, $RGamesPerDay, $RGamesPerSession, $RIntervalBetweenSession, $ArmMaxExtension, $targetReachPercent, $reachResetPercent, $trackLength)";
+											(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSessions, ArmMaxExtension, targetReachPercent, resetReachPercent, trackLength)
+											values ($User, $RGamesPerDay, $RGamesPerSession, $RIntervalBetweenSession, $ArmMaxExtension, $targetReachPercent, $resetReachPercent, $trackLength)";
 							}
 							else //Update because value already exists
 							{
 								$sql = "UPDATE RowingRestrictions
-									SET GamesPerDay=$RGamesPerDay, GamesPerSession=$RGamesPerSession, IntervalBetweenSession=$RIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, targetReachPercent=$targetReachPercent, reachResetPercent=$reachResetPercent, trackLength=$trackLength
+									SET GamesPerDay=$RGamesPerDay, GamesPerSession=$RGamesPerSession, IntervalBetweenSessions=$RIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, targetReachPercent=$targetReachPercent, resetReachPercent=$resetReachPercent, trackLength=$trackLength
 									WHERE UserID=$User";
 							}
 							$result = $dbhandle->query($sql);
@@ -225,26 +225,26 @@
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledRowing, Users.EnabledEAlerts,
-							Affliction.*,
-							WingmanRestrictions.AngleThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
-							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-							RowingRestrictions.GamesPerDay as RGamesPerDay , RowingRestrictions.GamesPerSession as RGamesPerSession, RowingRestrictions.IntervalBetweenSession as RIntervalBetweenSession, RowingRestrictions.ArmMaxExtension, RowingRestrictions.targetReachPercent, RowingRestrictions.reachResetPercent, RowingRestrictions.trackLength,
-							Severity.Description as Severity, 
-							Lesion.Description as LesDesc, 
-							SideAffected.Description as SideAffected 
-						FROM 
-							Users 
-							Left Join Affliction on Affliction.UserID = Users.UserID 
-							Left Join WingmanRestrictions on WingmanRestrictions.UserID = Users.UserID 
-							Left Join TargetRestrictions on TargetRestrictions.UserID = Users.UserID 
-							Left Join RowingRestrictions on RowingRestrictions.UserID = Users.UserID 
-							Left Join SideAffected on SideAffected.SideAffectedID = Affliction.SideAffectedID
-							Left Join Severity on Affliction.SeverityID = Severity.SeverityID
-							Left Join Lesion on Affliction.SiteOfLesionID = Lesion.LesionID
-						WHERE
-							Users.UserID = $User";
-				$result = $dbhandle->query($sql);
+						Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledRowing, Users.EnabledEAlerts,
+						Affliction.*,
+						WingmanRestrictions.AngleThreshold, WingmanRestrictions.AngleMinThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
+						TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
+						RowingRestrictions.GamesPerDay AS RGamesPerDay, RowingRestrictions.GamesPerSession AS RGamesPerSession, RowingRestrictions.IntervalBetweenSessions AS RIntervalBetweenSession, RowingRestrictions.ArmMaxExtension, RowingRestrictions.targetReachPercent, RowingRestrictions.resetReachPercent, RowingRestrictions.trackLength,
+						Severity.Description as Severity, 
+						Lesion.Description as LesDesc, 
+						SideAffected.Description as SideAffected 
+					FROM 
+						Users 
+						Left Join Affliction on Affliction.UserID = Users.UserID 
+						Left Join WingmanRestrictions on WingmanRestrictions.UserID = Users.UserID 
+						Left Join TargetRestrictions on TargetRestrictions.UserID = Users.UserID 
+						Left Join RowingRestrictions on RowingRestrictions.UserID = Users.UserID 
+						Left Join SideAffected on SideAffected.SideAffectedID = Affliction.SideAffectedID
+						Left Join Severity on Affliction.SeverityID = Severity.SeverityID
+						Left Join Lesion on Affliction.SiteOfLesionID = Lesion.LesionID
+					WHERE
+						Users.UserID = $User";
+			$result = $dbhandle->query($sql);
 
 				if ($result->num_rows > 0) 
 				{
@@ -262,8 +262,15 @@
 					
 					if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin || $_SESSION['SelectedRole'] == $constCoach || $_SESSION['SelectedRole'] == $constPhysio)
 					{
+						echo "<script>
+								$(document).ready(function (){
+									$('#editLink').click(function (){
+										$('.Rowing').toggle();
+									});
+								});
+							</script>";
 						$urlA = "../Includes/Admin/AddRole.php?user=$User";
-						$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0);' onclick='showEditFields(); SetEdit();'> Edit </a></a>   
+						$outputString = $outputString . "<a class='vert-line'>  | <a class='profile-links' href='javascript:void(0);' id='editLink' onclick='showEditFields(); SetEdit();'> Edit </a></a>   
 						<a class='vert-line'>  | <a class='profile-links' href=\"$urlA\">Add Role </a> </a> ";
 						if($_SESSION['SelectedRole'] == $constSuperAdmin || $_SESSION['SelectedRole'] == $constAdmin)
 						{
@@ -512,8 +519,8 @@
 					$RIntervalBetweenSession 	= $user["RIntervalBetweenSession"];
 					$ArmMaxExtension					= $user["ArmMaxExtension"];
 					$targetReachPercent				= $user["targetReachPercent"];
-					$reachResetPercent				= $user["reachResetPercent"];
-					$DistanceShort						= $user["trackLength"];
+					$resetReachPercent				= $user["resetReachPercent"];
+					$trackLength							= $user["trackLength"];
 						
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -1045,6 +1052,14 @@
 								</td>
 							</tr>
 							
+							<script>
+								$(document).ready(function (){
+									$('#rowcheck').click(function (){
+										$('.RowingData').toggle();
+									});
+								});
+							</script>
+							
 							<!--Rowing Game Settings
 							//was originally cycling, so all class names haven't been changed
 							-->
@@ -1056,38 +1071,38 @@
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
-										if($enabledRowing)
+										if($enabledRowing){
 											$outputString .= "checked";
-										$outputString .= "	name='EnabledRowinging' value='Rowing' onclick='ShowCycling(this.form);' />&nbsp; &nbsp;
+										}
+										$outputString .= " name='EnabledRowing' value='rowing' id='rowcheck' onclick='RowingDisplay(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable Rowing game</span>
 									</div>
 								</td>
 							</tr>
-							
-							<tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
-									Arm Max Extension:
+									Arm Max Extension(mm):
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+								<td class='Rowing' style='padding:10px;'>
 									$ArmMaxExtension
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='ArmMaxExtension' id='ArmMaxExtension' onblur='ValidateArmMaxExtension(document.getElementById(\"ArmMaxExtension\").value);' value='$ArmMaxExtension'>
-										<span class='tooltiptext'>Maximum Arm extesion that allow user to play</span>
+										<span class='tooltiptext'>Maximum Arm extension that allow user to play</span>
 									</div>
 									<span id='ArmMaxExtensionError' style='color:red'>
 									</span>
 								</td>
 							</tr>
-							<tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
-									Target Reach Percentage:
+									Target Reach Percentage (%):
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+								<td class='Rowing' style='padding:10px;'>
 									$targetReachPercent
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='targetReachPercent' id='targetReachPercent' min='1' max='99' value='$targetReachPercent'>
 										<span class='tooltiptext'>Percentage of maximum arm extension that is required of the patient</span>
@@ -1095,46 +1110,46 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
-									Reach Reset Percentage:
+									Reach Reset Percentage(%):
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
-									$reachResetPercent
+								<td class='Rowing' style='padding:10px;'>
+									$resetReachPercent
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='targetReachPercent' id='targetReachPercent' min='1' onblur='ValidateReachReset(this.value);' value='$reachResetPercent'>
+										<input type='number' name='targetReachPercent' id='targetReachPercent' min='1' onblur='ValidateReachReset(this.value);' value='$resetReachPercent'>
 										<span class='tooltiptext'>Percentage of maximum arm extension that the patient needs to pull back.</span>
 									</div>
-									<span id='ReachResetError' style='color:red'>
+									<span id='reachResetError' style='color:red'>
 									</span>
 								</td>
 							</tr>
-							<tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
-									Track Length:
+									Track Length (m):
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+								<td class='Rowing' style='padding:10px;'>
 									$trackLength
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
-										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateGraphicLow(document.getElementById(\"DistanceShort\").value);' value='$trackLength' step='50' max='900' min='100'>
+										<input type='number' name='DistanceShort' id='DistanceShort' onblur='ValidateTrackLength(this.value);' value='$trackLength' step='50' max='900' min='100'>
 										<span class='tooltiptext'>The length (in meters) of the track.</span>
 									</div>
-									<span id='GraphicLowError' style='color:red'>
+									<span id='TrackLengthError' style='color:red'>
 									</span>
 								</td>
 							</tr>
-							<tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
 									Max games per day:
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+								<td class='Rowing' style='padding:10px;'>
 									$RGamesPerDay
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='RGamesPerDay' id='RGamesPerDay' onblur='ValidateCycleGamesPerDay(document.getElementById(\"CGamesPerDay\").value);' value='$RGamesPerDay'>
 										<span class='tooltiptext'>The maximum number of games that can be played during an entire day</span>
@@ -1143,14 +1158,14 @@
 									</span>
 								</td>
 							</tr>
-							 <tr class='CyclingData'>
+							<tr class='RowingData'>
 								<td class='page-details'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+								<td class='Rowing' style='padding:10px;'>
 									$RGamesPerSession
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='CGamesPerSession' id='CGamesPerSession' onblur='ValidateCycleGamesPerSession(document.getElementById(\"CGamesPerSession\").value);' value='$RGamesPerSession'>
 										<span class='tooltiptext'>The maximum number of games that can be played for each session (time between login/logout)</span>
@@ -1159,12 +1174,14 @@
 									</span>
 								</td>
 							</tr>
-							 <tr>
-								<td class='page-details'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
-								<td class='CyclingNotEdit' style='padding:10px;'>
+							<tr class='RowingData'>
+								<td class='page-details'>
+									&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):
+								</td>
+								<td class='Rowing' style='padding:10px;'>
 									$RIntervalBetweenSession
 								</td>
-								<td class='CyclingEdit' style='display:none;'>
+								<td class='Rowing' style='display:none;'>
 									<div class='tooltips'>
 										<input step='0.01' type='number' name='CIntervalBetweenSession' id='CIntervalBetweenSession' onblur='ValidateCycleInterval(document.getElementById(\"CIntervalBetweenSession\").value);' value='$RIntervalBetweenSession'>
 										<span class='tooltiptext'>The minimum number of hours after a session before a survivor can play again</span>
@@ -1180,7 +1197,7 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Email Alerts</td>
-								<td class='CyclingNotEdit'>
+								<td class='WingmanNotEdit'>
 									<input type='checkbox' ";
 									if($enabledEAlerts){
 										$outputString .= "checked";

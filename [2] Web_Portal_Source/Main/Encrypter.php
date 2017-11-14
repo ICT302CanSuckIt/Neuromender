@@ -7,11 +7,10 @@
 	<body>
 		<?php
 			$key = openssl_random_pseudo_bytes(10);
-			$k2 = $key . " " . PHP_EOL;
+			$k2 = $key . "  ";
 			$fname ="../Includes/DBData.txt";
 			$file = fopen($fname, "w");
-			fwrite($file, $key);
-			//fwrite($file, " break ");
+			fwrite($file, $k2);
 			
 			$cipher = "AES-256-OFB";
 			
@@ -21,10 +20,9 @@
 				echo "key: " . $key . "<br/>";
 				$ivlen = openssl_cipher_iv_length($cipher);
 				$iv = openssl_random_pseudo_bytes($ivlen);
-				$iv2 = $iv . " " . PHP_EOL;
+				$iv2 = $iv . "  ";
 				echo "iv: " . $iv . "<br/>";
 				fwrite($file, $iv2);
-				//fwrite($file, " break ");
 			
 				$filename = "../Includes/DBDataOLD.txt";
 				$DBFile = fopen($filename, "r") or die ("Unable to Open File.");
@@ -32,9 +30,8 @@
 				while(!feof($DBFile)){
 					$tmp = rtrim(fgets($DBFile));
 					if(($temp = openssl_encrypt(strval($tmp), $cipher, $key, $options=0, $iv)) != FALSE){
-						$tmp2 = $temp . " " . PHP_EOL;
+						$tmp2 = $temp . "  ";
 						fwrite($file, $tmp2);
-						//fwrite($file, " break ");
 						
 						echo ($temp . "<br/>");
 					} else {
