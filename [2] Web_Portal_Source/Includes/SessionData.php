@@ -254,8 +254,8 @@
                                 echo "<h4>What does this graph mean?</h4><br>";
                                 echo "Each value on the X-Axis reflects upon a ring that the player passed through during that game.<br>";
                                 echo "The value of the Y-Axis number represents the angles at the entry of the ring.<br>";
-                                echo "The blue bar means that before the player approached a ring, they had lowered their elbow down to the starting position.<br>";
-                                echo "The orange bar means that before the player approached a ring, they had kept their elbow up since entering the previous ring.<br>";
+                                echo "The blue bar means that before the player approached a ring, they had correctly lowered their elbow down to the reset position.<br>";
+                                echo "The orange bar means that before the player approached a ring, they had not lowered their elbow, but instead had kept their elbow up after entering the previous ring.<br>";
                                 
                                 //
 				// ANGLE FOR GAMES OVER MULTIPLE SESSIONS

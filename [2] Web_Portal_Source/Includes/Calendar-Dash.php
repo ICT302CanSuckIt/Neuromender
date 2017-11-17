@@ -42,7 +42,7 @@ function draw_calendar($month,$year, $userID, $type, $dbhandle){
 			$alertCount = $alertResult->num_rows;
 			if( $alertCount > 0 )
 			{
-				$calendar.= '<div><b><a href="../Main/Alerts.php?user='.$userID.'&date='.$dateString.'" style="color:red">'.$alertCount.'</a></b></div>';
+				$calendar.= '<div><b><a href="./Main/Alerts.php?user='.$userID.'&date='.$dateString.'" style="color:red">'.$alertCount.'</a></b></div>';
 			}
 			
 			

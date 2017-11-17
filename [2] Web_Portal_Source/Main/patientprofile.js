@@ -900,7 +900,7 @@ function CheckTextAdd(id)
 	var str = element.value;
 	
 	
-	str = str.replace(/[^a-zA-Z1-9.,@ ]/g, "");
+	str = str.replace(/[^a-zA-Z1-9.@ ]/g, "");
 	
 	//Update real value
 	element.value = str;

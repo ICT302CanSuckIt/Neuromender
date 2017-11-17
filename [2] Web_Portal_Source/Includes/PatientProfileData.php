@@ -525,7 +525,7 @@
 					$ArmMaxExtension					= $user["ArmMaxExtension"];
 					$targetReachPercent				= $user["targetReachPercent"];
 					$resetReachPercent				= $user["resetReachPercent"];
-					$trackLength						= $user["trackLength"];
+					$trackLength							= $user["trackLength"];
 					
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -1396,7 +1396,7 @@
 						$amchartAverageChartData = array();
 						
 						$sql = "SELECT DISTINCT(Achievement.SessionID) FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-								WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND Achievement.Completed = 1
+								WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '".date('Y-m-d', strtotime($beginAngDate))." 00:00:00' AND '".date('Y-m-d', strtotime($endAngDate))." 23:59:59') AND Achievement.Completed = 1
 								ORDER BY TimeAchieved ASC";
 						$result = mysqli_query($dbhandle,$sql);
 						while($row = mysqli_fetch_assoc($result))
