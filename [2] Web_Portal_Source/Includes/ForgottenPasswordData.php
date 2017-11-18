@@ -25,7 +25,7 @@
 														</tr>
 														<tr>
 															<td></td>
-															<td><input type='submit' class='btn btn-primary btn-sm' name='btnQuestion' /><input type='hidden' name='Question' value='$Question' /><input type='hidden' name='Username' value='$username' /></td>
+															<td><input type='submit' class='btn btn-primary btn-sm' name='btnQuestion' value='Continue'/><input type='hidden' name='Question' value='$Question' /><input type='hidden' name='Username' value='$username' /></td>
 														</tr>
 													</table>";
 				}
@@ -57,7 +57,7 @@
 														</tr>
 														<tr>
 															<td></td>
-															<td><input type='submit' class='btn btn-primary btn-sm' name='btnReset' /><input type='hidden' name='Username' value='$username' /></td>
+															<td><input type='submit' class='btn btn-primary btn-sm' value='Change Password' name='btnReset' /><input type='hidden' name='Username' value='$username' /></td>
 														</tr>
 													</table>";
 				}
@@ -111,7 +111,7 @@
 													</tr>
 													<tr>
 														<td></td>
-														<td style="padding-left:10px;padding-top:10px"><input type="submit" class="btn btn-primary btn-sm" name="btnRetrieve" /></td>
+														<td style="padding-left:10px;padding-top:10px"><input type="submit" class="btn btn-primary btn-sm" name="btnRetrieve" value="Continue"/></td>
 													</tr>
 												</table>';
 			} else {
