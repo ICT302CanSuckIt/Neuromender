@@ -131,14 +131,14 @@
 						if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
 						if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
 						
-						$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
+						$roleSQL = "select * from assignedroles where UserID=$User and RoleID=5;";
 						$roleResult = $dbhandle->query($roleSQL);
 						$isPatient = $roleResult->num_rows;
 					
 					
 					
 					
-						$sql = "UPDATE Users
+						$sql = "UPDATE users
 							SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-m-d', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledRowing=$enabledRowing, EnabledEAlerts='$enabledEAlerts'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
@@ -150,7 +150,7 @@
 							//GetSideAffected
 						if( $isPatient > 0 )
 						{
-							$sql = "UPDATE Affliction
+							$sql = "UPDATE affliction
 								SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-m-d', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
 								WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
@@ -160,17 +160,17 @@
 							//First check if an entry exists
 							if( $enabledWingman == 1 )
 							{
-								$sql = "SELECT * FROM WingmanRestrictions WHERE UserID=$User";
+								$sql = "SELECT * FROM wingmanrestrictions WHERE UserID=$User";
 								$result = $dbhandle->query($sql);
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
-									$sql = "INSERT INTO WingmanRestrictions 
+									$sql = "INSERT INTO wingmanrestrictions 
 												(UserID, AngleThreshold, AngleMinThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
 												values ($User, $angleThreshold, $angleMinThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
 								}
 								else //Update because value already exists
 								{
-									$sql = "UPDATE WingmanRestrictions
+									$sql = "UPDATE wingmanrestrictions
 										SET AngleThreshold=$angleThreshold, AngleMinThreshold=$angleMinThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
 										WHERE UserID=$User";
 								}
@@ -183,17 +183,17 @@
 							//First check if an entry exists
 							if( $enabledTargets == 1 )
 							{
-								$sql = "SELECT * FROM TargetRestrictions WHERE UserID=$User";
+								$sql = "SELECT * FROM targetrestrictions WHERE UserID=$User";
 								$result = $dbhandle->query($sql);
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
-									$sql = "INSERT INTO TargetRestrictions 
+									$sql = "INSERT INTO targetrestrictions 
 												(UserID, ExtensionThreshold, ExtensionThresholdIncrease, MinimumExtensionThreshold, GridSize, GridOrder, Repetitions, GamesPerDay, GamesPerSession, IntervalBetweenSession, AdjustmentCountdown, CountdownDistance, ArmResetDistance)
 												values ($User, $extensionThreshold, $extensionThresholdIncrease, $minimumExtensionThreshold, '$gridSize', '$gridOrder', $repetitions, $TGamesPerDay, $TGamesPerSession, $TIntervalBetweenSession, $AdjustmentCountdown, $CountdownDistance, $ArmResetDistance)";
 								}
 								else //Update because value already exists
 								{
-									$sql = "UPDATE TargetRestrictions
+									$sql = "UPDATE targetrestrictions
 										SET ExtensionThreshold=$extensionThreshold, ExtensionThresholdIncrease=$extensionThresholdIncrease, MinimumExtensionThreshold=$minimumExtensionThreshold, GridSize='$gridSize', GridOrder='$gridOrder', Repetitions=$repetitions, GamesPerDay=$TGamesPerDay, GamesPerSession=$TGamesPerSession, IntervalBetweenSession=$TIntervalBetweenSession, AdjustmentCountdown=$AdjustmentCountdown, CountdownDistance=$CountdownDistance, ArmResetDistance=$ArmResetDistance 
 										WHERE UserID=$User";
 								}
@@ -205,17 +205,17 @@
 							//First check if an entry exists
 							if( $enabledRowing == 1 )
 							{
-								$sql = "SELECT * FROM RowingRestrictions WHERE UserID=$User";
+								$sql = "SELECT * FROM rowingrestrictions WHERE UserID=$User";
 								$result = $dbhandle->query($sql);
 								if ($result->num_rows == 0) // Insert because value doesn't exist
 								{
-									$sql = "INSERT INTO RowingRestrictions 
+									$sql = "INSERT INTO rowingrestrictions 
 												(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSessions, ArmMaxExtension, targetReachPercent, resetReachPercent, trackLength)
 												values ($User, $RGamesPerDay, $RGamesPerSession, $RIntervalBetweenSession, $ArmMaxExtension, $targetReachPercent, $resetReachPercent, $trackLength)";
 								}
 								else //Update because value already exists
 								{
-									$sql = "UPDATE RowingRestrictions
+									$sql = "UPDATE rowingrestrictions
 										SET GamesPerDay=$RGamesPerDay, GamesPerSession=$RGamesPerSession, IntervalBetweenSessions=$RIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, targetReachPercent=$targetReachPercent, resetReachPercent=$resetReachPercent, trackLength=$trackLength
 										WHERE UserID=$User";
 								}
@@ -229,25 +229,25 @@
 				}
 				
 				$sql = "SELECT 
-							Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledRowing, Users.EnabledEAlerts,
-							Affliction.*,
-							WingmanRestrictions.AngleThreshold, WingmanRestrictions.AngleMinThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
-							TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-							RowingRestrictions.GamesPerDay AS RGamesPerDay, RowingRestrictions.GamesPerSession AS RGamesPerSession, RowingRestrictions.IntervalBetweenSessions AS RIntervalBetweenSession, RowingRestrictions.ArmMaxExtension, RowingRestrictions.targetReachPercent, RowingRestrictions.resetReachPercent, RowingRestrictions.trackLength,
-							Severity.Description as Severity, 
-							Lesion.Description as LesDesc, 
-							SideAffected.Description as SideAffected 
+							users.FullName, users.Username, users.Email, users.Address, users.Dob, users.Gender, users.EnabledWingman, users.EnabledTargets, users.EnabledRowing, users.EnabledEAlerts,
+							affliction.*,
+							wingmanrestrictions.AngleThreshold, wingmanrestrictions.AngleMinThreshold, wingmanrestrictions.ThresholdIncrease, wingmanrestrictions.trackSlow, wingmanrestrictions.trackMedium, wingmanrestrictions.trackFast, wingmanrestrictions.GamesPerDay as WGamesPerDay, wingmanrestrictions.GamesPerSession as WGamesPerSession, wingmanrestrictions.IntervalBetweenSession as WIntervalBetweenSession,
+							targetrestrictions.ExtensionThreshold, targetrestrictions.ExtensionThresholdIncrease, targetrestrictions.MinimumExtensionThreshold, targetrestrictions.GridSize, targetrestrictions.GridOrder, targetrestrictions.Repetitions, targetrestrictions.GamesPerDay as TGamesPerDay, targetrestrictions.GamesPerSession as TGamesPerSession, targetrestrictions.IntervalBetweenSession as TIntervalBetweenSession, targetrestrictions.AdjustmentCountdown as AdjustmentCountdown, targetrestrictions.CountdownDistance as CountdownDistance, targetrestrictions.ArmResetDistance, 
+							rowingrestrictions.GamesPerDay AS RGamesPerDay, rowingrestrictions.GamesPerSession AS RGamesPerSession, rowingrestrictions.IntervalBetweenSessions AS RIntervalBetweenSession, rowingrestrictions.ArmMaxExtension, rowingrestrictions.targetReachPercent, rowingrestrictions.resetReachPercent, rowingrestrictions.trackLength,
+							severity.Description as Severity, 
+							lesion.Description as LesDesc, 
+							sideaffected.Description as SideAffected 
 						FROM 
-							Users 
-							Left Join Affliction on Affliction.UserID = Users.UserID 
-							Left Join WingmanRestrictions on WingmanRestrictions.UserID = Users.UserID 
-							Left Join TargetRestrictions on TargetRestrictions.UserID = Users.UserID 
-							Left Join RowingRestrictions on RowingRestrictions.UserID = Users.UserID 
-							Left Join SideAffected on SideAffected.SideAffectedID = Affliction.SideAffectedID
-							Left Join Severity on Affliction.SeverityID = Severity.SeverityID
-							Left Join Lesion on Affliction.SiteOfLesionID = Lesion.LesionID
+							users 
+							Left Join affliction on affliction.UserID = users.UserID 
+							Left Join wingmanrestrictions on wingmanrestrictions.UserID = users.UserID 
+							Left Join targetrestrictions on targetrestrictions.UserID = users.UserID 
+							Left Join rowingrestrictions on rowingrestrictions.UserID = users.UserID 
+							Left Join sideaffected on sideaffected.SideAffectedID = affliction.SideAffectedID
+							Left Join severity on affliction.SeverityID = severity.SeverityID
+							Left Join lesion on affliction.SiteOfLesionID = lesion.LesionID
 						WHERE
-							Users.UserID = $User";
+							users.UserID = $User";
 				$result = $dbhandle->query($sql);
 
 				if ($result->num_rows > 0) 
@@ -304,7 +304,7 @@
 								exit;        
 							}
 
-							$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+							$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 							$roleCount = getval($dbhandle, $selectRoles);
 							
 							if ($roleCount > 1)
@@ -313,14 +313,14 @@
 								{
 									$Role = $_SESSION['SelectedRole'];
 
-									$roleSQL = "Select Description from Role where RoleID = $Role";
+									$roleSQL = "Select Description from role where RoleID = $Role";
 									$RoleDesc = getval($dbhandle, $roleSQL);
 									$outputString = $outputString . "<br><br>Change Role ";
 								}
 
 								if($roleCount > 1)
 								{
-									$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+									$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 									$outputString = $outputString . "<form method='post' style='display: inline;'>";
 									$outputString = $outputString . "CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle)";
 									$outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
@@ -432,7 +432,7 @@
 								</tr>
 								</div>";
 															
-						$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+						$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 						$result = $dbhandle->query($sql);
 						$roleList = "<ul style='list-style-type: none;padding-left:0;'>";
 						if ($result->num_rows > 0) {
@@ -484,8 +484,8 @@
 					$Notes 						= $user["Notes"];
 					$LeftNeglect 				= numToDetail($LeftNeglect, "yesNo");
 					
-					//----Wingman Restriction Details:----//
-					$enabledWingman 			= $user["EnabledWingman"];
+					//----wingman Restriction Details:----//
+					$enabledwingman 			= $user["Enabledwingman"];
 					
 					$AngleThreshold 			= $user["AngleThreshold"];
 					$AngleMinThreshold    = $user["AngleMinThreshold"];
@@ -525,7 +525,7 @@
 					$ArmMaxExtension					= $user["ArmMaxExtension"];
 					$targetReachPercent				= $user["targetReachPercent"];
 					$resetReachPercent				= $user["resetReachPercent"];
-					$trackLength							= $user["trackLength"];
+					$trackLength						= $user["trackLength"];
 					
 					//----Alert Emailing Details----//
 					$enabledEAlerts = $user['EnabledEAlerts'];
@@ -683,32 +683,32 @@
 								</tr>
 							
 							
-							<!--Wingman Game Settings-->
+							<!--wingman Game Settings-->
 							<tr>
-								<td><br><h1 class='page-title'>Wingman Game Settings</h1></td>
+								<td><br><h1 class='page-title'>wingman Game Settings</h1></td>
 							</tr>
 							<tr>
-								<td class='page-details-table'>Enable Wingman Game</td>
+								<td class='page-details-table'>Enable wingman Game</td>
 								<td class='editable' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
-										if($enabledWingman)
+										if($enabledwingman)
 											$outputString .= "checked";
-					$outputString .= "	name='EnabledWingman' value='wingman' onclick='ShowWingman(this.form);' />&nbsp; &nbsp;
+					$outputString .= "	name='Enabledwingman' value='wingman' onclick='Showwingman(this.form);' />&nbsp; &nbsp;
 										<span class='tooltiptext'>Check to enable wingman game</span>
 									</div>
 								</td>
 							</tr>
 							
-							<tr class='WingmanData'>
+							<tr class='wingmanData'>
 							
-								<td class='page-details-table WingmanData'>
+								<td class='page-details-table wingmanData'>
 									Angle Threshold (degrees):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$AngleThreshold
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='angleThreshold' id='angleThreshold' onblur='ValidateAngleThreshold(document.getElementById(\"angleThreshold\").value);' value='$AngleThreshold'>
 										<span class='tooltiptext'>The highest angle (in degrees) to which game will allow the survivor to lift their arm</span>
@@ -717,15 +717,15 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='WingmanData'>
+							<tr class='wingmanData'>
 							
-								<td class='page-details-table WingmanData'>
+								<td class='page-details-table wingmanData'>
 									Arm Reset Angle (degrees):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$AngleMinThreshold
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='angleMinThreshold' id='angleMinThreshold' onblur='ValidateAngleMinThreshold(document.getElementById(\"angleMinThreshold\").value);' value='$AngleMinThreshold'>
 										<span class='tooltiptext'>The angle the user will have to lower their arm to when prompted to do so.</span>
@@ -734,14 +734,14 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='WingmanData'>
-								<td class='page-details-table WingmanData'>
+							<tr class='wingmanData'>
+								<td class='page-details-table wingmanData'>
 									Threshold Increment-Decrement (degrees):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$ThresholdIncrease
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='thresholdIncreaser' step='0.1' min='0' id='thresholdIncreaser' onblur='ValidateAngleThresholdIncrease(this.value);' value='$ThresholdIncrease'>
 										<span class='tooltiptext'>By how much the angle threshold (in degrees) will increase or decrease in response to survivor gameplay</span>
@@ -750,14 +750,14 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='WingmanData'>
+							<tr class='wingmanData'>
 								<td class='page-details-table'>
 									Track Slow (seconds):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$slow
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='speedSlow' id='speedSlow' onblur='ValidateSlowTrack(document.getElementById(\"speedSlow\").value);' value='$slow'>
 										<span class='tooltiptext'>The length (in seconds) of the slow track mode</span>
@@ -766,14 +766,14 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='WingmanData'>
-								<td class='page-details-table WingmanData'>
+							<tr class='wingmanData'>
+								<td class='page-details-table wingmanData'>
 									Track Medium (seconds):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$medium
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='speedMedium' id='speedMedium' onblur='ValidateMediumTrack(document.getElementById(\"speedMedium\").value);' value='$medium'>
 										<span class='tooltiptext'>The length (in seconds) of the medium track mode</span>
@@ -782,14 +782,14 @@
 									</span>
 								</td>
 							</tr>
-							<tr class='WingmanData'>
-								<td class='page-details-table WingmanData'>
+							<tr class='wingmanData'>
+								<td class='page-details-table wingmanData'>
 									Track Fast (seconds):
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$fast
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='speedFast' id='speedFast' onblur='ValidateFastTrack(document.getElementById(\"speedFast\").value);' value='$fast'>
 										<span class='tooltiptext'>The length (in seconds) of the fast track mode</span>
@@ -799,14 +799,14 @@
 								</td>
 							</tr>
 							
-							<tr class='WingmanData'>
-								<td class='page-details-table WingmanData'>
+							<tr class='wingmanData'>
+								<td class='page-details-table wingmanData'>
 									Max games per day:
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$WGamesPerDay
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='WGamesPerDay' id='WGamesPerDay' onblur='ValidateWingGamesPerDay(document.getElementById(\"WGamesPerDay\").value);' value='$WGamesPerDay'>
 										<span class='tooltiptext'>The maximum number of games that can be played during an entire day</span>
@@ -815,14 +815,14 @@
 									</span>
 								</td>
 							</tr>
-							 <tr class='WingmanData'>
-								<td class='page-details-table WingmanData'>
+							 <tr class='wingmanData'>
+								<td class='page-details-table wingmanData'>
 									&nbsp;&nbsp;&nbsp;&nbsp;Max games per session:
 								</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$WGamesPerSession
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='number' name='WGamesPerSession' id='WGamesPerSession' onblur='ValidateWingGamesPerSession(document.getElementById(\"WGamesPerSession\").value);' value='$WGamesPerSession'>
 										<span class='tooltiptext'>The maximum number of games that can be played for each session (time between login/logout)</span>
@@ -832,11 +832,11 @@
 								</td>
 							</tr>
 							 <tr>
-								<td class='page-details WingmanData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
-								<td class='WingmanNotEdit' style='padding:10px;'>
+								<td class='page-details wingmanData'>&nbsp;&nbsp;&nbsp;&nbsp;Interval between session (hours):</td>
+								<td class='wingmanNotEdit' style='padding:10px;'>
 									$WIntervalBetweenSession
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input step='0.01' type='number' name='WIntervalBetweenSession' id='WIntervalBetweenSession' onblur='ValidateWingInterval(document.getElementById(\"WIntervalBetweenSession\").value);' value='$WIntervalBetweenSession'>
 										<span class='tooltiptext'>The minimum number of hours after a session before a survivor can play again</span>
@@ -898,10 +898,10 @@
 								<td class='TargetData' style='font-weight:bold;padding:10px;'>";
 							
 							// Replace the text %% with select boxes. CreateSelectBox is in DBConnect.php
-							$sql = "Select * from SideAffected where Description<>'None' and Description<>'Bilateral'";
+							$sql = "Select * from sideaffected where Description<>'None' and Description<>'Bilateral'";
 							$outputString = str_replace("%SIDEAFFECTEDSELECTOR%", CreateSelectBox($sql, 'SideAffected', 'SideAffected', 'SideAffectedID', 'Description', '', $dbhandle), $outputString);
 
-							$sql = "Select * from Severity where Description<>'None'";
+							$sql = "Select * from severity where Description<>'None'";
 							$outputString = str_replace("%SEVERITYSELECTOR%", CreateSelectBox($sql, 'Severity', 'Severity', 'SeverityID', 'Description', '', $dbhandle), $outputString);
 			
 							
@@ -1220,14 +1220,14 @@
 							</tr>
 							<tr>
 								<td class='page-details'>Enable Email Alerts</td>
-								<td class='WingmanNotEdit'>
+								<td class='wingmanNotEdit'>
 									<input type='checkbox' ";
 									if($enabledEAlerts){
 										$outputString .= "checked";
 									}
 									$outputString .= "	name='EnabledEAlerts' value='EAlerts' disabled />&nbsp; &nbsp;
 								</td>
-								<td class='WingmanEdit' style='display:none;'>
+								<td class='wingmanEdit' style='display:none;'>
 									<div class='tooltips'>
 										<input type='checkbox' ";
 										if($enabledEAlerts){
@@ -1319,22 +1319,22 @@
 						
                                                 $outputString = "<h1 class='page-title'>Calendar Legend</h1>
                                                                                                                 <table>
-                                                                                                                <tr><td class='page-details'><p2 style='color:blue'>Blue = Only an elbow raise (Wingman) game has been played during that session.</p2></td></tr>
+                                                                                                                <tr><td class='page-details'><p2 style='color:blue'>Blue = Only an elbow raise (wingman) game has been played during that session.</p2></td></tr>
                                                                                                                 <tr><td class='page-details'><p2 style='color:green'>Green = Only an arm extension (Targets) game has been played during that session.</p2></td></tr>
-                                                                                                                <tr><td class='page-details'><p2 style='color:red'>Red = Both an elbow raise (Wingman) game and an arm extension (Targets) game has been played during that session.</p2></td></tr>
+                                                                                                                <tr><td class='page-details'><p2 style='color:red'>Red = Both an elbow raise (wingman) game and an arm extension (Targets) game has been played during that session.</p2></td></tr>
                                                                                                                 </table><br>";
                                                 echo $outputString;
                                                 $outputString = "";
                                                 
 						//don't think this is ever used?
 						/*echo "<div id='SessionContent'>";
-						$sql = " SELECT AVG(ThresholdPassed) as ThresholdPassed, Achievement.SessionID, Session.StartTime, Session.UserID 
-												FROM Achievement 
-												LEFT JOIN Session on Session.SessionID = Achievement.SessionID
-												WHERE TaskID = 1 AND Achievement.Completed = 1
-													AND Session.UserID = $User
-													group by Session.SessionID
-													Order By Session.StartTime ";
+						$sql = " SELECT AVG(ThresholdPassed) as ThresholdPassed, achievement.SessionID, session.StartTime, session.UserID 
+												FROM achievement 
+												LEFT JOIN session on session.SessionID = achievement.SessionID
+												WHERE TaskID = 1 AND achievement.Completed = 1
+													AND session.UserID = $User
+													group by session.SessionID
+													Order By session.StartTime ";
 						
 						$result=mysqli_query($dbhandle,$sql);
 											
@@ -1347,7 +1347,7 @@
 						//IF statement to check if any data exists.
 						//Otherwise, will crash the webpage and stop it here.
 						$temp = $_GET['user'];
-						$query1 = "SELECT SessionID FROM Session WHERE UserID = $temp";
+						$query1 = "SELECT SessionID FROM session WHERE UserID = $temp";
 						$res = mysqli_query($dbhandle, $query1);
 						if($res->num_rows != 0){
 						//
@@ -1365,8 +1365,8 @@
 						if(empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate']))
 						{
 							//get the first available session's date
-							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Achievement.SessionID = Session.SessionID 
-									WHERE UserID = " . $User . " AND Achievement.Completed = 1
+							$sql = "SELECT achievement.TimeAchieved FROM achievement LEFT JOIN session ON achievement.SessionID = session.SessionID 
+									WHERE UserID = " . $User . " AND achievement.Completed = 1
 									ORDER BY TimeAchieved ASC
 									LIMIT 1";
 							$result = mysqli_query($dbhandle,$sql);
@@ -1395,8 +1395,8 @@
 						$sessionIds = array();
 						$amchartAverageChartData = array();
 						
-						$sql = "SELECT DISTINCT(Achievement.SessionID) FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-								WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '".date('Y-m-d', strtotime($beginAngDate))." 00:00:00' AND '".date('Y-m-d', strtotime($endAngDate))." 23:59:59') AND Achievement.Completed = 1
+						$sql = "SELECT DISTINCT(achievement.SessionID) FROM achievement LEFT JOIN session ON session.SessionID = achievement.SessionID 
+								WHERE UserID = " . $User . " AND wingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND achievement.Completed = 1
 								ORDER BY TimeAchieved ASC";
 						$result = mysqli_query($dbhandle,$sql);
 						while($row = mysqli_fetch_assoc($result))
@@ -1408,9 +1408,9 @@
 						{
 							//sum all the threshold pass and count the number of games
 							$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore 
-							FROM Achievement 
-									LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-									WHERE Achievement.SessionID = $sessionId AND Session.WingmanPlayed >= 1 AND Achievement.Completed = 1";
+							FROM achievement 
+									LEFT JOIN session ON session.SessionID = achievement.SessionID 
+									WHERE achievement.SessionID = $sessionId AND session.wingmanPlayed >= 1 AND achievement.Completed = 1";
 							$result = mysqli_query($dbhandle,$sql);
 							$row = mysqli_fetch_assoc($result);
 							$totalGame = (float)$row["TotalGame"];
@@ -1556,16 +1556,16 @@
 						
 						$allAngleData = array();
 						
-						$useSideColumn = "RawTracking.LeftAngle";
+						$useSideColumn = "rawtracking.LeftAngle";
 						if($SideAffected == "Right")
 						{
-							$useSideColumn = "RawTracking.RightAngle";
+							$useSideColumn = "rawtracking.RightAngle";
 						}
 						
-						$sql = "SELECT " . $useSideColumn . ", RawTracking.Time FROM Neuromender3.RawTracking 
-								LEFT JOIN Session ON RawTracking.SessionID = Session.SessionID
-								WHERE Session.UserID = " . $User . "
-								ORDER BY RawTracking.Time ASC";
+						$sql = "SELECT " . $useSideColumn . ", rawtracking.Time FROM Neuromender4_5.rawtracking 
+								LEFT JOIN session ON rawtracking.SessionID = session.SessionID
+								WHERE session.UserID = " . $User . "
+								ORDER BY rawtracking.Time ASC";
 						$result = mysqli_query($dbhandle,$sql);
 						while($row = mysqli_fetch_assoc($result))
 						{

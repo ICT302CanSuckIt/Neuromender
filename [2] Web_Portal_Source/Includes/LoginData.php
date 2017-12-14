@@ -45,13 +45,13 @@
 			{
 				$password = hash("sha512", htmlspecialchars($_POST["password"]));
 				$username = htmlspecialchars($_POST["userName"]);
-				$loginSQL = "SELECT * FROM Users WHERE Username = '$username'";
+				$loginSQL = "SELECT * FROM users WHERE Username = '$username'";
 				$result = $dbhandle->query($loginSQL);
 				
 				if ($result->num_rows > 0) {
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
-						if($row["Password"] == $password){
+						if($row["password"] == $password){
 							$_SESSION['loggedIn'] = true;
 							$_SESSION['UserID'] = $row["UserID"];
 							$_SESSION['Username'] = $username;
@@ -67,12 +67,12 @@
 
 					if($_SESSION['loggedIn'] == true)
 					{
-						$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+						$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 						$result = $dbhandle->query($selectRoles);
 						$data=$result->fetch_assoc();
 
 						if((int)$data['roleCount'] >= 2){
-							$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+							$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 							$result = $dbhandle->query($sql);
 							$IDField = 'RoleID';
 							$IDValue = 'Description';
@@ -83,7 +83,7 @@
 									</div>
 									<div class='panel-body'>
 										<div class='form-group'>";
-											$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+											$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 											$output = $output . CreateSelectBox($sql, 'initialRole', 'initialRole', 'RoleID', 'Description', '', $dbhandle) . "</td></tr>";
 										$output = $output . "</div>
 										<button type='submit' class='btn btn-default btn-primary btn-block' id='btn-roleSelection' name='btnRoleSelection'>Submit</button>
@@ -94,7 +94,7 @@
 						}
 						else if((int)$data['roleCount'] <= 1)
 						{
-							$selectRole = "Select * from AssignedRoles where UserID = $User";
+							$selectRole = "Select * from assignedroles where UserID = $User";
 							$result1 = $dbhandle->query($selectRole);
 							$data=$result1->fetch_assoc();
 							$_SESSION['SelectedRole'] = (int)$data["RoleID"];
@@ -148,13 +148,13 @@
 									// PUT THIS IN ANOTHER POSITION
 									// THE SELECTEDROLE
 									$User = $_SESSION['UserID'];
-									$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+									$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 									$result = $dbhandle->query($selectRoles);
 									$data=$result->fetch_assoc();
 
 									if ((int)$data['roleCount'] <= 1)
 									{
-											$selectRole = "Select * from AssignedRoles where UserID = $User";
+											$selectRole = "Select * from assignedroles where UserID = $User";
 											$result1 = $dbhandle->query($selectRole);
 											$data=$result1->fetch_assoc();
 											$_SESSION['SelectedRole'] = (int)$data["RoleID"];

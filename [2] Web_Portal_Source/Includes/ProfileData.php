@@ -130,14 +130,14 @@
 					if(empty($Address)) $Address = "";	//Deal with if the address was empty (as of writing, this is allowed)
 					if(empty($Notes)) $Notes = "";	//Deal with if the notes was empty (as of writing, this is allowed)
 					
-					$roleSQL = "select * from AssignedRoles where UserID=$User and RoleID=5;";
+					$roleSQL = "select * from assignedroles where UserID=$User and RoleID=5;";
 					$roleResult = $dbhandle->query($roleSQL);
 					$isPatient = $roleResult->num_rows;
 				
 				
 				
 				
-					$sql = "UPDATE Users
+					$sql = "UPDATE users
 						SET FullName='$FullName', Username='$Username', Email='$Email', Address='$Address', Dob='". date('Y-m-d', strtotime($dob)) ."', Gender=$Gender, EnabledTargets=$enabledTargets, EnabledWingman=$enabledWingman, EnabledRowing=$enabledRowing, EnabledEAlerts='$enabledEAlerts'
 						WHERE UserID=$User";
 					$result = $dbhandle->query($sql);
@@ -149,7 +149,7 @@
 						//GetSideAffected
 					if( $isPatient > 0 )
 					{
-						$sql = "UPDATE Affliction
+						$sql = "UPDATE affliction
 							SET SideAffectedID=$SideAffected, SeverityID=$Severity, Bilateral=$Bilateral, DateOfAffliction='" . date('Y-M-D', strtotime($Doa)) . "', SensorDistance=$SensorDistance , ArmLength=$ArmLength, LeftNeglect=$LeftNeglect, Notes='$Notes'
 							WHERE UserID=$User";
 						$result = $dbhandle->query($sql);
@@ -159,17 +159,17 @@
 						//First check if an entry exists
 						if( $enabledWingman == 1 )
 						{
-							$sql = "SELECT * FROM WingmanRestrictions WHERE UserID=$User";
+							$sql = "SELECT * FROM wingmanrestrictions WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
 							if ($result->num_rows == 0) // Insert because value doesn't exist
 							{
-								$sql = "INSERT INTO WingmanRestrictions 
+								$sql = "INSERT INTO wingmanrestrictions 
 											(UserID, AngleThreshold, ThresholdIncrease, trackSlow, trackMedium, trackFast, GamesPerDay, GamesPerSession, IntervalBetweenSession)
 											values ($User, $angleThreshold, $ThresholdIncreaser, $speedSlow, $speedMedium, $speedFast, $WGamesPerDay, $WGamesPerSession, $WIntervalBetweenSession)";
 							}
 							else //Update because value already exists
 							{
-								$sql = "UPDATE WingmanRestrictions
+								$sql = "UPDATE wingmanrestrictions
 									SET AngleThreshold=$angleThreshold, ThresholdIncrease=$ThresholdIncreaser, trackSlow=$speedSlow, trackMedium=$speedMedium, trackFast=$speedFast, GamesPerDay=$WGamesPerDay, GamesPerSession=$WGamesPerSession, IntervalBetweenSession=$WIntervalBetweenSession
 									WHERE UserID=$User";
 							}
@@ -182,17 +182,17 @@
 						//First check if an entry exists
 						if( $enabledTargets == 1 )
 						{
-							$sql = "SELECT * FROM TargetRestrictions WHERE UserID=$User";
+							$sql = "SELECT * FROM targetrestrictions WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
 							if ($result->num_rows == 0) // Insert because value doesn't exist
 							{
-								$sql = "INSERT INTO TargetRestrictions 
+								$sql = "INSERT INTO targetrestrictions 
 											(UserID, ExtensionThreshold, ExtensionThresholdIncrease, MinimumExtensionThreshold, GridSize, GridOrder, Repetitions, GamesPerDay, GamesPerSession, IntervalBetweenSession, AdjustmentCountdown, CountdownDistance, ArmResetDistance)
 											values ($User, $extensionThreshold, $extensionThresholdIncrease, $minimumExtensionThreshold, '$gridSize', '$gridOrder', $repetitions, $TGamesPerDay, $TGamesPerSession, $TIntervalBetweenSession, $AdjustmentCountdown, $CountdownDistance, $ArmResetDistance)";
 							}
 							else //Update because value already exists
 							{
-								$sql = "UPDATE TargetRestrictions
+								$sql = "UPDATE targetrestrictions
 									SET ExtensionThreshold=$extensionThreshold, ExtensionThresholdIncrease=$extensionThresholdIncrease, MinimumExtensionThreshold=$minimumExtensionThreshold, GridSize='$gridSize', GridOrder='$gridOrder', Repetitions=$repetitions, GamesPerDay=$TGamesPerDay, GamesPerSession=$TGamesPerSession, IntervalBetweenSession=$TIntervalBetweenSession, AdjustmentCountdown=$AdjustmentCountdown, CountdownDistance=$CountdownDistance, ArmResetDistance=$ArmResetDistance 
 									WHERE UserID=$User";
 							}
@@ -204,17 +204,17 @@
 						//First check if an entry exists
 						if( $enabledRowing == 1 )
 						{
-							$sql = "SELECT * FROM RowingRestrictions WHERE UserID=$User";
+							$sql = "SELECT * FROM rowingrestrictions WHERE UserID=$User";
 							$result = $dbhandle->query($sql);
 							if ($result->num_rows == 0) // Insert because value doesn't exist
 							{
-								$sql = "INSERT INTO RowingRestrictions 
+								$sql = "INSERT INTO rowingrestrictions 
 											(UserID, GamesPerDay, GamesPerSession, IntervalBetweenSessions, ArmMaxExtension, targetReachPercent, resetReachPercent, trackLength)
 											values ($User, $RGamesPerDay, $RGamesPerSession, $RIntervalBetweenSession, $ArmMaxExtension, $targetReachPercent, $resetReachPercent, $trackLength)";
 							}
 							else //Update because value already exists
 							{
-								$sql = "UPDATE RowingRestrictions
+								$sql = "UPDATE rowingrestrictions
 									SET GamesPerDay=$RGamesPerDay, GamesPerSession=$RGamesPerSession, IntervalBetweenSessions=$RIntervalBetweenSession, ArmMaxExtension=$ArmMaxExtension, targetReachPercent=$targetReachPercent, resetReachPercent=$resetReachPercent, trackLength=$trackLength
 									WHERE UserID=$User";
 							}
@@ -225,25 +225,25 @@
 				}
 				
 				$sql = "SELECT 
-						Users.FullName, Users.Username, Users.Email, Users.Address, Users.Dob, Users.Gender, Users.EnabledWingman, Users.EnabledTargets, Users.EnabledRowing, Users.EnabledEAlerts,
-						Affliction.*,
-						WingmanRestrictions.AngleThreshold, WingmanRestrictions.AngleMinThreshold, WingmanRestrictions.ThresholdIncrease, WingmanRestrictions.trackSlow, WingmanRestrictions.trackMedium, WingmanRestrictions.trackFast, WingmanRestrictions.GamesPerDay as WGamesPerDay, WingmanRestrictions.GamesPerSession as WGamesPerSession, WingmanRestrictions.IntervalBetweenSession as WIntervalBetweenSession,
-						TargetRestrictions.ExtensionThreshold, TargetRestrictions.ExtensionThresholdIncrease, TargetRestrictions.MinimumExtensionThreshold, TargetRestrictions.GridSize, TargetRestrictions.GridOrder, TargetRestrictions.Repetitions, TargetRestrictions.GamesPerDay as TGamesPerDay, TargetRestrictions.GamesPerSession as TGamesPerSession, TargetRestrictions.IntervalBetweenSession as TIntervalBetweenSession, TargetRestrictions.AdjustmentCountdown as AdjustmentCountdown, TargetRestrictions.CountdownDistance as CountdownDistance, TargetRestrictions.ArmResetDistance, 
-						RowingRestrictions.GamesPerDay AS RGamesPerDay, RowingRestrictions.GamesPerSession AS RGamesPerSession, RowingRestrictions.IntervalBetweenSessions AS RIntervalBetweenSession, RowingRestrictions.ArmMaxExtension, RowingRestrictions.targetReachPercent, RowingRestrictions.resetReachPercent, RowingRestrictions.trackLength,
-						Severity.Description as Severity, 
-						Lesion.Description as LesDesc, 
-						SideAffected.Description as SideAffected 
+						users.FullName, users.Username, users.Email, users.Address, users.Dob, users.Gender, users.EnabledWingman, users.EnabledTargets, users.EnabledRowing, users.EnabledEAlerts,
+						affliction.*,
+						wingmanrestrictions.AngleThreshold, wingmanrestrictions.AngleMinThreshold, wingmanrestrictions.ThresholdIncrease, wingmanrestrictions.trackSlow, wingmanrestrictions.trackMedium, wingmanrestrictions.trackFast, wingmanrestrictions.GamesPerDay as WGamesPerDay, wingmanrestrictions.GamesPerSession as WGamesPerSession, wingmanrestrictions.IntervalBetweenSession as WIntervalBetweenSession,
+						targetrestrictions.ExtensionThreshold, targetrestrictions.ExtensionThresholdIncrease, targetrestrictions.MinimumExtensionThreshold, targetrestrictions.GridSize, targetrestrictions.GridOrder, targetrestrictions.Repetitions, targetrestrictions.GamesPerDay as TGamesPerDay, targetrestrictions.GamesPerSession as TGamesPerSession, targetrestrictions.IntervalBetweenSession as TIntervalBetweenSession, targetrestrictions.AdjustmentCountdown as AdjustmentCountdown, targetrestrictions.CountdownDistance as CountdownDistance, targetrestrictions.ArmResetDistance, 
+						rowingrestrictions.ArmMaxExtension, rowingrestrictions.targetReachPercent, rowingrestrictions.resetReachPercent, rowingrestrictions.trackLength,
+						severity.Description as Severity, 
+						lesion.Description as LesDesc, 
+						sideaffected.Description as SideAffected 
 					FROM 
-						Users 
-						Left Join Affliction on Affliction.UserID = Users.UserID 
-						Left Join WingmanRestrictions on WingmanRestrictions.UserID = Users.UserID 
-						Left Join TargetRestrictions on TargetRestrictions.UserID = Users.UserID 
-						Left Join RowingRestrictions on RowingRestrictions.UserID = Users.UserID 
-						Left Join SideAffected on SideAffected.SideAffectedID = Affliction.SideAffectedID
-						Left Join Severity on Affliction.SeverityID = Severity.SeverityID
-						Left Join Lesion on Affliction.SiteOfLesionID = Lesion.LesionID
+						users 
+						Left Join affliction on affliction.UserID = users.UserID 
+						Left Join wingmanrestrictions on wingmanrestrictions.UserID = users.UserID 
+						Left Join targetrestrictions on targetrestrictions.UserID = users.UserID 
+						Left Join rowingrestrictions on rowingrestrictions.UserID = users.UserID 
+						Left Join sideaffected on sideaffected.SideAffectedID = affliction.SideAffectedID
+						Left Join severity on affliction.SeverityID = severity.SeverityID
+						Left Join lesion on affliction.SiteOfLesionID = lesion.LesionID
 					WHERE
-						Users.UserID = $User";
+						users.UserID = $User";
 			$result = $dbhandle->query($sql);
 
 				if ($result->num_rows > 0) 
@@ -300,7 +300,7 @@
 								exit;        
 							}
 
-							$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+							$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 							$roleCount = getval($dbhandle, $selectRoles);
 							
 							if ($roleCount > 1)
@@ -309,14 +309,14 @@
 								{
 									$Role = $_SESSION['SelectedRole'];
 
-									$roleSQL = "Select Description from Role where RoleID = $Role";
+									$roleSQL = "Select Description from role where RoleID = $Role";
 									$RoleDesc = getval($dbhandle, $roleSQL);
 									$outputString = $outputString . "<br><br>Change Role ";
 								}
 
 								if($roleCount > 1)
 								{
-									$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+									$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 									$outputString = $outputString . "<form method='post' style='display: inline;'>";
 									$outputString = $outputString . "CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle)";
 									$outputString = $outputString . " <input type='submit' class='btn btn-primary btn-sm' name='btnRoleChange' value='Change' /></form><br><br>";
@@ -428,7 +428,7 @@
 								</tr>
 								</div>";
 															
-						$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+						$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 						$result = $dbhandle->query($sql);
 						$roleList = "<ul style='list-style-type: none;padding-left:0;'>";
 						if ($result->num_rows > 0) {
@@ -875,10 +875,10 @@
 								<td class='TargetData' style='font-weight:bold;padding:10px;'>";
 							
 							// Replace the text %% with select boxes. CreateSelectBox is in DBConnect.php
-							$sql = "Select * from SideAffected where Description<>'None' and Description<>'Bilateral'";
+							$sql = "Select * from sideaffected where Description<>'None' and Description<>'Bilateral'";
 							$outputString = str_replace("%SIDEAFFECTEDSELECTOR%", CreateSelectBox($sql, 'SideAffected', 'SideAffected', 'SideAffectedID', 'Description', '', $dbhandle), $outputString);
 
-							$sql = "Select * from Severity where Description<>'None'";
+							$sql = "Select * from severity where Description<>'None'";
 							$outputString = str_replace("%SEVERITYSELECTOR%", CreateSelectBox($sql, 'Severity', 'Severity', 'SeverityID', 'Description', '', $dbhandle), $outputString);
 			
 							
@@ -1305,13 +1305,13 @@
                                                 $outputString = "";
                                                 
 						echo "<div id='SessionContent'>";
-						$sql = " SELECT AVG(ThresholdPassed) as ThresholdPassed, Achievement.SessionID, Session.StartTime, Session.UserID 
-												FROM Achievement 
-												LEFT JOIN Session on Session.SessionID = Achievement.SessionID
-												WHERE TaskID = 1 AND Achievement.Completed = 1
-													AND Session.UserID = $User
-													group by Session.SessionID
-													Order By Session.StartTime ";
+						$sql = " SELECT AVG(ThresholdPassed) as ThresholdPassed, achievement.SessionID, session.StartTime, session.UserID 
+												FROM achievement 
+												LEFT JOIN session on session.SessionID = achievement.SessionID
+												WHERE TaskID = 1 AND achievement.Completed = 1
+													AND session.UserID = $User
+													group by session.SessionID
+													Order By session.StartTime ";
 						
 						$result=mysqli_query($dbhandle,$sql);
 											
@@ -1324,7 +1324,7 @@
 						//IF statement to check if any data exists.
 						//Otherwise, will crash the webpage and stop it here.
 						$temp = $_GET['user'];
-						$query1 = "SELECT SessionID FROM Session WHERE UserID = $temp";
+						$query1 = "SELECT SessionID FROM session WHERE UserID = $temp";
 						$res = mysqli_query($dbhandle, $query1);
 						if($res->num_rows != 0){
 						//
@@ -1342,8 +1342,8 @@
 						if(empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate']))
 						{
 							//get the first available session's date
-							$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Achievement.SessionID = Session.SessionID 
-									WHERE UserID = " . $User . " AND Achievement.Completed = 1
+							$sql = "SELECT achievement.TimeAchieved FROM achievement LEFT JOIN session ON achievement.SessionID = session.SessionID 
+									WHERE UserID = " . $User . " AND achievement.Completed = 1
 									ORDER BY TimeAchieved ASC
 									LIMIT 1";
 							$result = mysqli_query($dbhandle,$sql);
@@ -1372,8 +1372,8 @@
 						$sessionIds = array();
 						$amchartAverageChartData = array();
 						
-						$sql = "SELECT DISTINCT(Achievement.SessionID) FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-								WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND Achievement.Completed = 1
+						$sql = "SELECT DISTINCT(achievement.SessionID) FROM achievement LEFT JOIN session ON session.SessionID = achievement.SessionID 
+								WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND achievement.Completed = 1
 								ORDER BY TimeAchieved ASC";
 						$result = mysqli_query($dbhandle,$sql);
 						while($row = mysqli_fetch_assoc($result))
@@ -1384,9 +1384,9 @@
 						foreach($sessionIds as $sessionId)
 						{
 							//sum all the threshold pass and count the number of games
-							$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM Achievement 
-									LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-									WHERE Achievement.SessionID = $sessionId AND Session.WingmanPlayed >= 1 AND Achievement.Completed = 1";
+							$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM achievement 
+									LEFT JOIN session ON session.SessionID = achievement.SessionID 
+									WHERE achievement.SessionID = $sessionId AND session.WingmanPlayed >= 1 AND achievement.Completed = 1";
 							$result = mysqli_query($dbhandle,$sql);
 							$row = mysqli_fetch_assoc($result);
 							$totalGame = (float)$row["TotalGame"];
@@ -1531,16 +1531,16 @@
 						
 						$allAngleData = array();
 						
-						$useSideColumn = "RawTracking.LeftAngle";
+						$useSideColumn = "rawtracking.LeftAngle";
 						if($SideAffected == "Right")
 						{
-							$useSideColumn = "RawTracking.RightAngle";
+							$useSideColumn = "rawtracking.RightAngle";
 						}
 						
-						$sql = "SELECT " . $useSideColumn . ", RawTracking.Time FROM Neuromender3.RawTracking 
-								LEFT JOIN Session ON RawTracking.SessionID = Session.SessionID
-								WHERE Session.UserID = " . $User . "
-								ORDER BY RawTracking.Time ASC";
+						$sql = "SELECT " . $useSideColumn . ", rawtracking.Time FROM Neuromender4_5.rawtracking 
+								LEFT JOIN session ON rawtracking.SessionID = session.SessionID
+								WHERE session.UserID = " . $User . "
+								ORDER BY rawtracking.Time ASC";
 						$result = mysqli_query($dbhandle,$sql);
 						while($row = mysqli_fetch_assoc($result))
 						{

@@ -18,7 +18,7 @@
                     $Role = $_POST["roleSelection"];
 
                     $insertSQL = 	"INSERT 
-                                                    INTO AssignedRoles 
+                                                    INTO assignedroles 
                                                                     (UserID, RoleID)
                                                     Values ('$UserID', '$Role')";
 
@@ -64,7 +64,7 @@
             $outputString = $outputString .  '<p>Not logged In</p>'; 
     }
 
-    $sql = "Select * from Role where RoleID >= $currRole AND RoleID <> $constPatient";
+    $sql = "Select * from role where RoleID >= $currRole AND RoleID <> $constPatient";
     $outputString = str_replace("%ROLESELECTOR%", CreateSelectBox($sql, 'roleSelection', 'roleSelection', 'RoleID', 'Description', 'showAffliction()', $dbhandle), $outputString);
 
 

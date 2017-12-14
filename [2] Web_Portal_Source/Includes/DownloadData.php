@@ -217,7 +217,7 @@
 								</tr>
 							</table>";
 									
-					$sqlColumNames = "SHOW COLUMNS FROM Achievement";
+					$sqlColumNames = "SHOW COLUMNS FROM achievement";
 					
 					$result = $dbhandle->query($sqlColumNames);
 

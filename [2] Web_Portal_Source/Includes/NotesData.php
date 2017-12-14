@@ -17,7 +17,7 @@
 			//[Delete Note] stuff comes before the NoteID is reset.
 			if(isset($_POST['delete'])){
 				$deletedNote = $_SESSION['noteNum'];
-				$sql = "DELETE FROM sessionnotes WHERE NoteID = ". $deletedNote;
+				$sql = "DELETE FROM SessionNotes WHERE NoteID = ". $deletedNote;
 				if (mysqli_query($dbhandle, $sql)) {
 					//deleted successfully
 					unset($_SESSION['noteNum']);
@@ -32,7 +32,7 @@
 			if(isset($_POST['save'])){
 				$string = $_POST['notesText'];
 				if(isset($_SESSION['noteNum'])){
-					$sql = "UPDATE sessionnotes SET UserNote = \"". $string . "\" WHERE NoteID = ". $_SESSION['noteNum'];
+					$sql = "UPDATE SessionNotes SET UserNote = \"". $string . "\" WHERE NoteID = ". $_SESSION['noteNum'];
 					if (mysqli_query($dbhandle, $sql)) {
 						//save successful
 					} else {
@@ -40,7 +40,7 @@
 						echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 					}
 				} else {
-					$sql = "INSERT INTO sessionnotes (UserID, UserNote, Date) VALUES (\"". $User ."\", \"". $string . "\", NOW())" ;
+					$sql = "INSERT INTO SessionNotes (UserID, UserNote, Date) VALUES (\"". $User ."\", \"". $string . "\", NOW())" ;
 					if (mysqli_query($dbhandle, $sql)) {
 						//save successful
 					} else {
@@ -89,7 +89,7 @@
 							<form method="post">
 								<select name="memoFile" style="width:auto;">
 									<?php
-										$sql = "Select * FROM sessionnotes WHERE UserID =" . $_SESSION['PatientID'];
+										$sql = "Select * FROM SessionNotes WHERE UserID =" . $_SESSION['PatientID'];
 										$result = mysqli_query($dbhandle,$sql);
 										if($result->num_rows > 0){
 											while($row = mysqli_fetch_assoc($result)){
@@ -142,7 +142,7 @@
 									//loads note from database
 									if(isset($_POST['memoFile'])){
 										//grabs from DB by username instead
-										$sql = "Select * FROM sessionnotes WHERE UserID=". $_SESSION['PatientID'];
+										$sql = "Select * FROM SessionNotes WHERE UserID=". $_SESSION['PatientID'];
 											$result = mysqli_query($dbhandle,$sql);
 											if($result->num_rows > 0){
 												while($row = mysqli_fetch_assoc($result)){

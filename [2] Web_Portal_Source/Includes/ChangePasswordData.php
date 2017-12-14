@@ -13,7 +13,7 @@
 	$conNewPassword = "";
 
 
-	$nameSQL = "select FullName from Users where UserID=" . $_SESSION['currPasswordChange'];
+	$nameSQL = "select FullName from users where UserID=" . $_SESSION['currPasswordChange'];
 	$nameResult = $dbhandle->query($nameSQL);
 	$nameRow = $nameResult->fetch_assoc();
 	$FullName = $nameRow['FullName'];
@@ -55,16 +55,16 @@
 			$newPassword = $_POST["newPassword"];
 			$conNewPassword = $_POST["conNewPassword"];
 	
-			$sql = "SELECT Password FROM Users WHERE UserID = " . $_SESSION['currPasswordChange'];
+			$sql = "SELECT password FROM users WHERE UserID = " . $_SESSION['currPasswordChange'];
 			$result = $dbhandle->query($sql);
 			$row = $result->fetch_assoc();
 			
-			if (hash("sha512", htmlspecialchars($currPassword)) === $row['Password'] || $_SESSION['SelectedRole'] == $constSuperAdmin )
+			if (hash("sha512", htmlspecialchars($currPassword)) === $row['password'] || $_SESSION['SelectedRole'] == $constSuperAdmin )
 			{
 				if ($newPassword === $conNewPassword)
 				{
 					$newPassword = hash("sha512", htmlspecialchars($newPassword));
-					$sql = "UPDATE Users SET Password = '$newPassword' WHERE UserID = " . $_SESSION['currPasswordChange'];
+					$sql = "UPDATE users SET password = '$newPassword' WHERE UserID = " . $_SESSION['currPasswordChange'];
 					$_SESSION['currPasswordChange'] = "";
 					$result = $dbhandle->query($sql);
 					if ($result  === TRUE) 

@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 //load database data from file
-$filename = __DIR__ . "./DBData.txt";
+$filename = __DIR__ . "/DBData.txt";
 $DBFile = fopen($filename, "r") or die ("Unable to Open File.");
 //get database details from file
 $cipher = "AES-256-OFB";
@@ -46,9 +46,9 @@ $dbhandle = mysqli_connect($hostname, $username, $password, $dbname);
   
 function getUserRoles($id, $dbhandle)
 {
-	$sql = " Select Role.Description
-			from AssignedRoles
-			LEFT JOIN Role on Role.RoleID = AssignedRoles.RoleID
+	$sql = " Select role.Description
+			from assignedroles
+			LEFT JOIN role on role.RoleID = assignedroles.RoleID
 			Where UserID = $id";
 			
 		//var_dump($sql);
@@ -202,7 +202,7 @@ function hasViewingRights($Child, $dbhandle)
 		return true;
 	else{
 		$sql = "select t.`UserID`, t.`FullName`, @pv := t.`ParentID` col3
-				from (select * from Users order by `UserID` desc) t
+				from (select * from users order by `UserID` desc) t
 				join (select @pv := $Child) tmp
 				where t.`UserID` = @pv";
 		$result = $dbhandle->query($sql);

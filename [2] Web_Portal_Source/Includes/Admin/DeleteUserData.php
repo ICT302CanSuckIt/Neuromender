@@ -16,10 +16,10 @@
                                $UserID = $_POST["UserID"];
                                if(isset($_POST["btnYes"]))
                                {
-                                       $sqlDeleteRawTracking = "Delete RawTracking
-                                                                                       from RawTracking 
-                                                                                       Inner Join Session on Session.SessionID = RawTracking.SessionID
-                                                                                       where Session.UserID = $UserID";
+                                       $sqlDeleteRawTracking = "Delete rawtracking
+                                                                                       from rawtracking 
+                                                                                       Inner Join session on session.SessionID = rawtracking.SessionID
+                                                                                       where session.UserID = $UserID";
 
 
 
@@ -30,10 +30,10 @@
                                                echo "Raw Tracking Removed <br />";
                                        }
                                        
-                                       $sqlAchievementRings = "Delete AchievementRings
-                                                                               from AchievementRings
-                                                                               Inner Join Session on Achievement.AcheivementID = AchievementRings.AcheivementID
-                                                                               where Session.UserID = $UserID";
+                                       $sqlAchievementRings = "Delete achievementrings
+                                                                               from achievementrings
+                                                                               Inner Join session on achievement.AcheivementID = achievementrings.AcheivementID
+                                                                               where session.UserID = $UserID";
                                        $result = $dbhandle->query($sqlAchievementRings);
 
                                        if($result == true)
@@ -41,10 +41,10 @@
                                                echo "AchievementRings Removed <br />";
                                        }
 
-                                       $sqlAchievements = "Delete Achievement
-                                                                               from Achievement
-                                                                               Inner Join Session on Session.SessionID = Achievement.SessionID
-                                                                               where Session.UserID = $UserID";
+                                       $sqlAchievements = "Delete achievement
+                                                                               from achievement
+                                                                               Inner Join session on session.SessionID = achievement.SessionID
+                                                                               where session.UserID = $UserID";
                                        $result = $dbhandle->query($sqlAchievements);
 
                                        if($result == true)
@@ -53,10 +53,10 @@
                                        }
                                                                             
 
-                                       $sqlLevelComplete = "Delete LevelCompleted  
-                                                                               from LevelCompleted 
-                                                                               Inner Join Session on Session.SessionID = LevelCompleted.SessionID
-                                                                               where Session.UserID = $UserID";
+                                       $sqlLevelComplete = "Delete levelcompleted  
+                                                                               from levelcompleted 
+                                                                               Inner Join session on session.SessionID = levelcompleted.SessionID
+                                                                               where session.UserID = $UserID";
 
                                        $result = $dbhandle->query($sqlLevelComplete);
 
@@ -65,10 +65,10 @@
                                                echo "Completed Levels Removed <br />";
                                        }
 
-                                       $sqlReachTrackingData = "Delete ReachTrackingData
-                                                                               from ReachTrackingData
-                                                                               Inner Join Session on Session.SessionID = ReachTrackingData.SessionID
-                                                                               where Session.UserID = $UserID";
+                                       $sqlReachTrackingData = "Delete reachtrackingdata
+                                                                               from reachtrackingdata
+                                                                               Inner Join session on session.SessionID = reachtrackingdata.SessionID
+                                                                               where session.UserID = $UserID";
                                        $result = $dbhandle->query($sqlReachTrackingData);
 
                                        if($result == true)
@@ -76,10 +76,10 @@
                                                echo "ReachTrackingData Removed <br />";
                                        }
                                        
-                                       $sqlReachGameData = "Delete ReachGameData
-                                                                               from ReachGameData
-                                                                               Inner Join Session on Session.SessionID = ReachGameData.SessionID
-                                                                               where Session.UserID = $UserID";
+                                       $sqlReachGameData = "Delete reachgamedata
+                                                                               from reachgamedata
+                                                                               Inner Join session on session.SessionID = reachgamedata.SessionID
+                                                                               where session.UserID = $UserID";
                                        $result = $dbhandle->query($sqlReachGameData);
 
                                        if($result == true)
@@ -88,8 +88,8 @@
                                        }
 
 
-                                       $sqlDeleteSession = "Delete Session 
-                                                                               from Session 
+                                       $sqlDeleteSession = "Delete session 
+                                                                               from session 
                                                                                where UserID = $UserID ";
                                        $result = $dbhandle->query($sqlDeleteSession);
 
@@ -98,8 +98,8 @@
                                                echo "Sessions Removed <br />";
                                        }
 
-                                       $sqlDeleteAffliction = "Delete Affliction 
-                                                                               from Affliction 
+                                       $sqlDeleteAffliction = "Delete affliction 
+                                                                               from affliction 
                                                                                where UserID = $UserID ";
                                        $result = $dbhandle->query($sqlDeleteAffliction);
 
@@ -108,8 +108,8 @@
                                                echo "Config Data Removed <br />";
                                        }
 
-                                       $sqlDeleteRoles = "Delete AssignedRoles 
-                                                                               from AssignedRoles 
+                                       $sqlDeleteRoles = "Delete assignedroles 
+                                                                               from assignedroles 
                                                                                where UserID = $UserID ";
                                        $result = $dbhandle->query($sqlDeleteRoles);
 
@@ -118,8 +118,8 @@
                                                echo "Roles Removed <br />";
                                        }
 
-                                       $sqlDeleteUser= "Delete Users 
-                                                                               from Users 
+                                       $sqlDeleteUser= "Delete users 
+                                                                               from users 
                                                                                where UserID = $UserID ";
                                        $result = $dbhandle->query($sqlDeleteUser);
 

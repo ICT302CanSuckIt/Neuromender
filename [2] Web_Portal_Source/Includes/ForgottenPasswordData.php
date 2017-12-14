@@ -7,7 +7,7 @@
 			{
 				$username = $_POST["Username"];
 				$email = $_POST["Email"];
-				$sql = "Select SecretQuestion from Users where Username='$username' AND Email='$email' ";
+				$sql = "Select SecretQuestion from users where Username='$username' AND Email='$email' ";
 				$Question = getval($dbhandle, $sql);
 				
 				if($Question != "")
@@ -40,7 +40,7 @@
 				$question = $_POST["Question"];
 				$answer = $_POST["Answer"];
 				$username = $_POST["Username"];
-				$sql = "Select SecretAnswer from Users where SecretAnswer='$answer' AND SecretQuestion='$question'";
+				$sql = "Select SecretAnswer from users where SecretAnswer='$answer' AND SecretQuestion='$question'";
 				$AnswerFromDB = getval($dbhandle, $sql);
 				if($AnswerFromDB != "")
 				{
@@ -74,8 +74,8 @@
 				if($password == $confirm)
 				{
 					$password = hash("sha512", htmlspecialchars($password));
-					$sql = "UPDATE Users
-							SET Password='$password'
+					$sql = "UPDATE users
+							SET password='$password'
 							WHERE Username='$username' ";
 							
 					$result = $dbhandle->query($sql);

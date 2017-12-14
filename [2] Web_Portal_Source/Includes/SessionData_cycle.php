@@ -7,7 +7,7 @@
                           
       $SessionID = $_SESSION['SessionID'];
 
-      $sql = "SELECT UserID FROM Session WHERE SessionID = $SessionID";
+      $sql = "SELECT UserID FROM session WHERE SessionID = $SessionID";
       $result = mysqli_query($dbhandle,$sql);
       $row = mysqli_fetch_assoc($result);
       $currUser = $row['UserID'];
@@ -28,7 +28,7 @@
 				echo "Game = A full set of rounds (A set of target hits, 20 Cycle could be 1 game).<br>";
 				echo "Round = An extension towards a target. 1 target hit is equal to 1 round.</div><br><br>";
 
-				$sql = "SELECT * FROM CyclingGameData WHERE UserID = $currUser";
+				$sql = "SELECT * FROM cyclinggamedata WHERE UserID = $currUser";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				
@@ -45,12 +45,12 @@
 				$output = $output . "<div class='page-details-graph'>%GAMENUMBER%</div>";
 				$output = $output . "<div class='page-details-graph'><input type='submit' class='btn btn-primary btn-sm' id='btnGameNumber' name='btnGameNumber'/> </div></form>";
 
-				$sql = "SELECT GameNo FROM CyclingGameData WHERE UserID = $currUser AND SessionID = $SessionID";
+				$sql = "SELECT GameNo FROM cyclinggamedata WHERE UserID = $currUser AND SessionID = $SessionID";
 				$output = str_replace("%GAMENUMBER%", CreateSelectBox($sql, 'gameNumberSelection', 'gameNumberSelection', 'GameNo', 'GameNo', '', $dbhandle), $output);
 				echo $output;
 
 								
-				$sql = "SELECT * FROM CyclingGameData Where GameNo = $gameNumber AND SessionID = $SessionID AND UserID = $currUser";
+				$sql = "SELECT * FROM cyclinggamedata Where GameNo = $gameNumber AND SessionID = $SessionID AND UserID = $currUser";
 				$result=mysqli_query($dbhandle,$sql);
 		
 		

@@ -31,12 +31,12 @@
 										<li>
 											<?php
 												$output = "";
-												$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+												$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 												$roleCount = getval($dbhandle, $selectRoles);
 												if (isset($_SESSION['SelectedRole']))
 												{
 													$Role = $_SESSION['SelectedRole'];
-													$roleSQL = "Select Description from Role where RoleID = $Role";
+													$roleSQL = "Select Description from role where RoleID = $Role";
 													$RoleDesc = getval($dbhandle, $roleSQL);
 													$output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc</div>";
 												}
@@ -76,7 +76,7 @@
 				}
 				$SessionID = $_SESSION['SessionID'];
 				
-				$sql = "SELECT * FROM Session WHERE SessionID = $SessionID";
+				$sql = "SELECT * FROM session WHERE SessionID = $SessionID";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				$wingman = (int)$row['WingmanPlayed'];

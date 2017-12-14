@@ -19,8 +19,8 @@
 					{
 						$sql = "SELECT FullName, U.UserID, Email 
 								FROM 
-									Users U
-									LEFT JOIN AssignedRoles AR on AR.UserID = U.UserID
+									users U
+									LEFT JOIN assignedroles AR on AR.UserID = U.UserID
 								WHERE 
 									ParentID = $UserID
 									AND AR.RoleID = $constPatient";
@@ -43,7 +43,7 @@
 								$url 			= "../Main/PatientProfile.php?user=$id&password=2";
 								
 								//Alerts data
-								$alertsSql 		= "SELECT count(*) as total from Alerts where SubjectID=". $id ." and Seen=0;";
+								$alertsSql 		= "SELECT count(*) as total from alerts where SubjectID=". $id ." and Seen=0;";
 								$alertsResult 	= $dbhandle->query($alertsSql);
 								$alertsData 	= $alertsResult->fetch_assoc();
 								$alertCount 	= $alertsData['total'];
@@ -87,11 +87,11 @@
 									U4.FullName as Name4, U4.UserID as ID4, 
 									U5.FullName as Name5, U5.UserID as ID5 
 								FROM 
-									Users U1
-									LEFT JOIN Users U2 on U2.ParentID = U1.UserID
-									LEFT JOIN Users U3 on U3.ParentID = U2.UserID
-									LEFT JOIN Users U4 on U4.ParentID = U3.UserID
-									LEFT JOIN Users U5 on U5.ParentID = U4.UserID
+									users U1
+									LEFT JOIN users U2 on U2.ParentID = U1.UserID
+									LEFT JOIN users U3 on U3.ParentID = U2.UserID
+									LEFT JOIN users U4 on U4.ParentID = U3.UserID
+									LEFT JOIN users U5 on U5.ParentID = U4.UserID
 								WHERE 
 									U1.ParentID = $UserID";
 									
@@ -163,8 +163,8 @@
 						// Return Users who's sessions should be listed
 						$sql = "SELECT FullName, U.UserID
 						FROM 
-						Users U
-						LEFT JOIN AssignedRoles AR on AR.UserID = U.UserID
+						users U
+						LEFT JOIN assignedroles AR on AR.UserID = U.UserID
 						WHERE 
 						ParentID = $UserID
 						AND AR.RoleID = $constPatient";
@@ -189,7 +189,7 @@
 						
 							// SQL statement for pulling sessions
 							$sql = "SELECT SessionID, StartTime
-								FROM Session
+								FROM session
 								WHERE DATE(StartTime) > (NOW() - INTERVAL 30 DAY) AND UserID=$viewableusers[$i]";	
 		
 							// SQLi safe code
@@ -227,8 +227,8 @@
 						// Return Users who's sessions should be listed
 						$sql = "SELECT FullName, U.UserID
 						FROM 
-						Users U
-						LEFT JOIN AssignedRoles AR on AR.UserID = U.UserID
+						users U
+						LEFT JOIN assignedroles AR on AR.UserID = U.UserID
 						WHERE 
 						ParentID = $UserID
 						AND AR.RoleID = $constPatient";
@@ -250,7 +250,7 @@
 						
 							// SQL statement for pulling sessions
 							$sql = "SELECT SessionID, StartTime
-								FROM Session
+								FROM session
 								WHERE DATE(StartTime) > (NOW() - INTERVAL 7 DAY) AND UserID=$viewableusers[$i]";	
 		
 							// SQLi safe code
@@ -295,8 +295,8 @@
 						// Return Users who's sessions should be listed
 						$sql = "SELECT FullName, U.UserID
 						FROM 
-						Users U
-						LEFT JOIN AssignedRoles AR on AR.UserID = U.UserID
+						users U
+						LEFT JOIN assignedroles AR on AR.UserID = U.UserID
 						WHERE 
 						ParentID = $UserID
 						AND AR.RoleID = $constPatient";
@@ -318,7 +318,7 @@
 						
 							// SQL statement for pulling sessions
 							$sql = "SELECT SessionID, StartTime
-								FROM Session
+								FROM session
 								WHERE DATE(StartTime) > (NOW() - INTERVAL 1 DAY) AND UserID=$viewableusers[$i]";	
 		
 							// SQLi safe code
@@ -356,9 +356,9 @@
                                         else if($_POST["report"] == "5")//View all users
 					{
                                             $sql = "SELECT *
-						    FROM Users  
-                                                    LEFT JOIN AssignedRoles ON AssignedRoles.UserID = Users.UserID
-						    WHERE AssignedRoles.RoleID >= $currRole";
+						    FROM users  
+                                                    LEFT JOIN assignedroles ON assignedroles.UserID = users.UserID
+						    WHERE assignedroles.RoleID >= $currRole";
 							
                                             $result = $dbhandle->query($sql);
 						

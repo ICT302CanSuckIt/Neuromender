@@ -11,7 +11,7 @@
 		if ($_SESSION['loggedIn'] == true) {
 			$SessionID = $_GET['SessionID'];
                         
-			$sql = "SELECT UserID FROM Session WHERE SessionID = $SessionID";
+			$sql = "SELECT UserID FROM session WHERE SessionID = $SessionID";
 			$result = mysqli_query($dbhandle,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$currUser = $row['UserID'];
@@ -35,7 +35,7 @@
 				echo "Game = A full set of rounds (A set of target hits, 20 targets could be 1 game).<br>";
 				echo "Round = An extension towards a target. 1 target hit is equal to 1 round.</div><br><br>";
 
-				$sql = "SELECT * FROM TargetRestrictions WHERE UserID = $currUser";
+				$sql = "SELECT * FROM targetrestrictions WHERE UserID = $currUser";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				
@@ -54,11 +54,11 @@
 				$output = $output . "<div class='page-details-graph'>%GAMENUMBER%</div>";
 				$output = $output . "<div class='page-details-graph'><input type='submit' class='btn btn-primary btn-sm' id='btnGameNumber' name='btnGameNumber'/> </div></form>";
 
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE UserID = $currUser AND SessionID = $SessionID";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE UserID = $currUser AND SessionID = $SessionID";
 				$output = str_replace("%GAMENUMBER%", CreateSelectBox($sql, 'gameNumberSelection', 'gameNumberSelection', 'GameNoID', 'GameNoID', '', $dbhandle), $output);
 				echo $output;
 
-				$sql = "SELECT RoundID, Accuracy, Assisted, Points, Latency FROM ReachGameData Where GameNoID = $gameNumber AND SessionID = $SessionID";
+				$sql = "SELECT RoundID, Accuracy, Assisted, Points, Latency FROM reachgamedata Where GameNoID = $gameNumber AND SessionID = $SessionID";
 				$result=mysqli_query($dbhandle,$sql);
 
 				/*$accuracyArrayUnassisted = array(30, 55, null, null);
@@ -245,7 +245,7 @@
 						
 						echo "<h1 class='page-title'>Latency for Game $gameNumber from Session $SessionID</h1>";
 						
-						$sql = "SELECT * FROM Affliction WHERE UserID = $currUser";
+						$sql = "SELECT * FROM affliction WHERE UserID = $currUser";
 						$result = mysqli_query($dbhandle,$sql);
 						$row = mysqli_fetch_assoc($result);
 
@@ -360,7 +360,7 @@
 				
 					//Code formerly commented out here removed, as it was not necessary - BL
 				
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				$totalGames = (int)$row['GameNoID'];
@@ -376,7 +376,7 @@
 				//get averages for each game, and add them to the array
 				for ($gameCount = 1; $gameCount <= $totalGames; $gameCount++)
 				{
-						$sql = "SELECT Accuracy FROM ReachGameData WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
+						$sql = "SELECT Accuracy FROM reachgamedata WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
 						$result = mysqli_query($dbhandle,$sql);
 						$totalGameAccuracy = 0;
 						while($row = mysqli_fetch_assoc($result))
@@ -507,7 +507,7 @@
 				echo "<h1 class='page-title'>Range of Motion for Session $SessionID</h1>";
 					//Code formerly commented out here removed, as it was not necessary - BL
 
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				$totalGames = (int)$row['GameNoID'];
@@ -522,7 +522,7 @@
 				
 				for ($gameCount = 1; $gameCount <= $totalGames; $gameCount++)
 				{
-						$sql = "SELECT MaximumReach, MinimumReach FROM ReachGameData WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
+						$sql = "SELECT MaximumReach, MinimumReach FROM reachgamedata WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
 						$result = mysqli_query($dbhandle,$sql);
 						$totalRange = 0;
 						while($row = mysqli_fetch_assoc($result))
@@ -659,7 +659,7 @@
 					echo "<h1 class='page-title'>Average Maximum Reach for Session $SessionID</h1>";
 					//Code formerly commented out here removed, as it was not necessary - BL
 					
-					$sql = "SELECT GameNoID FROM ReachGameData WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
+					$sql = "SELECT GameNoID FROM reachgamedata WHERE  SessionID = $SessionID AND UserId = $currUser ORDER BY GameNoID DESC LIMIT 1";
 					$maxReachArray = array();
 					$ticks = array();
 					$result = mysqli_query($dbhandle,$sql);
@@ -678,7 +678,7 @@
 					$totalReach=0;
 					for ($gameCount = 1; $gameCount <= $totalGames; $gameCount++)
 					{
-							$sql = "SELECT MaximumReach FROM ReachGameData WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
+							$sql = "SELECT MaximumReach FROM reachgamedata WHERE GameNoID = $gameCount AND SessionID = $SessionID AND UserID = $currUser";
 							$result = mysqli_query($dbhandle,$sql);
 							
 							while($row = mysqli_fetch_assoc($result))

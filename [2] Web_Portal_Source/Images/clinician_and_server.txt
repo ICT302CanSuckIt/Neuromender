@@ -1,0 +1,18 @@
+--- Server Access ---
+To access the server in the web portal, place the following in Includes/DBDataOLD.txt:
+
+neuroadmin4_5
+*3A91ED3DC9D1D5CB80BBC66C0CE5728C43D7462A
+vegas.murdoch.edu.au
+Neuromender4_5
+
+After this, run Main/Encrypter.php on the server (NOT through a browser), and the connection should work.
+
+--- Clinician Access to Web Portal ---
+
+The following details can be used to access the clinician web portal:
+
+Username: Clinic1
+Password: test1
+
+If any login does not work, reset the password. There may be some leftover passwords using old hashes.

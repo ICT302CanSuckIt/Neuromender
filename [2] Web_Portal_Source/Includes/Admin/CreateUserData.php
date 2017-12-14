@@ -38,7 +38,7 @@
 				$Signup = date("Y-m-d H:i:s");  
 				$parent = $_SESSION['UserID'];
 
-				$sqlCheckUser = "Select * from Users WHERE Username = '$Username'";
+				$sqlCheckUser = "Select * from users WHERE Username = '$Username'";
 
 				$result = $dbhandle->query($sqlCheckUser);
 			
@@ -48,8 +48,8 @@
 				}
 				else{
 					$insertSQL = 	"INSERT 
-									INTO Users 
-											(Username,Password,Email,Address,SecretQuestion,SecretAnswer,FullName,Dob,Gender,ParentID,SignupDate)
+									INTO users 
+											(Username,password,Email,Address,SecretQuestion,SecretAnswer,FullName,Dob,Gender,ParentID,SignupDate)
 									Values ('$Username','$Password','$Email','$Address','$Question','$Answer','$FullName','".date('Y-m-d',$DOB)."','$Gender','$parent','$Signup')";
 					$result = $dbhandle->query($insertSQL);
 					
@@ -63,7 +63,7 @@
 					$UserID = $dbhandle->insert_id; 
 					
 					$insertSQL = 	"INSERT 
-									INTO AssignedRoles 
+									INTO assignedroles 
 											(UserID, RoleID)
 									Values ('$UserID', '$Role')";
 									
@@ -94,7 +94,7 @@
 
 
 						 $insertSQL = 	"INSERT 
-										INTO Affliction 
+										INTO affliction 
 												(UserID, SideAffectedID, SiteOfLesionID, SeverityID, Bilateral, DateOfAffliction, ArmLength, LeftNeglect, Notes)
 										Values ($UserID, $sideAffected, $siteOfLesion, $severity, $bilateral, '" . date('Y-m-d',$dateOfAfflction) . "', $armLength, $leftNeglect, '$Notes')";
 						$result = $dbhandle->query($insertSQL);
@@ -366,18 +366,18 @@
 			$outputString = $outputString .  '<p>Not logged In</p>'; 
 		}
 		$currRole = $_SESSION['SelectedRole'];
-		$sql = "Select * from Role where RoleID >= $currRole ORDER BY (`Description` = 'None') DESC, `Description`";
+		$sql = "Select * from role where RoleID >= $currRole ORDER BY (`Description` = 'None') DESC, `Description`";
 		$outputString = str_replace("%ROLESELECTOR%", CreateSelectBox($sql, 'roleSelection', 'roleSelection', 'RoleID', 'Description', 'showAffliction()', $dbhandle), $outputString);
 		
-		$sql = "Select * from SideAffected where Description<>'Bilateral' ORDER BY (`Description` = 'None') DESC, `Description`";
+		$sql = "Select * from sideaffected where Description<>'Bilateral' ORDER BY (`Description` = 'None') DESC, `Description`";
 		$outputString = str_replace("%SIDEAFFECTEDSELECTOR%", CreateSelectBox($sql, 'sideAffected', 'sideAffected', 'SideAffectedID', 'Description', '', $dbhandle), $outputString);
 		
 		//to be included when needed
-		//$sql = "Select * from Lesion";
+		//$sql = "Select * from lesion";
 		//$outputString = str_replace("%SITEOFLESIONSELECTOR%", CreateSelectBox($sql, 'siteOfLesion', 'siteOfLesion', 'LesionID', 'Description', '', $dbhandle), $outputString);
 		
 		
-		$sql = "Select * from Severity ORDER BY (`Description` = 'None') DESC, `Description`";
+		$sql = "Select * from severity ORDER BY (`Description` = 'None') DESC, `Description`";
 		$outputString = str_replace("%SEVERITYSELECTOR%", CreateSelectBox($sql, 'severity', 'severity', 'SeverityID', 'Description', '', $dbhandle), $outputString);
 		
 		

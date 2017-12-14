@@ -14,7 +14,7 @@
 	if(isset($_POST["btnClear"]))
 	{
 		if($_SESSION['UserID'] != $_GET['user']){
-			$AlertClearSQL = "update Alerts set Seen=1 where ParentID=" . $_SESSION['UserID'] . ";";
+			$AlertClearSQL = "update alerts set Seen=1 where ParentID=" . $_SESSION['UserID'] . ";";
 		} else {
 			$AlertClearSQL = "UPDATE alerts SET Seen=1 WHERE SubjectID=". $_SESSION['UserID'] . ";";
 		}
@@ -23,7 +23,7 @@
 	else if(isset($_POST["btnRecover"]))
 	{
 		if($_SESSION['UserID'] != $_GET['user']){
-			$AlertClearSQL = "update Alerts set Seen=0 where ParentID=" . $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
+			$AlertClearSQL = "update alerts set Seen=0 where ParentID=" . $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
 		} else {
 			$AlertClearSQL = "UPDATE alerts SET Seen=0 WHERE SubjectID=". $_SESSION['UserID'] . " and Description<>'Hidden - Alerts accessed';";
 		}
@@ -39,15 +39,15 @@
 	
 	if( isset( $_GET['user'] ) && isset( $_GET['date'] ) )
 	{
-		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from Alerts where Seen=0 and SubjectID=".$_GET['user']." and CAST(`Date` AS DATE)='".$_GET['date']."';";
+		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from alerts where Seen=0 and SubjectID=".$_GET['user']." and CAST(`Date` AS DATE)='".$_GET['date']."';";
 	}
 	else if( isset( $_GET['user'] ) )
 	{
-		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from Alerts where Seen=0 AND SubjectID=".$_GET['user'].";";
+		$sql = "select *, DATE_FORMAT(CAST(`Date` AS DATE), '%d-%m-%Y %r') AS DDate from alerts where Seen=0 AND SubjectID=".$_GET['user'].";";
 	}
 	else
 	{
-		$sql = "select * from Alerts where Seen=0 and SubjectID=".$_SESSION['UserID'].";";
+		$sql = "select * from alerts where Seen=0 and SubjectID=".$_SESSION['UserID'].";";
 	}
 	
 	
@@ -85,7 +85,7 @@
 			$date 			= $row["DDate"];
 			$description 	= $row["Description"];
 			$patientID	 	= $row["SubjectID"];
-			$patientSql = "select FullName, UserID from Users where UserID=$patientID;";
+			$patientSql = "select FullName, UserID from users where UserID=$patientID;";
 			$patientResult = $dbhandle->query($patientSql);
 			$patient = $patientResult->fetch_assoc();
 			$patientName = $patient["FullName"];

@@ -15,7 +15,7 @@
 
     $selectUsers = $_POST['selectUsers'];
     
-    $sql = "SELECT * FROM Users WHERE UserID = $selectUsers";
+    $sql = "SELECT * FROM users WHERE UserID = $selectUsers";
 	  $result = $dbhandle->query($sql);
 		if($result->num_rows > 0){
 			$row = $result->fetch_assoc();

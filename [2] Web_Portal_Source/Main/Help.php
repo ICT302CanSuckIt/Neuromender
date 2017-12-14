@@ -38,20 +38,20 @@
 			    <li>
                                 <?php
                                     $output = "";
-                                    $selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+                                    $selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
                                     $roleCount = getval($dbhandle, $selectRoles);
                                     if (isset($_SESSION['SelectedRole']))
                                     {
                                             $Role = $_SESSION['SelectedRole'];
 
-                                            $roleSQL = "Select Description from Role where RoleID = $Role";
+                                            $roleSQL = "Select Description from role where RoleID = $Role";
                                             $RoleDesc = getval($dbhandle, $roleSQL);
                                             $output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc</div>";
                                     }
 				    /*
                                     if($roleCount > 1)
                                     {
-                                            $sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+                                            $sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
                                             $output = $output . "<form method='post' style='display: inline;'>";
                                             $output = $output . CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle);
                                             $output = $output . "<input type='submit' name='btnRoleChange' value='Change' /></form><br><br>";

@@ -7,7 +7,7 @@
 	if ($_SESSION['loggedIn'] == true) {
 		$SessionID = $_GET['SessionID'];
 
-		$sql = "SELECT UserID FROM Session WHERE SessionID = $SessionID";
+		$sql = "SELECT UserID FROM session WHERE SessionID = $SessionID";
 		$result = mysqli_query($dbhandle,$sql);
 		$row = mysqli_fetch_assoc($result);
 		$User = $row['UserID'];
@@ -20,7 +20,7 @@
 			//
 			$currUser = $_SESSION['currPatientID'];
 			
-			$sql = "SELECT Username from Users WHERE UserID = $User";
+			$sql = "SELECT Username from users WHERE UserID = $User";
 			$result = mysqli_query($dbhandle,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$uName = $row['Username'];
@@ -61,18 +61,18 @@
 
 			// Get total games
 			/*
-			$sql = "SELECT GameNoID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
+			$sql = "SELECT GameNoID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
 			$result = mysqli_query($dbhandle,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$totalGames = $row['GameNoID'];*/
 			
 			// Get total sessions
-			$sql = "SELECT SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
+			$sql = "SELECT SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
 			$result = mysqli_query($dbhandle,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$sessionMax = $row['SessionID'];
 			
-			$sql = "SELECT SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
+			$sql = "SELECT SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
 			$result = mysqli_query($dbhandle,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$sessionMin = $row['SessionID'];
@@ -94,7 +94,7 @@
 			
 			for ($sessCount = $sessionMin; $sessCount <= $sessionMax + 1; $sessCount++)
 			{
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE SessionID=$sessCount AND UserID = $User ORDER BY GameNoID DESC LIMIT 1";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE SessionID=$sessCount AND UserID = $User ORDER BY GameNoID DESC LIMIT 1";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 
@@ -111,7 +111,7 @@
 
 				for ($gameCount = 1; $gameCount <= $totalGames; $gameCount++)
 				{
-					$sql = "SELECT Accuracy, SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND GameNoID = $gameCount AND UserID = $currUser";
+					$sql = "SELECT Accuracy, SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND GameNoID = $gameCount AND UserID = $currUser";
 					$result = mysqli_query($dbhandle,$sql);
 					
 					while($row = mysqli_fetch_assoc($result))
@@ -277,19 +277,19 @@
 		$output = $output . " <input type='submit' id='btnROM' class='btn btn-primary btn-sm' name='btnROM'/> </div></form>";
 		echo $output;
 
-		//$sql = "SELECT GameNoID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
+		//$sql = "SELECT GameNoID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
 		//$result = mysqli_query($dbhandle,$sql);
 		//$row = mysqli_fetch_assoc($result);
 		$sessionMin = 0;
 		$sessionMax = 0;
 		
 		// Get total sessions
-		$sql = "SELECT SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
+		$sql = "SELECT SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
 		$result = mysqli_query($dbhandle,$sql);
 		$row = mysqli_fetch_assoc($result);
 		$sessionMaxROM = $row['SessionID'];
 		
-		$sql = "SELECT SessionID, GameNoID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
+		$sql = "SELECT SessionID, GameNoID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
 		$result = mysqli_query($dbhandle,$sql);
 		$row = mysqli_fetch_assoc($result);
 		$sessionMinROM = $row['SessionID'];
@@ -305,7 +305,7 @@
 		
 		for ($sessCountROM = $sessionMinROM; $sessCountROM <= $sessionMaxROM + 1; $sessCountROM++)
 		{
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND SessionID = $sessCountROM AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginROM 00:00:00' AND '$endROM 23:59:59') AND SessionID = $sessCountROM AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 
@@ -322,7 +322,7 @@
 				
 				for ($gameCountROM = 1; $gameCountROM <= $totalGamesROM; $gameCountROM++)
 				{
-					$sql = "SELECT MinimumReach, MaximumReach FROM ReachGameData WHERE GameNoID = $gameCountROM AND UserID = $currUser";
+					$sql = "SELECT MinimumReach, MaximumReach FROM reachgamedata WHERE GameNoID = $gameCountROM AND UserID = $currUser";
 					$result = mysqli_query($dbhandle,$sql);
 					if(mysqli_num_rows($result) > 0){
 						while($row = mysqli_fetch_assoc($result))
@@ -464,12 +464,12 @@
 		echo $output;
 		
 		// Get total sessions
-		$sql = "SELECT SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
+		$sql = "SELECT SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID DESC LIMIT 1";
 		$result = mysqli_query($dbhandle,$sql);
 		$row = mysqli_fetch_assoc($result);
 		$sessionMaxMR = $row['SessionID'];
 		
-		$sql = "SELECT SessionID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
+		$sql = "SELECT SessionID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAcc 00:00:00' AND '$endAcc 23:59:59') AND UserID = $currUser ORDER BY SessionID ASC LIMIT 1";
 		$result = mysqli_query($dbhandle,$sql);
 		$row = mysqli_fetch_assoc($result);
 		$sessionMinMR = $row['SessionID'];
@@ -480,7 +480,7 @@
 					
 			for ($sessCountMR = $sessionMinMR; $sessCountMR <= $sessionMaxMR + 1; $sessCountMR++)
 			{
-				$sql = "SELECT GameNoID FROM ReachGameData WHERE (TimeCreated BETWEEN '$beginAvgReach 00:00:00' AND '$endAvgReach 23:59:59') AND SessionID=$sessCountMR AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
+				$sql = "SELECT GameNoID FROM reachgamedata WHERE (TimeCreated BETWEEN '$beginAvgReach 00:00:00' AND '$endAvgReach 23:59:59') AND SessionID=$sessCountMR AND UserID = $currUser ORDER BY GameNoID DESC LIMIT 1";
 				$result = mysqli_query($dbhandle,$sql);
 				$row = mysqli_fetch_assoc($result);
 				
@@ -501,7 +501,7 @@
 		
 				for ($gameCountMR = 1; $gameCountMR <= $totalGamesMR + 1; $gameCountMR++)
 				{
-					$sql = "SELECT MaximumReach FROM ReachGameData WHERE SessionID=$sessCountMR AND GameNoID = $gameCountMR AND UserID = $currUser";
+					$sql = "SELECT MaximumReach FROM reachgamedata WHERE SessionID=$sessCountMR AND GameNoID = $gameCountMR AND UserID = $currUser";
 					$result = mysqli_query($dbhandle,$sql);
 					if(mysqli_num_rows($result) > 0){
 						while($row = mysqli_fetch_assoc($result))

@@ -37,7 +37,7 @@ function draw_calendar($month,$year, $userID, $type, $dbhandle){
 				$dateString .= $list_day;
 				
 			
-			$alertSql = "select `Date`, Description from Alerts where SubjectID=$userID and Seen=0 and CAST(`Date` AS DATE)='".$dateString."';";
+			$alertSql = "select `Date`, Description from alerts where SubjectID=$userID and Seen=0 and CAST(`Date` AS DATE)='".$dateString."';";
 			$alertResult = $dbhandle->query($alertSql);
 			$alertCount = $alertResult->num_rows;
 			if( $alertCount > 0 )
@@ -70,7 +70,7 @@ function draw_calendar($month,$year, $userID, $type, $dbhandle){
 				}
 				//$calendar.= '<div>'.$endtTime.'</div>';
 					
-				$sql = "SELECT SessionID, WingmanPlayed, CyclingPlayed, TargetsPlayed, DATE_FORMAT(StartTime,'%H:%i') as Start, DATE_FORMAT(EndTime,'%H:%i') as End FROM Session WHERE UserID = $userID AND (StartTime > '$startTime' AND EndTime < '$endtTime' AND EndTime <> 0 )";
+				$sql = "SELECT SessionID, WingmanPlayed, CyclingPlayed, TargetsPlayed, DATE_FORMAT(StartTime,'%H:%i') as Start, DATE_FORMAT(EndTime,'%H:%i') as End FROM session WHERE UserID = $userID AND (StartTime > '$startTime' AND EndTime < '$endtTime' AND EndTime <> 0 )";
 				$result = $dbhandle->query($sql);
 				if ($result->num_rows > 0) {
 					// output data of each row

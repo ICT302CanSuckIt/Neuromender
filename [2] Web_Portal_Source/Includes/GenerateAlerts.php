@@ -1,8 +1,5 @@
 <?php
-	$PatientSql = "	select *
-					from Users
-					left join AssignedRoles on AssignedRoles.UserID=Users.UserID
-					where AssignedRoles.RoleID=5;";
+	$PatientSql = "SELECT * FROM users LEFT JOIN assignedroles ON assignedroles.UserID=users.UserID	WHERE assignedroles.RoleID=5;";
 	
 	$PatientResult = $dbhandle->query($PatientSql);
 
@@ -19,7 +16,7 @@
 		{
 			
 			//Get the last alert for this patient
-			$AlertSQL = "select Date from Alerts where SubjectID=" . $PatientID . " order by Date desc limit 1;";
+			$AlertSQL = "select Date from alerts where SubjectID=" . $PatientID . " order by Date desc limit 1;";
 			$AlertResult = mysqli_query($dbhandle,$AlertSQL);
 			
 			
@@ -39,7 +36,7 @@
 			
 			while (strtotime($startDate) <= strtotime($endDate)) //For each day between initial startDate and now
 			{
-					$SessionSQL = "select StartTime, WingmanPlayed, TargetsPlayed, CyclingPlayed from Session where UserID=" . $PatientID . " and CAST(`StartTime` AS DATE)='" . $startDate . "';"; // Select all sessions on $startDate
+					$SessionSQL = "select StartTime, WingmanPlayed, TargetsPlayed, CyclingPlayed from session where UserID=" . $PatientID . " and CAST(`StartTime` AS DATE)='" . $startDate . "';"; // Select all sessions on $startDate
 					$SessionResult = mysqli_query($dbhandle,$SessionSQL);
 					
 					$wingmanPlayed = 0;
@@ -60,21 +57,21 @@
 					if( $patient['EnabledWingman'] == 1 && $wingmanPlayed == 0 )
 					{
 						//echo "No Wingman Played today! " . $startDate . "<br/>";
-						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+						$newAlertSQL = "insert into alerts ( ParentID, SubjectID, Date, Seen, Description )
 									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Wingman was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					if( $patient['EnabledTargets'] == 1 && $targetsPlayed == 0 )
 					{
 						//echo "No Targets Played today! " . $startDate . "<br/>";
-						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+						$newAlertSQL = "insert into alerts ( ParentID, SubjectID, Date, Seen, Description )
 									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Targets was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
 					if( $patient['EnabledCycling'] == 1 && $cyclingPlayed == 0 )
 					{
 						//echo "No Targets Played today! " . $startDate . "<br/>";
-						$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+						$newAlertSQL = "insert into alerts ( ParentID, SubjectID, Date, Seen, Description )
 									values ( " . $patient['ParentID'] . ", $PatientID, '" . $startDate . "', 0, 'Cycling/Rowing was not played today: " . date('d-m-Y', strtotime($startDate)) . "' );";
 						$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 					}
@@ -107,13 +104,13 @@
 		else
 		{
 			//if no games were enabled
-			/*$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+			/*$newAlertSQL = "insert into alerts ( ParentID, SubjectID, Date, Seen, Description )
 						values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $date . "', 0, 'User has no games enabled: " . $patient['FullName'] . "' );";
 			$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);*/
 		}
 		
 		//echo "        - " . $PatientID . "        - ";
-		$newAlertSQL = "insert into Alerts ( ParentID, SubjectID, Date, Seen, Description )
+		$newAlertSQL = "insert into alerts ( ParentID, SubjectID, Date, Seen, Description )
 					values ( " . $_SESSION['UserID'] . ", $PatientID, '" . $date . "', 1, 'Hidden - Alerts accessed' );";
 		$newAlertResult = mysqli_query($dbhandle,$newAlertSQL);
 		

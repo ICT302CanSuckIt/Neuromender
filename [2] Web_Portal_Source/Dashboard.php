@@ -71,20 +71,20 @@
 						<li>
 							<?php
 								$output = "";
-								$selectRoles = "Select count(*) as roleCount from AssignedRoles where UserID = $User";
+								$selectRoles = "Select count(*) as roleCount from assignedroles where UserID = $User";
 								$roleCount = getval($dbhandle, $selectRoles);
 								if (isset($_SESSION['SelectedRole']))
 								{
 									$Role = $_SESSION['SelectedRole'];
 
-									$roleSQL = "Select Description from Role where RoleID = $Role";
+									$roleSQL = "Select Description from role where RoleID = $Role";
 									$RoleDesc = getval($dbhandle, $roleSQL);
 									$output = $output . "<div class='main-header-links'>Logged in as: $RoleDesc </div>";
 								}
 								/*<i class='fa fa-user fa-lg'></i>
 								if($roleCount > 1)
 								{
-									$sql = "Select Role.RoleID, Role.Description from AssignedRoles INNER JOIN Role on Role.RoleID = AssignedRoles.RoleID where UserID = $User";
+									$sql = "Select role.RoleID, role.Description from assignedroles INNER JOIN role on role.RoleID = assignedroles.RoleID where UserID = $User";
 									$output = $output . "<form method='post' style='display: inline;'>";
 									$output = $output . CreateSelectBox($sql, 'roleChange', 'roleChange', 'RoleID', 'Description', '', $dbhandle);
 									$output = $output . "<input type='submit' name='btnRoleChange' value='Change' /></form><br><br>";
@@ -114,7 +114,7 @@
 					<div class="jumbotron">
 						<?php
 						$User = $_SESSION['UserID'];
-						$sql = "SELECT Users.FullName FROM Users WHERE Users.UserID = $User";
+						$sql = "SELECT users.FullName FROM users WHERE users.UserID = $User";
 						$result = $dbhandle->query($sql);
 						$user = $result->fetch_assoc();
 						$FullName = $user['FullName'];
@@ -140,7 +140,7 @@
 								echo $str;
 								
 								$temp = (int)$_SESSION['UserID'];
-								$query1 = "SELECT SessionID FROM Session WHERE UserID = $temp";
+								$query1 = "SELECT SessionID FROM session WHERE UserID = $temp";
 								$res = mysqli_query($dbhandle, $query1);
 								if($res->num_rows != 0){
 								//
@@ -158,8 +158,8 @@
 								if((empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate'])) || (isset($_POST['resetGraph'])))
 								{
 									//get the first available session's date
-									$sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Achievement.SessionID = Session.SessionID 
-											WHERE UserID = " . $User . " AND Achievement.Completed = 1
+									$sql = "SELECT achievement.TimeAchieved FROM achievement LEFT JOIN session ON achievement.SessionID = session.SessionID 
+											WHERE UserID = " . $User . " AND achievement.Completed = 1
 											ORDER BY TimeAchieved ASC
 											LIMIT 1";
 									$result = mysqli_query($dbhandle,$sql);
@@ -188,8 +188,8 @@
 								$sessionIds = array();
 								$amchartAverageChartData = array();
 								
-								$sql = "SELECT DISTINCT(Achievement.SessionID) FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-										WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '" .  date('Y-m-d', strtotime($beginAngDate)). "00:00:00' AND '".date('Y-m-d', strtotime($endAngDate))." 23:59:59') AND Achievement.Completed = 1
+								$sql = "SELECT DISTINCT(achievement.SessionID) FROM achievement LEFT JOIN session ON session.SessionID = achievement.SessionID 
+										WHERE UserID = " . $User . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND achievement.Completed = 1
 										ORDER BY TimeAchieved ASC";
 								$result = mysqli_query($dbhandle,$sql);
 								while($row = mysqli_fetch_assoc($result))
@@ -200,9 +200,9 @@
 								foreach($sessionIds as $sessionId)
 								{
 									//sum all the threshold pass and count the number of games
-									$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM Achievement 
-											LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-											WHERE Achievement.SessionID = $sessionId AND Session.WingmanPlayed >= 1 AND Achievement.Completed = 1";
+									$sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM achievement 
+											LEFT JOIN session ON session.SessionID = achievement.SessionID 
+											WHERE achievement.SessionID = $sessionId AND session.WingmanPlayed >= 1 AND achievement.Completed = 1";
 									$result = mysqli_query($dbhandle,$sql);
 									$row = mysqli_fetch_assoc($result);
 									$totalGame = (float)$row["TotalGame"];

@@ -7,7 +7,7 @@
                           
       $SessionID = $_SESSION['SessionID'];
 
-      $sql = "SELECT UserID FROM Session WHERE SessionID = $SessionID";
+      $sql = "SELECT UserID FROM session WHERE SessionID = $SessionID";
       $result = mysqli_query($dbhandle,$sql);
       $row = mysqli_fetch_assoc($result);
       $currUser = $row['UserID'];
@@ -23,7 +23,7 @@
                                 
         // SQL statement for returning field names in RawTracking
         $sql = "SHOW columns
-                FROM RawTracking";
+                FROM rawtracking";
         $trackingfields=mysqli_query($dbhandle,$sql);
         $trackingfieldsarray = array();
 
@@ -36,8 +36,8 @@
         
         echo "<h1 class='page-title'>Angle Reached for Session $SessionID</h1>";           
 
-        $sql = "SELECT a.*, ar.GameNo FROM Neuromender3.Achievement a 
-                LEFT JOIN Neuromender3.AchievementRings ar 
+        $sql = "SELECT a.*, ar.GameNo FROM Neuromender4_5.achievement a 
+                LEFT JOIN Neuromender4_5.achievementrings ar 
                 ON a.AcheivementID=ar.AcheivementID 
                 Where SessionID = $SessionID AND a.Completed = 1
                 Group BY GameNo";
@@ -206,9 +206,9 @@
         if (empty($_SESSION['wgameNumber']))
         {
             //get the first game available
-            $sql = "Select AchievementRings.AcheivementID, AchievementRings.GameNo from AchievementRings LEFT JOIN Achievement ON Achievement.AcheivementID = AchievementRings.AcheivementID
-                    WHERE Achievement.SessionID = " . $SessionID . " AND Achievement.Completed = 1
-                    ORDER BY Achievement.TimeAchieved ASC
+            $sql = "Select achievementrings.AcheivementID, achievementrings.GameNo from achievementrings LEFT JOIN achievement ON achievement.AcheivementID = achievementrings.AcheivementID
+                    WHERE achievement.SessionID = " . $SessionID . " AND achievement.Completed = 1
+                    ORDER BY achievement.TimeAchieved ASC
                     LIMIT 1";
             $result = mysqli_query($dbhandle,$sql);
             $row = mysqli_fetch_assoc($result);
@@ -221,7 +221,7 @@
         {
             $_SESSION['wgameNumber'] = $_POST['wgameNumberSelection'];
             $sql    = "SELECT * "
-                    . "FROM AchievementRings "
+                    . "FROM achievementrings "
                     . "WHERE AcheivementID = " . $_SESSION['wgameNumber']; 
             $result = mysqli_query($dbhandle,$sql);
             $row = mysqli_fetch_assoc($result);
@@ -232,11 +232,11 @@
         $wgameNumberID = $_SESSION['wgameNumberID'];
 
         $sql    = "SELECT * "
-                . "FROM Session "
-                . "LEFT JOIN Achievement ON Achievement.SessionID = Session.SessionID "
-                . "LEFT JOIN LevelCompleted ON LevelCompleted.SessionID = Session.SessionID "
-                . "LEFT JOIN Level ON LevelCompleted.LevelID = Level.LevelID "
-                . "WHERE AcheivementID = $wgameNumber AND Achievement.Completed = 1"; 
+                . "FROM session "
+                . "LEFT JOIN achievement ON achievement.SessionID = session.SessionID "
+                . "LEFT JOIN levelcompleted ON levelcompleted.SessionID = session.SessionID "
+                . "LEFT JOIN level ON levelcompleted.LevelID = level.LevelID "
+                . "WHERE AcheivementID = $wgameNumber AND achievement.Completed = 1"; 
         $result = mysqli_query($dbhandle,$sql);
         $row = mysqli_fetch_assoc($result);
         
@@ -245,10 +245,10 @@
         echo "<div class='page-details-graph'>Level: " . $row['Name'] . ", " . $row['Description'] . "</div>";
         
         $sql    = "SELECT * "
-                . "FROM Session "
-                . "LEFT JOIN Achievement ON Achievement.SessionID = Session.SessionID "
-                . "LEFT JOIN Task ON Task.TaskID = Achievement.TaskID "
-                . "WHERE AcheivementID = $wgameNumber AND Achievement.Completed = 1";
+                . "FROM session "
+                . "LEFT JOIN achievement ON achievement.SessionID = session.SessionID "
+                . "LEFT JOIN task ON task.TaskID = achievement.TaskID "
+                . "WHERE AcheivementID = $wgameNumber AND achievement.Completed = 1";
         $result = mysqli_query($dbhandle,$sql);
         $row = mysqli_fetch_assoc($result);
         
@@ -261,10 +261,10 @@
         $output = $output . "<input type='submit' class='btn btn-primary btn-sm' id='btnWGameNumber' name='btnWGameNumber'/></div> </form>";
         
         $sql = "SELECT * "
-              . "FROM AchievementRings "
-              . "LEFT JOIN Achievement ON Achievement.AcheivementID = AchievementRings.AcheivementID "
-              . "WHERE Achievement.SessionID = $SessionID AND Achievement.Completed = 1 "
-              . "ORDER BY Achievement.TimeAchieved ASC";
+              . "FROM achievementrings "
+              . "LEFT JOIN achievement ON achievement.AcheivementID = achievementrings.AcheivementID "
+              . "WHERE achievement.SessionID = $SessionID AND achievement.Completed = 1 "
+              . "ORDER BY achievement.TimeAchieved ASC";
         $output = str_replace("%WGAMENUMBER%", CreatePersistenceSelectBox($sql, 'wgameNumberSelection', 'wgameNumberSelection', 'AcheivementID', 'GameNo', $wgameNumber, '', $dbhandle), $output);
 
         echo $output;
@@ -275,7 +275,7 @@
         $iwgCounter = 0;
         
         // Get rows from database
-        $sql = "SELECT Angle, Reloaded, Score, Assisted FROM AchievementRings Where AcheivementID = $wgameNumber";
+        $sql = "SELECT Angle, Reloaded, Score, Assisted FROM achievementrings Where AcheivementID = $wgameNumber";
         $result=mysqli_query($dbhandle,$sql);
                         
         // Insert data into arrays if it exists
@@ -472,8 +472,8 @@
         if(empty($_SESSION['beginAngDate']) && empty($_SESSION['endAngDate']))
         {
             //get the first available session's date
-            $sql = "SELECT Achievement.TimeAchieved FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-                    WHERE UserID = " . $_SESSION['currPatientID'] . " AND Achievement.Completed = 1
+            $sql = "SELECT achievement.TimeAchieved FROM achievement LEFT JOIN session ON session.SessionID = achievement.SessionID 
+                    WHERE UserID = " . $_SESSION['currPatientID'] . " AND achievement.Completed = 1
                     ORDER BY TimeAchieved ASC
                     LIMIT 1";
             $result = mysqli_query($dbhandle,$sql);
@@ -502,8 +502,8 @@
         $sessionIds = array();
         $amchartAverageChartData = array();
         
-        $sql = "SELECT DISTINCT(Achievement.SessionID) FROM Achievement LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-                WHERE UserID = " . $_SESSION['currPatientID'] . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND Achievement.Completed = 1
+        $sql = "SELECT DISTINCT(achievement.SessionID) FROM achievement LEFT JOIN session ON session.SessionID = achievement.SessionID 
+                WHERE UserID = " . $_SESSION['currPatientID'] . " AND WingmanPlayed >= 1 AND (TimeAchieved BETWEEN '$beginAngDate 00:00:00' AND '$endAngDate 23:59:59') AND achievement.Completed = 1
                 ORDER BY TimeAchieved ASC";
         $result = mysqli_query($dbhandle,$sql);
         while($row = mysqli_fetch_assoc($result))
@@ -514,9 +514,9 @@
         foreach($sessionIds as $sessionId)
         {
             //sum all the threshold pass and count the number of games
-            $sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM Achievement 
-                    LEFT JOIN Session ON Session.SessionID = Achievement.SessionID 
-                    WHERE Achievement.SessionID = $sessionId AND Session.WingmanPlayed >= 1 AND Achievement.Completed = 1";
+            $sql = "SELECT count(*) as TotalGame, Sum(ThresholdPassed) as TotalAngle, Sum(Score) as TotalScore FROM achievement 
+                    LEFT JOIN session ON session.SessionID = achievement.SessionID 
+                    WHERE achievement.SessionID = $sessionId AND session.WingmanPlayed >= 1 AND achievement.Completed = 1";
             $result = mysqli_query($dbhandle,$sql);
             $row = mysqli_fetch_assoc($result);
             $totalAngle = (float)$row["TotalAngle"];
